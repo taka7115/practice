@@ -1,0 +1,21 @@
+@charset "utf-8";
+
+
+
+
+
+.m-sample{
+  // $thisに親のclass名を格納する
+  $this: &;
+
+  // デフォルトのスタイル
+  &__block {
+    // 本文スタイル
+
+    #{$this}--modifier &{
+    // .m-sample--modifier .m-sample__block
+
+    }
+  }
+
+}

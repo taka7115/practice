@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+
+// 共通部分------------------------------------------------
+.section {
+  margin: 0 auto 40px;
+  padding: 80px 0;
+
+  @include sp {}
+}
+
+
+.secTtl {
+  margin: 0 auto 60px;
+
+  @include sp {}
+
+  &__text {
+    font-size: 18px;
+    text-align: center;
+
+    @include sp {}
+  }
+}
+
+
+
+
+// section1-------------------------------------------------
+
+
+.section1 {
+  background-color: rgb(230, 255, 230);
+
+  @include sp {}
+}
+
+
+.sec1Trial {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: scroll;
+
+  @include sp {}
+}
+
+.sec1El {
+  width: 800px;
+  height: 300px;
+  scroll-snap-type: mandatory;
+
+  @include sp {}
+
+  &--1 {
+    background-color: blue;
+    scroll-snap-align: start;
+  }
+
+  &--2 {
+    background-color: yellow;
+    scroll-snap-align: start;
+  }
+
+  &--3 {
+    background-color: red;
+    scroll-snap-align: start;
+  }
+}
