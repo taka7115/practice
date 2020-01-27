@@ -4,14 +4,14 @@
 
 
 .section3 {
-  background-color: rgb(230, 255, 230);
+  background-color: rgb(255, 249, 223);
 
   @include sp {}
 }
 
 
 .sec3Trial {
-  width: 700px;
+  width: 600px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -20,10 +20,117 @@
   @include sp {}
 }
 
-.sec3El {
+.pulse {
   width: 100px;
   height: 100px;
-  background-color: #555;
+  border-radius: 50%;
+  font-size: 10px;
+  line-height: 100px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
 
   @include sp {}
+
+  &--1 {
+    background-color: rgb(94, 177, 255);
+  }
+
+  &--2 {
+    background-color: rgba(65, 255, 214, 0.63);
+  }
+
+  &--3 {
+    background-color: rgba(233, 88, 91, 1);
+  }
+}
+
+.pulse a {
+  color: rgb(58, 48, 48);
+}
+
+
+
+.pulse:after {
+  width: 100px;
+  height: 100px;
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.pulse--1:hover:after {
+  animation: pulse--1 1.5s ease;
+}
+
+.pulse--2:hover:after {
+  animation: pulse--2 1.5s ease;
+}
+
+.pulse--3:hover:after {
+  animation: pulse--3 3s ease infinite;
+}
+
+.pulse--2:before {
+  width: 100px;
+  height: 100px;
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+.pulse--2:hover:before {
+  animation: pulse--2-2 1.5s ease .5s;
+}
+
+
+@keyframes pulse--1 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 1px rgba(233, 88, 91, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+    box-shadow: 0 0 0 1.5px blue;
+  }
+}
+
+
+
+@keyframes pulse--2 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 1px rgba(233, 88, 91, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+    box-shadow: 0 0 0 1.5px rgb(0, 144, 55);
+  }
+}
+
+
+@keyframes pulse--2-2 {
+  0% {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 0 1px rgba(233, 88, 91, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+    box-shadow: 0 0 0 1.5px rgb(0, 144, 55);
+  }
 }

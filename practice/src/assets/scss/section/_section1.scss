@@ -35,35 +35,72 @@
   @include sp {}
 }
 
-
-.sec1Trial {
-  width: 800px;
-  margin: 0 auto;
+.snap-container {
+  width: 600px;
+  height: 300px;
+  margin: 0 auto 60px;
   display: flex;
   overflow-x: scroll;
+  scroll-snap-type: x mandatory;
 
-  @include sp {}
+  @include sp {
+    width: 80%;
+    height: 70vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
 }
 
-.sec1El {
-  width: 800px;
-  height: 300px;
-  scroll-snap-type: mandatory;
+.red {
+  width: 100%;
+  flex: none;
+  background-color: rgb(94, 177, 255);
+  scroll-snap-align: start;
 
-  @include sp {}
+  @include sp {
+    width: 100%;
+    height: 100%;
+  }
+}
 
-  &--1 {
-    background-color: blue;
-    scroll-snap-align: start;
+.blue {
+  width: 100%;
+  flex: none;
+  background-color: rgba(65, 255, 214, 0.63);
+  scroll-snap-align: start;
+
+  @include sp {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.yellow {
+  width: 100%;
+  flex: none;
+  background-color: rgba(233, 88, 91, 1);
+  scroll-snap-align: start;
+
+  @include sp {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+.secNote {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+
+  & h3 {
+    text-align: left;
   }
 
-  &--2 {
-    background-color: yellow;
-    scroll-snap-align: start;
-  }
-
-  &--3 {
-    background-color: red;
-    scroll-snap-align: start;
+  & p {
+    text-align: left;
   }
 }

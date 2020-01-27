@@ -11,19 +11,51 @@
 
 
 .sec2Trial {
-  width: 700px;
+  width: 600px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
 
+
   @include sp {}
 }
 
-.sec2El {
-  width: 100px;
-  height: 100px;
-  background-color: #555;
+details {
+  height: auto;
+  transition: .5s;
+  margin: 0 auto 60px;
+}
 
-  @include sp {}
+
+
+
+summary {
+  width: 188px;
+  height: 59px;
+  line-height: 59px;
+  color: white;
+  background-image: url('../../assets/img/button.png');
+  background-size: cover;
+  background-position: center center;
+  margin: 0 auto 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s;
+  // ▶を消す Chrome以外の場合
+  list-style: none;
+}
+
+summary:hover {
+  opacity: .7;
+}
+
+// ▶を消す Chromeの場合
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.summary-wrap {
+  padding: 20px 40px;
+  background-color: white;
 }
