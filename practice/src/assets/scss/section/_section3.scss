@@ -71,7 +71,8 @@
 }
 
 .pulse--3:hover:after {
-  animation: pulse--3 3s ease infinite;
+  animation: pulse--3 1.5s ease infinite;
+  animation-iteration-count: infinite;
 }
 
 .pulse--2:before {
@@ -132,5 +133,20 @@
     opacity: 0;
     transform: scale(1.8);
     box-shadow: 0 0 0 1.5px rgb(0, 144, 55);
+  }
+}
+
+
+@keyframes pulse--3 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 1px rgba(233, 88, 91, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+    box-shadow: 0 0 0 1.5px red;
   }
 }

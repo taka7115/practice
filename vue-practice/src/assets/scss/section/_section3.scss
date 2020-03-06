@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+// section3-------------------------------------------------
+
+
+.section3 {
+  background-color: rgb(255, 249, 223);
+
+  @include sp {}
+}
+
+.connection {
+  position: relative;
+
+  &Wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &Result {
+    height: 80px;
+    font-size: 40px;
+    text-align: center;
+    color: darkred;
+    font-weight: bold;
+  }
+
+  &Input {
+    display: block;
+    border: 1px solid black;
+    margin: 0 auto 20px;
+  }
+
+  &Button {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &Box {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: 500px;
+    bottom: 20px;
+    padding: 5px 0 0 10px;
+    border: 1px solid black;
+    overflow-y: scroll;
+  }
+
+}

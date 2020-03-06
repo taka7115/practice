@@ -11018,6 +11018,9 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /*import*/
+
+
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
@@ -11028,10 +11031,11 @@ var _common2 = _interopRequireDefault(_common);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 // import Sample from './modules/Sample';
 
 /*create instance*/
-/*import*/
 var common = new _common2.default();
 // const sample = new Sample({
 //     name: 'world'
@@ -11039,13 +11043,160 @@ var common = new _common2.default();
 
 /*load event*/
 document.addEventListener('DOMContentLoaded', function () {
-    common.init();
+  common.init();
 });
 
-/*sample*/
-// $('h1').on('click', () => {
-//     console.log(`hello, ${sample.name}.`);
-// });
+// class仕様で円を左右に----------------------------------------------
+
+/**
+ * 円を左右に動かす
+ */
+
+var Transform = function () {
+  function Transform(a, b) {
+    _classCallCheck(this, Transform);
+
+    this.trigger1 = a;
+    this.trigger2 = b;
+    this.reset = (0, _jquery2.default)('.btn-reset');
+    this.content = (0, _jquery2.default)('.circle');
+    this.init();
+  }
+
+  /**
+   * 処理実行
+   */
+
+
+  _createClass(Transform, [{
+    key: 'init',
+    value: function init() {
+      this.clickRight();
+      this.clickLeft();
+      this.clickReset();
+    }
+
+    /**
+     * 右へボタンを押すと円が右に移動
+     */
+
+  }, {
+    key: 'clickRight',
+    value: function clickRight() {
+      var _this = this;
+
+      this.trigger1.on('click', function () {
+        _this.content.removeClass('left');
+        _this.content.addClass('right');
+      });
+    }
+
+    /**
+     * 左へボタンを押すと円が左に移動
+     */
+
+  }, {
+    key: 'clickLeft',
+    value: function clickLeft() {
+      var _this2 = this;
+
+      this.trigger2.on('click', function () {
+        _this2.content.removeClass('right');
+        _this2.content.addClass('left');
+      });
+    }
+
+    /**
+     * リセットボタンを押すと円がリセット
+     */
+
+  }, {
+    key: 'clickReset',
+    value: function clickReset() {
+      var _this3 = this;
+
+      this.reset.on('click', function () {
+        _this3.content.removeClass('right');
+        _this3.content.removeClass('left');
+      });
+    }
+  }]);
+
+  return Transform;
+}();
+
+/**
+ * 関数実行
+ */
+
+
+(0, _jquery2.default)(window).on('load', function () {
+  new Transform((0, _jquery2.default)('.btn-right'), (0, _jquery2.default)('.btn-left'));
+});
+
+// マウスストーカー----------------------------------------------
+
+/**
+ * マウスストーカー
+ */
+
+var stalker = function () {
+  function stalker() {
+    _classCallCheck(this, stalker);
+
+    this.init();
+    this.range();
+  }
+
+  _createClass(stalker, [{
+    key: 'init',
+    value: function init() {
+      /**
+       * マウスストーカー用のdivを取得
+       */
+
+      //上記のdivタグをマウスに追従させる処理
+      (0, _jquery2.default)(".section7").mousemove(function (e) {
+        (0, _jquery2.default)('.stalker').css({
+          "transform": 'translate(' + e.clientX + 'px ,' + e.clientY + 'px)'
+        });
+      });
+    }
+
+    /**
+     * 円をsection7の上でしか表示させない
+     */
+
+  }, {
+    key: 'range',
+    value: function range() {
+      (0, _jquery2.default)(window).mousemove(function () {
+        var rangeT = (0, _jquery2.default)(".section7").offset().top;
+        var rangeL = (0, _jquery2.default)(".section7").offset().left;
+
+        var stalkerT = (0, _jquery2.default)(".stalker").offset().top;
+        var stalkerL = (0, _jquery2.default)(".stalker").offset().left;
+        if (stalkerT > rangeT && stalkerL > rangeL) {
+          (0, _jquery2.default)('.stalker').css("opacity", "1");
+        } else {
+          (0, _jquery2.default)('.stalker').css("opacity", "0");
+        }
+      });
+    }
+  }]);
+
+  return stalker;
+}();
+/**
+ * 関数実行
+ */
+
+
+(0, _jquery2.default)(window).on('load', function () {
+  new stalker();
+});
+
+// ----------------------------------------------
 
 },{"./modules/common":3,"jquery":1}],3:[function(require,module,exports){
 'use strict';

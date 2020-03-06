@@ -1,0 +1,48 @@
+<section class="section section2">
+  <div class="secTtl">
+    <h2 class="secTtl__text">
+      v-if
+    </h2>
+  </div>
+
+  <div id="sec2">
+    <div class="cont cont--1">
+      <div class="contTrigger">
+        <div class="contTriggerCircle" v-on:click="active1">1</div>
+        <div class="contTriggerCircle" v-on:click="active2">2</div>
+        <div class="contTriggerCircle" v-on:click="active3">3</div>
+      </div>
+      <div class="contResult">
+        <div class="contResultRect">
+          <div class="contResultWrap" v-if="status1">
+            <p class="contResultText1" v-text="text1">
+            </p>
+          </div>
+        </div>
+        <div class="contResultRect">
+          <div class="contResultWrap" v-if="status2">
+            <p class="contResultText2" v-text="text2">
+            </p>
+          </div>
+        </div>
+        <div class="contResultRect">
+          <div class="contResultWrap" v-if="status3">
+            <p class="contResultText3" v-text="text3">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cont cont--2">
+      <p class="contText">
+
+      </p>
+    </div>
+    <div class="cont cont--3">
+      <p class="contText">
+
+      </p>
+    </div>
+  </div>
+
+</section>

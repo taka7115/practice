@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+
+body {
+  z-index: 0;
+}
+
+// 共通部分------------------------------------------------
+.section {
+  margin: 0 auto 40px;
+  padding: 80px 0;
+
+  @include sp {}
+}
+
+
+.secTtl {
+  margin: 0 auto 60px;
+
+  @include sp {}
+
+  &__text {
+    font-size: 18px;
+    text-align: center;
+
+    @include sp {}
+  }
+}
+
+
+
+
+// section1-------------------------------------------------
+
+
+.section1 {
+  background-color: rgb(230, 255, 230);
+
+  @include sp {}
+}
+
+.cont {
+  width: 700px;
+  height: 300px;
+  padding: 60px 0;
+  margin: 0 auto 30px;
+  background-color: #fff;
+}
+
+.basic {
+  &Text {
+    text-align: center;
+  }
+}

@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.section9 {
+  background-color: rgb(255, 194, 204);
+
+
+  .hover {
+    width: 220px;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-radius: 2em;
+    background-color: #fff;
+    cursor: pointer;
+
+    &Text {
+      text-align: center;
+    }
+  }
+
+  // 簡単にツールチップを表示する----------------------------------------------------
+  .tooltip:hover {
+    position: relative;
+  }
+
+  .tooltip::after {
+    position: absolute;
+    content: attr(data-tooltip);
+    top: -30px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+  }
+}

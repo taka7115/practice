@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+// section3-------------------------------------------------
+
+
+.section5 {
+  background-color: rgba(128, 0, 128, 0.2);
+
+  @include sp {}
+}
+
+.computed {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &Wrap {
+    position: absolute;
+    height: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &Adjust {
+    height: 60px;
+  }
+
+  &Result {
+    font-size: 40px;
+    text-align: center;
+    color: darkred;
+    font-weight: bold;
+  }
+
+  &Input {
+    display: block;
+    border: 1px solid black;
+    margin: 0 auto 20px;
+  }
+
+  &Btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &Clear {
+    display: block;
+    margin: 0 auto;
+  }
+
+
+}

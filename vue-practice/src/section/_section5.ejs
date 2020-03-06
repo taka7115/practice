@@ -1,0 +1,30 @@
+<section class="section section5">
+
+  <div class="secTtl">
+    <h2 class="secTtl__text">
+      computed<br>
+      methods = returnするときはreversedMessage()<br>computed = returnするときはreversedMessage
+    </h2>
+  </div>
+
+
+  <div id="sec5">
+    <div class="cont computed">
+      <div class="computedWrap">
+        <div class="computedAdjust">
+          <p class="computedResult" v-if="messageShow">
+            {{ reversedMessage }}
+          </p>
+          <p class="computedResult" v-else>
+            {{ message }}
+          </p>
+        </div>
+        <hr class="under">
+        <input type="text" class="computedInput" v-model="message">
+        <button class="computedClear" @click="messageChange">反転</button>
+      </div>
+    </div>
+  </div>
+
+
+</section>
