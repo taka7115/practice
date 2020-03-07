@@ -11039,13 +11039,29 @@ var common = new _common2.default();
 
 /*load event*/
 document.addEventListener('DOMContentLoaded', function () {
-    common.init();
+  common.init();
 });
 
-/*sample*/
-// $('h1').on('click', () => {
-//     console.log(`hello, ${sample.name}.`);
-// });
+// flash-----------------------------------------
+new Vue({
+  el: '#app',
+  data: {
+    questionText: 'これが質問です',
+    answerText: 'これが答えです',
+    questionCont: true,
+    answerCont: false
+  },
+  methods: {
+    answerOpen: function answerOpen() {
+      this.answerCont = !this.answerCont;
+      this.questionCont = !this.questionCont;
+    },
+    answerClose: function answerClose() {
+      this.answerCont = false;
+    }
+  }
+});
+// ----------------------------------------flash-
 
 },{"./modules/common":3,"jquery":1}],3:[function(require,module,exports){
 'use strict';

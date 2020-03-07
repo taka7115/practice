@@ -11,12 +11,27 @@ const common = new Common();
 
 /*load event*/
 document.addEventListener('DOMContentLoaded', () => {
-    common.init();
+  common.init();
 })
 
 
-
-/*sample*/
-// $('h1').on('click', () => {
-//     console.log(`hello, ${sample.name}.`);
-// });
+// flash-----------------------------------------
+new Vue({
+  el: '#app',
+  data: {
+    questionText: 'これが質問です',
+    answerText: 'これが答えです',
+    questionCont: true,
+    answerCont: false
+  },
+  methods: {
+    answerOpen: function () {
+      this.answerCont = !this.answerCont;
+      this.questionCont = !this.questionCont;
+    },
+    answerClose: function () {
+      this.answerCont = false;
+    }
+  }
+})
+// ----------------------------------------flash-

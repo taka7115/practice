@@ -1,4 +1,23 @@
-<section class="section4">
+<section class="section section4" id="app">
+
+
+  <div class="cont"></div>
+  <div class="btn" v-on:click="answerOpen">
+    答える
+  </div>
+  <div class="question">
+    <div class="questionCont" v-show="questionCont">
+      {{questionText}}
+    </div>
+    <div class="answerCont" v-show="answerCont">
+      {{ answerText}}
+    </div>
+  </div>
+  <div class="tips">
+    ヒント
+  </div>
+  </div>
+
 
 
 </section>

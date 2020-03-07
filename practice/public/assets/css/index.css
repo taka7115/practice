@@ -3732,7 +3732,8 @@ summary {
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s;
-  list-style: none
+  list-style: none;
+  overflow: hidden
 }
 summary:hover {
   opacity: .7
@@ -3742,7 +3743,8 @@ summary::-webkit-details-marker {
 }
 .summary-wrap {
   padding: 20px 40px;
-  background-color: #fff
+  background-color: #fff;
+  overflow: hidden
 }
 .section3 {
   background-color: #fff9df
@@ -3914,5 +3916,45 @@ summary::-webkit-details-marker {
     -webkit-box-shadow: 0 0 0 1.5px #009037;
     box-shadow: 0 0 0 1.5px #009037
   }
+}
+.section4 {
+  background-color: #ccf
+}
+.cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.btn {
+  width: 150px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-weight: 700;
+  text-align: center;
+  background-color: #ddd;
+  cursor: pointer
+}
+.question {
+  width: 80%;
+  height: 300px;
+  margin: 100px auto;
+  padding: 30px 50px;
+  background-color: #fff
+}
+.tips {
+  width: 150px;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid #ffe058;
+  background-color: #f4ff94
 }
 /*# sourceMappingURL=index.css.map */
