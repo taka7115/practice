@@ -1,0 +1,23 @@
+<section class="section section4">
+  <div class="secTtl">
+    <h2 class="secTtl__text">
+      filters<br>
+      (頭文字を大文字にする)
+    </h2>
+  </div>
+
+  <div id="sec4">
+    <div class="cont filters">
+      <div class="filtersWrap">
+        <div class="filtersAdjust">
+          <p class="filtersResult" v-if="textShow">
+            {{newList | capitalize | quotation}}
+          </p>
+        </div>
+        <hr class="under">
+        <input type="text" class="filtersInput" v-model="newList">
+        <button class="filtersClear" v-on:click="clearEvent">クリア</button>
+      </div>
+    </div>
+  </div>
+</section>

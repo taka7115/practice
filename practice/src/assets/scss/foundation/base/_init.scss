@@ -4,54 +4,60 @@
  */
 
 html {
-    font-family: $font-family-basic;
-    color: $color_txt;
-    word-wrap: break-word;
-    font-size: $base_fs * 1px;
-    line-height: 1.6;
+  font-family: $font-family-basic;
+  color: $color_txt;
+  word-wrap: break-word;
+  font-size: $base_fs * 1px;
+  line-height: 1.6;
 }
 
 
 body {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    -webkit-text-size-adjust: 100%;
-    line-height: 1.6;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.6;
 }
 
 a {
-    text-decoration: $link_deco;
-    color: $color_lnk;
-    transition: all 0.2s;
-    &:hover {
-        text-decoration: none;
-        opacity: 0.8;
-    }
+  text-decoration: $link_deco;
+  color: $color_lnk;
+  transition: all 0.2s;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.8;
+  }
 }
+
 img {
-    vertical-align: bottom;
-    @include sp{
-        width: 100%;
-    }
+  width: 100%;
+  vertical-align: bottom;
+
+  @include sp {
+    width: 100%;
+  }
 }
 
 strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 input {
-    padding: 0;
-    border: none;
-    background: none;
+  padding: 0;
+  border: none;
+  background: none;
 }
-*{
-    box-sizing: border-box;
-    transition: font-size 0.1s linear;
-    -webkit-backface-visibility:hidden;
-    backface-visibility:hidden;
+
+* {
+  box-sizing: border-box;
+  transition: font-size 0.1s linear;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 
 }
+
 input[type=text],
 input[type=tel],
 input[type=password],
@@ -67,75 +73,83 @@ input[type=datetime-local],
 input[type=number],
 select,
 textarea {
-    padding: 6px;
-    font-family: $font-family-basic;
-    background-color: #fff;
-    border: solid 1px #c9c9c9;
-    vertical-align: bottom;
-    &::-webkit-input-placeholder {
-        color: $color_placeholder;
-    }
-    &:-ms-input-placeholder {
-        color: $color_placeholder;
-    }
-    &::-moz-placeholder {
-        color: $color_placeholder;
-    }
-    &:focus {
-        background-color: #eef4fb;
-    }
+  padding: 6px;
+  font-family: $font-family-basic;
+  background-color: #fff;
+  border: solid 1px #c9c9c9;
+  vertical-align: bottom;
+
+  &::-webkit-input-placeholder {
+    color: $color_placeholder;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color_placeholder;
+  }
+
+  &::-moz-placeholder {
+    color: $color_placeholder;
+  }
+
+  &:focus {
+    background-color: #eef4fb;
+  }
 }
 
 input[type=radio],
 input[type=checkbox] {
-    margin: 0;
-    vertical-align: -1px;
+  margin: 0;
+  vertical-align: -1px;
 }
 
 input[type="button"],
 input[type="submit"] {
-    -webkit-appearance: none;
-    cursor: pointer;
-    font-family: $font-family-basic;
-    vertical-align: bottom;
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-family: $font-family-basic;
+  vertical-align: bottom;
 }
 
 textarea {
-    resize: vertical;
-    vertical-align: bottom;
+  resize: vertical;
+  vertical-align: bottom;
 }
 
 em {
-    font-style: italic;
+  font-style: italic;
 }
 
 sup {
-    vertical-align: super;
+  vertical-align: super;
 }
 
 sub {
-    vertical-align: sub;
+  vertical-align: sub;
 }
 
-blockquote{
-    background-color: #EEEFFF;
-    padding: 1em 1em 1em 3em;
-    position: relative;
-    border-left: 3px solid #666;
+blockquote {
+  background-color: #EEEFFF;
+  padding: 1em 1em 1em 3em;
+  position: relative;
+  border-left: 3px solid #666;
 }
-blockquote:before{
-    content: "“";
-    font-size: 600%;
-    line-height: 1em;
-    color: #999;
-    position: absolute;
-    left: 0;
-    top: 0;
+
+blockquote:before {
+  content: "“";
+  font-size: 600%;
+  line-height: 1em;
+  color: #999;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 ::selection {
-    background: #d4dcd6; /* Safari */
+  background: #d4dcd6;
+  /* Safari */
 }
+
 ::-moz-selection {
-    background: #d4dcd6; /* Firefox */
+  background: #d4dcd6;
+  /* Firefox */
 }

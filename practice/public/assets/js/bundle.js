@@ -11018,6 +11018,9 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 'use strict';
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /*import*/
+
+
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
@@ -11028,10 +11031,11 @@ var _common2 = _interopRequireDefault(_common);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 // import Sample from './modules/Sample';
 
 /*create instance*/
-/*import*/
 var common = new _common2.default();
 // const sample = new Sample({
 //     name: 'world'
@@ -11042,32 +11046,126 @@ document.addEventListener('DOMContentLoaded', function () {
   common.init();
 });
 
-// flash-----------------------------------------
-new Vue({
-  el: '#app',
-  data: {
-    questionText: 'これが質問です',
-    answerText: 'これが答えです',
-    questionCont: true,
-    answerCont: false
-  },
-  methods: {
-    answerOpen: function answerOpen() {
-      this.answerCont = !this.answerCont;
-      this.questionCont = !this.questionCont;
-    },
-    answerClose: function answerClose() {
-      this.answerCont = false;
-    }
+// class仕様で円を左右に----------------------------------------------
+
+/**
+ * SVG animation
+ */
+
+var SvgTextAnimation = function () {
+  function SvgTextAnimation() {
+    _classCallCheck(this, SvgTextAnimation);
+
+    this.init();
   }
+
+  _createClass(SvgTextAnimation, [{
+    key: 'init',
+    value: function init() {
+      this.getLength();
+      this.animStart();
+    }
+  }, {
+    key: 'getLength',
+    value: function getLength() {
+      var wonderlust = document.querySelectorAll("#wonderlust path");
+      /**
+       * get the length of path
+       */
+      console.log(wonderlust);
+
+      for (var i = 0; i < wonderlust.length; i++) {
+        console.log(wonderlust[i].getTotalLength());
+      }
+    }
+  }, {
+    key: 'animStart',
+    value: function animStart() {
+      (0, _jquery2.default)("#wonderlust-btn").on("click", function () {
+        (0, _jquery2.default)("#wonderlust").addClass("anim-start");
+      });
+    }
+  }]);
+
+  return SvgTextAnimation;
+}();
+
+/**
+ * 関数実行
+ */
+
+
+(0, _jquery2.default)(window).on('load', function () {
+  new SvgTextAnimation();
 });
-// ----------------------------------------flash-
+
+// マウスストーカー----------------------------------------------
+
+/**
+ * マウスストーカー
+ */
+
+var stalker = function () {
+  function stalker() {
+    _classCallCheck(this, stalker);
+
+    this.init();
+    this.range();
+  }
+
+  _createClass(stalker, [{
+    key: 'init',
+    value: function init() {
+      /**
+       * マウスストーカー用のdivを取得
+       */
+
+      //上記のdivタグをマウスに追従させる処理
+      (0, _jquery2.default)(".section7").mousemove(function (e) {
+        (0, _jquery2.default)('.stalker').css({
+          "transform": 'translate(' + e.clientX + 'px ,' + e.clientY + 'px)'
+        });
+      });
+    }
+
+    /**
+     * 円をsection7の上でしか表示させない
+     */
+
+  }, {
+    key: 'range',
+    value: function range() {
+      (0, _jquery2.default)(window).mousemove(function () {
+        var rangeT = (0, _jquery2.default)(".section7").offset().top;
+        var rangeL = (0, _jquery2.default)(".section7").offset().left;
+
+        var stalkerT = (0, _jquery2.default)(".stalker").offset().top;
+        var stalkerL = (0, _jquery2.default)(".stalker").offset().left;
+        if (stalkerT > rangeT && stalkerL > rangeL) {
+          (0, _jquery2.default)('.stalker').css("opacity", "1");
+        } else {
+          (0, _jquery2.default)('.stalker').css("opacity", "0");
+        }
+      });
+    }
+  }]);
+
+  return stalker;
+}();
+/**
+ * 関数実行
+ */
+
+
+(0, _jquery2.default)(window).on('load', function () {
+  new stalker();
+});
 
 },{"./modules/common":3,"jquery":1}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -11075,35 +11173,37 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Common = function () {
-    function Common() {
-        _classCallCheck(this, Common);
+  function Common() {
+    _classCallCheck(this, Common);
 
-        this.speed = 400;
+    this.speed = 800;
+  }
+
+  _createClass(Common, [{
+    key: 'init',
+    value: function init() {
+      var self = this;
+      $('a[href^="#"]').on('click', function () {
+        self.pageScroll(this);
+      });
     }
+  }, {
+    key: 'pageScroll',
+    value: function pageScroll(el) {
+      var self = void 0,
+          href = void 0,
+          target = void 0,
+          position = void 0;
+      href = $(el).attr("href");
+      target = $(href == "#" || href == "" ? 'html' : href);
+      position = target.offset().top;
+      $("html, body").animate({
+        scrollTop: position
+      }, this.speed);
+    }
+  }]);
 
-    _createClass(Common, [{
-        key: 'init',
-        value: function init() {
-            var self = this;
-            $('a[href^="#"]').on('click', function () {
-                self.pageScroll(this);
-            });
-        }
-    }, {
-        key: 'pageScroll',
-        value: function pageScroll(el) {
-            var self = void 0,
-                href = void 0,
-                target = void 0,
-                position = void 0;
-            href = $(el).attr("href");
-            target = $(href == "#" || href == "" ? 'html' : href);
-            position = target.offset().top;
-            $("html, body").animate({ scrollTop: position }, this.speed);
-        }
-    }]);
-
-    return Common;
+  return Common;
 }();
 
 exports.default = Common;

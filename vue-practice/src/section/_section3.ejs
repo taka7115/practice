@@ -1,0 +1,24 @@
+<section class="section section3">
+  <div class="secTtl">
+    <h2 class="secTtl__text">
+      v-model<br>@keyup.enter<br>(エンター押して入力ワードをボックスに格納)
+    </h2>
+  </div>
+
+  <div id="sec3">
+    <div class="cont connection">
+      <div class="connectionWrap">
+        <p class="connectionResult" v-text="newList">
+        </p>
+        <hr class="under">
+        <input type="text" class="connectionInput" @keyup.enter="submitAction" v-model="newList">
+        <button class="connectionButton" @click="submitAction">Submit</button>
+      </div>
+      <div class="connectionBox">
+        <p class="connectionList" v-for="list in lists">
+          {{list.name}}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
