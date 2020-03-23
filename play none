@@ -1,0 +1,60 @@
+[33mcommit 610f4526b5cb954f72ac0b7fc89832fd2ec4b5ad[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Merge: 40f4846 35a95b6
+Author: taka7115 <taka7115web@gmail.com>
+Date:   Sun Mar 8 22:11:01 2020 +1100
+
+    svg animation
+
+[33mcommit 40f484652672624a1205d2609018941ea94eabba[m
+Author: taka7115 <taka7115web@gmail.com>
+Date:   Sat Mar 7 20:01:33 2020 +1100
+
+    Could I commit?
+
+[33mcommit 35a95b63bdd4dae02993a38ab780500bf75872f5[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: 3kaku-nishina <takahiro.nishina@3kaku.co.jp>
+Date:   Fri Mar 6 17:41:19 2020 +0900
+
+    commit for weekend
+
+[33mcommit c09ebbe1744591e72c3010134acbdbc4155801e5[m
+Author: 3kaku-nishina <takahiro.nishina@3kaku.co.jp>
+Date:   Mon Jan 27 20:16:54 2020 +0900
+
+    scroll-snap details+summary pulse
+
+[33mcommit 6d24ad85903a4e2105f2c690bf510bd8859f4d4d[m
+Author: 3kaku-nishina <takahiro.nishina@3kaku.co.jp>
+Date:   Mon Jan 27 15:05:47 2020 +0900
+
+    すべてリセット。ここからpracticeした内容を随時更新
+
+[33mcommit 518ed57a9a5a1869718372d1d9a76871cfa5ef4c[m
+Author: 3kaku-nishina <takahiro.nishina@3kaku.co.jp>
+Date:   Mon Jan 27 15:01:25 2020 +0900
+
+    作成したすべてのフォルダファイルを一括でプッシュできているか確認
+
+[33mcommit 183a00f34b42759e0ff54229d38b30c0571953c4[m
+Author: 3kaku-nishina <takahiro.nishina@3kaku.co.jp>
+Date:   Mon Jan 27 14:54:31 2020 +0900
+
+    forth commit
+
+[33mcommit 922426e7abb786dc60f0c0060742b29bdb2480cc[m
+Author: 3kaku-nishina <takahiro.nishina@3kaku.co.jp>
+Date:   Mon Jan 27 14:51:53 2020 +0900
+
+    third commit
+
+[33mcommit 7f76e140005eb420e2f4ee860bc59197e377bc30[m
+Author: 3kaku-nishina <takahiro.nishina@3kaku.co.jp>
+Date:   Mon Jan 27 14:49:09 2020 +0900
+
+    second commit
+
+[33mcommit 5d2f02111d6e7c13f8b5cc99c07ede9517102345[m
+Author: 3kaku-nishina <takahiro.nishina@3kaku.co.jp>
+Date:   Mon Jan 27 13:57:41 2020 +0900
+
+    Initial Commit
