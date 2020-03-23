@@ -1,3 +1,44 @@
 @charset "utf-8";
 
-.section11 {}
+.section11 {
+
+  background-color: rgb(255, 246, 215);
+
+  .spin {
+
+
+    &Text {
+      text-align: center;
+
+      &__letter {
+        display: inline-block;
+        margin-right: 10px;
+        color: rgb(94, 2, 94);
+        font-weight: bold;
+        font-size: 40px;
+        // letter-spacing: .5em;
+        transition: .8s;
+        animation: spin 2s infinite;
+      }
+
+      @for $num from 1 through 4 {
+        .spinText__letter:nth-child(#{$num}) {
+          animation-delay: $num * .2s;
+        }
+      }
+    }
+
+
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+
+
+
+
+
+}

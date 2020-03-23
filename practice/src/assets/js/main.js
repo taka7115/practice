@@ -42,9 +42,59 @@ class SvgTextAnimation {
   }
 
   animStart() {
-    $("#wonderlust-btn").on("click", function () {
-      $("#wonderlust").addClass("anim-start");
-    })
+    const btn = document.getElementById("wonderlust-btn");
+    const el = document.getElementById("wonderlust");
+
+    // add a class to #wonderlust
+    function add() {
+      el.classList.add("show");
+    }
+    // remove a class from #wonderlust
+    function remove() {
+      el.classList.remove("show");
+    }
+    // ,message
+    function message() {
+      return console.log("5秒たちました。")
+    }
+
+    function opacity() {
+      const clickAgain = document.getElementById("clickAgain");
+      clickAgain.style.opacity = 1;
+    }
+
+    function opacityZero() {
+      clickAgain.style.opacity = 0;
+    }
+
+    function urge() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(opacity());
+        }, 400);
+      });
+    }
+
+    function wait() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve(message())
+        }, 5000);
+      });
+    }
+
+
+    btn.addEventListener('click', function () {
+      async function asyncFunc() {
+        opacityZero()
+        add();
+        await wait();
+        await urge();
+        remove();
+      }
+      asyncFunc()
+    });
+
   }
 }
 
@@ -54,11 +104,6 @@ class SvgTextAnimation {
 $(window).on('load', () => {
   new SvgTextAnimation();
 });
-
-
-
-
-
 
 
 
@@ -93,15 +138,23 @@ class stalker {
   range() {
     $(window).mousemove(function () {
       var rangeT = $(".section7").offset().top;
+      var rangeT_end = rangeT + 248;
       var rangeL = $(".section7").offset().left;
 
       var stalkerT = $(".stalker").offset().top;
       var stalkerL = $(".stalker").offset().left;
+
       if (stalkerT > rangeT && stalkerL > rangeL) {
         $('.stalker').css("opacity", "1");
       } else {
         $('.stalker').css("opacity", "0");
       }
+      // $(window).scroll(function () {
+      if (rangeT_end < stalkerT) {
+        $('.stalker').css("opacity", "0");
+      }
+      // });
+
     });
   }
 }
@@ -110,4 +163,46 @@ class stalker {
  */
 $(window).on('load', () => {
   new stalker();
+});
+
+
+
+// clip-path----------------------------------------------
+
+/**
+ * clip-path
+ */
+
+class ClipPath {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+
+    $(".contCircle").on("mouseover", function () {
+      $(this).removeClass("zIndex3");
+      $(".contCircle").not(this).addClass("zIndex3");
+      $(".contCircle").not(this).addClass("eventNone");
+      var set = $(this);
+      setTimeout(function () {
+        $(".contCircle").removeClass("eventNone");
+      }, 500);
+    })
+
+    $(".contCircle").on("mouseleave", function () {
+      $(".contCircle").removeClass("zIndex1");
+
+    })
+
+
+
+  }
+}
+
+/**
+ * 関数実行
+ */
+$(window).on('load', () => {
+  new ClipPath();
 });

@@ -11081,8 +11081,56 @@ var SvgTextAnimation = function () {
   }, {
     key: 'animStart',
     value: function animStart() {
-      (0, _jquery2.default)("#wonderlust-btn").on("click", function () {
-        (0, _jquery2.default)("#wonderlust").addClass("anim-start");
+      var btn = document.getElementById("wonderlust-btn");
+      var el = document.getElementById("wonderlust");
+
+      // add a class to #wonderlust
+      function add() {
+        el.classList.add("show");
+      }
+      // remove a class from #wonderlust
+      function remove() {
+        el.classList.remove("show");
+      }
+      // ,message
+      function message() {
+        return console.log("5秒たちました。");
+      }
+
+      function opacity() {
+        var clickAgain = document.getElementById("clickAgain");
+        clickAgain.style.opacity = 1;
+      }
+
+      function opacityZero() {
+        clickAgain.style.opacity = 0;
+      }
+
+      function urge() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve(opacity());
+          }, 400);
+        });
+      }
+
+      function wait() {
+        return new Promise(function (resolve, reject) {
+          setTimeout(function () {
+            resolve(message());
+          }, 5000);
+        });
+      }
+
+      btn.addEventListener('click', function () {
+        async function asyncFunc() {
+          opacityZero();
+          add();
+          await wait();
+          await urge();
+          remove();
+        }
+        asyncFunc();
       });
     }
   }]);
@@ -11137,15 +11185,22 @@ var stalker = function () {
     value: function range() {
       (0, _jquery2.default)(window).mousemove(function () {
         var rangeT = (0, _jquery2.default)(".section7").offset().top;
+        var rangeT_end = rangeT + 248;
         var rangeL = (0, _jquery2.default)(".section7").offset().left;
 
         var stalkerT = (0, _jquery2.default)(".stalker").offset().top;
         var stalkerL = (0, _jquery2.default)(".stalker").offset().left;
+
         if (stalkerT > rangeT && stalkerL > rangeL) {
           (0, _jquery2.default)('.stalker').css("opacity", "1");
         } else {
           (0, _jquery2.default)('.stalker').css("opacity", "0");
         }
+        // $(window).scroll(function () {
+        if (rangeT_end < stalkerT) {
+          (0, _jquery2.default)('.stalker').css("opacity", "0");
+        }
+        // });
       });
     }
   }]);
@@ -11159,6 +11214,51 @@ var stalker = function () {
 
 (0, _jquery2.default)(window).on('load', function () {
   new stalker();
+});
+
+// clip-path----------------------------------------------
+
+/**
+ * clip-path
+ */
+
+var ClipPath = function () {
+  function ClipPath() {
+    _classCallCheck(this, ClipPath);
+
+    this.init();
+  }
+
+  _createClass(ClipPath, [{
+    key: 'init',
+    value: function init() {
+
+      (0, _jquery2.default)(".contCircle").on("mouseover", function () {
+        (0, _jquery2.default)(this).removeClass("zIndex3");
+        (0, _jquery2.default)(".contCircle").not(this).addClass("zIndex3");
+        (0, _jquery2.default)(".contCircle").not(this).addClass("eventNone");
+        var set = (0, _jquery2.default)(this);
+        setTimeout(function () {
+          (0, _jquery2.default)(".contCircle").removeClass("eventNone");
+        }, 500);
+      });
+
+      (0, _jquery2.default)(".contCircle").on("mouseleave", function () {
+        (0, _jquery2.default)(".contCircle").removeClass("zIndex1");
+      });
+    }
+  }]);
+
+  return ClipPath;
+}();
+
+/**
+ * 関数実行
+ */
+
+
+(0, _jquery2.default)(window).on('load', function () {
+  new ClipPath();
 });
 
 },{"./modules/common":3,"jquery":1}],3:[function(require,module,exports){
