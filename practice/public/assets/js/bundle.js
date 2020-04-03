@@ -11207,14 +11207,6 @@ var stalker = function () {
 
   return stalker;
 }();
-/**
- * 関数実行
- */
-
-
-(0, _jquery2.default)(window).on('load', function () {
-  new stalker();
-});
 
 // clip-path----------------------------------------------
 
@@ -11252,14 +11244,68 @@ var ClipPath = function () {
   return ClipPath;
 }();
 
+// scroll-curve----------------------------------------------
+
 /**
- * 関数実行
+ * scroll-curve
+ */
+
+var ScrollCurve = function () {
+  function ScrollCurve() {
+    _classCallCheck(this, ScrollCurve);
+
+    this.init();
+  }
+
+  _createClass(ScrollCurve, [{
+    key: 'init',
+    value: function init() {
+
+      var scroll = document.querySelector('.curve');
+      scroll.addEventListener('scroll', function () {
+        getTheScrollPosition();
+      });
+
+      function getTheScrollPosition() {
+        var range = document.querySelector('.curve');
+        var scrollTopRatio = range.scrollTop / (range.scrollHeight - range.clientHeight);
+
+        /**
+         * .scrollTop=elがscrollされた値
+         * .scrollHeight=overflow:hiddenで表示されない領域を含む、elの高さの値
+         * .clientHeight=elのheightとpaddingの合計の値
+         *
+         * scrollされた値をelの高さで割り、その値をscaleYへ代入
+         */
+        var img = document.querySelector('.curveImg');
+        img.style.transform = 'scaleY(' + scrollTopRatio + ')';
+        console.log(scrollTopRatio);
+      }
+    }
+  }]);
+
+  return ScrollCurve;
+}();
+
+/**
+ * 関数実行--------------------------------------------------------
  */
 
 
 (0, _jquery2.default)(window).on('load', function () {
+  new SvgTextAnimation();
+  new stalker();
   new ClipPath();
+  new ScrollCurve();
 });
+
+// 時間あるときに
+// https://qiita.com/amamamaou/items/728d571d508347b2bc82
+// element.scrollIntoView({
+//   behavior: 'auto',
+//   block: 'center',
+//   inline: 'nearest',
+// });
 
 },{"./modules/common":3,"jquery":1}],3:[function(require,module,exports){
 'use strict';

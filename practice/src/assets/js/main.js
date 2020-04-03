@@ -158,12 +158,7 @@ class stalker {
     });
   }
 }
-/**
- * 関数実行
- */
-$(window).on('load', () => {
-  new stalker();
-});
+
 
 
 
@@ -200,9 +195,67 @@ class ClipPath {
   }
 }
 
+
+
+// scroll-curve----------------------------------------------
+
 /**
- * 関数実行
+ * scroll-curve
+ */
+
+class ScrollCurve {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+
+    var scroll = document.querySelector('.curve');
+    scroll.addEventListener('scroll', function () {
+      getTheScrollPosition();
+    });
+
+    function getTheScrollPosition() {
+      var range = document.querySelector('.curve');
+      var scrollTopRatio = range.scrollTop / (range.scrollHeight - range.clientHeight);
+
+      /**
+       * .scrollTop=elがscrollされた値
+       * .scrollHeight=overflow:hiddenで表示されない領域を含む、elの高さの値
+       * .clientHeight=elのheightとpaddingの合計の値
+       *
+       * scrollされた値をelの高さで割り、その値をscaleYへ代入
+       */
+      var img = document.querySelector('.curveImg');
+      img.style.transform = 'scaleY(' + scrollTopRatio + ')';
+      console.log(scrollTopRatio);
+    }
+  }
+}
+
+
+
+
+
+
+/**
+ * 関数実行--------------------------------------------------------
  */
 $(window).on('load', () => {
+  new SvgTextAnimation();
+  new stalker();
   new ClipPath();
+  new ScrollCurve();
 });
+
+
+
+
+
+// 時間あるときに
+// https://qiita.com/amamamaou/items/728d571d508347b2bc82
+// element.scrollIntoView({
+//   behavior: 'auto',
+//   block: 'center',
+//   inline: 'nearest',
+// });

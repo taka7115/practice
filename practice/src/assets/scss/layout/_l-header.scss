@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.header {
+
+  &Wrap {
+    &__ttl {
+
+      font-size: 40px;
+      text-align: center;
+      padding: 30px;
+
+    }
+
+  }
+}
+
+.side {
+  width: 120px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgb(0, 0, 0);
+
+  &Cont {
+    width: 100%;
+  }
+
+  &Link {
+    padding: 12px 6px;
+    transition: .3s;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    &:hover .sideText {
+      color: #000;
+    }
+  }
+
+  &Text {
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    transition: .3s;
+  }
+
+
+}

@@ -2,11 +2,13 @@
 
 .section12 {
   background-color: rgb(22, 7, 104);
+
+  &__text {
+    color: #fff;
+  }
 }
 
-.secTtl__text {
-  color: #fff;
-}
+
 
 
 
@@ -37,12 +39,12 @@
   transform: translate(2px, -2px);
 
 
-  &:hover .cont__h2 {
+  &:hover .sec12-cont__h2 {
     top: -55px;
 
   }
 
-  &:hover .cont__more {
+  &:hover .sec12-cont__more {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
@@ -77,7 +79,7 @@
 }
 
 
-.cont {
+.sec12-cont {
   position: relative;
   padding: 60px 20px 0;
 
