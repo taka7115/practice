@@ -16,11 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// class仕様で円を左右に----------------------------------------------
+// SVG animation----------------------------------------------
 
-/**
- * SVG animation
- */
 class SvgTextAnimation {
   constructor() {
     this.init();
@@ -98,20 +95,10 @@ class SvgTextAnimation {
   }
 }
 
-/**
- * 関数実行
- */
-$(window).on('load', () => {
-  new SvgTextAnimation();
-});
 
 
 
 // マウスストーカー----------------------------------------------
-
-/**
- * マウスストーカー
- */
 
 class stalker {
   constructor() {
@@ -162,11 +149,8 @@ class stalker {
 
 
 
-// clip-path----------------------------------------------
 
-/**
- * clip-path
- */
+// clip-path----------------------------------------------
 
 class ClipPath {
   constructor() {
@@ -196,12 +180,7 @@ class ClipPath {
 }
 
 
-
 // scroll-curve----------------------------------------------
-
-/**
- * scroll-curve
- */
 
 class ScrollCurve {
   constructor() {
@@ -234,8 +213,98 @@ class ScrollCurve {
 }
 
 
+// scroll-curve----------------------------------------------
+
+class TypeWriting {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    var messageCount = 0;
+    var message = "There is more to life than increasing its speed. Without haste, but without rest.Think rich, look poor. Do one thing everyday that scares you. Some people feel the rain. Others just get wet. I never worry about action, but only inaction.";
+    var messageSpeed = 50; /* The speed/duration of the effect in milliseconds */
+
+    function typeMessage() {
+      var element = $('.sec17').find('.sec17Message')
+      element.addClass('text-cursor')
+      if (messageCount < message.length) {
+        element.html(element.html() + message.charAt(messageCount))
+        messageCount++;
+        setTimeout(typeMessage, messageSpeed);
+      } else {
+        setTimeout(function () {
+          // element.removeClass('text-cursor')
+        }, 1000)
+      }
+    }
+
+    typeMessage();
+
+  }
+}
 
 
+
+// cursor-transparent----------------------------------------------
+
+class CursorTransparent {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+
+    /**
+     * rangeの範囲でカーソルを動かしたときだけ、カーソル周囲の透明化を実行
+     */
+
+    $(".range").on('mousemove', function (e) {
+
+      /**
+       * rangeの範囲の要素の位置座標を取得
+       */
+      var el = document.querySelector(".range");
+      var clientRect = el.getBoundingClientRect();
+
+      /**
+       * 画面の上端から、 要素の上端までの距離
+       */
+      var elTop = clientRect.top;
+
+      /**
+       * 画面の左端から、 要素の左端までの距離
+       */
+      var elLeft = clientRect.left;
+
+      /**
+       * カーソルの座標を取得
+       */
+      var cursorTop = e.clientY;
+      var cursorLeft = e.clientX;
+
+      /**
+       *.rangeの端からカーソルまでの距離
+       */
+      var distanceY = cursorTop - elTop;
+      var distanceX = cursorLeft - elLeft;
+
+
+      $('.overlay').css({
+        "top": distanceY + 'px',
+        "left": distanceX + 'px'
+      });
+
+    });
+
+
+
+
+
+
+
+  }
+}
 
 
 /**
@@ -246,7 +315,10 @@ $(window).on('load', () => {
   new stalker();
   new ClipPath();
   new ScrollCurve();
+  new TypeWriting();
+  new CursorTransparent();
 });
+
 
 
 

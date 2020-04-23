@@ -1,1 +1,57 @@
 @charset "utf-8";
+
+.section17 {
+  background-color: #deffd1;
+}
+
+
+.sec17 {
+  &Wrap {
+    width: 900px;
+    margin: 0 auto;
+    padding: 100px 100px;
+    background-color: rgb(10, 10, 10);
+  }
+
+  &Message {
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+
+  }
+
+}
+
+.text-cursor:after {
+  background: white;
+  content: '-';
+  width: 5px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 5px;
+  position: absolute;
+  animation: cursorBlinker 1.5s infinite;
+  -webkit-animation: cursorBlinker 1.5s infinite
+}
+
+@keyframes cursorBlinker {
+  0% {
+    opacity: 0
+  }
+
+  25% {
+    opacity: 1
+  }
+
+  50% {
+    opacity: 0
+  }
+
+  75% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
+}

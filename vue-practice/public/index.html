@@ -3,37 +3,46 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <title>Review</title>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Review</title>
 
-    <meta name="keywords" content="Review">
-    <meta name="description" content="Review">
-    <meta property="og:title" content="Review">
-    <meta property="og:description" content="Review">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/assets/img/og/og.jpg">
-    <meta property="og:url" content="http://www.example.com/">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Review">
+  <meta name="keywords" content="Review">
+  <meta name="description" content="Review">
+  <meta property="og:title" content="Review">
+  <meta property="og:description" content="Review">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/img/og/og.jpg">
+  <meta property="og:url" content="http://www.example.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Review">
 
-    <script type="text/javascript">
-        var ua = navigator.userAgent;
-        document.open();
-        if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0) && (ua.indexOf('Mobile') > 0) || ua.indexOf('Windows Phone') > 0) {
-            document.write('<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0">');
-        } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
-            document.write('<meta content="width=1200" name="viewport">');
-        } else {
-            document.write('<meta content="width=1200" name="viewport">');
-        }
-        document.close();
+  <script type="text/javascript">
+    var ua = navigator.userAgent;
+    document.open();
+    if (ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || (ua.indexOf('Android') > 0) && (ua.indexOf('Mobile') >
+        0) || ua.indexOf('Windows Phone') > 0) {
+      document.write('<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0">');
+    } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
+      document.write('<meta content="width=1200" name="viewport">');
+    } else {
+      document.write('<meta content="width=1200" name="viewport">');
+    }
+    document.close();
 
-    </script>
+  </script>
 
-    <link rel="stylesheet" href="/assets/css/index.css">
+  <link rel="stylesheet" href="/assets/css/index.css">
+
+  <style>
+    /* <head>に<style>で指定して、cloakをバインドしている要素のタグ内に書くと、{{}}は読み込まれるまで非表示にされる。 */
+    [v-cloak] {
+      display: none;
+    }
+
+  </style>
 </head>
 
 <body>

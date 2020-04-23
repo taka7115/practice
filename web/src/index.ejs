@@ -1,0 +1,28 @@
+<% var meta = {
+    pageTitle:'starter',
+    description:'foo',
+    keywords:'foo',
+    url:'http://www.example.com/'
+  };
+  var page={
+      root:filePath.dir
+  };
+%>
+<%- include(page.root + 'common/_meta', {param:'param'}); %>
+<%- include(page.root + 'common/_header', {param:'param'}); %>
+
+
+<main class="main">
+
+  <%- include(page.root + 'section/_section1', {param:'param'}); %>
+  <%- include(page.root + 'section/_section2', {param:'param'}); %>
+  <%- include(page.root + 'section/_section3', {param:'param'}); %>
+  <%- include(page.root + 'section/_section4', {param:'param'}); %>
+  <%- include(page.root + 'section/_section5', {param:'param'}); %>
+  <%- include(page.root + 'section/_section6', {param:'param'}); %>
+  <%- include(page.root + 'section/_section7', {param:'param'}); %>
+  <%- include(page.root + 'section/_section8', {param:'param'}); %>
+
+</main>
+
+<%- include(page.root + 'common/_footer', {param:'param'}); %>

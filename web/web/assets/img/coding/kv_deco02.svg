@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="250" viewBox="0 0 500 250">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="長方形_21" data-name="長方形 21" width="250" height="500" transform="translate(1722 -643.001) rotate(90)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="0.317" y1="0.34" x2="0.902" y2="0.473" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00a2ff"/>
+      <stop offset="1" stop-color="#004880"/>
+    </linearGradient>
+  </defs>
+  <g id="マスクグループ_3" data-name="マスクグループ 3" transform="translate(-1222 643.001)" clip-path="url(#clip-path)">
+    <path id="パス_6" data-name="パス 6" d="M0,0,17.58,512.536,596.167,19.178Z" transform="matrix(-0.391, -0.921, 0.921, -0.391, 1298.326, -151.709)" stroke="#979797" stroke-width="2" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

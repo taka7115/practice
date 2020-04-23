@@ -1,0 +1,51 @@
+/*
+---
+name: component name
+tag:
+  - base
+  - latest
+category:
+  - component
+  - component/button
+---
+
+## This is a component document
+
+* Base button component.
+* Use `a` or `button` tag.
+
+Here's an example code.
+<img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png">
+
+![sample](https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png "サンプル")
+
+```html
+<a class="btn">Button</a>
+```
+*/
+
+@charset "utf-8";
+/*foundation base*/
+@import "foundation/base/_initialize";
+@import "foundation/base/_properties";
+@import "foundation/base/_mixin";
+@import "foundation/base/_init";
+
+/*foundation vender*/
+@import "foundation/vender/_animate";
+
+
+/*layout*/
+@import "layout/*";
+
+/*module*/
+@import "module/*";
+
+/*pages*/
+@import "pages/*";
+
+/*utility*/
+@import "utility/*";
+
+/*section*/
+@import "section/*";

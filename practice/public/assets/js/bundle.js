@@ -11046,11 +11046,7 @@ document.addEventListener('DOMContentLoaded', function () {
   common.init();
 });
 
-// class仕様で円を左右に----------------------------------------------
-
-/**
- * SVG animation
- */
+// SVG animation----------------------------------------------
 
 var SvgTextAnimation = function () {
   function SvgTextAnimation() {
@@ -11138,20 +11134,7 @@ var SvgTextAnimation = function () {
   return SvgTextAnimation;
 }();
 
-/**
- * 関数実行
- */
-
-
-(0, _jquery2.default)(window).on('load', function () {
-  new SvgTextAnimation();
-});
-
 // マウスストーカー----------------------------------------------
-
-/**
- * マウスストーカー
- */
 
 var stalker = function () {
   function stalker() {
@@ -11210,10 +11193,6 @@ var stalker = function () {
 
 // clip-path----------------------------------------------
 
-/**
- * clip-path
- */
-
 var ClipPath = function () {
   function ClipPath() {
     _classCallCheck(this, ClipPath);
@@ -11245,10 +11224,6 @@ var ClipPath = function () {
 }();
 
 // scroll-curve----------------------------------------------
-
-/**
- * scroll-curve
- */
 
 var ScrollCurve = function () {
   function ScrollCurve() {
@@ -11287,6 +11262,101 @@ var ScrollCurve = function () {
   return ScrollCurve;
 }();
 
+// scroll-curve----------------------------------------------
+
+var TypeWriting = function () {
+  function TypeWriting() {
+    _classCallCheck(this, TypeWriting);
+
+    this.init();
+  }
+
+  _createClass(TypeWriting, [{
+    key: 'init',
+    value: function init() {
+      var messageCount = 0;
+      var message = "There is more to life than increasing its speed. Without haste, but without rest.Think rich, look poor. Do one thing everyday that scares you. Some people feel the rain. Others just get wet. I never worry about action, but only inaction.";
+      var messageSpeed = 50; /* The speed/duration of the effect in milliseconds */
+
+      function typeMessage() {
+        var element = (0, _jquery2.default)('.sec17').find('.sec17Message');
+        element.addClass('text-cursor');
+        if (messageCount < message.length) {
+          element.html(element.html() + message.charAt(messageCount));
+          messageCount++;
+          setTimeout(typeMessage, messageSpeed);
+        } else {
+          setTimeout(function () {
+            // element.removeClass('text-cursor')
+          }, 1000);
+        }
+      }
+
+      typeMessage();
+    }
+  }]);
+
+  return TypeWriting;
+}();
+
+// cursor-transparent----------------------------------------------
+
+var CursorTransparent = function () {
+  function CursorTransparent() {
+    _classCallCheck(this, CursorTransparent);
+
+    this.init();
+  }
+
+  _createClass(CursorTransparent, [{
+    key: 'init',
+    value: function init() {
+
+      /**
+       * rangeの範囲でカーソルを動かしたときだけ、カーソル周囲の透明化を実行
+       */
+
+      (0, _jquery2.default)(".range").on('mousemove', function (e) {
+
+        /**
+         * rangeの範囲の要素の位置座標を取得
+         */
+        var el = document.querySelector(".range");
+        var clientRect = el.getBoundingClientRect();
+
+        /**
+         * 画面の上端から、 要素の上端までの距離
+         */
+        var elTop = clientRect.top;
+
+        /**
+         * 画面の左端から、 要素の左端までの距離
+         */
+        var elLeft = clientRect.left;
+
+        /**
+         * カーソルの座標を取得
+         */
+        var cursorTop = e.clientY;
+        var cursorLeft = e.clientX;
+
+        /**
+         *.rangeの端からカーソルまでの距離
+         */
+        var distanceY = cursorTop - elTop;
+        var distanceX = cursorLeft - elLeft;
+
+        (0, _jquery2.default)('.overlay').css({
+          "top": distanceY + 'px',
+          "left": distanceX + 'px'
+        });
+      });
+    }
+  }]);
+
+  return CursorTransparent;
+}();
+
 /**
  * 関数実行--------------------------------------------------------
  */
@@ -11297,6 +11367,8 @@ var ScrollCurve = function () {
   new stalker();
   new ClipPath();
   new ScrollCurve();
+  new TypeWriting();
+  new CursorTransparent();
 });
 
 // 時間あるときに
