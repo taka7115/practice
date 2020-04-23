@@ -12,6 +12,10 @@ export default class Coding {
     this.ttlArea();
   }
 
+
+  /**
+   *kvを画面高さいっぱいにする
+   */
   kvHeight() {
     var changeHeight = function () {
       if ($(window).width() > 750) {
@@ -25,7 +29,28 @@ export default class Coding {
     });
   }
 
+  /**
+   *オープニングアニメーション
+   */
   ttlArea() {
+
+    function scroll_control(event) {
+      event.preventDefault();
+    }
+    /**
+     * prohibit scrolling
+     */
+    var noScroll = () => {
+      // prohibit in PC
+      document.addEventListener("mousewheel", scroll_control, {
+        passive: false
+      });
+      // prohibit in SP
+      document.addEventListener("touchmove", scroll_control, {
+        passive: false
+      });
+    }
+
 
     /**
      * タイトル部分のwidthを広げる
@@ -71,6 +96,7 @@ export default class Coding {
 
       })
     }
+
     /**
      * 青いboxを落とす
      */
@@ -112,6 +138,7 @@ export default class Coding {
         resolve("promised");
       })
     }
+
     /**
      * 濃い青boxを弾ませる
      */
@@ -136,6 +163,7 @@ export default class Coding {
         }, 1600);
       })
     }
+
     /**
      * 縦線を倒す
      */
@@ -159,13 +187,31 @@ export default class Coding {
         first.classList.add('js-vanish');
         wrap.classList.add('js-smaller');
         resolve("promised");
-      })
+      });
     }
+
+
+    /**
+     * accepting scrolling
+     */
+    var yesScroll = () => {
+      // accepting in PC
+      document.removeEventListener("mousewheel", scroll_control, {
+        passive: false
+      });
+      // accepting in SP
+      document.removeEventListener("touchmove", scroll_control, {
+        passive: false
+      });
+      resolve("promised");
+    }
+
 
     /**
      * タイトルのアニメーションを順番に処理
      */
     var ttlAnimation = async () => {
+      noScroll();
       await widen();
       await jack(0);
       await jack(1);
@@ -185,22 +231,17 @@ export default class Coding {
       await swing();
       await lean();
       await vanish();
-      await smaller();
+      yesScroll();
     }
+
+
 
     ttlAnimation();
 
 
 
-
-
-
-
-
-
-
-
   }
+
 
 
 };

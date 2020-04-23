@@ -11089,6 +11089,11 @@ var Coding = function () {
       this.kvHeight();
       this.ttlArea();
     }
+
+    /**
+     *kvを画面高さいっぱいにする
+     */
+
   }, {
     key: "kvHeight",
     value: function kvHeight() {
@@ -11103,9 +11108,31 @@ var Coding = function () {
         changeHeight();
       });
     }
+
+    /**
+     *オープニングアニメーション
+     */
+
   }, {
     key: "ttlArea",
     value: function ttlArea() {
+
+      function scroll_control(event) {
+        event.preventDefault();
+      }
+      /**
+       * prohibit scrolling
+       */
+      var noScroll = function noScroll() {
+        // prohibit in PC
+        document.addEventListener("mousewheel", scroll_control, {
+          passive: false
+        });
+        // prohibit in SP
+        document.addEventListener("touchmove", scroll_control, {
+          passive: false
+        });
+      };
 
       /**
        * タイトル部分のwidthを広げる
@@ -11149,6 +11176,7 @@ var Coding = function () {
           }
         });
       };
+
       /**
        * 青いboxを落とす
        */
@@ -11189,6 +11217,7 @@ var Coding = function () {
           resolve("promised");
         });
       };
+
       /**
        * 濃い青boxを弾ませる
        */
@@ -11213,6 +11242,7 @@ var Coding = function () {
           }, 1600);
         });
       };
+
       /**
        * 縦線を倒す
        */
@@ -11240,9 +11270,25 @@ var Coding = function () {
       };
 
       /**
+       * accepting scrolling
+       */
+      var yesScroll = function yesScroll() {
+        // accepting in PC
+        document.removeEventListener("mousewheel", scroll_control, {
+          passive: false
+        });
+        // accepting in SP
+        document.removeEventListener("touchmove", scroll_control, {
+          passive: false
+        });
+        resolve("promised");
+      };
+
+      /**
        * タイトルのアニメーションを順番に処理
        */
       var ttlAnimation = async function ttlAnimation() {
+        noScroll();
         await widen();
         await jack(0);
         await jack(1);
@@ -11262,7 +11308,7 @@ var Coding = function () {
         await swing();
         await lean();
         await vanish();
-        await smaller();
+        yesScroll();
       };
 
       ttlAnimation();
