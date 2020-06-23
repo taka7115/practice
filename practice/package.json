@@ -48,7 +48,7 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^5.2.1",
     "imagemin-pngquant": "^5.1.0",
-    "jquery": "^1.11.3",
+    "jquery": "^3.5.0",
     "node-aigis": "^1.4.1",
     "pump": "^3.0.0",
     "vinyl-source-stream": "^2.0.0"
