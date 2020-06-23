@@ -1,0 +1,816 @@
+@charset "UTF-8";
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: bottom;
+  background: 0 0;
+  font-size: 1rem
+}
+body {
+  line-height: 1
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block
+}
+li,
+ul {
+  list-style: none
+}
+blockquote,
+q {
+  quotes: none
+}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: '';
+  content: none
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0
+}
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none
+}
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: 700
+}
+del {
+  text-decoration: line-through
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0
+}
+input,
+select {
+  vertical-align: middle
+}
+html {
+  font-family: "Noto Sans JP","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ヒラギノ丸ゴ ProN W4","Hiragino Maru Gothic ProN","ヒラギノ丸ゴ Pro W4","Hiragino Maru Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
+  color: #000;
+  word-wrap: break-word;
+  font-size: 15px;
+  line-height: 1.6
+}
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.6
+}
+a {
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s
+}
+a:hover {
+  text-decoration: none;
+  opacity: .8
+}
+div {
+  width: 100%
+}
+img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle
+}
+@media screen and (max-width:750px) {
+  img {
+    width: 100%
+  }
+}
+strong {
+  font-weight: 700
+}
+input {
+  padding: 0;
+  border: none;
+  background: 0 0
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: font-size .1s linear;
+  -o-transition: font-size .1s linear;
+  transition: font-size .1s linear;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden
+}
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+  padding: 6px;
+  font-family: "Noto Sans JP","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ヒラギノ丸ゴ ProN W4","Hiragino Maru Gothic ProN","ヒラギノ丸ゴ Pro W4","Hiragino Maru Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
+  background-color: #fff;
+  border: solid 1px #c9c9c9;
+  vertical-align: bottom
+}
+input[type=date]::-webkit-input-placeholder,
+input[type=datetime-local]::-webkit-input-placeholder,
+input[type=datetime]::-webkit-input-placeholder,
+input[type=email]::-webkit-input-placeholder,
+input[type=month]::-webkit-input-placeholder,
+input[type=number]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder,
+input[type=search]::-webkit-input-placeholder,
+input[type=tel]::-webkit-input-placeholder,
+input[type=text]::-webkit-input-placeholder,
+input[type=time]::-webkit-input-placeholder,
+input[type=url]::-webkit-input-placeholder,
+input[type=week]::-webkit-input-placeholder,
+select::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #e2e2e2
+}
+input[type=date]:-ms-input-placeholder,
+input[type=datetime-local]:-ms-input-placeholder,
+input[type=datetime]:-ms-input-placeholder,
+input[type=email]:-ms-input-placeholder,
+input[type=month]:-ms-input-placeholder,
+input[type=number]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder,
+input[type=search]:-ms-input-placeholder,
+input[type=tel]:-ms-input-placeholder,
+input[type=text]:-ms-input-placeholder,
+input[type=time]:-ms-input-placeholder,
+input[type=url]:-ms-input-placeholder,
+input[type=week]:-ms-input-placeholder,
+select:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #e2e2e2
+}
+input[type=date]::-moz-placeholder,
+input[type=datetime-local]::-moz-placeholder,
+input[type=datetime]::-moz-placeholder,
+input[type=email]::-moz-placeholder,
+input[type=month]::-moz-placeholder,
+input[type=number]::-moz-placeholder,
+input[type=password]::-moz-placeholder,
+input[type=search]::-moz-placeholder,
+input[type=tel]::-moz-placeholder,
+input[type=text]::-moz-placeholder,
+input[type=time]::-moz-placeholder,
+input[type=url]::-moz-placeholder,
+input[type=week]::-moz-placeholder,
+select::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #e2e2e2
+}
+input[type=date]:focus,
+input[type=datetime-local]:focus,
+input[type=datetime]:focus,
+input[type=email]:focus,
+input[type=month]:focus,
+input[type=number]:focus,
+input[type=password]:focus,
+input[type=search]:focus,
+input[type=tel]:focus,
+input[type=text]:focus,
+input[type=time]:focus,
+input[type=url]:focus,
+input[type=week]:focus,
+select:focus,
+textarea:focus {
+  background-color: #eef4fb
+}
+input[type=checkbox],
+input[type=radio] {
+  margin: 0;
+  vertical-align: -1px
+}
+input[type=button],
+input[type=submit] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  font-family: "Noto Sans JP","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","ヒラギノ丸ゴ ProN W4","Hiragino Maru Gothic ProN","ヒラギノ丸ゴ Pro W4","Hiragino Maru Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",Sans-Serif;
+  vertical-align: bottom
+}
+textarea {
+  resize: vertical;
+  vertical-align: bottom
+}
+em {
+  font-style: italic
+}
+sup {
+  vertical-align: super
+}
+sub {
+  vertical-align: sub
+}
+blockquote {
+  background-color: #eeefff;
+  padding: 1em 1em 1em 3em;
+  position: relative;
+  border-left: 3px solid #666
+}
+blockquote:before {
+  content: "“";
+  font-size: 600%;
+  line-height: 1em;
+  color: #999;
+  position: absolute;
+  left: 0;
+  top: 0
+}
+::-moz-selection {
+  background: #d4dcd6
+}
+::selection {
+  background: #d4dcd6
+}
+::-moz-selection {
+  background: #d4dcd6
+}
+.u-mt00 {
+  margin-top: 0
+}
+.u-pci {
+  display: inline-block
+}
+@media screen and (max-width:750px) {
+  .u-pci {
+    display: none
+  }
+}
+.u-spi {
+  display: none
+}
+@media screen and (max-width:750px) {
+  .u-spi {
+    display: inline-block
+  }
+}
+.u-pc {
+  display: block!important
+}
+@media screen and (max-width:750px) {
+  .u-pc {
+    display: none!important
+  }
+}
+.u-sp {
+  display: none!important
+}
+@media screen and (max-width:750px) {
+  .u-sp {
+    display: block!important
+  }
+}
+.footer {
+  width: 100%;
+  padding: 100px 0 10px;
+  background-color: #433a44
+}
+.f-nav {
+  display: table;
+  margin: 0 auto 100px
+}
+.f-ul {
+  width: 300px;
+  display: table-cell;
+  vertical-align: top;
+  border-left: 1px solid #fff
+}
+.f-ul:first-child {
+  border-left: none
+}
+.f-li {
+  text-align: center;
+  margin-bottom: 10px
+}
+.f-li a {
+  color: #c1c1c1
+}
+.f-li a:hover {
+  color: #91c2f5
+}
+.f-li--ttl {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 20px
+}
+.f-li--left {
+  text-align: left
+}
+.f-copy {
+  text-align: center;
+  color: #fff;
+  font-size: .8em
+}
+body {
+  background-color: #000105
+}
+.c-page {
+  padding-top: 120px
+}
+@media screen and (max-width:750px) {
+  .c-page {
+    padding-top: 16vw
+  }
+}
+.c-page .ttl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 auto 20px
+}
+@media screen and (max-width:750px) {
+  .c-page .ttl {
+    margin: 0 auto 4vw
+  }
+}
+.c-page .ttl h1 {
+  display: inline-block;
+  color: #fff;
+  font-size: 34px;
+  text-align: center;
+  font-family: serif
+}
+@media screen and (max-width:750px) {
+  .c-page .ttl h1 {
+    font-size: 21px;
+    font-size: 5.6vw
+  }
+}
+.c-page .ttl h1 span {
+  position: relative;
+  font-size: 34px;
+  text-align: center;
+  font-family: serif
+}
+@media screen and (max-width:750px) {
+  .c-page .ttl h1 span {
+    font-size: 21px;
+    font-size: 5.6vw
+  }
+}
+.c-page .ttl h1 span:before {
+  width: 23px;
+  height: 23px;
+  content: "";
+  background-image: url(/assets/img/coding/page/box1.svg);
+  -webkit-box-shadow: 0 0 14px #00a2ff;
+  box-shadow: 0 0 14px #00a2ff;
+  position: absolute;
+  left: -30px;
+  top: -10px;
+  -webkit-transform: rotate(-54deg);
+  -ms-transform: rotate(-54deg);
+  transform: rotate(-54deg)
+}
+@media screen and (max-width:750px) {
+  .c-page .ttl h1 span:before {
+    width: 3.2vw;
+    height: 3.2vw;
+    left: -4vw;
+    top: -1.86667vw;
+    -webkit-transform: rotate(-48deg);
+    -ms-transform: rotate(-48deg);
+    transform: rotate(-48deg)
+  }
+}
+.c-page .ttl h1 span:after {
+  width: 16px;
+  height: 16px;
+  content: "";
+  background-image: url(/assets/img/coding/page/box2.svg);
+  -webkit-box-shadow: 0 0 14px #0375cc;
+  box-shadow: 0 0 14px #0375cc;
+  position: absolute;
+  left: 0;
+  top: -22px;
+  -webkit-transform: rotate(-17deg);
+  -ms-transform: rotate(-17deg);
+  transform: rotate(-17deg)
+}
+@media screen and (max-width:750px) {
+  .c-page .ttl h1 span:after {
+    width: 2.4vw;
+    height: 2.4vw;
+    left: 0;
+    top: -3.73333vw
+  }
+}
+.c-page .cont {
+  max-width: 1000px;
+  width: 100%;
+  height: 625px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: #00c2ff solid 5px;
+  margin-bottom: 100px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box
+}
+@media screen and (max-width:750px) {
+  .c-page .cont {
+    width: 96vw;
+    height: 60vw;
+    border: #00c2ff solid 3px;
+    margin-bottom: 26.66667vw
+  }
+}
+.c-page .code {
+  margin: 0 auto 120px
+}
+@media screen and (max-width:750px) {
+  .c-page .code {
+    margin: 0 auto 26.66667vw
+  }
+}
+.c-page .lang {
+  position: relative;
+  width: 300px;
+  margin: 0 auto 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+@media screen and (max-width:750px) {
+  .c-page .lang {
+    width: 56vw;
+    margin: 0 auto 5.33333vw
+  }
+}
+.c-page .lang__tab {
+  width: 60px;
+  cursor: pointer;
+  opacity: .4
+}
+@media screen and (max-width:750px) {
+  .c-page .lang__tab {
+    width: 13.33333vw
+  }
+}
+.c-page .slide {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative
+}
+@media screen and (max-width:750px) {
+  .c-page .slide {
+    width: 93.33333vw
+  }
+}
+.c-page .slide__cont {
+  border: #40e0d0 3px solid
+}
+.c-page .point {
+  margin-bottom: 200px
+}
+@media screen and (max-width:750px) {
+  .c-page .point {
+    margin-bottom: 26.66667vw
+  }
+}
+.c-page .point-wrap {
+  width: 1000px;
+  margin: 0 auto
+}
+@media print,
+screen and (min-width:751px) {
+  .c-page .point-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+  }
+}
+@media screen and (max-width:750px) {
+  .c-page .point-wrap {
+    width: 90.66667vw
+  }
+}
+@media print,
+screen and (min-width:751px) {
+  .c-page .point-wrap:nth-child(odd) {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+  }
+}
+@media print,
+screen and (min-width:751px) {
+  .c-page .point-wrap:nth-child(even) {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end
+  }
+}
+.c-page .point-wrap:not(:last-child) {
+  margin: 0 auto 50px
+}
+.c-page .point-cont {
+  width: 800px;
+  padding: 100px 80px;
+  background-color: #f7f8fc;
+  border: #00f6ff solid 4px
+}
+@media screen and (max-width:750px) {
+  .c-page .point-cont {
+    width: 100%;
+    padding: 8vw 5.33333vw;
+    border: #00f6ff solid 2px
+  }
+}
+.c-page .point-cont__ttl {
+  position: relative
+}
+.c-page .point-cont__h2 {
+  width: 100%;
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 80px;
+  color: #464646
+}
+@media screen and (max-width:750px) {
+  .c-page .point-cont__h2 {
+    font-size: 18px;
+    font-size: 4.8vw;
+    margin-bottom: 10.66667vw
+  }
+}
+.c-page .point-cont__list:not(:last-child) {
+  margin-bottom: 50px
+}
+@media screen and (max-width:750px) {
+  .c-page .point-cont__list:not(:last-child) {
+    margin-bottom: 8vw
+  }
+}
+.c-page .nz {
+  width: 100%;
+  -webkit-transform-origin: bottom;
+  -ms-transform-origin: bottom;
+  transform-origin: bottom;
+  -webkit-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  transform: scaleY(1);
+  background: -webkit-gradient(linear,left top,left bottom,from(transparent),color-stop(70%,#065a67),to(#433a44));
+  background: -o-linear-gradient(transparent 0,#065a67 70%,#433a44);
+  background: linear-gradient(transparent 0,#065a67 70%,#433a44)
+}
+.c-page .js-current {
+  opacity: 1
+}
+.c-page .js-left h2 {
+  text-align: left;
+  padding-left: 100px
+}
+@media screen and (max-width:750px) {
+  .c-page .js-left h2 {
+    padding-left: 18vw
+  }
+}
+.c-page .js-left svg {
+  width: 110px;
+  height: 90px;
+  position: absolute;
+  bottom: 5px;
+  left: -30px
+}
+@media screen and (max-width:750px) {
+  .c-page .js-left svg {
+    width: 19.06667vw;
+    height: 15.6vw;
+    bottom: 1.33333vw;
+    left: -2.66667vw
+  }
+}
+.c-page .js-right h2 {
+  text-align: left;
+  padding-right: 100px
+}
+@media screen and (max-width:750px) {
+  .c-page .js-right h2 {
+    padding-right: 18vw
+  }
+}
+.c-page .js-right svg {
+  width: 110px;
+  height: 90px;
+  position: absolute;
+  bottom: 5px;
+  right: -30px
+}
+@media screen and (max-width:750px) {
+  .c-page .js-right svg {
+    width: 19.06667vw;
+    height: 15.6vw;
+    bottom: 1.33333vw;
+    right: -2.66667vw
+  }
+}
+.c-page .js-orange {
+  position: relative
+}
+.c-page .js-orange h2 {
+  position: relative
+}
+.c-page .js-orange h2:after {
+  width: 100%;
+  height: 2px;
+  content: "";
+  border-top: 1px solid #e65100;
+  border-bottom: 1px solid #e65100;
+  position: absolute;
+  bottom: -10px;
+  left: 0
+}
+.c-page .js-orange svg path {
+  fill: #ff6d00
+}
+.c-page .js-orange svg line {
+  stroke: #ff6d00
+}
+.c-page .js-orange li span {
+  color: #ff6d00
+}
+.c-page .js-blue {
+  position: relative
+}
+.c-page .js-blue h2 {
+  position: relative
+}
+.c-page .js-blue h2:after {
+  width: 100%;
+  height: 2px;
+  content: "";
+  border-top: 1px solid #0277bd;
+  border-bottom: 1px solid #0277bd;
+  position: absolute;
+  bottom: -10px;
+  left: 0
+}
+.c-page .js-blue svg path {
+  fill: #039be5
+}
+.c-page .js-blue svg line {
+  stroke: #039be5
+}
+.c-page .js-blue li span {
+  color: #039be5
+}
+.c-page .js-yellow {
+  position: relative
+}
+.c-page .js-yellow h2 {
+  position: relative
+}
+.c-page .js-yellow h2:after {
+  width: 100%;
+  height: 2px;
+  content: "";
+  border-top: 1px solid #e7a42b;
+  border-bottom: 1px solid #e7a42b;
+  position: absolute;
+  bottom: -10px;
+  left: 0
+}
+.c-page .js-yellow svg path {
+  fill: #f2bf22
+}
+.c-page .js-yellow svg line {
+  stroke: #f2bf22
+}
+.c-page .js-yellow li span {
+  color: #e7a42b
+}
+/*# sourceMappingURL=c-page.css.map */

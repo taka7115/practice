@@ -1,0 +1,188 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title></title>
+
+  <meta name="keywords" content="foo">
+  <meta name="description" content="foo">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="foo">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/img/og/og.jpg">
+  <meta property="og:url" content="http://www.example.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="">
+
+  <link rel="stylesheet" href="/assets/css/coding/c-page.css">
+  <link rel="stylesheet" href="/assets/css/coding/prism.css">
+  <script type="text/javascript" src="/assets/js/coding/prism.js"></script>
+</head>
+
+<body>
+
+<div id="c-page">
+  <main class="c-page">
+
+    <page name="work1" path="/assets/img/coding/page/">
+      <template slot="mainCont">
+        <div class="wrap">
+          <img src="/assets/img/coding/page/page1.png" alt="" />
+          <div class="overlay"></div>
+          <div class="area"></div>
+        </div>
+      </template>
+      <template slot="html">
+        &lt;div class="wrap"&gt;
+        &lt;img src="/assets/img/coding/page/page1.png" alt=""&gt;
+        &lt;div class="overlay">&lt;/div&gt;
+        &lt;div class="area">&lt;/div&gt;
+        &lt;/div&gt;
+      </template>
+      <template slot="css">
+        .wrap {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        }
+
+        .area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        cursor: pointer;
+        }
+
+        .overlay {
+        position: absolute;
+        width: 2000px;
+        height: 2000px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: radial-gradient(transparent 0, transparent 8%,
+        rgba(0, 0, 0, .25) 10%,
+        rgba(0, 0, 0, .2) 12%,
+        rgba(0, 0, 0, .9) 14%);
+        }
+      </template>
+      <template slot="javascript">
+        //.areaの範囲でカーソルを動かしたときの処理
+        var area = document.querySelector(".area");
+        area.addEventListener("mousemove", (e) => {
+
+        // .areaのサイズを取得
+        var clientRect = area.getBoundingClientRect();
+
+        // 画面上端からの距離を取得
+        var areaTop = clientRect.top;
+
+        // 画面左端からの距離を取得
+        var areaLeft = clientRect.left;
+
+        // カーソルの座標を取得
+        var cursorTop = e.clientY;
+        var cursorLeft = e.clientX;
+
+        // カーソルから.areaの端までの距離を取得
+        var distanceY = cursorTop - areaTop;
+        var distanceX = cursorLeft - areaLeft;
+
+        // 取得した距離を.overlayのtopとleftに代入
+        $('.overlay').css({
+        "top": distanceY + 'px',
+        "left": distanceX + 'px'
+        });
+
+        });
+      </template>
+    </page>
+  </main>
+</div>
+
+<footer class="footer">
+
+  <nav class="f-nav">
+    <ul class="f-ul">
+      <li class="f-li f-li--ttl">Web制作</li>
+      <li class="f-li"><a href="/coding">コーディングの部屋</a></li>
+      <li class="f-li"><a href="">プログラミングの部屋</a></li>
+      <li class="f-li"><a href="">デザインの部屋</a></li>
+    </ul>
+    <ul class="f-ul">
+      <li class="f-li f-li--ttl">趣味嗜好</li>
+      <li class="f-li"><a href="">花の部屋</a></li>
+      <li class="f-li"><a href="">言語の部屋</a></li>
+      <li class="f-li"><a href="">願望の部屋</a></li>
+    </ul>
+    <ul class="f-ul">
+      <li class="f-li f-li--ttl">このサイトについて</li>
+      <li class="f-li"><a href="" target="_blank">サイトの目的</a></li>
+      <li class="f-li"><a href="" target="_blank">免責事項</a></li>
+      <li class="f-li"><a href="" target="_blank">利用規約</a></li>
+    </ul>
+    <ul class="f-ul">
+      <li class="f-li f-li--ttl">47fkin</li>
+      <li class="f-li"><a href="" target="_blank">47fkinについて</a></li>
+    </ul>
+    <a href="" target="_blank"></a>
+
+  </nav>
+
+  <p class="f-copy">
+    COPYRIGHT © 47fkin. ALL RIGHTS RESERVED.
+  </p>
+
+</footer>
+
+<!-- css manipulation ----------------------------------------- -->
+<style>
+  .wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .overlay {
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: radial-gradient(transparent 0, transparent 8%, rgba(0, 0, 0, .25) 10%, rgba(0, 0, 0, .2) 12%,
+        rgba(0, 0, 0, .9) 14%);
+
+  }
+
+</style>
+
+<!-- call the common javascript ------------------------------------ -->
+<script type="text/javascript" src="/assets/js/coding/c-page.js"></script>
+
+<!------------------------------------------- javascript manipulatio -->
+
+</body>
+
+</html>

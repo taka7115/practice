@@ -1,0 +1,26 @@
+{
+  "source": [
+    "./src/assets/scss"
+  ],
+  "destination": [
+    "./styleguide"
+  ],
+  "css": [
+    "./assets/css/index.css",
+    "./assets/css/_styleguide-css/custom.css"
+  ],
+  "js": [
+    "/assets/js/bundle.js"
+  ],
+  "markdown": true,
+  "homepage": "./overview.md",
+  "title": "CSSスタイルガイド",
+  "nav-depth": 3,
+  "builder"      : "node_modules/kss-scheibo/kss_styleguide/scheibo-template/",
+  "custom"       : ["Colors", "Wrapper", "RequireJS", "BodyClass", "HtmlLang"]
+
+}
+
+
+
+

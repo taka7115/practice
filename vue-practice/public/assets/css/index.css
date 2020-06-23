@@ -3615,12 +3615,16 @@ body {
   font-size: 18px;
   text-align: center
 }
+.secTtl__text--multi {
+  width: 400px;
+  text-align: left;
+  margin: 0 auto
+}
 .section1 {
   background-color: #e6ffe6
 }
 .cont {
   width: 700px;
-  height: 300px;
   padding: 60px 0;
   margin: 0 auto 30px;
   background-color: #fff
@@ -3858,8 +3862,93 @@ body {
 .section7 {
   background-color: #c2fff5
 }
+.sec7Ttl {
+  font-size: 18px;
+  text-align: center
+}
+.sec7Wrap {
+  width: 300px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.sec7Btn {
+  width: 100px;
+  padding: 20px 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 1em;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s
+}
+.sec7Btn:hover {
+  background-color: #555;
+  color: #fff
+}
+.sec7Cont {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #00f;
+  margin-top: 50px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.sec7Cont p {
+  text-align: center;
+  color: #fff;
+  font-weight: 700
+}
 .section8 {
   background-color: #ffc6c2
+}
+.sec8Ques {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700
+}
+.sec8Wrap {
+  width: 300px;
+  margin: 50px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
+}
+.sec8Txt {
+  width: 60%;
+  margin: 0 auto;
+  text-align: left;
+  color: #000;
+  font-size: 24px
+}
+.sec8Txt span {
+  color: #c50000;
+  text-decoration: underline;
+  font-size: 24px
 }
 .section9 {
   background-color: #ffc2cc

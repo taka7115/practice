@@ -2,6 +2,8 @@
 
 //require
 const gulp = require('gulp');
+const webpackStream = require("webpack-stream");
+const webpack = require("webpack");
 const plumber = require('gulp-plumber');
 const sass = require('gulp-sass');
 const autoprefixer = require("gulp-autoprefixer");
@@ -10,29 +12,65 @@ const notify = require('gulp-notify');
 const watch = require('gulp-watch');
 const ejs = require('gulp-ejs');
 const rename = require('gulp-rename');
-const fs = require('fs');
 const data = require('gulp-data');
-const browserify = require('browserify');
-const babelify = require('babelify');
-const source = require('vinyl-source-stream');
-// const frontnote = require("gulp-frontnote");
 const cleanCSS = require('gulp-clean-css');
-const uglify = require('gulp-uglify');
-const pump = require('pump');
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const del = require('del');
 const replace = require('gulp-replace');
 const connectSSI = require('connect-ssi');
-const aigis = require('gulp-aigis');
 const sourcemaps = require('gulp-sourcemaps');
 const sassGlob = require('gulp-sass-glob');
+const jsdoc = require('gulp-jsdoc3');
+const kss = require('kss');
+const kssConfig = require('./kssConfig.json')
+
+const fs = require('fs');
+const path = require('path');
 
 //path
 const SRC = './src';
 const HTDOCS = './web';
 const BASE_PATH = '/';
 const DEST = `${HTDOCS}${BASE_PATH}`;
+
+// 変更しなくていい（build コマンド時に true）
+// 開発中:false
+// リリース:true
+let isProduction = false;
+
+
+
+
+// // ファイルの量産
+// gulp.task('page', (done) => {
+
+
+//   const dataPath = 'src/json/pages.json';  //JSONデータ
+//   const outputPath = 'public/'; //出力先
+
+//   const json = JSON.parse(fs.readFileSync(dataPath,'utf-8'));
+
+
+//     for (var key in json.pages) {
+//         const data = json.pages[key];
+//         const layout = json.pages[key].layout;
+
+//         const templatePath = `src/_template_fund/${layout}.ejs`; //テンプレート
+
+//         data.path = key;
+
+//         gulp.src(templatePath)
+//             .pipe(ejs(data))
+//             .pipe(rename(key + '.html'))
+//             .pipe(gulp.dest(outputPath));
+//     }
+
+//     done();
+
+// });
+
+
 
 
 
@@ -41,7 +79,7 @@ const DEST = `${HTDOCS}${BASE_PATH}`;
 
 // css
 gulp.task("sass", () => {
-  return gulp.src(`${SRC}/assets/scss/**/*.scss`, `!${SRC}/_**/**`)
+  return gulp.src(['src/assets/scss/**/*.scss', '!src/assets/scss/**/_**/**'])
     .pipe(plumber({
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
@@ -65,33 +103,62 @@ gulp.task('css', gulp.series('sass'));
 
 
 //styleguide
-gulp.task('styleguide', () => {
-  return gulp.src('./aigis/aigis_config.yml')
-    .pipe(aigis());
-});
-gulp.task('sg', gulp.parallel('styleguide'));
 
+
+// styleguide KSS
+gulp.task('styleguide', () => {
+  return kss(kssConfig);
+});
+
+// styleguide用 CSS
+gulp.task('styleguide-css', () => {
+  return gulp.src(`${SRC}/assets/scss/**/*.scss`)
+    .pipe(plumber({
+      errorHandler: notify.onError("Error: <%= error.message %>")
+    }))
+    .pipe(sassGlob())
+    .pipe(sass())
+    .pipe(autoprefixer({
+      grid: true
+    }))
+    .pipe(sourcemaps.write(`./`))
+    .pipe(gulp.dest(`styleguide/assets/css/`))
+
+});
+
+// // styleguide用  js
+// gulp.task('styleguide-webpack', () => {
+//   const webpackConfig = isProduction ? './webpack.prd' : './webpack.dev.js'
+//   return gulp.src(`${SRC}/assets/js/main.js`)
+//     .pipe(webpackStream(require(webpackConfig), webpack))
+//     .pipe(plumber())
+//     .pipe(gulp.dest(`styleguide/assets/js/`));
+// });
+// gulp.task('sg', gulp.series('styleguide-css', 'styleguide-webpack', 'styleguide'));
 
 
 
 //js
-gulp.task('browserify', () => {
-  return browserify(`${SRC}/assets/js/main.js`)
-    .transform(babelify, {
-      presets: ['es2015']
-    })
-    .bundle()
-    .on('error', function (err) {
-      console.log(err.message);
-      console.log(err.stack);
-    })
-    .pipe(source('bundle.js'))
-    .pipe(gulp.dest(`${DEST}assets/js/`))
-    .pipe(browserSync.stream());
+gulp.task('webpack', () => {
+  const webpackConfig = isProduction ? './webpack.prd' : './webpack.dev.js'
+  return gulp.src(`${SRC}/assets/js/main.js`)
+    .pipe(webpackStream(require(webpackConfig), webpack))
+    .pipe(plumber())
+    .pipe(gulp.dest(`${DEST}assets/js/`));
 });
 
-gulp.task('js', gulp.parallel('browserify'));
+gulp.task('js', gulp.parallel('webpack'));
 
+
+
+
+// jsdoc
+gulp.task('doc', (cb) => {
+  gulp.src(['README.md', `${SRC}/assets/js/**/*.js`], {
+      read: false
+    })
+    .pipe(jsdoc(cb));
+});
 
 //html
 gulp.task("ejs", () => {
@@ -102,8 +169,8 @@ gulp.task("ejs", () => {
       errorHandler: notify.onError("Error: <%= error.message %>")
     }))
     .pipe(data(function (file) {
-      const conf = require(`./src/${BASE_PATH}/json/config.json`);
-      const pages = require(`./src/${BASE_PATH}/json/pages.json`);
+      const conf = require(`./src/json/config.json`);
+      const pages = require(`./src/json/meta.json`);
       const filePath = {};
 
       if (file.path.length !== 0) {
@@ -134,7 +201,6 @@ gulp.task("ejs", () => {
     .pipe(replace("\r\r", "\r"))
     .pipe(replace(/(\r\n){2,}/g, '\n\n'))
     .pipe(gulp.dest(`${HTDOCS}`))
-    .pipe(browserSync.stream());
 });
 
 gulp.task('html', gulp.series('ejs'));
@@ -157,24 +223,15 @@ gulp.task('browser-sync', () => {
     ghostMode: false
   });
   watch([`${SRC}/assets/scss/**/*.scss`], gulp.series('sass'));
-  watch([`${SRC}/assets/js/**/*.js`], gulp.series('browserify'));
+  watch([`${SRC}/assets/js/**/*.js`, `${SRC}/assets/js/**/*.vue`], gulp.series('webpack', browserSync.reload));
   // watch('./src/**/*.+(jpg|jpeg|png|gif|svg)', gulp.series('image'));
-  watch([`${SRC}/**/*.ejs`], gulp.series('ejs'));
+  watch([
+    `${SRC}/**/*.ejs`,
+  ], gulp.series('ejs', browserSync.reload));
 
 });
 
 gulp.task('server', gulp.series('browser-sync'));
-
-
-//js min
-gulp.task('compress', () => {
-  return pump([
-    gulp.src(`${DEST}assets/js/bundle.js`),
-    uglify(),
-    gulp.dest(`${DEST}assets/js/`)
-  ]);
-});
-
 
 //image min
 gulp.task('imagemin', () => {
@@ -220,5 +277,13 @@ gulp.task('clean', () => del([`${DEST}**/*.+(jpg|jpeg|png|gif|svg)`, `${DEST}**/
 
 // default
 gulp.task('dev', gulp.parallel('css', 'js', 'html'));
-gulp.task('build', gulp.series('clean', 'dev', 'compress', 'imagemin'));
+gulp.task('build', (done) => {
+  isProduction = true
+  return gulp.series('clean', 'dev', 'imagemin')(done);
+});
 gulp.task('default', gulp.series('dev', 'server'));
+
+gulp.task('bjs', (done) => {
+  isProduction = true
+  return gulp.series('js')(done);
+});

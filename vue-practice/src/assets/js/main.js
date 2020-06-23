@@ -98,6 +98,7 @@ new Sec13();
 
 
 
+
 /*load event*/
 document.addEventListener('DOMContentLoaded', () => {
   common.init();

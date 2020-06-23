@@ -11261,7 +11261,7 @@ var Sec7 = function Sec7() {
    * section1---------------------------------------------
    */
   new Vue({
-    el: '#sec7',
+    el: '#sec10',
     data: {
       text: 'v-text="text"'
     }
@@ -11287,7 +11287,7 @@ var Sec7 = function Sec7() {
    * section1---------------------------------------------
    */
   new Vue({
-    el: '#sec7',
+    el: '#sec11',
     data: {
       text: 'v-text="text"'
     }
@@ -11313,7 +11313,7 @@ var Sec7 = function Sec7() {
    * section1---------------------------------------------
    */
   new Vue({
-    el: '#sec7',
+    el: '#sec12',
     data: {
       text: 'v-text="text"'
     }
@@ -11339,7 +11339,7 @@ var Sec7 = function Sec7() {
    * section1---------------------------------------------
    */
   new Vue({
-    el: '#sec7',
+    el: '#sec13',
     data: {
       text: 'v-text="text"'
     }
@@ -11567,7 +11567,7 @@ exports.default = Sec6;
 ;
 
 },{}],14:[function(require,module,exports){
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -11581,64 +11581,52 @@ var Sec7 = function () {
   function Sec7() {
     _classCallCheck(this, Sec7);
 
-    /**
-     * section1---------------------------------------------
-     */
-
-    Vue.component('explanation', {
-      /**
-       * component内のdataは関数のみ
-       * なのでreturnする必要あり
-       */
-      data: function data() {
-        return {
-          wrapStyle: {
-            display: 'inline-block',
-            marginLeft: '240px',
-            marginBottom: '20px'
-          },
-          compoStyle: {
-            display: 'flex',
-            justifyContent: 'flex-start'
-          },
-          numStyle: {
-            marginRight: '20px'
-          },
-          productStyle: {
-            marginRight: '20px'
-          },
-          priceStyle: {
-            marginRight: '20px'
-          },
-          textStyle: {
-            border: '1px solid grey',
-            padding: '0 10px',
-            cursor: 'pointer'
-          }
-        };
-      },
-      props: ['num', 'product', 'price', 'text'],
-      template: '<div :style="wrapStyle"><div :style="compoStyle"><p class="compoNum" :style="numStyle">{{num}}</p><p class = "compoProduct":style = "productStyle">{{product}}</p><p class = "compoPrice":style = "priceStyle">{{price}}</p><p class = "compoText":style="textStyle"">{{text}}</p></div></div>'
-    });
-
-    new Vue({
-      el: '#sec7'
-    });
-
-    this.init();
+    this.components();
   }
 
   _createClass(Sec7, [{
-    key: 'init',
-    value: function init() {
-      var maxWidth = 0;
-      $("body").find(".compoProduct").each(function () {
-        if ($(this).width() > maxWidth) {
-          maxWidth = $(this).width();
-        };
+    key: "components",
+    value: function components() {
+      Vue.component("ttl", {
+        template: "\n      <h2 class=\"sec7Ttl\">{{name}}</h2>\n    ",
+        data: function data() {
+          return {
+            name: "Components(inline)"
+          };
+        }
       });
-      console.log(maxWidth);
-      $(".compoProduct").css("width", maxWidth + 1 + "px");
+
+      Vue.component("btn01", {
+        template: "\n      <div class=\"sec7Btn\"> {{name}} </div>\n    ",
+        data: function data() {
+          return {
+            name: "ボタン01"
+          };
+        }
+      });
+
+      Vue.component("btn02", {
+        template: "\n      <div class=\"sec7Btn\"\"> {{name}} </div>\n    ",
+        data: function data() {
+          return {
+            name: "ボタン02"
+          };
+        }
+      });
+
+      Vue.component("cont", {
+        template: "\n      <div class=\"sec7Cont\" v-if=\"show\"><p>{{text}}</p></div>\n    ",
+        data: function data() {
+          return {
+            show: true,
+            text: "コンテンツ"
+          };
+        }
+      });
+
+      new Vue({
+        el: '#sec7'
+      });
     }
   }]);
 
@@ -11663,10 +11651,26 @@ var Sec8 = function Sec8() {
   /**
    * section1---------------------------------------------
    */
-  new Vue({
-    el: '#sec8',
-    components: {},
-    data: {}
+  var input = new Vue({
+    el: '#sec8Input',
+    data: {},
+    methods: {
+      readRefs: function readRefs() {
+        var inputTxt = this.$refs.input.value;
+        /**
+         * After pushing the button, check console in dev tool.
+         * You can trace what is included in the element and check how to call its value.
+         */
+        console.log(inputTxt);
+        result.txt = "" + inputTxt;
+      }
+    }
+  });
+  var result = new Vue({
+    el: '#sec8Result',
+    data: {
+      txt: "　　　　"
+    }
   });
 };
 
@@ -11689,7 +11693,7 @@ var Sec7 = function Sec7() {
    * section1---------------------------------------------
    */
   new Vue({
-    el: '#sec7',
+    el: '#sec9',
     data: {
       text: 'v-text="text"'
     }

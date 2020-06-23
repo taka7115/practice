@@ -4,7 +4,7 @@ export default class Sec7 {
      * section1---------------------------------------------
      */
     new Vue({
-      el: '#sec7',
+      el: '#sec13',
       data: {
         text: 'v-text="text"',
       }

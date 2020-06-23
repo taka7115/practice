@@ -229,36 +229,45 @@
 
 </section>
 
-  <section class="section section7">
+  <section id="sec7" class="section section7">
+
   <div class="secTtl">
-    <h2 class="secTtl__text">
-      components(basic)<br>
-    </h2>
+    <ttl></ttl>
   </div>
 
-  <div id="sec7">
-    <div class="cont">
-      <explanation num="1" product="ダウン" price="34,000" text="詳細"></explanation>
-      <explanation num="2" product="スカート" price="26,000" text="詳細"></explanation>
-      <explanation num="3" product="デニム" price="27,500" text="詳細"></explanation>
-      <explanation num="4" product="カバン" price="22,000" text="詳細"></explanation>
-      <explanation num="5" product="シューズ" price="15,000" text="詳細"></explanation>
-
+  <div class="cont">
+    <div class="sec7Wrap">
+      <btn01></btn01>
+      <btn02></btn02>
     </div>
+
+    <cont></cont>
+
   </div>
 
 </section>
 
   <section class="section section8">
   <div class="secTtl">
-    <h2 class="secTtl__text">
-      components(advanced)
+    <h2 class="secTtl__text secTtl__text--multi">
+      ・refと$refsの使い方<br>
+      ・別のvueインスタンスへのdataの受け渡し<br>
+      ・@keyup.enter<br>
     </h2>
   </div>
 
-  <div id="sec8">
-    <div class="cont">
-
+  <div class="cont">
+    <p class="sec8Ques">
+      好きな動物は何ですか？
+    </p>
+    <div id="sec8Input" class="sec8Wrap">
+      <input type="text" ref="input" @keyup.enter="readRefs">
+      <button @click="readRefs">Submit</button>
+    </div>
+    <div id="sec8Result">
+      <p class="sec8Txt">
+        私の好きな動物は<span>{{txt}}</span>です。
+      </p>
     </div>
   </div>
 
@@ -292,10 +301,13 @@
 </main>
 
 <footer class="l-footer">
-
+  <!-- <div id="app">
+    {{ message }}
+  </div> -->
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script type="text/javascript" src="/assets/js/bundle.js"></script>
+
 <!-- lazyload使い方----------------------------------------- -->
 <!-- ①CDNコード1行
 ②lazyload仕様宣言

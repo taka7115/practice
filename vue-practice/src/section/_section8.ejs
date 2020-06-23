@@ -1,19 +1,28 @@
 <section class="section section8">
   <div class="secTtl">
-    <h2 class="secTtl__text">
-      components(advanced)
+    <h2 class="secTtl__text secTtl__text--multi">
+      ・refと$refsの使い方<br>
+      ・別のvueインスタンスへのdataの受け渡し<br>
+      ・@keyup.enter<br>
     </h2>
   </div>
 
-  <div id="sec8">
-    <div class="cont">
 
-
-
-
-
+  <div class="cont">
+    <p class="sec8Ques">
+      好きな動物は何ですか？
+    </p>
+    <div id="sec8Input" class="sec8Wrap">
+      <input type="text" ref="input" @keyup.enter="readRefs">
+      <button @click="readRefs">Submit</button>
+    </div>
+    <div id="sec8Result">
+      <p class="sec8Txt">
+        私の好きな動物は<span>{{txt}}</span>です。
+      </p>
     </div>
   </div>
+
 
 
 

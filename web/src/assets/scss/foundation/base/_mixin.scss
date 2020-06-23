@@ -36,7 +36,7 @@
 @mixin tab {
 
   @media print,
-  screen and (min-width: 750px) and (max-width: 1250px) {
+  screen and (min-width: 750px) and (max-width: 1200px) {
     @content;
   }
 }

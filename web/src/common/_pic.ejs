@@ -1,7 +1,0 @@
-<% if (typeof pcimg === 'undefined') { var pcimg = '';} %>
-<% if (typeof spimg === 'undefined') { var spimg = '';} %>
-<% if (typeof alt === 'undefined') { var alt = '';} %>
-  <picture>
-    <source srcset="<%- spimg %>" media="(max-width: 769px)">
-    <img src="<%- pcimg %>" alt="<%- alt %>">
-  </picture>

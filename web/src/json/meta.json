@@ -1,0 +1,17 @@
+{
+  "path": {
+    "img": "/rb/h-body/r/assets/img/",
+    "css": "/rb/h-body/r/assets/css/",
+    "js": "/rb/h-body/r/assets/js/",
+    "ico": "",
+    "appico": ""
+  },
+  "og": {
+    "img": "/rb/h-body/r/assets/img/ogp.png",
+    "url": ""
+  },
+  "link": {
+    "_comment_": "ホーム",
+    "home": "/"
+  }
+}

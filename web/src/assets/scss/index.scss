@@ -31,8 +31,8 @@ Here's an example code.
 @import "foundation/base/_mixin";
 @import "foundation/base/_init";
 
-/*foundation vender*/
-@import "foundation/vender/_animate";
+// /*foundation vender*/
+// @import "foundation/vender/_animate";
 
 
 /*layout*/
@@ -40,9 +40,6 @@ Here's an example code.
 
 /*module*/
 @import "module/*";
-
-/*pages*/
-@import "pages/*";
 
 /*utility*/
 @import "utility/*";

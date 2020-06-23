@@ -26,8 +26,8 @@ export default class Common {
       /**
        * fadeoutするアンカー一位置を取得
        */
-      var anchor01 = $(".js-side-anchor01").offset().top;
-      var anchor02 = $(".js-side-anchor02").offset().top;
+      var anchor1 = $(".js-side-anchor1").offset().top;
+      var anchor2 = $(".js-side-anchor2").offset().top;
 
       /**
        * スクロール位置 画面上
@@ -47,9 +47,9 @@ export default class Common {
       /**
        * 2つのアンカーの間だけサイドナビを表示
        */
-      if (scrollH < anchor01) {
+      if (scrollH < anchor1) {
         $(".sideNav").fadeOut(400);
-      } else if (scrollHBottom > anchor02) {
+      } else if (scrollHBottom > anchor2) {
         $(".sideNav").fadeOut(400);
       } else {
         $(".sideNav").fadeIn(400);

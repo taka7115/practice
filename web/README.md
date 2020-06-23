@@ -1,60 +1,84 @@
-# starter-kit-v2.0
-html5 starter-kit
+# Global X Japan
 
-### 環境構築
 
-Node v8.11.1 で動作確認
+## 環境構築
+
+- v10.15.3（安定版）推奨
 
 npmパッケージをインストール
+
 ```
-npm install
+npm i
 ```
 
+
+## ファイル構成
+
+- /README.md
+    - このファイル
+- /gulpfile.js
+    - gulp設定ファイル
+- /package.json
+    - 依存するnpmパッケージに関する設定ファイル
+- /public/
+    - Web公開されるファイル (gulp 実行までは空の状態です)
+- /src/
+    - ビルドに必要な各種ソースコード
+
+
+
+
+## 開発手順
+
+- 開発時に必要なタスクはgulpfile.jsで管理。
+- 以下のコマンドを実行することで、各種ビルド・タスク実行が可能。
+
+- `gulp`
+    - 開発用ブラウザを立ち上げ、その後ソースコードに修正があれば自動ビルド・自動ブラウザ更新します。
+
+- `gulp bjs`
+    - jsファイルの圧縮
+
+- `gulp page`
+  - ファンドページファイルの量産
+
+## 使用言語
+
+ejs -> HTML
+scss -> CSS
+
+
+## GXJ内容
 
 ### ファイル構成
 
-- README.md
- - このファイル
-- gulpfile.js
- - gulp設定ファイル
-- package.json
- - 依存するnpmパッケージに関する設定ファイル
-- public
- - Web公開されるファイル (gulp 実行までは空の状態です)
-- src
- - ビルドに必要な各種ソースコード
-- aigis
- - スタイルガイド用ファイル
+
+* 画像pathなど
+src\json\config.json
+
+* ★ファンドページ量産用の設定ファイル（後述）
+src\json\pages.json
 
 
-### 開発手順
+* 更新用データ
+public\assets\json
 
- 開発時に必要なタスクはgulpfile.jsで管理。
- 以下のコマンドを実行することで、各種ビルド・タスク実行が可能。
-
-- `gulp`
- - 開発用ブラウザを立ち上げ、その後ソースコードに修正があれば自動ビルド・自動ブラウザ更新します。
- - 基本的には、このコマンドを実行しておくだけで開発が可能なはず...
-
-- `gulp build`
- -  ファイルをビルド。ファイルとして出力するには`npm run build / yarn build `が必要になります。
+* ダミーデータ
+public\assets\json\fund_data
 
 
-### 使用言語
- - ejs　→　HTML
- - Sass　→　CSS
- - javaScript（ES6)
+* ★ファンド量産用ベーステンプレート
+src\_template_fund\template.ejs
+src\_template_fund\en\template.ejs
 
 
-### 更新内容
+### ディスクレーマー
 
----
 
-##### v1.2 (T.Kobayashi)
- - imageminを gulp build のみで実行する仕様に変更
 
-##### v2.0 (KANZAKI)
- - Bitbucket へgit管理を移行
- - バージョン2作成
+### ページの追加
 
+翻訳の対になるページURLを下記に記述すること
+
+src\assets\js\vue\data\menuTop.json
 
