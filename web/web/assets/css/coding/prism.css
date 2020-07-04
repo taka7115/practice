@@ -17,8 +17,6 @@ pre[class*="language-"] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
-
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -43,9 +41,15 @@ pre[class*="language-"]>code {
   box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf; */
   background-color: #fdfdfd;
   background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
-  background-size: 3em 3em;
+  background-size: 2.935rem 2.935rem;
   background-origin: content-box;
   background-attachment: local;
+}
+
+@media screen and (max-width: 750px) {
+  pre[class*="language-"]>code {
+    background-size: 2.788rem 2.788rem;
+  }
 }
 
 code[class*="language"] {
@@ -59,8 +63,10 @@ code[class*="language"] {
 @media screen and (max-width:750px) {
   code[class*="language"] {
     padding: 0;
+    font-size: .9rem;
   }
 }
+
 
 
 /* Margin bottom to accommodate shadow */
@@ -113,6 +119,12 @@ pre[class*="language-"]:after {
 	-o-transform: rotate(2deg);
 	transform: rotate(2deg);
 } */
+
+@media screen and (max-width: 750px) {
+  .token {
+    font-size: .9rem;
+  }
+}
 
 .token.comment,
 .token.block-comment,
@@ -219,6 +231,7 @@ pre[class*="language-"].line-numbers.line-numbers {
   pre[class*="language-"].line-numbers.line-numbers code {
     padding-left: 3.8em;
     white-space: pre-wrap;
+    line-height: 1.5;
   }
 }
 
@@ -351,14 +364,15 @@ pre[class*="language-"].line-numbers>code {
 .line-numbers-rows>span {
   display: block;
   counter-increment: linenumber;
+  font-size: .9rem;
+  line-height: 1.7;
 }
 
 .line-numbers-rows>span:before {
   content: counter(linenumber);
   color: #999;
   display: block;
-  padding-right: 0.8em;
-  text-align: right;
+  text-align: center;
 }
 
 div.code-toolbar {

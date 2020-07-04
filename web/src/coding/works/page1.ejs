@@ -13,7 +13,7 @@
 <div id="c-page">
   <main class="c-page">
 
-    <page name="work1" path="<%= imgpath %>">
+    <page name="work1" tab="1" csssp jssp>
       <template slot="mainCont">
         <div class="wrap">
           <img src="/assets/img/coding/page/page1.png" alt="" />
@@ -23,9 +23,13 @@
       </template>
       <template slot="html">
         &lt;div class="wrap"&gt;
+
         &lt;img src="/assets/img/coding/page/page1.png" alt=""&gt;
-        &lt;div class="overlay">&lt;/div&gt;
-        &lt;div class="area">&lt;/div&gt;
+
+        &lt;div class="overlay"&gt;&lt;/div&gt;
+
+        &lt;div class="area"&gt;&lt;/div&gt;
+
         &lt;/div&gt;
       </template>
       <template slot="css">
@@ -53,40 +57,118 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background-image: radial-gradient(transparent 0, transparent 8%,
+        background-image: radial-gradient(
+        transparent 0, transparent 8%,
         rgba(0, 0, 0, .25) 10%,
         rgba(0, 0, 0, .2) 12%,
         rgba(0, 0, 0, .9) 14%);
         }
       </template>
-      <template slot="javascript">
-        //.areaの範囲でカーソルを動かしたときの処理
+      <template slot="csssp">
+        .wrap {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        }
+
+        .area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        cursor: pointer;
+        }
+
+        .overlay {
+        position: absolute;
+        width: 2000px;
+        height: 2000px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: radial-gradient(
+        transparent 0, transparent 4%,
+        rgba(0, 0, 0, .25) 5%,
+        rgba(0, 0, 0, .2) 6%,
+        rgba(0, 0, 0, .9) 7%);
+        }
+      </template>
+      <template slot="js">
+        //.areaを変数化しておく
         var area = document.querySelector(".area");
-        area.addEventListener("mousemove", (e) => {
+
+        //mousemoveしたときの関数
+        var action = (e) => {
 
         // .areaのサイズを取得
         var clientRect = area.getBoundingClientRect();
 
-        // 画面上端からの距離を取得
+        // 画面上端から.areaまでの距離を取得
         var areaTop = clientRect.top;
 
-        // 画面左端からの距離を取得
+        // 画面左端から.areaまでの距離を取得
         var areaLeft = clientRect.left;
 
-        // カーソルの座標を取得
-        var cursorTop = e.clientY;
-        var cursorLeft = e.clientX;
+        // カーソル位置の座標を取得
+        var distanceTop = e.clientY;
+        var distanceLeft = e.clientX;
 
-        // カーソルから.areaの端までの距離を取得
-        var distanceY = cursorTop - areaTop;
-        var distanceX = cursorLeft - areaLeft;
 
-        // 取得した距離を.overlayのtopとleftに代入
+        // カーソル位置の座標から.areaの端までの距離を取得
+        var distanceY = distanceTop - areaTop;
+        var distanceX = distanceLeft - areaLeft;
+
+        // その距離を.overlayのtopとleftに代入
         $('.overlay').css({
         "top": distanceY + 'px',
         "left": distanceX + 'px'
         });
+        }
 
+        // mousemoveしたときに関数実行
+        area.addEventListener("mousemove", (e) => {
+        action(e);
+        });
+      </template>
+      <template slot="jssp">
+        //.areaを変数化しておく
+        var area = document.querySelector(".area");
+
+        //touchmoveしたときの関数
+        var action = (e) => {
+
+        // .areaのサイズを取得
+        var clientRect = area.getBoundingClientRect();
+
+        // 画面上端から.areaまでの距離を取得
+        var areaTop = clientRect.top;
+
+        // 画面左端から.areaまでの距離を取得
+        var areaLeft = clientRect.left;
+
+        // タッチした座標を取得
+        var distanceTop = e.changedTouches[0].pageY;
+        var distanceLeft = e.changedTouches[0].pageX;
+
+        // タッチした座標から.areaの端までの距離を取得
+        var distanceY = distanceTop - areaTop;
+        var distanceX = distanceLeft - areaLeft;
+
+        // その距離を.overlayのtopとleftに代入
+        $('.overlay').css({
+        "top": distanceY + 'px',
+        "left": distanceX + 'px'
+        });
+        }
+
+        // touchmoveしたときに関数実行
+        area.addEventListener("touchmove", (e) => {
+        action(e);
+        // タッチによる画面スクロールを止める
+        event.preventDefault();
         });
       </template>
     </page>
@@ -96,7 +178,7 @@
 <%- include(page.root + 'common/_footer', {param:'param'}); %>
 
 <!-- css manipulation ----------------------------------------- -->
-<style>
+<style type="text/css">
   .wrap {
     position: relative;
     overflow: hidden;
@@ -123,7 +205,13 @@
     transform: translate(-50%, -50%);
     background-image: radial-gradient(transparent 0, transparent 8%, rgba(0, 0, 0, .25) 10%, rgba(0, 0, 0, .2) 12%,
         rgba(0, 0, 0, .9) 14%);
+  }
 
+  @media screen and (max-width: 750px) {
+    .overlay {
+      background-image: radial-gradient(transparent 0, transparent 4%, rgba(0, 0, 0, .25) 5%, rgba(0, 0, 0, .2) 6%,
+          rgba(0, 0, 0, .9) 7%);
+    }
   }
 
 </style>

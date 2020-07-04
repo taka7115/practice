@@ -543,12 +543,12 @@ path {
     }
 
     &:hover img {
-      opacity: .3;
+      opacity: .2;
     }
 
     &:active img {
       @include sp {
-        opacity: .3;
+        opacity: .2;
       }
     }
 

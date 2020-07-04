@@ -1,0 +1,200 @@
+<% var meta = {
+    pageTitle:'',
+    description:'foo',
+    keywords:'foo',
+    url:'http://www.example.com/'
+  };
+  var page={
+      root:filePath.dir
+  };
+%>
+<% var imgpath = '/assets/img/coding/page/' %>
+<%- include(page.root + 'common/meta/coding/_page', {param:'param'}); %>
+<div id="c-page">
+  <main class="c-page">
+
+
+    <page name="work6" tab="3" portrait>
+
+
+      <template slot="mainCont">
+        <div class="canvas-parent" id="canvasParent">
+          <canvas id="canvas"></canvas>
+        </div>
+      </template>
+
+
+
+      <template slot="html">
+        &lt;div class="canvas-parent" id="canvasParent"&gt;
+        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+      </template>
+
+
+      <template slot="css">
+        .canvas-parent {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        }
+      </template>
+
+
+      <template slot="js">
+        //親要素とcanvas要素を取得
+        let canvasParent = document.getElementById("canvasParent");
+        let canvas = document.getElementById("canvas");
+
+        // Canvas利用不可の環境では実行しないようにif文で囲む
+        if (canvas.getContext) {
+
+        // canvasの幅と高さを親要素のサイズに合わせる
+        canvas.width = canvasParent.clientWidth;
+        canvas.height = canvasParent.clientHeight;
+
+        // Canvasに描画機能を付与する
+        let c = canvas.getContext('2d');
+
+        // ボールの描画&アニメーションに必要な値をオブジェクト化しておく
+        let val = {
+        quantity: 50,
+        maxRadius: 20,
+        colorArray: [
+        '#248EA6',
+        '#84BFA4',
+        '#F2E74B',
+        '#F2D49B',
+        '#D94141',
+        ],
+        gravity: 1,
+        friction: .8,
+        }
+
+        //関数オブジェクトを設定
+        function Ball(radius, x, y, vX, vY, color) {
+        this.radius = radius;
+        this.x = x;
+        this.y = y;
+        this.firstY = this.y;
+        this.vX = vX;
+        this.vY = vY;
+        // ボール運動を調整(クリックしたとき、この値をthis.vYに代入(125行目))
+        this.firstVY = this.vY * 2;
+        // colorArrayに格納された色をランダムに割り振る
+        this.color = color;
+
+        // ボールを描画する関数
+        this.draw = () =&gt; {
+        c.beginPath();
+        c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        c.fillStyle = this.color;
+        c.fill();
+        }
+
+        // ボールの弾力をリセットする関数
+        this.reset = () =&gt; {
+        this.vY = this.firstVY;
+        }
+
+        // ボールのアニメーションの内容を定義する関数
+        this.update = () =&gt; {
+
+        // 座標の値を変えていく
+        this.x += this.vX;
+        this.y += this.vY;
+
+        // 重力アニメーションを定義
+        if (this.y + this.radius + this.vY &gt; canvas.height) {
+        this.vY = -this.vY * val.friction;
+        } else {
+        this.vY += val.gravity;
+        }
+
+        // x軸の端まできたら折り返す
+        if (this.x + this.radius &gt; canvas.width || this.x - this.radius &lt; 0) {
+        this.vX = -this.vX;
+        }
+
+        // ボールを描画する
+        this.draw();
+        }
+
+        }
+
+        // 配列を作っておく
+        var ballArray = []
+
+        for (let i = 0; i &lt; val.quantity; i++) {
+        // ボールの値をランダムで決める
+        // ボールの半径
+        var radius = Math.random() * val.maxRadius;
+        // ボールの初期x座標
+        var x = Math.random() * (canvas.width - radius * 2) + radius;
+        // ボールの初期y座標(キャンバスの下半分のy座標になるように制限)
+        var y = Math.random() * (canvas.height / 2 - radius * 2) + radius;
+        // ボールのx軸でのスピード(正負の値を出力)
+        var vX = (Math.random() - 0.5) * 2;
+        // ボールのy軸でのスピード(負の値のみ出力&10以上の値になるようにする)
+        var vY = Math.random() * 10 + 10;
+        // ボールの色をランダムに決める
+        var color = val.colorArray[Math.floor(Math.random() * val.colorArray.length)];
+
+        //ランダムで決められた値を配列にいれていく
+        ballArray.push(new Ball(radius, x, y, vX, vY, color));
+        }
+
+        // ボールを描画&アニメーションさせる関数
+        function animate() {
+
+        // animate関数をループさせる関数
+        requestAnimationFrame(animate);
+
+        // 指定した範囲の描画内容をリセットする
+        c.clearRect(0, 0, canvas.width, canvas.height);
+
+        //ballArrayの数だけボールを描画する
+        for (let i = 0; i &lt; ballArray.length; i++) {
+        ballArray[i].update();
+        }
+
+        }
+
+        // animate関数を実行する
+        animate();
+
+        // クリックするたびにボールを弾ませる
+        canvas.addEventListener("click", (event) =&gt; {
+        for (let i = 0; i &lt; ballArray.length; i++) {
+        ballArray[i].reset();
+        }
+        })
+
+        }
+      </template>
+    </page>
+  </main>
+</div>
+
+<%- include(page.root + 'common/_footer', {param:'param'}); %>
+
+<!-- css manipulation ----------------------------------------- -->
+<style type="text/css">
+  .canvas-parent {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+</style>
+
+<!-- call the common javascript ------------------------------------ -->
+<script type="text/javascript" src="<%-conf.path.js%>coding/c-page.js"></script>
+
+
+
+<!------------------------------------------- javascript manipulatio -->
+
+</body>
+
+</html>

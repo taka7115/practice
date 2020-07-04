@@ -1,0 +1,173 @@
+<% var meta = {
+    pageTitle:'',
+    description:'foo',
+    keywords:'foo',
+    url:'http://www.example.com/'
+  };
+  var page={
+      root:filePath.dir
+  };
+%>
+<% var imgpath = '/assets/img/coding/page/' %>
+<%- include(page.root + 'common/meta/coding/_page', {param:'param'}); %>
+<div id="c-page">
+  <main class="c-page">
+
+    <page name="work2" tab="3" portrait csssp jssp>
+
+      <template slot="mainCont">
+        <div class="canvas-parent" id="canvasParent">
+          <canvas id="canvas"></canvas>
+        </div>
+      </template>
+
+      <template slot="html">
+        &lt;div class="canvas-parent" id="canvasParent"&gt;
+        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+      </template>
+      <template slot="css">
+        .canvas-parent {
+        width: 100%;
+        height: 100%;
+        }
+      </template>
+      <template slot="js">
+        //親要素とcanvas要素を取得
+        let canvasParent = document.getElementById("canvasParent");
+        let canvas = document.getElementById("canvas");
+
+        // Canvas利用不可の環境では実行しないようにif文で囲む
+        if (canvas.getContext) {
+
+        // canvasの幅と高さを親要素のサイズに合わせる
+        canvas.width = canvasParent.clientWidth;
+        canvas.height = canvasParent.clientHeight;
+
+        // Canvasに描画機能を付与する
+        let c = canvas.getContext('2d');
+
+        // 四角形 (x座標, y座標, 幅, 高さ)
+        c.fillStyle = "rgb(0, 0, 255)";
+        c.fillRect(50, 50, 50, 50);
+        c.fillStyle = "#ffff00";
+        c.fillRect(150, 50, 50, 50);
+        c.fillStyle = "green";
+        c.fillRect(250, 50, 50, 50);
+
+        // 線 (x座標, y座標)
+        c.beginPath();
+        c.moveTo(50, 200);
+        c.lineTo(100, 250);
+        c.lineTo(150, 200);
+        c.lineTo(200, 250);
+        c.lineTo(250, 200);
+        c.strokeStyle = 'red';
+        c.stroke();
+
+        // 円 (x座標, y座標, 半径, 開始角度, 終了角度,時計回りか反時計回りか)
+        c.beginPath();
+        c.arc(100, 380, 30, 0, Math.PI * 2, false);
+        c.fillStyle = "skyblue";
+        c.fill();
+        c.strokeStyle = "rgb(70, 0, 128)";
+        c.stroke();
+
+        // ループ処理で三角形を複数作成
+        var x = 100;
+        var y = 550;
+        for (var i = 0; i &lt; 8; i++) {
+        c.beginPath();
+        c.moveTo(x, y - 50);
+        c.lineTo(x - 30, y);
+        c.lineTo(x + 30, y);
+        c.lineTo(x, y - 50);
+        c.fillStyle='turquoise';
+        c.fill();
+        x = x + 100;
+        }
+
+        }
+      </template>
+      <template slot="jssp">
+        //親要素とcanvas要素を取得
+        let canvasParent = document.getElementById("canvasParent");
+        let canvas = document.getElementById("canvas");
+
+        // Canvas利用不可の環境では実行しないようにif文で囲む
+        if (canvas.getContext) {
+
+        // canvasの幅と高さを親要素のサイズに合わせる
+        canvas.width = canvasParent.clientWidth;
+        canvas.height = canvasParent.clientHeight;
+
+        // Canvasに描画機能を付与する
+        let c = canvas.getContext('2d');
+
+        // 四角形 (x座標, y座標, 幅, 高さ)
+        c.fillStyle = "rgb(0, 0, 255)";
+        c.fillRect(50, 50, 50, 50);
+        c.fillStyle = "#ffff00";
+        c.fillRect(150, 50, 50, 50);
+        c.fillStyle = "green";
+        c.fillRect(250, 50, 50, 50);
+
+        // 線 (x座標, y座標)
+        c.beginPath();
+        c.moveTo(50, 150);
+        c.lineTo(100, 200);
+        c.lineTo(150, 150);
+        c.lineTo(200, 200);
+        c.lineTo(250, 150);
+        c.strokeStyle = 'red';
+        c.stroke();
+
+        // 円 (x座標, y座標, 半径, 開始角度, 終了角度,時計回りか反時計回りか)
+        c.beginPath();
+        c.arc(80, 270, 30, 0, Math.PI * 2, false);
+        c.fillStyle = "skyblue";
+        c.fill();
+        c.strokeStyle = "rgb(70, 0, 128)";
+        c.stroke();
+
+        // ループ処理で三角形を複数作成
+        var x = 40;
+        var y = 360;
+        for (var i = 0; i &lt; 8; i++) {
+        c.beginPath();
+        c.moveTo(x, y - 25);
+        c.lineTo(x - 15, y);
+        c.lineTo(x + 15, y);
+        c.lineTo(x, y - 25);
+        c.fillStyle='turquoise';
+        c.fill();
+        x = x + 40;
+        }
+
+        }
+      </template>
+    </page>
+  </main>
+</div>
+
+<%- include(page.root + 'common/_footer', {param:'param'}); %>
+
+<!-- css manipulation ----------------------------------------- -->
+<style type="text/css">
+  .canvas-parent {
+    width: 100%;
+    height: 100%;
+  }
+
+</style>
+
+<!-- call the common javascript ------------------------------------ -->
+<script type="text/javascript" src="<%-conf.path.js%>coding/c-page.js"></script>
+
+
+
+<!------------------------------------------- javascript manipulatio -->
+
+</body>
+
+</html>

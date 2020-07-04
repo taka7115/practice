@@ -1,20 +1,26 @@
 
 <template>
   <div>
-    <kv :name="name">
+    <kv :name="name" :portrait="portrait">
       <template #mainCont>
         <slot name="mainCont">ここにkvが入ります。</slot>
       </template>
     </kv>
-    <sourceCode :name="name">
+    <sourceCode :name="name" :tab="tab" :csssp="csssp" :jssp="jssp">
       <template #html>
-        <slot name="html">ここにhtmlが入ります。</slot>
+        <slot name="html">今回、HTMLの記述はありません。</slot>
       </template>
       <template #css>
-        <slot name="css">ここにcssが入ります。</slot>
+        <slot name="css">今回、CSSの記述はありません。</slot>
       </template>
-      <template #javascript>
-        <slot name="javascript">ここにjavascriptが入ります。</slot>
+      <template #csssp>
+        <slot name="csssp">今回、CSSSpの記述はありません。</slot>
+      </template>
+      <template #js>
+        <slot name="js">今回、JavaScriptの記述はありません。</slot>
+      </template>
+      <template #jssp>
+        <slot name="jssp">今回、JavaScriptSpの記述はありません。</slot>
       </template>
     </sourceCode>
     <point :name="name"></point>
@@ -37,7 +43,28 @@ export default {
     point,
     nz
   },
-  props: ["name"]
+  props: {
+    name: {
+      type: String,
+      default: ""
+    },
+    tab: {
+      type: String,
+      default: ""
+    },
+    portrait: {
+      type: Boolean,
+      default: false
+    },
+    csssp: {
+      type: Boolean,
+      default: false
+    },
+    jssp: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>
 

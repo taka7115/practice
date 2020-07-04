@@ -1,10 +1,10 @@
 
 <template>
   <section class="point">
-    <div class="point-wrap">
-      <div class="point-cont js-1 js-left" :class="arrays[name].p1_color">
-        <div class="point-cont__ttl">
-          <h2 class="point-cont__h2" v-html="arrays[name].p1"></h2>
+    <div class="point__wrap">
+      <div class="point__cont js-1 js-left" :class="arrays[name].p1_color">
+        <div class="point__ttl">
+          <h2 class="point__h2" v-html="arrays[name].p1"></h2>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 90">
             <g transform="translate(0.146 0.286)">
               <path
@@ -52,22 +52,16 @@
           </svg>
         </div>
         <ul>
-          <li class="point-cont__list">
-            <span>&#9642;</span>
-            {{arrays[name].p1_list1}}
-          </li>
-          <li class="point-cont__list" v-if="arrays[name].p1_list2">
-            <span>&#9642;</span>
-            {{arrays[name].p1_list2}}
-          </li>
+          <li class="point__list" v-html="arrays[name].p1_list1"></li>
+          <li class="point__list" v-if="arrays[name].p1_list2" v-html="arrays[name].p1_list2"></li>
         </ul>
       </div>
     </div>
 
-    <div class="point-wrap" v-if="arrays[name].p2">
-      <div class="point-cont js-right" :class="arrays[name].p2_color">
-        <div class="point-cont__ttl">
-          <h2 class="point-cont__h2" v-html="arrays[name].p2"></h2>
+    <div class="point__wrap" v-if="arrays[name].p2">
+      <div class="point__cont js-right" :class="arrays[name].p2_color">
+        <div class="point__ttl">
+          <h2 class="point__h2" v-html="arrays[name].p2"></h2>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 90">
             <g transform="translate(-1240.551 -2591.452)">
               <path
@@ -115,22 +109,16 @@
           </svg>
         </div>
         <ul>
-          <li class="point-cont__list">
-            <span>&#9642;</span>
-            {{arrays[name].p2_list1}}
-          </li>
-          <li class="point-cont__list" v-if="arrays[name].p2_list2">
-            <span>&#9642;</span>
-            {{arrays[name].p2_list2}}
-          </li>
+          <li class="point__list" v-html="arrays[name].p2_list1"></li>
+          <li class="point__list" v-if="arrays[name].p2_list2" v-html="arrays[name].p2_list2"></li>
         </ul>
       </div>
     </div>
 
-    <div class="point-wrap" v-if="arrays[name].p3">
-      <div class="point-cont js-left" :class="arrays[name].p3_color">
-        <div class="point-cont__ttl">
-          <h2 class="point-cont__h2" v-html="arrays[name].p3"></h2>
+    <div class="point__wrap" v-if="arrays[name].p3">
+      <div class="point__cont js-left" :class="arrays[name].p3_color">
+        <div class="point__ttl">
+          <h2 class="point__h2" v-html="arrays[name].p3"></h2>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 90">
             <g transform="translate(-503.183 -3226.022)">
               <path
@@ -178,14 +166,8 @@
           </svg>
         </div>
         <ul>
-          <li class="point-cont__list">
-            <span>&#9642;</span>
-            {{arrays[name].p3_list1}}
-          </li>
-          <li class="point-cont__list" v-if="arrays[name].p3_list2">
-            <span>&#9642;</span>
-            {{arrays[name].p3_list2}}
-          </li>
+          <li class="point__list" v-html="arrays[name].p3_list1"></li>
+          <li class="point__list" v-if="arrays[name].p3_list2" v-html="arrays[name].p3_list2"></li>
         </ul>
       </div>
     </div>
@@ -194,6 +176,15 @@
 
 
 <script>
+import work10 from "../../../data/work10.js";
+import work9 from "../../../data/work9.js";
+import work8 from "../../../data/work8.js";
+import work7 from "../../../data/work7.js";
+import work6 from "../../../data/work6.js";
+import work5 from "../../../data/work5.js";
+import work4 from "../../../data/work4.js";
+import work3 from "../../../data/work3.js";
+import work2 from "../../../data/work2.js";
 import work1 from "../../../data/work1.js";
 export default {
   props: {
@@ -205,6 +196,15 @@ export default {
   data() {
     return {
       arrays: {
+        work10,
+        work9,
+        work8,
+        work7,
+        work6,
+        work5,
+        work4,
+        work3,
+        work2,
         work1
       }
     };

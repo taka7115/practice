@@ -1,0 +1,141 @@
+<% var meta = {
+    pageTitle:'',
+    description:'foo',
+    keywords:'foo',
+    url:'http://www.example.com/'
+  };
+  var page={
+      root:filePath.dir
+  };
+%>
+<% var imgpath = '/assets/img/coding/page/' %>
+<%- include(page.root + 'common/meta/coding/_page', {param:'param'}); %>
+<div id="c-page">
+  <main class="c-page">
+
+
+    <page name="work3" tab="3">
+
+
+      <template slot="mainCont">
+        <div class="canvas-parent" id="canvasParent">
+          <canvas id="canvas"></canvas>
+        </div>
+      </template>
+
+
+
+      <template slot="html">
+        &lt;div class="canvas-parent" id="canvasParent"&gt;
+        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+      </template>
+
+
+      <template slot="css">
+        .canvas-parent {
+        width: 100%;
+        height: 100%;
+        }
+      </template>
+
+
+      <template slot="js">
+        //親要素とcanvas要素を取得
+        let canvasParent = document.getElementById("canvasParent");
+        let canvas = document.getElementById("canvas");
+
+        // Canvas利用不可の環境では実行しないようにif文で囲む
+        if (canvas.getContext) {
+
+        // canvasの幅と高さを親要素のサイズに合わせる
+        canvas.width = canvasParent.clientWidth;
+        canvas.height = canvasParent.clientHeight;
+
+        // Canvasに描画機能を付与する
+        let c = canvas.getContext('2d');
+
+        // 値を変数化しておく
+        // 円の半径
+        var radius = Math.random() * 50;
+        // 円の初期x座標
+        var x = Math.random() * canvas.width;
+        // 円の初期y座標
+        var y = Math.random() * canvas.height;
+        // 円のx軸でのスピード
+        var speedX = (Math.random() - 0.5) * 10;
+        // 円のy軸でのスピード
+        var speedY = (Math.random() - 0.5) * 10;
+
+        // 円の直径を変数化
+        var diameter = radius * 2;
+        // 描画された円が画面からはみでるとき
+        // はみでないように初期座標を修正
+        if (x &lt; diameter) {
+        　　x = diameter;
+        } else if (x &gt; canvas.width - diameter) {
+        　　x = canvas.width - diameter;
+        } else if (y &gt; canvas.height - diameter) {
+        　　y = canvas.height - diameter;
+        } else if (y &lt; diameter) {
+        　　y = diameter;
+        }
+
+        // 円を描画&アニメーションさせる関数
+        function animate() {
+
+        // animate()関数をループさせる関数
+        requestAnimationFrame(animate);
+
+        // 指定した範囲の描画内容をリセットする
+        c.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 円を描画する
+        c.beginPath();
+        c.arc(x, y, radius, 0, Math.PI * 2, false);
+        c.fillStyle = 'orange';
+        c.fill();
+
+        // 範囲の端にきたら折り返す
+        if (x + radius &gt; canvas.width || x - radius &lt; 0) {
+        speedX = -speedX;
+        } else if (y + radius &gt; canvas.height || y - radius &lt; 0) {
+        speedY = -speedY;
+        }
+
+        // 座標の値を変えていく
+        x += speedX;
+        y += speedY;
+
+        }
+
+        // 関数を実行する
+        animate();
+
+        }
+      </template>
+    </page>
+  </main>
+</div>
+
+<%- include(page.root + 'common/_footer', {param:'param'}); %>
+
+<!-- css manipulation ----------------------------------------- -->
+<style type="text/css">
+  .canvas-parent {
+    width: 100%;
+    height: 100%;
+  }
+
+</style>
+
+<!-- call the common javascript ------------------------------------ -->
+<script type="text/javascript" src="<%-conf.path.js%>coding/c-page.js"></script>
+
+
+
+<!------------------------------------------- javascript manipulatio -->
+
+</body>
+
+</html>

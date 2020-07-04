@@ -1,0 +1,159 @@
+<% var meta = {
+    pageTitle:'',
+    description:'foo',
+    keywords:'foo',
+    url:'http://www.example.com/'
+  };
+  var page={
+      root:filePath.dir
+  };
+%>
+<% var imgpath = '/assets/img/coding/page/' %>
+<%- include(page.root + 'common/meta/coding/_page', {param:'param'}); %>
+<div id="c-page">
+  <main class="c-page">
+
+
+    <page name="work4" tab="3">
+
+
+      <template slot="mainCont">
+        <div class="canvas-parent" id="canvasParent">
+          <canvas id="canvas"></canvas>
+        </div>
+      </template>
+
+
+
+      <template slot="html">
+        &lt;div class="canvas-parent" id="canvasParent"&gt;
+        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+      </template>
+
+
+      <template slot="css">
+        .canvas-parent {
+        width: 100%;
+        height: 100%;
+        }
+      </template>
+
+
+      <template slot="js">
+        //親要素とcanvas要素を取得
+        let canvasParent = document.getElementById("canvasParent");
+        let canvas = document.getElementById("canvas");
+
+        // Canvas利用不可の環境では実行しないようにif文で囲む
+        if (canvas.getContext) {
+
+        // canvasの幅と高さを親要素のサイズに合わせる
+        canvas.width = canvasParent.clientWidth;
+        canvas.height = canvasParent.clientHeight;
+
+        // Canvasに描画機能を付与する
+        let c = canvas.getContext('2d');
+
+        //関数オブジェクトを設定
+        function Circle(x, y, speedX, speedY, radius) {
+        this.x = x;
+        this.y = y;
+        this.speedX = speedX;
+        this.speedY = speedY;
+        this.radius = radius;
+
+        // 円を描画する処理
+        this.draw = () =&gt; {
+        c.beginPath();
+        c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        c.strokeStyle = 'turquoise';
+        c.stroke();
+        }
+
+        // 座標をズラしながら円を描画していく処理
+        this.update = () =&gt; {
+
+        // 範囲の端にきたら折り返す
+        if (this.x + this.radius &gt; canvas.width || this.x - this.radius &lt; 0) {
+        this.speedX = -this.speedX;
+        } else if (this.y + this.radius &gt; canvas.height || this.y - this.radius &lt; 0) {
+        this.speedY = -this.speedY;
+        }
+
+        // 座標の値を変えていく
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // 円を描画する
+        this.draw();
+        }
+        }
+
+        // 配列を作っておく
+        var circleArray = []
+
+        for (let i = 0; i &lt; 100; i++) {
+        // 円の値をランダムで決める
+        // 円の半径
+        var radius = Math.random() * 50;
+        // 円の初期x座標
+        var x = Math.random() * (canvas.width - radius * 2) + radius;
+        // 円の初期y座標
+        var y = Math.random() * (canvas.height - radius * 2) + radius;
+        // 円のx軸でのスピード
+        var speedX = (Math.random() - 0.5) * 10;
+        // 円のy軸でのスピード
+        var speedY = (Math.random() - 0.5) * 10;
+
+        //ランダムで決められた値を配列にいれていく
+        circleArray.push(new Circle(x, y, speedX, speedY, radius));
+        }
+
+        // 円を描画&アニメーションさせる関数
+        function animate() {
+
+        // animate()関数をループさせる関数
+        requestAnimationFrame(animate);
+
+        // 指定した範囲の描画内容をリセットする
+        c.clearRect(0, 0, canvas.width, canvas.height);
+
+        //円をcircleArrayの数だけ描画する
+        for (let i = 0; i &lt; circleArray.length; i++) {
+        circleArray[i].update();
+        }
+
+        }
+
+        // 関数を実行する
+        animate();
+
+        }
+      </template>
+    </page>
+  </main>
+</div>
+
+<%- include(page.root + 'common/_footer', {param:'param'}); %>
+
+<!-- css manipulation ----------------------------------------- -->
+<style type="text/css">
+  .canvas-parent {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+  }
+
+</style>
+
+<!-- call the common javascript ------------------------------------ -->
+<script type="text/javascript" src="<%-conf.path.js%>coding/c-page.js"></script>
+
+
+
+<!------------------------------------------- javascript manipulatio -->
+
+</body>
+
+</html>

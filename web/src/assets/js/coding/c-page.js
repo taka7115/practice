@@ -37,45 +37,10 @@ var scrollCurve = () => {
   }
 }
 
-/**
- * js for each works---------------
- */
-var work01 = () => {
-
-  //.areaの範囲でカーソルを動かしたときの処理
-  var area = document.querySelector(".area");
-  area.addEventListener("mousemove", (e) => {
-
-    // .areaのサイズを取得
-    var clientRect = area.getBoundingClientRect();
-
-    // 画面上端からの距離を取得
-    var areaTop = clientRect.top;
-
-    // 画面左端からの距離を取得
-    var areaLeft = clientRect.left;
-
-    // カーソルの座標を取得
-    var cursorTop = e.clientY;
-    var cursorLeft = e.clientX;
-
-    // カーソルから.areaの端までの距離を取得し、
-    // その距離を.overlayのtopとleftに代入
-    var distanceY = cursorTop - areaTop;
-    var distanceX = cursorLeft - areaLeft;
-    $('.overlay').css({
-      "top": distanceY + 'px',
-      "left": distanceX + 'px'
-    });
-
-  });
-}
-
 
 /*load event*/
 document.addEventListener('DOMContentLoaded', () => {
   scrollCurve();
-  work01();
 })
 
 // window.on("load", () => {

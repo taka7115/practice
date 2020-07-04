@@ -163,7 +163,8 @@ body {
   width: 100%;
   height: 100%;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.6
+  line-height: 1.6;
+  letter-spacing: .07em
 }
 a {
   text-decoration: none;
@@ -363,6 +364,22 @@ blockquote:before {
     display: inline-block
   }
 }
+.u-pcin {
+  display: inline
+}
+@media screen and (max-width:750px) {
+  .u-pcin {
+    display: none
+  }
+}
+.u-spin {
+  display: none
+}
+@media screen and (max-width:750px) {
+  .u-spin {
+    display: inline
+  }
+}
 .u-pc {
   display: block!important
 }
@@ -384,22 +401,53 @@ blockquote:before {
   padding: 100px 0 10px;
   background-color: #433a44
 }
+@media screen and (max-width:750px) {
+  .footer {
+    padding: 13.33333vw 0 10px
+  }
+}
 .f-nav {
   display: table;
   margin: 0 auto 100px
 }
+@media screen and (max-width:750px) {
+  .f-nav {
+    margin: 0 auto 13.33333vw
+  }
+}
 .f-ul {
   width: 300px;
   display: table-cell;
-  vertical-align: top;
-  border-left: 1px solid #fff
+  vertical-align: top
 }
-.f-ul:first-child {
-  border-left: none
+@media print,
+screen and (min-width:751px) {
+  .f-ul {
+    border-right: 1px solid #fff
+  }
+}
+@media screen and (max-width:750px) {
+  .f-ul {
+    display: block;
+    border-bottom: none
+  }
+}
+.f-ul:last-child {
+  border-right: none
+}
+@media screen and (max-width:750px) {
+  .f-ul:last-child {
+    border-bottom: none
+  }
 }
 .f-li {
   text-align: center;
-  margin-bottom: 10px
+  padding: 5px 0
+}
+@media screen and (max-width:750px) {
+  .f-li:last-child {
+    margin-bottom: 8vw
+  }
 }
 .f-li a {
   color: #c1c1c1
@@ -411,6 +459,11 @@ blockquote:before {
   font-size: 16px;
   color: #fff;
   margin-bottom: 20px
+}
+@media screen and (max-width:750px) {
+  .f-li--ttl {
+    margin-bottom: 2.66667vw
+  }
 }
 .f-li--left {
   text-align: left
@@ -461,7 +514,34 @@ body {
     font-size: 5.6vw
   }
 }
+.c-page .ttl h1 a {
+  color: #fff
+}
+@media print,
+screen and (min-width:751px) {
+  .c-page .ttl h1 a:first-child {
+    display: inline-block;
+    opacity: 1
+  }
+}
+@media screen and (max-width:750px) {
+  .c-page .ttl h1 a:first-child {
+    display: none
+  }
+}
+@media print,
+screen and (min-width:751px) {
+  .c-page .ttl h1 a:nth-child(2) {
+    display: none
+  }
+}
+@media screen and (max-width:750px) {
+  .c-page .ttl h1 a:nth-child(2) {
+    display: inline-block
+  }
+}
 .c-page .ttl h1 span {
+  display: inline-block;
   position: relative;
   font-size: 34px;
   text-align: center;
@@ -482,16 +562,16 @@ body {
   box-shadow: 0 0 14px #00a2ff;
   position: absolute;
   left: -30px;
-  top: -10px;
-  -webkit-transform: rotate(-54deg);
-  -ms-transform: rotate(-54deg);
-  transform: rotate(-54deg)
+  top: -16px;
+  -webkit-transform: rotate(-48deg);
+  -ms-transform: rotate(-48deg);
+  transform: rotate(-48deg)
 }
 @media screen and (max-width:750px) {
   .c-page .ttl h1 span:before {
     width: 3.2vw;
     height: 3.2vw;
-    left: -4vw;
+    left: -4.53333vw;
     top: -1.86667vw;
     -webkit-transform: rotate(-48deg);
     -ms-transform: rotate(-48deg);
@@ -506,11 +586,11 @@ body {
   -webkit-box-shadow: 0 0 14px #0375cc;
   box-shadow: 0 0 14px #0375cc;
   position: absolute;
-  left: 0;
-  top: -22px;
-  -webkit-transform: rotate(-17deg);
-  -ms-transform: rotate(-17deg);
-  transform: rotate(-17deg)
+  left: 2px;
+  top: -26px;
+  -webkit-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  transform: rotate(-15deg)
 }
 @media screen and (max-width:750px) {
   .c-page .ttl h1 span:after {
@@ -537,6 +617,12 @@ body {
     height: 60vw;
     border: #00c2ff solid 3px;
     margin-bottom: 26.66667vw
+  }
+}
+@media screen and (max-width:750px) {
+  .c-page .portrait {
+    width: 96vw;
+    height: 106.66667vw
   }
 }
 .c-page .code {
@@ -595,16 +681,16 @@ body {
 }
 @media screen and (max-width:750px) {
   .c-page .point {
-    margin-bottom: 26.66667vw
+    margin-bottom: 53.33333vw
   }
 }
-.c-page .point-wrap {
+.c-page .point__wrap {
   width: 1000px;
   margin: 0 auto
 }
 @media print,
 screen and (min-width:751px) {
-  .c-page .point-wrap {
+  .c-page .point__wrap {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -614,13 +700,13 @@ screen and (min-width:751px) {
   }
 }
 @media screen and (max-width:750px) {
-  .c-page .point-wrap {
-    width: 90.66667vw
+  .c-page .point__wrap {
+    width: 93.33333vw
   }
 }
 @media print,
 screen and (min-width:751px) {
-  .c-page .point-wrap:nth-child(odd) {
+  .c-page .point__wrap:nth-child(odd) {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start
@@ -628,32 +714,32 @@ screen and (min-width:751px) {
 }
 @media print,
 screen and (min-width:751px) {
-  .c-page .point-wrap:nth-child(even) {
+  .c-page .point__wrap:nth-child(even) {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end
   }
 }
-.c-page .point-wrap:not(:last-child) {
+.c-page .point__wrap:not(:last-child) {
   margin: 0 auto 50px
 }
-.c-page .point-cont {
+.c-page .point__cont {
   width: 800px;
   padding: 100px 80px;
   background-color: #f7f8fc;
   border: #00f6ff solid 4px
 }
 @media screen and (max-width:750px) {
-  .c-page .point-cont {
+  .c-page .point__cont {
     width: 100%;
     padding: 8vw 5.33333vw;
     border: #00f6ff solid 2px
   }
 }
-.c-page .point-cont__ttl {
+.c-page .point__ttl {
   position: relative
 }
-.c-page .point-cont__h2 {
+.c-page .point__h2 {
   width: 100%;
   position: relative;
   font-size: 24px;
@@ -661,17 +747,36 @@ screen and (min-width:751px) {
   color: #464646
 }
 @media screen and (max-width:750px) {
-  .c-page .point-cont__h2 {
+  .c-page .point__h2 {
     font-size: 18px;
     font-size: 4.8vw;
     margin-bottom: 10.66667vw
   }
 }
-.c-page .point-cont__list:not(:last-child) {
+.c-page .point__h2 span {
+  width: 100%;
+  position: relative;
+  font-size: 24px;
+  margin-bottom: 80px;
+  color: #464646
+}
+@media screen and (max-width:750px) {
+  .c-page .point__h2 span {
+    font-size: 18px;
+    font-size: 4.8vw;
+    margin-bottom: 10.66667vw
+  }
+}
+.c-page .point__list {
+  text-indent: -1em;
+  padding-left: 1em;
+  text-align: justify
+}
+.c-page .point__list:not(:last-child) {
   margin-bottom: 50px
 }
 @media screen and (max-width:750px) {
-  .c-page .point-cont__list:not(:last-child) {
+  .c-page .point__list:not(:last-child) {
     margin-bottom: 8vw
   }
 }
@@ -760,8 +865,17 @@ screen and (min-width:751px) {
 .c-page .js-orange svg line {
   stroke: #ff6d00
 }
-.c-page .js-orange li span {
+.c-page .js-orange li span[data=dot] {
   color: #ff6d00
+}
+.c-page .js-orange li a {
+  color: #186cc2
+}
+.c-page .js-orange li a:hover {
+  text-decoration: underline
+}
+.c-page .js-orange li a:visited {
+  color: #6e0672
 }
 .c-page .js-blue {
   position: relative
@@ -785,8 +899,17 @@ screen and (min-width:751px) {
 .c-page .js-blue svg line {
   stroke: #039be5
 }
-.c-page .js-blue li span {
+.c-page .js-blue li span[data=dot] {
   color: #039be5
+}
+.c-page .js-blue li a {
+  color: #186cc2
+}
+.c-page .js-blue li a:hover {
+  text-decoration: underline
+}
+.c-page .js-blue li a:visited {
+  color: #6e0672
 }
 .c-page .js-yellow {
   position: relative
@@ -810,7 +933,16 @@ screen and (min-width:751px) {
 .c-page .js-yellow svg line {
   stroke: #f2bf22
 }
-.c-page .js-yellow li span {
+.c-page .js-yellow li span[data=dot] {
   color: #e7a42b
+}
+.c-page .js-yellow li a {
+  color: #186cc2
+}
+.c-page .js-yellow li a:hover {
+  text-decoration: underline
+}
+.c-page .js-yellow li a:visited {
+  color: #6e0672
 }
 /*# sourceMappingURL=c-page.css.map */

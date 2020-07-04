@@ -137,6 +137,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var _default = {
   components: {
     sourceCode: _SourceCode["default"],
@@ -144,7 +150,28 @@ var _default = {
     point: _Point["default"],
     nz: _Nz["default"]
   },
-  props: ["name"]
+  props: {
+    name: {
+      type: String,
+      "default": ""
+    },
+    tab: {
+      type: String,
+      "default": ""
+    },
+    portrait: {
+      type: Boolean,
+      "default": false
+    },
+    csssp: {
+      type: Boolean,
+      "default": false
+    },
+    jssp: {
+      type: Boolean,
+      "default": false
+    }
+  }
 };
 exports["default"] = _default;
 
@@ -160,8 +187,6 @@ exports["default"] = _default;
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.array.map */ "./node_modules/core-js/modules/es.array.map.js");
-
 __webpack_require__(/*! core-js/modules/es.function.name */ "./node_modules/core-js/modules/es.function.name.js");
 
 Object.defineProperty(exports, "__esModule", {
@@ -169,7 +194,25 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
+var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
+
+var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
+
+var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
+
+var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
+
+var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
+
+var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
+
+var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
+
+var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
+
+var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+
+var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -193,23 +236,30 @@ var _default = {
     name: {
       type: String,
       "default": ""
+    },
+    portrait: {
+      type: Boolean,
+      "default": ""
     }
   },
   data: function data() {
     return {
       arrays: {
-        work1: _work["default"]
+        work10: _work["default"],
+        work9: _work2["default"],
+        work8: _work3["default"],
+        work7: _work4["default"],
+        work6: _work5["default"],
+        work5: _work6["default"],
+        work4: _work7["default"],
+        work3: _work8["default"],
+        work2: _work9["default"],
+        work1: _work10["default"]
       }
     };
   },
-  computed: {
-    new_array_tags: function new_array_tags() {
-      //nameがマッチする配列を取得
-      var array_a = this.arrays[this.name].map(function (value) {
-        return value;
-      });
-      return array_a;
-    }
+  mounted: function mounted() {
+    return this.arrays[this.name].func();
   }
 };
 exports["default"] = _default;
@@ -300,28 +350,28 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
+var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
+
+var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
+
+var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
+
+var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
+
+var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
+
+var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
+
+var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
+
+var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
+
+var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+
+var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -509,7 +559,16 @@ var _default = {
   data: function data() {
     return {
       arrays: {
-        work1: _work["default"]
+        work10: _work["default"],
+        work9: _work2["default"],
+        work8: _work3["default"],
+        work7: _work4["default"],
+        work6: _work5["default"],
+        work5: _work6["default"],
+        work4: _work7["default"],
+        work3: _work8["default"],
+        work2: _work9["default"],
+        work1: _work10["default"]
       }
     };
   }
@@ -528,19 +587,37 @@ exports["default"] = _default;
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.array.map */ "./node_modules/core-js/modules/es.array.map.js");
-
-__webpack_require__(/*! core-js/modules/es.function.name */ "./node_modules/core-js/modules/es.function.name.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
+var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
+
+var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
+
+var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
+
+var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
+
+var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
+
+var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
+
+var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
+
+var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
+
+var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+
+var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+//
+//
+//
+//
 //
 //
 //
@@ -616,27 +693,45 @@ var _default = {
     name: {
       type: String,
       "default": ""
+    },
+    tab: {
+      type: String,
+      "default": ""
+    },
+    csssp: {
+      type: Boolean,
+      "default": ""
+    },
+    jssp: {
+      type: Boolean,
+      "default": ""
     }
   },
   data: function data() {
     return {
       arrays: {
-        work1: _work["default"]
+        work10: _work["default"],
+        work9: _work2["default"],
+        work8: _work3["default"],
+        work7: _work4["default"],
+        work6: _work5["default"],
+        work5: _work6["default"],
+        work4: _work7["default"],
+        work3: _work8["default"],
+        work2: _work9["default"],
+        work1: _work10["default"]
       },
-      slide1: true,
-      slide2: false,
-      slide3: false,
-      isActive1: true,
-      isActive2: false,
-      isActive3: false
+      csspcShow: true,
+      cssspShow: false,
+      jspcShow: true,
+      jsspShow: false,
+      slide1: this.tab == 1,
+      slide2: this.tab == 2,
+      slide3: this.tab == 3,
+      isActive1: this.tab == 1,
+      isActive2: this.tab == 2,
+      isActive3: this.tab == 3
     };
-  },
-  new_array_tags: function new_array_tags() {
-    //nameがマッチする配列を取得
-    var array_a = this.arrays[this.name].map(function (value) {
-      return value;
-    });
-    return array_a;
   },
   methods: {
     slideActivate1: function slideActivate1() {
@@ -663,23 +758,49 @@ var _default = {
       this.isActive2 = false;
       this.isActive3 = true;
     }
+  },
+  mounted: function mounted() {
+    if (window.innerWidth < 750) {
+      if (this.jssp) {
+        this.jsspShow = true, this.jspcShow = false;
+      }
+
+      if (this.csssp) {
+        this.cssspShow = true, this.csspcShow = false;
+      }
+    }
   }
 };
 exports["default"] = _default;
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/a-function.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/internals/a-function.js ***!
-  \******************************************************/
+/***/ "./node_modules/core-js/internals/add-to-unscopables.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/core-js/internals/add-to-unscopables.js ***!
+  \**************************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = function (it) {
-  if (typeof it != 'function') {
-    throw TypeError(String(it) + ' is not a function');
-  } return it;
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var create = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js/internals/object-create.js");
+var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
+
+var UNSCOPABLES = wellKnownSymbol('unscopables');
+var ArrayPrototype = Array.prototype;
+
+// Array.prototype[@@unscopables]
+// https://tc39.github.io/ecma262/#sec-array.prototype-@@unscopables
+if (ArrayPrototype[UNSCOPABLES] == undefined) {
+  definePropertyModule.f(ArrayPrototype, UNSCOPABLES, {
+    configurable: true,
+    value: create(null)
+  });
+}
+
+// add a key to Array.prototype[@@unscopables]
+module.exports = function (key) {
+  ArrayPrototype[UNSCOPABLES][key] = true;
 };
 
 
@@ -698,6 +819,35 @@ module.exports = function (it) {
   if (!isObject(it)) {
     throw TypeError(String(it) + ' is not an object');
   } return it;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/array-fill.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/internals/array-fill.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var toAbsoluteIndex = __webpack_require__(/*! ../internals/to-absolute-index */ "./node_modules/core-js/internals/to-absolute-index.js");
+var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js/internals/to-length.js");
+
+// `Array.prototype.fill` method implementation
+// https://tc39.github.io/ecma262/#sec-array.prototype.fill
+module.exports = function fill(value /* , start = 0, end = @length */) {
+  var O = toObject(this);
+  var length = toLength(O.length);
+  var argumentsLength = arguments.length;
+  var index = toAbsoluteIndex(argumentsLength > 1 ? arguments[1] : undefined, length);
+  var end = argumentsLength > 2 ? arguments[2] : undefined;
+  var endPos = end === undefined ? length : toAbsoluteIndex(end, length);
+  while (endPos > index) O[index++] = value;
+  return O;
 };
 
 
@@ -741,181 +891,6 @@ module.exports = {
   // `Array.prototype.indexOf` method
   // https://tc39.github.io/ecma262/#sec-array.prototype.indexof
   indexOf: createMethod(false)
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/array-iteration.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js/internals/array-iteration.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var bind = __webpack_require__(/*! ../internals/function-bind-context */ "./node_modules/core-js/internals/function-bind-context.js");
-var IndexedObject = __webpack_require__(/*! ../internals/indexed-object */ "./node_modules/core-js/internals/indexed-object.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
-var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js/internals/to-length.js");
-var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js/internals/array-species-create.js");
-
-var push = [].push;
-
-// `Array.prototype.{ forEach, map, filter, some, every, find, findIndex }` methods implementation
-var createMethod = function (TYPE) {
-  var IS_MAP = TYPE == 1;
-  var IS_FILTER = TYPE == 2;
-  var IS_SOME = TYPE == 3;
-  var IS_EVERY = TYPE == 4;
-  var IS_FIND_INDEX = TYPE == 6;
-  var NO_HOLES = TYPE == 5 || IS_FIND_INDEX;
-  return function ($this, callbackfn, that, specificCreate) {
-    var O = toObject($this);
-    var self = IndexedObject(O);
-    var boundFunction = bind(callbackfn, that, 3);
-    var length = toLength(self.length);
-    var index = 0;
-    var create = specificCreate || arraySpeciesCreate;
-    var target = IS_MAP ? create($this, length) : IS_FILTER ? create($this, 0) : undefined;
-    var value, result;
-    for (;length > index; index++) if (NO_HOLES || index in self) {
-      value = self[index];
-      result = boundFunction(value, index, O);
-      if (TYPE) {
-        if (IS_MAP) target[index] = result; // map
-        else if (result) switch (TYPE) {
-          case 3: return true;              // some
-          case 5: return value;             // find
-          case 6: return index;             // findIndex
-          case 2: push.call(target, value); // filter
-        } else if (IS_EVERY) return false;  // every
-      }
-    }
-    return IS_FIND_INDEX ? -1 : IS_SOME || IS_EVERY ? IS_EVERY : target;
-  };
-};
-
-module.exports = {
-  // `Array.prototype.forEach` method
-  // https://tc39.github.io/ecma262/#sec-array.prototype.foreach
-  forEach: createMethod(0),
-  // `Array.prototype.map` method
-  // https://tc39.github.io/ecma262/#sec-array.prototype.map
-  map: createMethod(1),
-  // `Array.prototype.filter` method
-  // https://tc39.github.io/ecma262/#sec-array.prototype.filter
-  filter: createMethod(2),
-  // `Array.prototype.some` method
-  // https://tc39.github.io/ecma262/#sec-array.prototype.some
-  some: createMethod(3),
-  // `Array.prototype.every` method
-  // https://tc39.github.io/ecma262/#sec-array.prototype.every
-  every: createMethod(4),
-  // `Array.prototype.find` method
-  // https://tc39.github.io/ecma262/#sec-array.prototype.find
-  find: createMethod(5),
-  // `Array.prototype.findIndex` method
-  // https://tc39.github.io/ecma262/#sec-array.prototype.findIndex
-  findIndex: createMethod(6)
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/array-method-has-species-support.js":
-/*!****************************************************************************!*\
-  !*** ./node_modules/core-js/internals/array-method-has-species-support.js ***!
-  \****************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var V8_VERSION = __webpack_require__(/*! ../internals/engine-v8-version */ "./node_modules/core-js/internals/engine-v8-version.js");
-
-var SPECIES = wellKnownSymbol('species');
-
-module.exports = function (METHOD_NAME) {
-  // We can't use this feature detection in V8 since it causes
-  // deoptimization and serious performance degradation
-  // https://github.com/zloirock/core-js/issues/677
-  return V8_VERSION >= 51 || !fails(function () {
-    var array = [];
-    var constructor = array.constructor = {};
-    constructor[SPECIES] = function () {
-      return { foo: 1 };
-    };
-    return array[METHOD_NAME](Boolean).foo !== 1;
-  });
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/array-method-uses-to-length.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/core-js/internals/array-method-uses-to-length.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-
-var defineProperty = Object.defineProperty;
-var cache = {};
-
-var thrower = function (it) { throw it; };
-
-module.exports = function (METHOD_NAME, options) {
-  if (has(cache, METHOD_NAME)) return cache[METHOD_NAME];
-  if (!options) options = {};
-  var method = [][METHOD_NAME];
-  var ACCESSORS = has(options, 'ACCESSORS') ? options.ACCESSORS : false;
-  var argument0 = has(options, 0) ? options[0] : thrower;
-  var argument1 = has(options, 1) ? options[1] : undefined;
-
-  return cache[METHOD_NAME] = !!method && !fails(function () {
-    if (ACCESSORS && !DESCRIPTORS) return true;
-    var O = { length: -1 };
-
-    if (ACCESSORS) defineProperty(O, 1, { enumerable: true, get: thrower });
-    else O[1] = 1;
-
-    method.call(O, argument0, argument1);
-  });
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/array-species-create.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js/internals/array-species-create.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js/internals/is-array.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-
-var SPECIES = wellKnownSymbol('species');
-
-// `ArraySpeciesCreate` abstract operation
-// https://tc39.github.io/ecma262/#sec-arrayspeciescreate
-module.exports = function (originalArray, length) {
-  var C;
-  if (isArray(originalArray)) {
-    C = originalArray.constructor;
-    // cross-realm fallback
-    if (typeof C == 'function' && (C === Array || isArray(C.prototype))) C = undefined;
-    else if (isObject(C)) {
-      C = C[SPECIES];
-      if (C === null) C = undefined;
-    }
-  } return new (C === undefined ? Array : C)(length === 0 ? 0 : length);
 };
 
 
@@ -1040,51 +1015,6 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/engine-user-agent.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-user-agent.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js/internals/get-built-in.js");
-
-module.exports = getBuiltIn('navigator', 'userAgent') || '';
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/engine-v8-version.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js/internals/engine-v8-version.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
-
-var process = global.process;
-var versions = process && process.versions;
-var v8 = versions && versions.v8;
-var match, version;
-
-if (v8) {
-  match = v8.split('.');
-  version = match[0] + match[1];
-} else if (userAgent) {
-  match = userAgent.match(/Edge\/(\d+)/);
-  if (!match || match[1] >= 74) {
-    match = userAgent.match(/Chrome\/(\d+)/);
-    if (match) version = match[1];
-  }
-}
-
-module.exports = version && +version;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/enum-bug-keys.js":
 /*!*********************************************************!*\
   !*** ./node_modules/core-js/internals/enum-bug-keys.js ***!
@@ -1189,41 +1119,6 @@ module.exports = function (exec) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/function-bind-context.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/core-js/internals/function-bind-context.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var aFunction = __webpack_require__(/*! ../internals/a-function */ "./node_modules/core-js/internals/a-function.js");
-
-// optional / simple context binding
-module.exports = function (fn, that, length) {
-  aFunction(fn);
-  if (that === undefined) return fn;
-  switch (length) {
-    case 0: return function () {
-      return fn.call(that);
-    };
-    case 1: return function (a) {
-      return fn.call(that, a);
-    };
-    case 2: return function (a, b) {
-      return fn.call(that, a, b);
-    };
-    case 3: return function (a, b, c) {
-      return fn.call(that, a, b, c);
-    };
-  }
-  return function (/* ...args */) {
-    return fn.apply(that, arguments);
-  };
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/get-built-in.js":
 /*!********************************************************!*\
   !*** ./node_modules/core-js/internals/get-built-in.js ***!
@@ -1295,6 +1190,20 @@ module.exports = function (it, key) {
 /***/ (function(module, exports) {
 
 module.exports = {};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/html.js":
+/*!************************************************!*\
+  !*** ./node_modules/core-js/internals/html.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js/internals/get-built-in.js");
+
+module.exports = getBuiltIn('document', 'documentElement');
 
 
 /***/ }),
@@ -1439,24 +1348,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/is-array.js":
-/*!****************************************************!*\
-  !*** ./node_modules/core-js/internals/is-array.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var classof = __webpack_require__(/*! ../internals/classof-raw */ "./node_modules/core-js/internals/classof-raw.js");
-
-// `IsArray` abstract operation
-// https://tc39.github.io/ecma262/#sec-isarray
-module.exports = Array.isArray || function isArray(arg) {
-  return classof(arg) == 'Array';
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/is-forced.js":
 /*!*****************************************************!*\
   !*** ./node_modules/core-js/internals/is-forced.js ***!
@@ -1546,6 +1437,122 @@ var inspectSource = __webpack_require__(/*! ../internals/inspect-source */ "./no
 var WeakMap = global.WeakMap;
 
 module.exports = typeof WeakMap === 'function' && /native code/.test(inspectSource(WeakMap));
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/object-create.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/internals/object-create.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
+var defineProperties = __webpack_require__(/*! ../internals/object-define-properties */ "./node_modules/core-js/internals/object-define-properties.js");
+var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
+var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js/internals/hidden-keys.js");
+var html = __webpack_require__(/*! ../internals/html */ "./node_modules/core-js/internals/html.js");
+var documentCreateElement = __webpack_require__(/*! ../internals/document-create-element */ "./node_modules/core-js/internals/document-create-element.js");
+var sharedKey = __webpack_require__(/*! ../internals/shared-key */ "./node_modules/core-js/internals/shared-key.js");
+
+var GT = '>';
+var LT = '<';
+var PROTOTYPE = 'prototype';
+var SCRIPT = 'script';
+var IE_PROTO = sharedKey('IE_PROTO');
+
+var EmptyConstructor = function () { /* empty */ };
+
+var scriptTag = function (content) {
+  return LT + SCRIPT + GT + content + LT + '/' + SCRIPT + GT;
+};
+
+// Create object with fake `null` prototype: use ActiveX Object with cleared prototype
+var NullProtoObjectViaActiveX = function (activeXDocument) {
+  activeXDocument.write(scriptTag(''));
+  activeXDocument.close();
+  var temp = activeXDocument.parentWindow.Object;
+  activeXDocument = null; // avoid memory leak
+  return temp;
+};
+
+// Create object with fake `null` prototype: use iframe Object with cleared prototype
+var NullProtoObjectViaIFrame = function () {
+  // Thrash, waste and sodomy: IE GC bug
+  var iframe = documentCreateElement('iframe');
+  var JS = 'java' + SCRIPT + ':';
+  var iframeDocument;
+  iframe.style.display = 'none';
+  html.appendChild(iframe);
+  // https://github.com/zloirock/core-js/issues/475
+  iframe.src = String(JS);
+  iframeDocument = iframe.contentWindow.document;
+  iframeDocument.open();
+  iframeDocument.write(scriptTag('document.F=Object'));
+  iframeDocument.close();
+  return iframeDocument.F;
+};
+
+// Check for document.domain and active x support
+// No need to use active x approach when document.domain is not set
+// see https://github.com/es-shims/es5-shim/issues/150
+// variation of https://github.com/kitcambridge/es5-shim/commit/4f738ac066346
+// avoid IE GC bug
+var activeXDocument;
+var NullProtoObject = function () {
+  try {
+    /* global ActiveXObject */
+    activeXDocument = document.domain && new ActiveXObject('htmlfile');
+  } catch (error) { /* ignore */ }
+  NullProtoObject = activeXDocument ? NullProtoObjectViaActiveX(activeXDocument) : NullProtoObjectViaIFrame();
+  var length = enumBugKeys.length;
+  while (length--) delete NullProtoObject[PROTOTYPE][enumBugKeys[length]];
+  return NullProtoObject();
+};
+
+hiddenKeys[IE_PROTO] = true;
+
+// `Object.create` method
+// https://tc39.github.io/ecma262/#sec-object.create
+module.exports = Object.create || function create(O, Properties) {
+  var result;
+  if (O !== null) {
+    EmptyConstructor[PROTOTYPE] = anObject(O);
+    result = new EmptyConstructor();
+    EmptyConstructor[PROTOTYPE] = null;
+    // add "__proto__" for Object.getPrototypeOf polyfill
+    result[IE_PROTO] = O;
+  } else result = NullProtoObject();
+  return Properties === undefined ? result : defineProperties(result, Properties);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/object-define-properties.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/core-js/internals/object-define-properties.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
+var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
+var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
+
+// `Object.defineProperties` method
+// https://tc39.github.io/ecma262/#sec-object.defineproperties
+module.exports = DESCRIPTORS ? Object.defineProperties : function defineProperties(O, Properties) {
+  anObject(O);
+  var keys = objectKeys(Properties);
+  var length = keys.length;
+  var index = 0;
+  var key;
+  while (length > index) definePropertyModule.f(O, key = keys[index++], Properties[key]);
+  return O;
+};
 
 
 /***/ }),
@@ -1668,6 +1675,25 @@ module.exports = function (object, names) {
     ~indexOf(result, key) || result.push(key);
   }
   return result;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/object-keys.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/internals/object-keys.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var internalObjectKeys = __webpack_require__(/*! ../internals/object-keys-internal */ "./node_modules/core-js/internals/object-keys-internal.js");
+var enumBugKeys = __webpack_require__(/*! ../internals/enum-bug-keys */ "./node_modules/core-js/internals/enum-bug-keys.js");
+
+// `Object.keys` method
+// https://tc39.github.io/ecma262/#sec-object.keys
+module.exports = Object.keys || function keys(O) {
+  return internalObjectKeys(O, enumBugKeys);
 };
 
 
@@ -2061,32 +2087,25 @@ module.exports = function (name) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/modules/es.array.map.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/modules/es.array.map.js ***!
-  \******************************************************/
+/***/ "./node_modules/core-js/modules/es.array.fill.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.fill.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
 var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var $map = __webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").map;
-var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js/internals/array-method-has-species-support.js");
-var arrayMethodUsesToLength = __webpack_require__(/*! ../internals/array-method-uses-to-length */ "./node_modules/core-js/internals/array-method-uses-to-length.js");
+var fill = __webpack_require__(/*! ../internals/array-fill */ "./node_modules/core-js/internals/array-fill.js");
+var addToUnscopables = __webpack_require__(/*! ../internals/add-to-unscopables */ "./node_modules/core-js/internals/add-to-unscopables.js");
 
-var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('map');
-// FF49- issue
-var USES_TO_LENGTH = arrayMethodUsesToLength('map');
-
-// `Array.prototype.map` method
-// https://tc39.github.io/ecma262/#sec-array.prototype.map
-// with adding support of @@species
-$({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT || !USES_TO_LENGTH }, {
-  map: function map(callbackfn /* , thisArg */) {
-    return $map(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
-  }
+// `Array.prototype.fill` method
+// https://tc39.github.io/ecma262/#sec-array.prototype.fill
+$({ target: 'Array', proto: true }, {
+  fill: fill
 });
+
+// https://tc39.github.io/ecma262/#sec-array.prototype-@@unscopables
+addToUnscopables('fill');
 
 
 /***/ }),
@@ -14426,7 +14445,7 @@ var render = function() {
     "div",
     [
       _c("kv", {
-        attrs: { name: _vm.name },
+        attrs: { name: _vm.name, portrait: _vm.portrait },
         scopedSlots: _vm._u(
           [
             {
@@ -14443,28 +14462,57 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("sourceCode", {
-        attrs: { name: _vm.name },
+        attrs: {
+          name: _vm.name,
+          tab: _vm.tab,
+          csssp: _vm.csssp,
+          jssp: _vm.jssp
+        },
         scopedSlots: _vm._u(
           [
             {
               key: "html",
               fn: function() {
-                return [_vm._t("html", [_vm._v("ここにhtmlが入ります。")])]
+                return [
+                  _vm._t("html", [_vm._v("今回、HTMLの記述はありません。")])
+                ]
               },
               proxy: true
             },
             {
               key: "css",
               fn: function() {
-                return [_vm._t("css", [_vm._v("ここにcssが入ります。")])]
+                return [
+                  _vm._t("css", [_vm._v("今回、CSSの記述はありません。")])
+                ]
               },
               proxy: true
             },
             {
-              key: "javascript",
+              key: "csssp",
               fn: function() {
                 return [
-                  _vm._t("javascript", [_vm._v("ここにjavascriptが入ります。")])
+                  _vm._t("csssp", [_vm._v("今回、CSSSpの記述はありません。")])
+                ]
+              },
+              proxy: true
+            },
+            {
+              key: "js",
+              fn: function() {
+                return [
+                  _vm._t("js", [_vm._v("今回、JavaScriptの記述はありません。")])
+                ]
+              },
+              proxy: true
+            },
+            {
+              key: "jssp",
+              fn: function() {
+                return [
+                  _vm._t("jssp", [
+                    _vm._v("今回、JavaScriptSpの記述はありません。")
+                  ])
                 ]
               },
               proxy: true
@@ -14509,7 +14557,12 @@ var render = function() {
       _c("h1", { domProps: { innerHTML: _vm._s(_vm.arrays[_vm.name].ttl) } })
     ]),
     _vm._v(" "),
-    _c("section", { staticClass: "cont" }, [_vm._t("mainCont")], 2)
+    _c(
+      "section",
+      { staticClass: "cont", class: { portrait: _vm.portrait } },
+      [_vm._t("mainCont")],
+      2
+    )
   ])
 }
 var staticRenderFns = []
@@ -14653,17 +14706,17 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("section", { staticClass: "point" }, [
-    _c("div", { staticClass: "point-wrap" }, [
+    _c("div", { staticClass: "point__wrap" }, [
       _c(
         "div",
         {
-          staticClass: "point-cont js-1 js-left",
+          staticClass: "point__cont js-1 js-left",
           class: _vm.arrays[_vm.name].p1_color
         },
         [
-          _c("div", { staticClass: "point-cont__ttl" }, [
+          _c("div", { staticClass: "point__ttl" }, [
             _c("h2", {
-              staticClass: "point-cont__h2",
+              staticClass: "point__h2",
               domProps: { innerHTML: _vm._s(_vm.arrays[_vm.name].p1) }
             }),
             _vm._v(" "),
@@ -14744,24 +14797,16 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("ul", [
-            _c("li", { staticClass: "point-cont__list" }, [
-              _c("span", [_vm._v("▪")]),
-              _vm._v(
-                "\n          " +
-                  _vm._s(_vm.arrays[_vm.name].p1_list1) +
-                  "\n        "
-              )
-            ]),
+            _c("li", {
+              staticClass: "point__list",
+              domProps: { innerHTML: _vm._s(_vm.arrays[_vm.name].p1_list1) }
+            }),
             _vm._v(" "),
             _vm.arrays[_vm.name].p1_list2
-              ? _c("li", { staticClass: "point-cont__list" }, [
-                  _c("span", [_vm._v("▪")]),
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.arrays[_vm.name].p1_list2) +
-                      "\n        "
-                  )
-                ])
+              ? _c("li", {
+                  staticClass: "point__list",
+                  domProps: { innerHTML: _vm._s(_vm.arrays[_vm.name].p1_list2) }
+                })
               : _vm._e()
           ])
         ]
@@ -14769,17 +14814,17 @@ var render = function() {
     ]),
     _vm._v(" "),
     _vm.arrays[_vm.name].p2
-      ? _c("div", { staticClass: "point-wrap" }, [
+      ? _c("div", { staticClass: "point__wrap" }, [
           _c(
             "div",
             {
-              staticClass: "point-cont js-right",
+              staticClass: "point__cont js-right",
               class: _vm.arrays[_vm.name].p2_color
             },
             [
-              _c("div", { staticClass: "point-cont__ttl" }, [
+              _c("div", { staticClass: "point__ttl" }, [
                 _c("h2", {
-                  staticClass: "point-cont__h2",
+                  staticClass: "point__h2",
                   domProps: { innerHTML: _vm._s(_vm.arrays[_vm.name].p2) }
                 }),
                 _vm._v(" "),
@@ -14868,24 +14913,18 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("ul", [
-                _c("li", { staticClass: "point-cont__list" }, [
-                  _c("span", [_vm._v("▪")]),
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.arrays[_vm.name].p2_list1) +
-                      "\n        "
-                  )
-                ]),
+                _c("li", {
+                  staticClass: "point__list",
+                  domProps: { innerHTML: _vm._s(_vm.arrays[_vm.name].p2_list1) }
+                }),
                 _vm._v(" "),
                 _vm.arrays[_vm.name].p2_list2
-                  ? _c("li", { staticClass: "point-cont__list" }, [
-                      _c("span", [_vm._v("▪")]),
-                      _vm._v(
-                        "\n          " +
-                          _vm._s(_vm.arrays[_vm.name].p2_list2) +
-                          "\n        "
-                      )
-                    ])
+                  ? _c("li", {
+                      staticClass: "point__list",
+                      domProps: {
+                        innerHTML: _vm._s(_vm.arrays[_vm.name].p2_list2)
+                      }
+                    })
                   : _vm._e()
               ])
             ]
@@ -14894,17 +14933,17 @@ var render = function() {
       : _vm._e(),
     _vm._v(" "),
     _vm.arrays[_vm.name].p3
-      ? _c("div", { staticClass: "point-wrap" }, [
+      ? _c("div", { staticClass: "point__wrap" }, [
           _c(
             "div",
             {
-              staticClass: "point-cont js-left",
+              staticClass: "point__cont js-left",
               class: _vm.arrays[_vm.name].p3_color
             },
             [
-              _c("div", { staticClass: "point-cont__ttl" }, [
+              _c("div", { staticClass: "point__ttl" }, [
                 _c("h2", {
-                  staticClass: "point-cont__h2",
+                  staticClass: "point__h2",
                   domProps: { innerHTML: _vm._s(_vm.arrays[_vm.name].p3) }
                 }),
                 _vm._v(" "),
@@ -14990,24 +15029,18 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("ul", [
-                _c("li", { staticClass: "point-cont__list" }, [
-                  _c("span", [_vm._v("▪")]),
-                  _vm._v(
-                    "\n          " +
-                      _vm._s(_vm.arrays[_vm.name].p3_list1) +
-                      "\n        "
-                  )
-                ]),
+                _c("li", {
+                  staticClass: "point__list",
+                  domProps: { innerHTML: _vm._s(_vm.arrays[_vm.name].p3_list1) }
+                }),
                 _vm._v(" "),
                 _vm.arrays[_vm.name].p3_list2
-                  ? _c("li", { staticClass: "point-cont__list" }, [
-                      _c("span", [_vm._v("▪")]),
-                      _vm._v(
-                        "\n          " +
-                          _vm._s(_vm.arrays[_vm.name].p3_list2) +
-                          "\n        "
-                      )
-                    ])
+                  ? _c("li", {
+                      staticClass: "point__list",
+                      domProps: {
+                        innerHTML: _vm._s(_vm.arrays[_vm.name].p3_list2)
+                      }
+                    })
                   : _vm._e()
               ])
             ]
@@ -15226,10 +15259,16 @@ var render = function() {
                 staticClass: "language-css",
                 attrs: { "data-language": "css" }
               },
-              [_vm._v("\n      "), _vm._t("css"), _vm._v("\n    ")],
+              [
+                _vm._v("\n      "),
+                _vm.csspcShow ? _vm._t("css") : _vm._e(),
+                _vm._v("\n      "),
+                _vm.cssspShow ? _vm._t("csssp") : _vm._e(),
+                _vm._v("\n    ")
+              ],
               2
             ),
-            _vm._v(" ")
+            _vm._v("\n    ")
           ])
         ]
       ),
@@ -15256,10 +15295,16 @@ var render = function() {
                 staticClass: "language-javascript",
                 attrs: { "data-language": "javascript" }
               },
-              [_vm._v("\n      "), _vm._t("javascript"), _vm._v("\n    ")],
+              [
+                _vm._v("\n      "),
+                _vm.jspcShow ? _vm._t("js") : _vm._e(),
+                _vm._v("\n      "),
+                _vm.jsspShow ? _vm._t("jssp") : _vm._e(),
+                _vm._v("\n    ")
+              ],
               2
             ),
-            _vm._v(" ")
+            _vm._v("\n    ")
           ])
         ]
       )
@@ -27405,7 +27450,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {
+
 
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"));
 
@@ -27449,49 +27494,440 @@ var scrollCurve = function scrollCurve() {
     });
   }
 };
-/**
- * js for each works---------------
- */
-
-
-var work01 = function work01() {
-  //.areaの範囲でカーソルを動かしたときの処理
-  var area = document.querySelector(".area");
-  area.addEventListener("mousemove", function (e) {
-    // .areaのサイズを取得
-    var clientRect = area.getBoundingClientRect(); // 画面上端からの距離を取得
-
-    var areaTop = clientRect.top; // 画面左端からの距離を取得
-
-    var areaLeft = clientRect.left; // カーソルの座標を取得
-
-    var cursorTop = e.clientY;
-    var cursorLeft = e.clientX; // カーソルから.areaの端までの距離を取得し、
-    // その距離を.overlayのtopとleftに代入
-
-    var distanceY = cursorTop - areaTop;
-    var distanceX = cursorLeft - areaLeft;
-    $('.overlay').css({
-      "top": distanceY + 'px',
-      "left": distanceX + 'px'
-    });
-  });
-};
 /*load event*/
 
 
 document.addEventListener('DOMContentLoaded', function () {
   scrollCurve();
-  work01();
 }); // window.on("load", () => {
 // });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
 /***/ "./src/assets/js/coding/data/work1.js":
 /*!********************************************!*\
   !*** ./src/assets/js/coding/data/work1.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 1,
+  ttl: '<a><span>カ</span>ーソル</a><a><span>タ</span>ッチ</a>周りのみ<br class="u-sp">オリジナルの画像を照らし出す',
+  txt: "カーソル周りのみ<br>オリジナルの画像を<br>照らし出す",
+  alt: "カーソル周りのみオリジナルの画像を照らし出す画像",
+  p1: "ここにpointの1つ目が入ります。",
+  p1_color: "js-orange",
+  p1_list1: "<span data='dot'>&#9642;</span>ここにリストの1つ目が入ります",
+  p1_list2: "<span data='dot'>&#9642;</span>ここにリストの2つ目が入ります",
+  p2: 'ここにpointの2つ目が入ります。',
+  p2_color: "js-blue",
+  p2_list1: "<span data='dot'>&#9642;</span>ここにリストの1つ目が入ります",
+  p2_list2: "<span data='dot'>&#9642;</span>ここにリストの2つ目が入ります",
+  p3: 'ここにpointの3つ目が入ります。',
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>ここにリストの1つ目が入ります",
+  p3_list2: "<span data='dot'>&#9642;</span>ここにリストの2つ目が入ります",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //.areaを変数化しておく
+  var area = document.querySelector(".area"); //mousemoveもしくはtouchmoveしたときの関数
+
+  var action = function action(e) {
+    // .areaのサイズを取得
+    var clientRect = area.getBoundingClientRect(); // 画面上端から.areaまでの距離を取得
+
+    var areaTop = clientRect.top; // 画面左端から.areaまでの距離を取得
+
+    var areaLeft = clientRect.left; // カーソル、もしくはタッチした座標を取得
+
+    if (window.innerWidth > 750) {
+      var distanceTop = e.clientY;
+      var distanceLeft = e.clientX;
+    } else {
+      var distanceTop = e.changedTouches[0].pageY;
+      var distanceLeft = e.changedTouches[0].pageX;
+    } // カーソル、もしくはタッチした座標から.areaの端までの距離を取得
+
+
+    var distanceY = distanceTop - areaTop;
+    var distanceX = distanceLeft - areaLeft; // その距離を.overlayのtopとleftに代入
+
+    $('.overlay').css({
+      "top": distanceY + 'px',
+      "left": distanceX + 'px'
+    });
+  }; // PCではmousemove、SPではtouchmoveしたときに関数実行
+
+
+  if (window.innerWidth > 750) {
+    area.addEventListener("mousemove", function (e) {
+      action(e);
+    });
+  } else {
+    area.addEventListener("touchmove", function (e) {
+      action(e); // タッチによる画面スクロールを止める
+
+      event.preventDefault();
+    });
+  }
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work10.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work10.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 3,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "3作品目の情報が入ります。",
+  alt: "3作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work2.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/coding/data/work2.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 2,
+  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた①<br class="u-sp">【基本的な描画】',
+  txt: "HTML5のCanvasを<br>独学で勉強してみた①<br>【基本的な描画】",
+  alt: "HTML5のCanvasを独学で勉強してみた①【基本的な描画】",
+  p1: "Canvasに描画機能を付与する",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>JavaScriptの15行目。.getContext('2d')オブジェクトは、線、四角形、円などを描画するメソッドを持っています。HTML5のCanvasタグ単体では図形を描画する能力を持っていません。つまり、Canvas要素に.getContext('2d')と指定することで初めて、図形の描画が可能になります。",
+  p1_list2: "<span data='dot'>&#9642;</span>今回の場合、変数cに描画機能を持った(リアルな意味の)キャンバスを格納します。この変数c(キャンバス)にメソッドを追加していき、図形を描いたり色を塗ったりしていきます。",
+  p2: '新しく図形を描くときは<br class="u-sp">.beginPath()で描画内容を初期化する',
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>四角形は例外ですが、基本的に図形を描く際は.beginPath()で描画内容を初期化する必要があります。図形は座標を指定しながらパスをつないでいくので、直前のパスの終了座標が、次のパスの開始地点として認識されます。beginPath()と記述することで直前のパスとの関係性を断ち切ることができるのです。",
+  p2_list2: "<span data='dot'>&#9642;</span>図形や色を描画する各メソッドは、<a href='https://developer.mozilla.org/ja/docs/Web/API/CanvasRenderingContext2D' target='_blank'>MDN</a>から使用方法を確認することができます。",
+  p3: 'ループ処理で図形を複数描画する',
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>JavaScriptの46行目。図形を複数作成する場合は、for文でループ処理します。上の例では変数iの上限を8に指定しているため、三角形が8つ描画されています。",
+  p3_list2: "<span data='dot'>&#9642;</span>JavaScriptの65行目。x = x + 100;と記述することで、三角形のパスの開始x座標が処理1回毎に100pxずつ増えます。そのため、三角形は右にズレながら作成されていきます。",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与する
+
+    var c = canvas.getContext('2d'); // 四角形
+
+    c.fillStyle = "rgb(0, 0, 255)";
+    c.fillRect(50, 50, 50, 50);
+    c.fillStyle = "#ffff00";
+    c.fillRect(150, 50, 50, 50);
+    c.fillStyle = "green";
+    c.fillRect(250, 50, 50, 50); // 線
+
+    if (window.innerWidth > 750) {
+      var line1 = {
+        x: 50,
+        y: 200
+      };
+      var line2 = {
+        x: 100,
+        y: 250
+      };
+      var line3 = {
+        x: 150,
+        y: 200
+      };
+      var line4 = {
+        x: 200,
+        y: 250
+      };
+      var line5 = {
+        x: 250,
+        y: 200
+      };
+    } else {
+      var line1 = {
+        x: 50,
+        y: 150
+      };
+      var line2 = {
+        x: 100,
+        y: 200
+      };
+      var line3 = {
+        x: 150,
+        y: 150
+      };
+      var line4 = {
+        x: 200,
+        y: 200
+      };
+      var line5 = {
+        x: 250,
+        y: 150
+      };
+    }
+
+    c.beginPath();
+    c.moveTo(line1.x, line1.y);
+    c.lineTo(line2.x, line2.y);
+    c.lineTo(line3.x, line3.y);
+    c.lineTo(line4.x, line4.y);
+    c.lineTo(line5.x, line5.y);
+    c.strokeStyle = 'red';
+    c.stroke(); // 円
+
+    if (window.innerWidth > 750) {
+      var circle = {
+        x: 100,
+        y: 380,
+        radius: 30,
+        startAngle: 0,
+        endAngle: Math.PI * 2,
+        anticlockwise: false
+      };
+    } else {
+      var circle = {
+        x: 80,
+        y: 270,
+        radius: 30,
+        startAngle: 0,
+        endAngle: Math.PI * 2,
+        anticlockwise: false
+      };
+    }
+
+    c.beginPath();
+    c.arc(circle.x, circle.y, circle.radius, circle.startAngle, circle.endAngle, circle.anticlockwise);
+    c.fillStyle = "skyblue";
+    c.fill();
+    c.strokeStyle = "rgb(70, 0, 128)";
+    c.stroke(); // ループ処理で三角形を複数作成
+
+    if (window.innerWidth > 750) {
+      var triangle = {
+        x: 100,
+        y: 550,
+        diffX: 30,
+        diffY: 50,
+        space: 100
+      };
+    } else {
+      var triangle = {
+        x: 40,
+        y: 360,
+        diffX: 15,
+        diffY: 25,
+        space: 40
+      };
+    }
+
+    for (var i = 0; i < 8; i++) {
+      c.beginPath();
+      c.moveTo(triangle.x, triangle.y - triangle.diffY);
+      c.lineTo(triangle.x - triangle.diffX, triangle.y);
+      c.lineTo(triangle.x + triangle.diffX, triangle.y);
+      c.lineTo(triangle.x, triangle.y - triangle.diffY);
+      c.fillStyle = 'turquoise';
+      c.fill();
+      triangle.x = triangle.x + triangle.space;
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work3.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/coding/data/work3.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 3,
+  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた②<br class="u-sp">【基本的なアニメーション】',
+  txt: "HTML5のCanvasを<br>独学で勉強してみた②<br>【基本的なアニメーション】",
+  alt: "HTML5のCanvasを独学で勉強してみた②【基本的なアニメーション】",
+  p1: "<br class='u-sp'>アニメーションの仕組み",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>今回はオレンジ色の円をアニメーションさせます。大きさ、初期座標、スピードはランダム。ページをリロードすると、毎回異なる円が描画されることが分かります。<br>アニメーション処理の流れは下記です。<br><br>①<strong>ループ処理で円を継続的に描画させる</strong><br>(JavaScriptの47行目、50行目)<br><br>②<strong>描画させる円の座標を1回ずつ変える</strong><br>(JavaScriptの66、67行目)<br><br>③<strong>キャンバスをクリアにしてから円を描画する</strong><br>(JavaScriptの50行目)",
+  p1_list2: "<span data='dot'>&#9642;</span>座標を少しずつズラしながら、円をループ描画していくイメージです。ただ、このままだと描画されたすべての円がキャンバス上に残ってしまい、1つの円が移動するというアニメーションになりません(太い直線が引かれるようなアニメーションになります)。なので、<a href='https://developer.mozilla.org/ja/docs/Web/API/CanvasRenderingContext2D/clearRect' target='_blank'>.clearRectメソッド</a>を使用してループ処理一回ごとにキャンバスをクリアにする必要があります(JavaScriptの50行目)。",
+  p2: '描画する円の値をランダムで決める',
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>JavaScriptの18～27行目。59行目のc.arcに入るそれぞれの値を変数化しておきます。今回は描画される円の大きさ、初期座標、アニメーションのスピードをランダムで決めたいので、Math.random()を使用します。",
+  p2_list2: "<span data='dot'>&#9642;</span>JavaScriptの25行目。x軸、y軸でのスピードを決める式で、- 0.5と表記するのは、正だけでなく負の値も出力されるようにするためです。Math.random()で出力される値が-0.5未満の場合、-0.5が引かれて、最終的な値は負の値になります。(負の値が出力されるようにしないと、右下方向に進む円しか描画されません)",
+  p3: '範囲の端に円がきたら折り返す',
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>JavaScriptの59～63行目。キャンバス内でのみ円をアニメーションさせるため、範囲の端に円がきたら、逆方向に折り返すようにします。座標を変化させる値(speedXとspeedY)が正であれば負、負であれば正に切り替わることで、円は逆方向に描画されていくので、円が範囲の端にきたら、正負を切り替える処理を記述します。",
+  p3_list2: "<span data='dot'>&#9642;</span>この処理方法を応用させると、ブロック崩しやエアホッケーといった、簡単なゲームが作れそうです。",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // 円を描画&アニメーションさせる関数
+    var animate = function animate() {
+      // animate関数をループさせる関数
+      requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
+
+      c.clearRect(0, 0, canvas.width, canvas.height); // 円を描画する
+
+      c.beginPath();
+      c.arc(x, y, radius, 0, Math.PI * 2, false);
+      c.fillStyle = 'orange';
+      c.fill(); // 範囲の端にきたら折り返す
+
+      if (x + radius > canvas.width || x - radius < 0) {
+        speedX = -speedX;
+      } else if (y + radius > canvas.height || y - radius < 0) {
+        speedY = -speedY;
+      } // 座標の値を変えていく
+
+
+      x += speedX;
+      y += speedY;
+    }; // animate関数を実行する
+    // canvasの幅と高さを親要素のサイズに合わせる
+
+
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与する
+
+    var c = canvas.getContext('2d'); // 値を変数化しておく
+    // 円の半径
+
+    var radius = Math.random() * 50; // 円の初期x座標
+
+    var x = Math.random() * canvas.width; // 円の初期y座標
+
+    var y = Math.random() * canvas.height; // 円のx軸でのスピード
+
+    var speedX = (Math.random() - 0.5) * 10; // 円のy軸でのスピード
+
+    var speedY = (Math.random() - 0.5) * 10; // 円の直径を変数化
+
+    var diameter = radius * 2; // 描画された円が画面からはみでるとき
+    // はみでないように初期座標を修正
+
+    if (x < diameter) {
+      x = diameter;
+    } else if (x > canvas.width - diameter) {
+      x = canvas.width - diameter;
+    } else if (y > canvas.height - diameter) {
+      y = canvas.height - diameter;
+    } else if (y < diameter) {
+      y = diameter;
+    }
+
+    animate();
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work4.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/coding/data/work4.js ***!
   \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -27506,24 +27942,702 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _default = {
-  id: 1,
-  ttl: '<span>カ</span>ーソル周りのみ<br class="u-sp">オリジナルの画像を照らし出す',
-  txt: "カーソル周りのみ<br>オリジナルの画像を<br>照らし出す",
-  alt: "カーソル周りのみオリジナルの画像を照らし出す画像",
-  p1: "ここにpointの1つ目が入ります。",
-  p1_color: "js-orange",
-  p1_list1: "ここにリストの1つ目が入ります",
-  p1_list2: "ここにリストの2つ目が入ります",
-  p2: 'ここにpointの2つ目が入ります。',
-  p2_color: "js-blue",
-  p2_list1: "ここにリストの1つ目が入ります",
-  p2_list2: "ここにリストの2つ目が入ります",
-  p3: 'ここにpointの3つ目が入ります。',
+  id: 4,
+  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた③<br class="u-sp">【簡単なアニメーション】',
+  txt: "HTML5のCanvasを<br>独学で勉強してみた③<br>【簡単なアニメーション】",
+  alt: "HTML5のCanvasを独学で勉強してみた③【簡単なアニメーション】",
+  p1: "<br class='u-sp'>アニメーション処理の流れ",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>今回は100個の円をランダムの大きさ、ランダムのスピードでアニメーションさせていきます。前回の内容を一部引き継いでいるので、<a href='./page3.html' target='_blank'>独学で勉強してみた②</a>のページから見ることをオススメします。<br>アニメーション処理の流れは下記です。<br><br>①<strong>円を描画する関数オブジェクトを作成する</strong><br>(JavaScriptの17行目、50行目)<br><br>②<strong>100個の円のそれぞれの値を配列に格納する</strong><br>(JavaScriptの52、70行目)<br><br>③<strong>100個の配列をもとに、それぞれの円を描画していく</strong><br>(JavaScriptの72～89行目)",
+  p1_list2: "",
+  p2: "100個の円それぞれの値を、配列に格納する",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>まずは描画される100個の円の値を、配列に格納することを考えましょう。JavaScriptの53行目でcircleArray配列を事前に用意。55行目のfor文によってランダム生成された円100個分の値をそれぞれ格納していきます。格納する際は.pushメソッドによって格納するのですが、格納する値は17行目～50行目のCircle関数オブジェクト内で定義された値です。",
+  p2_list2: "<span data='dot'>&#9642;</span>PCであれば検証ツール(F12キーを押す)のConsoleをみてみると、格納された100個すべての値を確認することができます。",
+  p3: "描画&アニメーションを定義している関数を、それぞれの円で呼び出す",
   p3_color: "js-yellow",
-  p3_list1: "ここにリストの1つ目が入ります",
-  p3_list2: "ここにリストの2つ目が入ります"
+  p3_list1: "<span data='dot'>&#9642;</span>円を描画するうえで重要となる関数がJavaScriptの34行目、update()です。この関数は生成されたランダムの値をもとに、円が範囲内で描画され、一定スピードで移動し、範囲端で折り返すという、アニメーションのすべてを定義しています。",
+  p3_list2: "<span data='dot'>&#9642;</span>このupdate()が描画された円すべてで呼び出されることで、円はそれぞれ独自のアニメーションをしていきます。なので、for文によって配列の数だけ(JavaScriptの82行目)、それぞれの配列からupdate()を呼び出す(83行目)という処理を記述してあげる必要があります。",
+  func: func
 };
+/**
+ * js--------------------------------------
+ */
+
 exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    //関数オブジェクトを設定
+    var Circle = function Circle(x, y, speedX, speedY, radius) {
+      var _this = this;
+
+      this.x = x;
+      this.y = y;
+      this.speedX = speedX;
+      this.speedY = speedY;
+      this.radius = radius; // 円を描画する処理
+
+      this.draw = function () {
+        c.beginPath();
+        c.arc(_this.x, _this.y, _this.radius, 0, Math.PI * 2, false);
+        c.strokeStyle = 'turquoise';
+        c.stroke();
+      }; // 座標をズラしながら円を描画していく処理
+
+
+      this.update = function () {
+        // 範囲の端にきたら折り返す
+        if (_this.x + _this.radius > canvas.width || _this.x - _this.radius < 0) {
+          _this.speedX = -_this.speedX;
+        } else if (_this.y + _this.radius > canvas.height || _this.y - _this.radius < 0) {
+          _this.speedY = -_this.speedY;
+        } // 座標の値を変えていく
+
+
+        _this.x += _this.speedX;
+        _this.y += _this.speedY; // 円を描画する
+
+        _this.draw();
+      };
+    }; // 配列を作っておく
+    // 円を描画&アニメーションさせる関数
+
+
+    var animate = function animate() {
+      // animate関数をループさせる関数
+      requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
+
+      c.clearRect(0, 0, canvas.width, canvas.height); //円をcircleArrayの数だけ描画する
+
+      for (var _i = 0; _i < circleArray.length; _i++) {
+        circleArray[_i].update();
+      }
+    }; // animate関数を実行する
+    // canvasの幅と高さを親要素のサイズに合わせる
+
+
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与する
+
+    var c = canvas.getContext('2d');
+    var circleArray = [];
+
+    for (var i = 0; i < 100; i++) {
+      // 円の値をランダムで決める
+      // 円の半径
+      var radius = Math.random() * 50; // 円の初期x座標
+
+      var x = Math.random() * (canvas.width - radius * 2) + radius; // 円の初期y座標
+
+      var y = Math.random() * (canvas.height - radius * 2) + radius; // 円のx軸でのスピード
+
+      var speedX = (Math.random() - 0.5) * 10; // 円のy軸でのスピード
+
+      var speedY = (Math.random() - 0.5) * 10; //ランダムで決められた値を配列にいれていく
+
+      circleArray.push(new Circle(x, y, speedX, speedY, radius));
+    }
+
+    console.log(circleArray);
+    animate();
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work5.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/coding/data/work5.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 5,
+  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた④<br class="u-sp">【アニメーションのイベント処理】',
+  txt: "HTML5のCanvasを<br>独学で勉強してみた④<br>【アニメーションのイベント処理】",
+  alt: "HTML5のCanvasを独学で勉強してみた④【アニメーションのイベント処理】",
+  p1: "<br class='u-sp'>アニメーション処理の流れ",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>今回は<span class='u-pcin'>マウスムーブ</span><span class='u-spin'>タッチムーブ</span>することで、<span class='u-pcin'>カーソル</span><span class='u-spin'>タッチ</span>周りの円が大きくなっていくアニメーションを紹介します。前回の内容を一部引き継いでいるので、<a href='./page4.html' target='_blank'>独学で勉強してみた③</a>のページから見ることをオススメします。<br>アニメーション処理の流れは下記です。<br><br>①<b><span class='u-pcin'>カーソルの</span><span class='u-spin'>タッチした</span>座標を取得する</b><br>(JavaScriptの24行目～34行目)<br><br>②<b><span class='u-pcin'>カーソル</span><span class='u-spin'>タッチ</span>と円が指定距離以内のとき、円を大きくする</b><br>(JavaScriptの85～92行目)<br><br>③<b>指定距離以内にないとき、もとのサイズに戻していく</b><br>(JavaScriptの93～95行目)",
+  p1_list2: "",
+  p2: "<br class='u-sp'><span class='u-pcin'>カーソルの</span><span class='u-spin'>タッチした</span>座標を取得する",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span><span class='u-pcin'>カーソル</span><span class='u-spin'>タッチ</span>周りの円のみサイズを大きくするためには、<span class='u-pcin'>カーソルの</span><span class='u-spin'>タッチした</span>座標と円の座標を比較し、位置関係を追跡する必要があります。なのでまずはJavaScriptの32～33行目、.pageXと.pageYによって<span class='u-pcin'>カーソル</span><span class='u-spin'>タッチ</span>の座標を取得します。注意すべきは、.pageXと.pageYは水平、垂直距離(つまり、画面端から<span class='u-pcin'>カーソル</span><span class='u-spin'>タッチ</span>までの距離)を取得するのに対し、円の座標はキャンバスの(0, 0)を原点とした座標(つまり、キャンバス端から円までの距離)を取得すること。このままでは、<span class='u-pcin'>カーソル</span><span class='u-spin'>タッチ</span>座標と円座標を比較することはできません。",
+  p2_list2: "<span data='dot'>&#9642;</span>ということで、キャンバス端から<span class='u-pcin'>カーソル</span><span class='u-spin'>タッチ</span>までの距離を取得します。17～22行目でキャンバスの、画面からの距離を取得し、その値を.pageXと.pageYで取得した値から差し引きます。これにより、円座標と同じく、<span class='u-pcin'>カーソル</span><span class='u-spin'>タッチ</span>座標もキャンバス端からの値を取得できるようになります。",
+  p3: "条件によって円を拡大、縮小",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>JavaScriptの85～95行目。<span class='u-pcin'>カーソル</span><span class='u-spin'>タッチ</span>と円の座標を比較し、条件によって円を拡大、縮小させます。<span class='u-pcin'>カーソルの</span><span class='u-spin'>タッチした</span>座標から円座標を差し引いた値が<span class='u-pcin'>100px</span><span class='u-spin'>50px</span>以下であれば、円の半径の値であるradiusに1pxずつ加算していくという処理です。",
+  p3_list2: "<span data='dot'>&#9642;</span>反対に<span class='u-pcin'>100px</span><span class='u-spin'>50px</span>以下でなければ、radiusを1pxずつ減算していき、円をもとの大きさまで縮小させます。円のもとの大きさは、予め変数に格納しておきます(JavaScriptの59行目)。",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    //関数オブジェクトを設定
+    var Circle = function Circle(x, y, speedX, speedY, radius) {
+      var _this = this;
+
+      this.x = x;
+      this.y = y;
+      this.speedX = speedX;
+      this.speedY = speedY;
+      this.radius = radius; // 円の初期サイズ
+
+      this.firstRadius = radius; // colorArrayに格納された色をランダムに割り振る
+
+      this.color = colorArray[Math.floor(Math.random() * colorArray.length)]; // 円を描画する処理
+
+      this.draw = function () {
+        c.beginPath();
+        c.arc(_this.x, _this.y, _this.radius, 0, Math.PI * 2, false);
+        c.fillStyle = _this.color;
+        c.fill();
+      }; // 座標をズラしながら円を描画していく処理
+
+
+      this.update = function () {
+        // 範囲の端にきたら折り返す処理
+        if (_this.x + _this.radius > canvas.width || _this.x - _this.radius < 0) {
+          _this.speedX = -_this.speedX;
+        } else if (_this.y + _this.radius > canvas.height || _this.y - _this.radius < 0) {
+          _this.speedY = -_this.speedY;
+        } // 座標の値を変えていく
+
+
+        _this.x += _this.speedX;
+        _this.y += _this.speedY; //円から100px以内にカーソルがあるとき、円は最大40pxまで大きくなる
+        //円から100px以内にカーソルがないとき、円は初期描画サイズまで小さくなる
+
+        if (window.innerWidth > 750) {
+          var range = 100;
+        } else {
+          var range = 50;
+        }
+
+        if (mouse.x - _this.x < range && mouse.x - _this.x > -range && mouse.y - _this.y < range && mouse.y - _this.y > -range) {
+          if (_this.radius < maxRadius) {
+            _this.radius += 1;
+          }
+        } else if (_this.radius > _this.firstRadius) {
+          _this.radius -= 1;
+        } // 円を描画する
+
+
+        _this.draw();
+      };
+    }; // 円の値を格納する配列
+    // 円を描画&アニメーションさせる関数
+
+
+    var animate = function animate() {
+      // animate関数をループさせる関数
+      requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
+
+      c.clearRect(0, 0, canvas.width, canvas.height); //円をcircleArrayの数だけ描画する
+
+      for (var _i = 0; _i < circleArray.length; _i++) {
+        circleArray[_i].update();
+      }
+    }; // animate関数を実行する
+    // canvasの幅と高さを親要素のサイズに合わせる
+
+
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d'); // canvasのサイズを取得
+
+    var canvasSize = canvas.getBoundingClientRect(); // 画面左端からcanvasまでの距離を取得
+
+    var canvasLeft = canvasSize.left; // 画面上端からcanvasまでの距離を取得
+
+    var canvasTop = canvasSize.top; // canvas上でのカーソル位置の値を格納するための変数
+
+    var mouse = {
+      x: undefined,
+      y: undefined
+    }; // カーソル移動があるたびにカーソル位置の値を格納する
+
+    if (window.innerWidth > 750) {
+      window.addEventListener("mousemove", function (event) {
+        mouse.x = event.pageX - canvasLeft;
+        mouse.y = event.pageY - canvasTop;
+      });
+    } else {
+      canvas.addEventListener("touchmove", function (event) {
+        // タッチの情報を含むオブジェクト
+        var touchObject = event.changedTouches[0]; // 位置座標を取得する
+
+        mouse.x = touchObject.pageX - canvasLeft;
+        mouse.y = touchObject.pageY - canvasTop; // タッチによる画面スクロールを止める
+
+        event.preventDefault();
+      });
+    } //  円の最大半径
+
+
+    var maxRadius = 40; //  円の配色
+
+    var colorArray = ['#092140', '#049DD9', '#F2B705', '#F29F05', '#F26835']; // 描画する円の個数
+
+    var quantity = 300;
+    var circleArray = []; // 円の値を円の個数分出力し、それぞれの円の値を配列に格納する
+
+    for (var i = 0; i < quantity; i++) {
+      // 円の半径
+      var radius = Math.random() * 10 + 1; // 円の初期x座標
+
+      var x = Math.random() * (canvas.width - radius * 2) + radius; // 円の初期y座標
+
+      var y = Math.random() * (canvas.height - radius * 2) + radius; // 円のx軸でのスピード
+
+      var speedX = (Math.random() - 0.5) * 4; // 円のy軸でのスピード
+
+      var speedY = (Math.random() - 0.5) * 4; //ランダムで決められた値を配列に格納していく
+
+      circleArray.push(new Circle(x, y, speedX, speedY, radius));
+    }
+
+    animate();
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work6.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/coding/data/work6.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 6,
+  ttl: "<span>H</span>TML5のCanvasを<br class='u-sp'>独学で勉強してみた⑤<br class='u-sp'><br>【重力加減速アニメーション】",
+  txt: "HTML5のCanvasを<br>独学で勉強してみた⑤<br>【重力加減速アニメーション】",
+  alt: "HTML5のCanvasを独学で勉強してみた⑤【重力加減速アニメーション】",
+  p1: "<br class='u-sp'>アニメーション処理の流れ",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>今回は、クリックするたびにボールが弾むようなアニメーションをさせていきます。前回の内容を一部引き継いでいるので、<a href='./page5.html' target='_blank'>独学で勉強してみた④</a>のページから見ることをオススメします。<br>アニメーション処理の流れは下記です。<br><br>①<strong>ボールが弾む&徐々に弾みが少なくなる条件分岐</strong><br>(JavaScriptの65行目～70行目)<br><br>②<strong>ボールを弾ませる関数の定義</strong><br>(JavaScriptの53～56行目)<br><br>③<strong>クリックするたびにボールを弾ませるイベント処理</strong><br>(JavaScriptの124～129行目)",
+  p1_list2: "",
+  p2: "重力アニメーションの定義",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>今回のアニメーションで肝となるのが、どのようにして重力があるかのようにボールを弾ませるか。この重力アニメーションを定義しているのが、JavaScriptの65～70行目です。ここでの処理は3つ。<br><br>①<strong>キャンバスの底辺でボールの移動方向を反転</strong><br><br>②<strong>底辺に当たったとき、摩擦としてfrictionの値を乗算</strong><br><br>③<strong>ボールが弾んでいるとき、重力を弾むボールのスピードに加算</strong>",
+  p2_list2: "<span data='dot'>&#9642;</span>③の「重力を弾むボールのスピードに加算」がイメージしづらいかもしれません。ボールのy軸の移動は、39行目のthis.vYの値によるものです(vYのvはvelocityのv)。なので<br><br><strong>負の値→0→正の値→底辺で正負を反転→0→正の値→底辺で正負を反転</strong><br><br>というようにthis.vYの値を調整すると、ボールはy軸上で上下に移動します。値が負のときは上に移動、0で下に折り返し、値が正のときは底辺に向かって移動。底辺で正負が反転し負の値になるので、再び上に移動。これを繰り返すイメージです。ちなみに重力は28行目、gravityで定義しています。",
+  p3: "クリックでボールを弾ませるイベント処理",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>this.vYの値はいずれ0になります。0になるとボールは弾まなくなります。なので再び弾ませたい場合は、this.vYの値を更新させてあげましょう。",
+  p3_list2: "<span data='dot'>&#9642;</span>この処理を定義しているのが、JavaScriptの53～56行目。this.firstVYは、ボールの初期this.vYの値です。37行目で変数化されています。この値をクリックのたびにthis.vYに代入することで、ボールは弾力を取り戻します。",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    //関数オブジェクトを設定
+    var Ball = function Ball(radius, x, y, vX, vY, color) {
+      var _this = this;
+
+      this.radius = radius;
+      this.x = x;
+      this.y = y;
+      this.firstY = this.y;
+      this.vX = vX;
+      this.vY = vY; // ボール運動を調整(クリックしたとき、この値をthis.vYに代入(125行目))
+
+      this.firstVY = this.vY * 2; // colorArrayに格納された色をランダムに割り振る
+
+      this.color = color; // ボールを描画する処理
+
+      this.draw = function () {
+        c.beginPath();
+        c.arc(_this.x, _this.y, _this.radius, 0, Math.PI * 2, false);
+        c.fillStyle = _this.color;
+        c.fill();
+      }; // 弾力をリセットする
+
+
+      this.reset = function () {
+        _this.vY = _this.firstVY;
+      }; // ボールのアニメーションの内容を定義する処理
+
+
+      this.update = function () {
+        // 座標の値を変えていく
+        _this.x += _this.vX;
+        _this.y += _this.vY; // 重力アニメーションを定義
+
+        if (_this.y + _this.radius + _this.vY > canvas.height) {
+          _this.vY = -_this.vY * val.friction;
+        } else {
+          _this.vY += val.gravity;
+        } // x軸の端まできたら折り返す
+
+
+        if (_this.x + _this.radius > canvas.width || _this.x - _this.radius < 0) {
+          _this.vX = -_this.vX;
+        } // ボールを描画する
+
+
+        _this.draw();
+      };
+    }; // 配列を作っておく
+    // ボールを描画&アニメーションさせる関数
+
+
+    var animate = function animate() {
+      // animate関数をループさせる関数
+      requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
+
+      c.clearRect(0, 0, canvas.width, canvas.height); //ballArrayの数だけボールを描画する
+
+      for (var _i = 0; _i < ballArray.length; _i++) {
+        ballArray[_i].update();
+      }
+    }; // animate関数を実行する
+    // canvasの幅と高さを親要素のサイズに合わせる
+
+
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与する
+
+    var c = canvas.getContext('2d'); // ボールの描画&アニメーションに必要な値をオブジェクト化しておく
+
+    var val = {
+      quantity: 50,
+      maxRadius: 20,
+      colorArray: ['#248EA6', '#84BFA4', '#F2E74B', '#F2D49B', '#D94141'],
+      gravity: 1,
+      friction: .8
+    };
+    var ballArray = [];
+
+    for (var i = 0; i < val.quantity; i++) {
+      // ボールの値をランダムで決める
+      // ボールの半径
+      var radius = Math.random() * val.maxRadius; // ボールの初期x座標
+
+      var x = Math.random() * (canvas.width - radius * 2) + radius; // ボールの初期y座標(キャンバスの下半分のy座標にあるように制限)
+
+      var y = Math.random() * (canvas.height / 2 - radius * 2) + radius; // ボールのx軸でのスピード(正負の値を出力)
+
+      var vX = (Math.random() - 0.5) * 2; // ボールのy軸でのスピード(負の値のみ出力&10以上の値になるようにする)
+
+      var vY = Math.random() * 10 + 10; // ボールの色をランダムに決める
+
+      var color = val.colorArray[Math.floor(Math.random() * val.colorArray.length)]; //ランダムで決められた値を配列にいれていく
+
+      ballArray.push(new Ball(radius, x, y, vX, vY, color));
+    }
+
+    animate(); // クリックしたときにボールが弾む処理
+
+    canvas.addEventListener("click", function (event) {
+      for (var _i2 = 0; _i2 < ballArray.length; _i2++) {
+        ballArray[_i2].reset();
+      }
+    });
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work7.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/coding/data/work7.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 7,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "3作品目の情報が入ります。",
+  alt: "3作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    //関数オブジェクトを設定
+    var Circle = function Circle(x, y, speedX, speedY, radius) {
+      var _this = this;
+
+      this.x = x;
+      this.y = y;
+      this.speedX = speedX;
+      this.speedY = speedY;
+      this.radius = radius; // 円の初期サイズ
+
+      this.firstRadius = radius; // colorArrayに格納された色をランダムに割り振る
+
+      this.color = colorArray[Math.floor(Math.random() * colorArray.length)]; // 円を描画する処理
+
+      this.draw = function () {
+        c.beginPath();
+        c.arc(_this.x, _this.y, _this.radius, 0, Math.PI * 2, false);
+        c.fillStyle = _this.color;
+        c.fill();
+      }; // 座標をズラしながら円を描画していく処理
+
+
+      this.update = function () {
+        // 範囲の端にきたら折り返す処理
+        if (_this.x + _this.radius > canvas.width || _this.x - _this.radius < 0) {
+          _this.speedX = -_this.speedX;
+        } else if (_this.y + _this.radius > canvas.height || _this.y - _this.radius < 0) {
+          _this.speedY = -_this.speedY;
+        } // 座標の値を変えていく
+
+
+        _this.x += _this.speedX;
+        _this.y += _this.speedY; // 円を描画する
+
+        _this.draw();
+      };
+    }; // 円の値を格納する配列
+    // 円を描画&アニメーションさせる関数
+
+
+    var animate = function animate() {
+      // animate関数をループさせる関数
+      requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
+
+      c.clearRect(0, 0, canvas.width, canvas.height); //円をcircleArrayの数だけ描画する
+
+      for (var _i = 0; _i < circleArray.length; _i++) {
+        circleArray[_i].update();
+      }
+    }; // animate関数を実行する
+    // canvasの幅と高さを親要素のサイズに合わせる
+
+
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d'); // canvasのサイズを取得
+
+    var canvasSize = canvas.getBoundingClientRect(); // 画面左端からcanvasまでの距離を取得
+
+    var canvasLeft = canvasSize.left; // 画面上端からcanvasまでの距離を取得
+
+    var canvasTop = canvasSize.top; // canvas上でのカーソル位置の値を格納するための変数
+
+    var mouse = {
+      x: undefined,
+      y: undefined
+    }; // カーソル移動があるたびにカーソル位置の値を格納する
+
+    window.addEventListener("mousemove", function (event) {
+      mouse.x = event.pageX - canvasLeft;
+      mouse.y = event.pageY - canvasTop;
+    });
+    canvas.addEventListener("touchmove", function (event) {
+      // タッチの情報を含むオブジェクト
+      var touchObject = event.changedTouches[0]; // 位置座標を取得する
+
+      mouse.x = touchObject.pageX - canvasLeft;
+      mouse.y = touchObject.pageY - canvasTop; // タッチによる画面スクロールを止める
+
+      event.preventDefault();
+    }); //  円の配色
+
+    var colorArray = ['#092140', '#049DD9', '#F2B705', '#F29F05', '#F26835']; // 描画する円の個数
+
+    var quantity = 300;
+    var circleArray = []; // 円の値を円の個数分出力し、それぞれの円の値を配列に格納する
+
+    for (var i = 0; i < quantity; i++) {
+      // 円の半径
+      var radius = Math.random() * 10 + 1; // 円の初期x座標
+
+      var x = Math.random() * (canvas.width - radius * 2) + radius; // 円の初期y座標
+
+      var y = Math.random() * (canvas.height - radius * 2) + radius; // 円のx軸でのスピード
+
+      var speedX = (Math.random() - 0.5) * 4; // 円のy軸でのスピード
+
+      var speedY = (Math.random() - 0.5) * 4; //ランダムで決められた値を配列に格納していく
+
+      circleArray.push(new Circle(x, y, speedX, speedY, radius));
+    }
+
+    animate();
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work8.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/coding/data/work8.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 3,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "3作品目の情報が入ります。",
+  alt: "3作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work9.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/coding/data/work9.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 3,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "3作品目の情報が入ります。",
+  alt: "3作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {}
 
 /***/ }),
 

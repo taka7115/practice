@@ -21,6 +21,22 @@
     }
   }
 
+  &-pcin {
+    display: inline;
+
+    @include sp {
+      display: none;
+    }
+  }
+
+  &-spin {
+    display: none;
+
+    @include sp {
+      display: inline;
+    }
+  }
+
   &-pc {
     display: block !important;
 

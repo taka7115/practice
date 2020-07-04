@@ -53,14 +53,18 @@
       <div class="slide__cont" v-show="slide2">
         <pre class="line-numbers">
       <code class="language-css" data-language="css">
-        <slot name="css"></slot>
-      </code> </pre>
+        <slot name="css" v-if="csspcShow"></slot>
+        <slot name="csssp" v-if="cssspShow"></slot>
+      </code>
+      </pre>
       </div>
       <div class="slide__cont" v-show="slide3">
         <pre class="line-numbers">
       <code class="language-javascript" data-language="javascript">
-        <slot name="javascript"></slot>
-      </code> </pre>
+        <slot name="js" v-if="jspcShow"></slot>
+        <slot name="jssp" v-if="jsspShow"></slot>
+      </code>
+      </pre>
       </div>
     </div>
   </section>
@@ -69,34 +73,60 @@
 
 
 <script>
+import work10 from "../../../data/work10.js";
+import work9 from "../../../data/work9.js";
+import work8 from "../../../data/work8.js";
+import work7 from "../../../data/work7.js";
+import work6 from "../../../data/work6.js";
+import work5 from "../../../data/work5.js";
+import work4 from "../../../data/work4.js";
+import work3 from "../../../data/work3.js";
+import work2 from "../../../data/work2.js";
 import work1 from "../../../data/work1.js";
 export default {
   props: {
     name: {
       type: String,
       default: ""
+    },
+    tab: {
+      type: String,
+      default: ""
+    },
+    csssp: {
+      type: Boolean,
+      default: ""
+    },
+    jssp: {
+      type: Boolean,
+      default: ""
     }
   },
   data: function() {
     return {
       arrays: {
+        work10,
+        work9,
+        work8,
+        work7,
+        work6,
+        work5,
+        work4,
+        work3,
+        work2,
         work1
       },
-      slide1: true,
-      slide2: false,
-      slide3: false,
-      isActive1: true,
-      isActive2: false,
-      isActive3: false
+      csspcShow: true,
+      cssspShow: false,
+      jspcShow: true,
+      jsspShow: false,
+      slide1: this.tab == 1,
+      slide2: this.tab == 2,
+      slide3: this.tab == 3,
+      isActive1: this.tab == 1,
+      isActive2: this.tab == 2,
+      isActive3: this.tab == 3
     };
-  },
-  new_array_tags() {
-    //nameがマッチする配列を取得
-    const array_a = this.arrays[this.name].map(value => {
-      return value;
-    });
-
-    return array_a;
   },
   methods: {
     slideActivate1: function() {
@@ -122,6 +152,16 @@ export default {
       this.isActive1 = false;
       this.isActive2 = false;
       this.isActive3 = true;
+    }
+  },
+  mounted() {
+    if (window.innerWidth < 750) {
+      if (this.jssp) {
+        (this.jsspShow = true), (this.jspcShow = false);
+      }
+      if (this.csssp) {
+        (this.cssspShow = true), (this.csspcShow = false);
+      }
     }
   }
 };

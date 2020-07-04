@@ -163,7 +163,8 @@ body {
   width: 100%;
   height: 100%;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.6
+  line-height: 1.6;
+  letter-spacing: .07em
 }
 a {
   text-decoration: none;
@@ -3506,6 +3507,22 @@ screen and (min-width:750px) and (max-width:1200px) {
     display: inline-block
   }
 }
+.u-pcin {
+  display: inline
+}
+@media screen and (max-width:750px) {
+  .u-pcin {
+    display: none
+  }
+}
+.u-spin {
+  display: none
+}
+@media screen and (max-width:750px) {
+  .u-spin {
+    display: inline
+  }
+}
 .u-pc {
   display: block!important
 }
@@ -3527,22 +3544,53 @@ screen and (min-width:750px) and (max-width:1200px) {
   padding: 100px 0 10px;
   background-color: #433a44
 }
+@media screen and (max-width:750px) {
+  .footer {
+    padding: 13.33333vw 0 10px
+  }
+}
 .f-nav {
   display: table;
   margin: 0 auto 100px
 }
+@media screen and (max-width:750px) {
+  .f-nav {
+    margin: 0 auto 13.33333vw
+  }
+}
 .f-ul {
   width: 300px;
   display: table-cell;
-  vertical-align: top;
-  border-left: 1px solid #fff
+  vertical-align: top
 }
-.f-ul:first-child {
-  border-left: none
+@media print,
+screen and (min-width:751px) {
+  .f-ul {
+    border-right: 1px solid #fff
+  }
+}
+@media screen and (max-width:750px) {
+  .f-ul {
+    display: block;
+    border-bottom: none
+  }
+}
+.f-ul:last-child {
+  border-right: none
+}
+@media screen and (max-width:750px) {
+  .f-ul:last-child {
+    border-bottom: none
+  }
 }
 .f-li {
   text-align: center;
-  margin-bottom: 10px
+  padding: 5px 0
+}
+@media screen and (max-width:750px) {
+  .f-li:last-child {
+    margin-bottom: 8vw
+  }
 }
 .f-li a {
   color: #c1c1c1
@@ -3554,6 +3602,11 @@ screen and (min-width:750px) and (max-width:1200px) {
   font-size: 16px;
   color: #fff;
   margin-bottom: 20px
+}
+@media screen and (max-width:750px) {
+  .f-li--ttl {
+    margin-bottom: 2.66667vw
+  }
 }
 .f-li--left {
   text-align: left
@@ -4112,11 +4165,11 @@ screen and (min-width:750px) and (max-width:1200px) {
   }
 }
 .c-worksWrap:hover img {
-  opacity: .3
+  opacity: .2
 }
 @media screen and (max-width:750px) {
   .c-worksWrap:active img {
-    opacity: .3
+    opacity: .2
   }
 }
 .c-worksWrap:hover p {

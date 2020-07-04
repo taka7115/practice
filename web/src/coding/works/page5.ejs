@@ -1,0 +1,361 @@
+<% var meta = {
+    pageTitle:'',
+    description:'foo',
+    keywords:'foo',
+    url:'http://www.example.com/'
+  };
+  var page={
+      root:filePath.dir
+  };
+%>
+<% var imgpath = '/assets/img/coding/page/' %>
+<%- include(page.root + 'common/meta/coding/_page', {param:'param'}); %>
+<div id="c-page">
+  <main class="c-page">
+
+
+    <page name="work5" tab="3" portrait jssp>
+
+
+      <template slot="mainCont">
+        <div class="canvas-parent" id="canvasParent">
+          <canvas id="canvas"></canvas>
+        </div>
+      </template>
+
+
+
+      <template slot="html">
+        &lt;div class="canvas-parent" id="canvasParent"&gt;
+        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
+      </template>
+
+
+      <template slot="css">
+        .canvas-parent {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        }
+      </template>
+
+
+      <template slot="js">
+        //親要素とcanvas要素を取得
+        let canvasParent = document.getElementById("canvasParent");
+        let canvas = document.getElementById("canvas");
+
+        // Canvas利用不可の環境では実行しないようにif文で囲む
+        if (canvas.getContext) {
+
+        // canvasの幅と高さを親要素のサイズに合わせる
+        canvas.width = canvasParent.clientWidth;
+        canvas.height = canvasParent.clientHeight;
+
+        // Canvasに描画機能を付与
+        let c = canvas.getContext('2d');
+
+        // canvasのサイズを取得
+        var canvasSize = canvas.getBoundingClientRect();
+        // 画面左端からcanvasまでの距離を取得
+        var canvasLeft = canvasSize.left;
+        // 画面上端からcanvasまでの距離を取得
+        var canvasTop = canvasSize.top;
+
+        // canvas上でのカーソル位置の値を格納するための変数
+        var mouse = {
+        x: undefined,
+        y: undefined
+        }
+
+        // カーソル移動があるたびにカーソル位置の値を格納する
+        window.addEventListener("mousemove", (event) =&gt; {
+        mouse.x = event.pageX - canvasLeft;
+        mouse.y = event.pageY - canvasTop;
+        });
+
+        // 円の最大半径
+        var maxRadius = 40;
+
+        // 円の配色
+        var colorArray = [
+        '#092140',
+        '#049DD9',
+        '#F2B705',
+        '#F29F05',
+        '#F26835',
+        ];
+
+        // 描画する円の個数
+        var quantity = 300;
+
+        //関数オブジェクトを設定
+        function Circle(x, y, speedX, speedY, radius) {
+        this.x = x;
+        this.y = y;
+        this.speedX = speedX;
+        this.speedY = speedY;
+        this.radius = radius;
+        // 円の初期サイズ
+        this.firstRadius = radius;
+        // colorArrayに格納された色をランダムに割り振る
+        this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+
+        // 円を描画する処理
+        this.draw = () =&gt; {
+        c.beginPath();
+        c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        c.fillStyle = this.color
+        c.fill();
+        }
+
+        // 座標をズラしながら円を描画していく処理
+        this.update = () =&gt; {
+
+        // 範囲の端にきたら折り返す処理
+        if (this.x + this.radius &gt; canvas.width || this.x - this.radius &lt; 0) {
+        this.speedX = -this.speedX;
+        } else if (this.y + this.radius &gt; canvas.height || this.y - this.radius &lt; 0) {
+        this.speedY = -this.speedY;
+        }
+
+        // 座標の値を変えていく
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        //円から100px以内にカーソルがあるとき、円は最大40pxまで大きくなる
+        //円から100px以内にカーソルがないとき、円は初期描画サイズまで小さくなる
+        var range = 100;
+        if (mouse.x - this.x &lt; range && mouse.x - this.x &gt; -range
+        　　&& mouse.y - this.y &lt; range && mouse.y - this.y &gt; -range) {
+        if (this.radius &lt; maxRadius) {
+        this.radius += 1;
+        }
+        } else if (this.radius &gt; this.firstRadius) {
+        this.radius -= 1;
+        }
+
+
+        // 円を描画する
+        this.draw();
+        }
+
+        }
+
+        // 円の値を格納する配列
+        var circleArray = []
+
+        // 円の値を円の個数分出力し、それぞれの円の値を配列に格納する
+        for (let i = 0; i &lt; quantity; i++) {
+        // 円の半径
+        var radius = Math.random() * 10 + 1;
+        // 円の初期x座標
+        var x = Math.random() * (canvas.width - radius * 2) + radius;
+        // 円の初期y座標
+        var y = Math.random() * (canvas.height - radius * 2) + radius;
+        // 円のx軸でのスピード
+        var speedX = (Math.random() - 0.5) * 4;
+        // 円のy軸でのスピード
+        var speedY = (Math.random() - 0.5) * 4;
+
+        //ランダムで決められた値を配列に格納していく
+        circleArray.push(new Circle(x, y, speedX, speedY, radius));
+        }
+
+        // 円を描画&アニメーションさせる関数
+        function animate() {
+
+        // animate関数をループさせる関数
+        requestAnimationFrame(animate);
+
+        // 指定した範囲の描画内容をリセットする
+        c.clearRect(0, 0, canvas.width, canvas.height);
+
+        //円をcircleArrayの数だけ描画する
+        for (let i = 0; i &lt; circleArray.length; i++) {
+        circleArray[i].update();
+        }
+
+        }
+
+        // animate関数を実行する
+        animate();
+
+        }
+      </template>
+
+
+      <template slot="jssp">
+        //親要素とcanvas要素を取得
+        let canvasParent = document.getElementById("canvasParent");
+        let canvas = document.getElementById("canvas");
+
+        // Canvas利用不可の環境では実行しないようにif文で囲む
+        if (canvas.getContext) {
+
+        // canvasの幅と高さを親要素のサイズに合わせる
+        canvas.width = canvasParent.clientWidth;
+        canvas.height = canvasParent.clientHeight;
+
+        // Canvasに描画機能を付与
+        let c = canvas.getContext('2d');
+
+        // canvasのサイズを取得
+        var canvasSize = canvas.getBoundingClientRect();
+        // 画面左端からcanvasまでの距離を取得
+        var canvasLeft = canvasSize.left;
+        // 画面上端からcanvasまでの距離を取得
+        var canvasTop = canvasSize.top;
+
+        // canvas上でのタッチ位置の値を格納するための変数
+        var touch = {
+        x: undefined,
+        y: undefined
+        }
+
+        // キャンバス上でタッチ移動があるたびにタッチ位置の値を格納する
+        canvas.addEventListener("touchmove", (event) =&gt; {
+        // タッチの情報を含むオブジェクト
+        var touchObject = event.changedTouches[0];
+        // 位置座標を取得する
+        mouse.x = touchObject.pageX - canvasLeft;
+        mouse.y = touchObject.pageY - canvasTop;
+        // タッチによる画面スクロールを止める
+        event.preventDefault();
+        });
+
+        // 円の最大半径
+        var maxRadius = 40;
+
+        // 円の配色
+        var colorArray = [
+        '#092140',
+        '#049DD9',
+        '#F2B705',
+        '#F29F05',
+        '#F26835',
+        ];
+
+        // 描画する円の個数
+        var quantity = 300;
+
+        //関数オブジェクトを設定
+        function Circle(x, y, speedX, speedY, radius) {
+        this.x = x;
+        this.y = y;
+        this.speedX = speedX;
+        this.speedY = speedY;
+        this.radius = radius;
+        // 円の初期サイズ
+        this.firstRadius = radius;
+        // colorArrayに格納された色をランダムに割り振る
+        this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+
+        // 円を描画する処理
+        this.draw = () =&gt; {
+        c.beginPath();
+        c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        c.fillStyle = this.color
+        c.fill();
+        }
+
+        // 座標をズラしながら円を描画していく処理
+        this.update = () =&gt; {
+
+        // 範囲の端にきたら折り返す処理
+        if (this.x + this.radius &gt; canvas.width || this.x - this.radius &lt; 0) {
+        this.speedX = -this.speedX;
+        } else if (this.y + this.radius &gt; canvas.height || this.y - this.radius &lt; 0) {
+        this.speedY = -this.speedY;
+        }
+
+        // 座標の値を変えていく
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        //円から50px以内にカーソルがあるとき、円は最大40pxまで大きくなる
+        //円から50px以内にカーソルがないとき、円は初期描画サイズまで小さくなる
+        var range = 50;
+        if (touch.x - this.x &lt; range && touch.x - this.x &gt; -range
+        　　&& touch.y - this.y &lt; range && touch.y - this.y &gt; -range) {
+        if (this.radius &lt; maxRadius) {
+        this.radius += 1;
+        }
+        } else if (this.radius &gt; this.firstRadius) {
+        this.radius -= 1;
+        }
+
+        // 円を描画する
+        this.draw();
+        }
+
+        }
+
+        // 円の値を格納する配列
+        var circleArray = []
+
+        // 円の値を円の個数分出力し、それぞれの円の値を配列に格納する
+        for (let i = 0; i &lt; quantity; i++) {
+        // 円の半径
+        var radius = Math.random() * 10 + 1;
+        // 円の初期x座標
+        var x = Math.random() * (canvas.width - radius * 2) + radius;
+        // 円の初期y座標
+        var y = Math.random() * (canvas.height - radius * 2) + radius;
+        // 円のx軸でのスピード
+        var speedX = (Math.random() - 0.5) * 4;
+        // 円のy軸でのスピード
+        var speedY = (Math.random() - 0.5) * 4;
+
+        //ランダムで決められた値を配列に格納していく
+        circleArray.push(new Circle(x, y, speedX, speedY, radius));
+        }
+
+        // 円を描画&アニメーションさせる関数
+        function animate() {
+
+        // animate関数をループさせる関数
+        requestAnimationFrame(animate);
+
+        // 指定した範囲の描画内容をリセットする
+        c.clearRect(0, 0, canvas.width, canvas.height);
+
+        //円をcircleArrayの数だけ描画する
+        for (let i = 0; i &lt; circleArray.length; i++) {
+        circleArray[i].update();
+        }
+
+        }
+
+        // animate関数を実行する
+        animate();
+
+        }
+      </template>
+    </page>
+  </main>
+</div>
+
+<%- include(page.root + 'common/_footer', {param:'param'}); %>
+
+<!-- css manipulation ----------------------------------------- -->
+<style type="text/css">
+  .canvas-parent {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+</style>
+
+<!-- call the common javascript ------------------------------------ -->
+<script type="text/javascript" src="<%-conf.path.js%>coding/c-page.js"></script>
+
+
+
+<!------------------------------------------- javascript manipulatio -->
+
+</body>
+
+</html>

@@ -46,7 +46,33 @@ body {
         @include vw(42);
       }
 
+      & a {
+        color: #fff;
+
+        &:first-child {
+          @include pc {
+            display: inline-block;
+            opacity: 1;
+          }
+
+          @include sp {
+            display: none;
+          }
+        }
+
+        &:nth-child(2) {
+          @include pc {
+            display: none;
+          }
+
+          @include sp {
+            display: inline-block;
+          }
+        }
+      }
+
       & span {
+        display: inline-block;
         position: relative;
         font-size: 34px;
         text-align: center;
@@ -64,13 +90,13 @@ body {
           box-shadow: 0 0 14px #00a2ff;
           position: absolute;
           left: -30px;
-          top: -10px;
-          transform: rotate(-54deg);
+          top: -16px;
+          transform: rotate(-48deg);
 
           @include sp {
             width: 24/750*100vw;
             height: 24/750*100vw;
-            left: -30/750*100vw;
+            left: -34/750*100vw;
             top: -14/750*100vw;
             transform: rotate(-48deg);
           }
@@ -83,9 +109,9 @@ body {
           background-image: url(/assets/img/coding/page/box2.svg);
           box-shadow: 0 0 14px #0375cc;
           position: absolute;
-          left: 0px;
-          top: -22px;
-          transform: rotate(-17deg);
+          left: 2px;
+          top: -26px;
+          transform: rotate(-15deg);
 
           @include sp {
             width: 18/750*100vw;
@@ -123,6 +149,13 @@ body {
       height: 450/750*100vw;
       border: #00C2FF solid 3px;
       margin-bottom: 200/750*100vw;
+    }
+  }
+
+  .portrait {
+    @include sp {
+      width: 720/750*100vw;
+      height: 800/750*100vw;
     }
   }
 
@@ -182,10 +215,10 @@ body {
     margin-bottom: 200px;
 
     @include sp {
-      margin-bottom: 200/750*100vw
+      margin-bottom: 400/750*100vw
     }
 
-    &-wrap {
+    &__wrap {
       width: 1000px;
       margin: 0 auto;
 
@@ -195,7 +228,7 @@ body {
       }
 
       @include sp {
-        width: 680/750*100vw;
+        width: 700/750*100vw;
       }
 
       &:nth-child(odd) {
@@ -215,7 +248,7 @@ body {
       }
     }
 
-    &-cont {
+    &__cont {
       width: 800px;
       padding: 100px 80px;
       background-color: #F7F8FC;
@@ -226,14 +259,27 @@ body {
         padding: 60/750*100vw 40/750*100vw;
         border: #00F6FF solid 2px;
       }
+    }
 
 
+    &__ttl {
+      position: relative;
+    }
 
-      &__ttl {
-        position: relative;
+    &__h2 {
+      width: 100%;
+      position: relative;
+      font-size: 24px;
+      margin-bottom: 80px;
+      color: rgb(70, 70, 70);
+
+      @include sp {
+        @include vw(36);
+        margin-bottom: 80/750*100vw;
+
       }
 
-      &__h2 {
+      & span {
         width: 100%;
         position: relative;
         font-size: 24px;
@@ -245,20 +291,25 @@ body {
           margin-bottom: 80/750*100vw;
 
         }
+
       }
+    }
 
-      &__list {
+    &__list {
+      text-indent: -1em;
+      padding-left: 1em;
+      text-align: justify;
 
-        &:not(:last-child) {
-          margin-bottom: 50px;
+      &:not(:last-child) {
+        margin-bottom: 50px;
 
-          @include sp {
-            margin-bottom: 60/750*100vw;
-          }
+        @include sp {
+          margin-bottom: 60/750*100vw;
         }
       }
     }
   }
+
 
   .nz {
     // position: absolute;
@@ -363,8 +414,20 @@ body {
         }
       }
 
-      & li span {
+      & li span[data=dot] {
         color: #FF6D00;
+      }
+
+      & li a {
+        color: #186cc2;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:visited {
+          color: #6e0672;
+        }
       }
 
     }
@@ -400,8 +463,20 @@ body {
         }
       }
 
-      & li span {
+      & li span[data=dot] {
         color: #039BE5;
+      }
+
+      & li a {
+        color: #186cc2;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:visited {
+          color: #6e0672;
+        }
       }
 
     }
@@ -436,14 +511,22 @@ body {
         }
       }
 
-      & li span {
+      & li span[data=dot] {
         color: #E7A42B;
       }
 
+      & li a {
+        color: #186cc2;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &:visited {
+          color: #6e0672;
+        }
+      }
+
     }
-
-
-
-
   }
 }
