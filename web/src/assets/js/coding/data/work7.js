@@ -1,3 +1,7 @@
+import {
+  unique
+} from "jquery";
+
 export default {
   id: 7,
   ttl: "<span></span><br class='u-sp'>",
@@ -24,6 +28,7 @@ export default {
  */
 
 function func() {
+
   //親要素とcanvas要素を取得
   let canvasParent = document.getElementById("canvasParent");
   let canvas = document.getElementById("canvas");
@@ -38,108 +43,193 @@ function func() {
     // Canvasに描画機能を付与
     let c = canvas.getContext('2d');
 
-    // canvasのサイズを取得
-    var canvasSize = canvas.getBoundingClientRect();
-    // 画面左端からcanvasまでの距離を取得
-    var canvasLeft = canvasSize.left;
-    // 画面上端からcanvasまでの距離を取得
-    var canvasTop = canvasSize.top;
+    // ------------------------------------------------------------------
 
-    // canvas上でのカーソル位置の値を格納するための変数
-    var mouse = {
-      x: undefined,
-      y: undefined
+    // 円の描画&アニメーションに必要な値をオブジェクト化しておく
+    let val = {
+      quantity: 100,
+      radius: 20,
+      colorArray: [
+        ["#F27EBE", "#fff5fa"],
+        ["#3DF2BF", "#e6fff8"],
+        ["#05AFF2", "#def6ff"],
+        ["#F2E085", "#fffae0"],
+        ["#F24822", "#ffd1c7"],
+      ],
+      velocityRange: 5,
+      strokeWidth: 2
     }
 
-    // カーソル移動があるたびにカーソル位置の値を格納する
-    window.addEventListener("mousemove", (event) => {
-      mouse.x = event.pageX - canvasLeft;
-      mouse.y = event.pageY - canvasTop;
-    })
+    // ------------------------------------------------------------------
 
-    canvas.addEventListener("touchmove", (event) => {
-      // タッチの情報を含むオブジェクト
-      var touchObject = event.changedTouches[0];
-      // 位置座標を取得する
-      mouse.x = touchObject.pageX - canvasLeft;
-      mouse.y = touchObject.pageY - canvasTop;
-      // タッチによる画面スクロールを止める
-      event.preventDefault();
-    })
+    // ユーティリティー関数
+
+    //円のスピードの反転
+    function rotate(velocity, angle) {
+      const rotatedVelocities = {
+        x: velocity.x * Math.cos(angle) - velocity.y * Math.sin(angle),
+        y: velocity.x * Math.sin(angle) + velocity.y * Math.cos(angle)
+      }
+      return rotatedVelocities;
+    }
+
+    //円の反射
+    function resolveCollision(particle, otherParticle) {
+      const xVelocityDiff = particle.velocity.x - otherParticle.velocity.x;
+      const yVelocityDiff = particle.velocity.y - otherParticle.velocity.y;
+
+      const xDist = otherParticle.x - particle.x;
+      const yDist = otherParticle.y - particle.y;
+
+      // Prevent accidental overlap of particles
+      if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
+
+        //Grab angle between the Two colliding particles
+        const angle = -Math.atan2(otherParticle.y - particle.y, otherParticle.x - particle.x)
+
+        //Store mass invar for better readability in collision equation
+        const m1 = particle.mass;
+        const m2 = otherParticle.mass;
+
+        //Velocity before equation
+        const u1 = rotate(particle.velocity, angle);
+        const u2 = rotate(otherParticle.velocity, angle);
 
 
-    //  円の配色
-    var colorArray = [
-      '#092140',
-      '#049DD9',
-      '#F2B705',
-      '#F29F05',
-      '#F26835',
-    ];
+        //Velocity after 1d collision equation
+        const v1 = {
+          x: u1.x * (m1 - m2) / (m1 + m2) + u2.x * 2 * m2 / (m1 + m2),
+          y: u1.y
+        };
+        const v2 = {
+          x: u2.x * (m1 - m2) / (m1 + m2) + u1.x * 2 * m2 / (m1 + m2),
+          y: u2.y
+        };
 
-    // 描画する円の個数
-    var quantity = 300;
+
+        //Final velocity after rotating axis back to original location
+        const vFinal1 = rotate(v1, -angle);
+        const vFinal2 = rotate(v2, -angle);
+
+        //Swap particle velocities for realistic bounce effect
+        particle.velocity.x = vFinal1.x;
+        particle.velocity.y = vFinal1.y;
+
+        otherParticle.velocity.x = vFinal2.x;
+        otherParticle.velocity.y = vFinal2.y;
+      }
+    }
+
+    // 円の描画座標出力
+    function randomIntFromRange(area, radius) {
+      return Math.floor(Math.random() * (area - radius + 1) + radius);
+    }
+
+    // 円と円の距離を測る
+    function distance(x1, y1, x2, y2) {
+      const xDist = x2 - x1;
+      const yDist = y2 - y1;
+      return Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2));
+    }
+
+    // ------------------------------------------------------------------
 
     //関数オブジェクトを設定
-    function Circle(x, y, speedX, speedY, radius) {
+    function Particle(x, y, radius) {
       this.x = x;
       this.y = y;
-      this.speedX = speedX;
-      this.speedY = speedY;
+      this.velocity = {
+        x: (Math.random() - 0.5) * val.velocityRange,
+        y: (Math.random() - 0.5) * val.velocityRange
+      }
       this.radius = radius;
-      // 円の初期サイズ
-      this.firstRadius = radius;
+      this.mass = 1;
       // colorArrayに格納された色をランダムに割り振る
-      this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+      this.color = val.colorArray[Math.floor(Math.random() * val.colorArray.length)];
+      this.stroke = this.color[0];
+      this.fill = this.color[1];
 
       // 円を描画する処理
       this.draw = () => {
         c.beginPath();
         c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-        c.fillStyle = this.color
+        c.fillStyle = this.fill;
         c.fill();
+        c.lineWidth = val.strokeWidth;
+        c.strokeStyle = this.stroke;
+        c.stroke();
       }
 
       // 座標をズラしながら円を描画していく処理
-      this.update = () => {
-
-        // 範囲の端にきたら折り返す処理
-        if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
-          this.speedX = -this.speedX;
-        } else if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
-          this.speedY = -this.speedY;
-        }
-
-        // 座標の値を変えていく
-        this.x += this.speedX;
-        this.y += this.speedY;
-
+      this.update = particles => {
 
         // 円を描画する
         this.draw();
+
+        //円と円がぶつかったら円を反転させる
+        for (let i = 0; i < particles.length; i++) {
+          if (this === particles[i]) continue;
+          if (distance(this.x, this.y, particles[i].x, particles[i].y) - this.radius * 2 < 0) {
+            resolveCollision(this, particles[i]);
+          }
+        }
+
+        // 範囲の端にきたら折り返す処理
+        if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
+          this.velocity.x = -this.velocity.x;
+        } else if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
+          this.velocity.y = -this.velocity.y;
+        }
+
+        // 座標の値を変えていく
+        this.x += this.velocity.x;
+        this.y += this.velocity.y;
+
       }
 
     }
 
-    // 円の値を格納する配列
-    var circleArray = []
+    // ------------------------------------------------------------------
 
-    // 円の値を円の個数分出力し、それぞれの円の値を配列に格納する
-    for (let i = 0; i < quantity; i++) {
-      // 円の半径
-      var radius = Math.random() * 10 + 1;
-      // 円の初期x座標
-      var x = Math.random() * (canvas.width - radius * 2) + radius;
-      // 円の初期y座標
-      var y = Math.random() * (canvas.height - radius * 2) + radius;
-      // 円のx軸でのスピード
-      var speedX = (Math.random() - 0.5) * 4;
-      // 円のy軸でのスピード
-      var speedY = (Math.random() - 0.5) * 4;
+    // 変数をグローバルに置いておく
+    let particles;
 
-      //ランダムで決められた値を配列に格納していく
-      circleArray.push(new Circle(x, y, speedX, speedY, radius));
+    // 円それぞれの値を配列に格納する関数
+    function init() {
+
+      // 格納する配列
+      particles = []
+
+      // 円の値を円の個数分出力し、それぞれの円の値を配列に格納する
+      for (let i = 0; i < val.quantity; i++) {
+        // 円の半径
+        const radius = val.radius;
+        // 円の初期x座標
+        let x = randomIntFromRange(canvas.width, radius);
+        // 円の初期y座標
+        let y = randomIntFromRange(canvas.height, radius);
+
+        // 円が重ならないか確認
+        if (i !== 0) {
+          for (let j = 0; j < particles.length; j++) {
+            if (distance(x, y, particles[j].x, particles[j].y) - radius * 2 < 0) {
+              // 重なってたら、再度円の座標を生成
+              x = randomIntFromRange(canvas.width, radius);
+              y = randomIntFromRange(canvas.height, radius);
+
+              // もう一度jの処理を行うため、jを1減算
+              j = -1;
+            }
+          }
+        }
+
+        //値を配列に格納していく
+        particles.push(new Particle(x, y, radius));
+      }
+
     }
+
+    // ------------------------------------------------------------------
 
     // 円を描画&アニメーションさせる関数
     function animate() {
@@ -150,14 +240,18 @@ function func() {
       // 指定した範囲の描画内容をリセットする
       c.clearRect(0, 0, canvas.width, canvas.height);
 
-      //円をcircleArrayの数だけ描画する
-      for (let i = 0; i < circleArray.length; i++) {
-        circleArray[i].update();
-      }
+      // update関数をそれぞれの円で実行
+      particles.forEach(particle => {
+        particle.update(particles);
+      });
 
     }
 
-    // animate関数を実行する
+    // ------------------------------------------------------------------
+
+    // init関数の実行
+    init();
+    // animate関数の実行
     animate();
 
   }

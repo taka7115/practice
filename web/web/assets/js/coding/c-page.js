@@ -775,6 +775,22 @@ exports["default"] = _default;
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/a-function.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/internals/a-function.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function (it) {
+  if (typeof it != 'function') {
+    throw TypeError(String(it) + ' is not a function');
+  } return it;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/add-to-unscopables.js":
 /*!**************************************************************!*\
   !*** ./node_modules/core-js/internals/add-to-unscopables.js ***!
@@ -853,6 +869,31 @@ module.exports = function fill(value /* , start = 0, end = @length */) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/array-for-each.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/internals/array-for-each.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $forEach = __webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").forEach;
+var arrayMethodIsStrict = __webpack_require__(/*! ../internals/array-method-is-strict */ "./node_modules/core-js/internals/array-method-is-strict.js");
+var arrayMethodUsesToLength = __webpack_require__(/*! ../internals/array-method-uses-to-length */ "./node_modules/core-js/internals/array-method-uses-to-length.js");
+
+var STRICT_METHOD = arrayMethodIsStrict('forEach');
+var USES_TO_LENGTH = arrayMethodUsesToLength('forEach');
+
+// `Array.prototype.forEach` method implementation
+// https://tc39.github.io/ecma262/#sec-array.prototype.foreach
+module.exports = (!STRICT_METHOD || !USES_TO_LENGTH) ? function forEach(callbackfn /* , thisArg */) {
+  return $forEach(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+} : [].forEach;
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/array-includes.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/internals/array-includes.js ***!
@@ -891,6 +932,173 @@ module.exports = {
   // `Array.prototype.indexOf` method
   // https://tc39.github.io/ecma262/#sec-array.prototype.indexof
   indexOf: createMethod(false)
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/array-iteration.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/internals/array-iteration.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var bind = __webpack_require__(/*! ../internals/function-bind-context */ "./node_modules/core-js/internals/function-bind-context.js");
+var IndexedObject = __webpack_require__(/*! ../internals/indexed-object */ "./node_modules/core-js/internals/indexed-object.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js/internals/to-length.js");
+var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js/internals/array-species-create.js");
+
+var push = [].push;
+
+// `Array.prototype.{ forEach, map, filter, some, every, find, findIndex }` methods implementation
+var createMethod = function (TYPE) {
+  var IS_MAP = TYPE == 1;
+  var IS_FILTER = TYPE == 2;
+  var IS_SOME = TYPE == 3;
+  var IS_EVERY = TYPE == 4;
+  var IS_FIND_INDEX = TYPE == 6;
+  var NO_HOLES = TYPE == 5 || IS_FIND_INDEX;
+  return function ($this, callbackfn, that, specificCreate) {
+    var O = toObject($this);
+    var self = IndexedObject(O);
+    var boundFunction = bind(callbackfn, that, 3);
+    var length = toLength(self.length);
+    var index = 0;
+    var create = specificCreate || arraySpeciesCreate;
+    var target = IS_MAP ? create($this, length) : IS_FILTER ? create($this, 0) : undefined;
+    var value, result;
+    for (;length > index; index++) if (NO_HOLES || index in self) {
+      value = self[index];
+      result = boundFunction(value, index, O);
+      if (TYPE) {
+        if (IS_MAP) target[index] = result; // map
+        else if (result) switch (TYPE) {
+          case 3: return true;              // some
+          case 5: return value;             // find
+          case 6: return index;             // findIndex
+          case 2: push.call(target, value); // filter
+        } else if (IS_EVERY) return false;  // every
+      }
+    }
+    return IS_FIND_INDEX ? -1 : IS_SOME || IS_EVERY ? IS_EVERY : target;
+  };
+};
+
+module.exports = {
+  // `Array.prototype.forEach` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.foreach
+  forEach: createMethod(0),
+  // `Array.prototype.map` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.map
+  map: createMethod(1),
+  // `Array.prototype.filter` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.filter
+  filter: createMethod(2),
+  // `Array.prototype.some` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.some
+  some: createMethod(3),
+  // `Array.prototype.every` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.every
+  every: createMethod(4),
+  // `Array.prototype.find` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.find
+  find: createMethod(5),
+  // `Array.prototype.findIndex` method
+  // https://tc39.github.io/ecma262/#sec-array.prototype.findIndex
+  findIndex: createMethod(6)
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/array-method-is-strict.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/internals/array-method-is-strict.js ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+
+module.exports = function (METHOD_NAME, argument) {
+  var method = [][METHOD_NAME];
+  return !!method && fails(function () {
+    // eslint-disable-next-line no-useless-call,no-throw-literal
+    method.call(null, argument || function () { throw 1; }, 1);
+  });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/array-method-uses-to-length.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/core-js/internals/array-method-uses-to-length.js ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
+
+var defineProperty = Object.defineProperty;
+var cache = {};
+
+var thrower = function (it) { throw it; };
+
+module.exports = function (METHOD_NAME, options) {
+  if (has(cache, METHOD_NAME)) return cache[METHOD_NAME];
+  if (!options) options = {};
+  var method = [][METHOD_NAME];
+  var ACCESSORS = has(options, 'ACCESSORS') ? options.ACCESSORS : false;
+  var argument0 = has(options, 0) ? options[0] : thrower;
+  var argument1 = has(options, 1) ? options[1] : undefined;
+
+  return cache[METHOD_NAME] = !!method && !fails(function () {
+    if (ACCESSORS && !DESCRIPTORS) return true;
+    var O = { length: -1 };
+
+    if (ACCESSORS) defineProperty(O, 1, { enumerable: true, get: thrower });
+    else O[1] = 1;
+
+    method.call(O, argument0, argument1);
+  });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/array-species-create.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js/internals/array-species-create.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
+var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js/internals/is-array.js");
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+
+var SPECIES = wellKnownSymbol('species');
+
+// `ArraySpeciesCreate` abstract operation
+// https://tc39.github.io/ecma262/#sec-arrayspeciescreate
+module.exports = function (originalArray, length) {
+  var C;
+  if (isArray(originalArray)) {
+    C = originalArray.constructor;
+    // cross-realm fallback
+    if (typeof C == 'function' && (C === Array || isArray(C.prototype))) C = undefined;
+    else if (isObject(C)) {
+      C = C[SPECIES];
+      if (C === null) C = undefined;
+    }
+  } return new (C === undefined ? Array : C)(length === 0 ? 0 : length);
 };
 
 
@@ -1015,6 +1223,52 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/dom-iterables.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/internals/dom-iterables.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// iterable DOM collections
+// flag - `iterable` interface - 'entries', 'keys', 'values', 'forEach' methods
+module.exports = {
+  CSSRuleList: 0,
+  CSSStyleDeclaration: 0,
+  CSSValueList: 0,
+  ClientRectList: 0,
+  DOMRectList: 0,
+  DOMStringList: 0,
+  DOMTokenList: 1,
+  DataTransferItemList: 0,
+  FileList: 0,
+  HTMLAllCollection: 0,
+  HTMLCollection: 0,
+  HTMLFormElement: 0,
+  HTMLSelectElement: 0,
+  MediaList: 0,
+  MimeTypeArray: 0,
+  NamedNodeMap: 0,
+  NodeList: 1,
+  PaintRequestList: 0,
+  Plugin: 0,
+  PluginArray: 0,
+  SVGLengthList: 0,
+  SVGNumberList: 0,
+  SVGPathSegList: 0,
+  SVGPointList: 0,
+  SVGStringList: 0,
+  SVGTransformList: 0,
+  SourceBufferList: 0,
+  StyleSheetList: 0,
+  TextTrackCueList: 0,
+  TextTrackList: 0,
+  TouchList: 0
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/enum-bug-keys.js":
 /*!*********************************************************!*\
   !*** ./node_modules/core-js/internals/enum-bug-keys.js ***!
@@ -1114,6 +1368,41 @@ module.exports = function (exec) {
   } catch (error) {
     return true;
   }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/function-bind-context.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/core-js/internals/function-bind-context.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var aFunction = __webpack_require__(/*! ../internals/a-function */ "./node_modules/core-js/internals/a-function.js");
+
+// optional / simple context binding
+module.exports = function (fn, that, length) {
+  aFunction(fn);
+  if (that === undefined) return fn;
+  switch (length) {
+    case 0: return function () {
+      return fn.call(that);
+    };
+    case 1: return function (a) {
+      return fn.call(that, a);
+    };
+    case 2: return function (a, b) {
+      return fn.call(that, a, b);
+    };
+    case 3: return function (a, b, c) {
+      return fn.call(that, a, b, c);
+    };
+  }
+  return function (/* ...args */) {
+    return fn.apply(that, arguments);
+  };
 };
 
 
@@ -1343,6 +1632,24 @@ module.exports = {
   has: has,
   enforce: enforce,
   getterFor: getterFor
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/is-array.js":
+/*!****************************************************!*\
+  !*** ./node_modules/core-js/internals/is-array.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var classof = __webpack_require__(/*! ../internals/classof-raw */ "./node_modules/core-js/internals/classof-raw.js");
+
+// `IsArray` abstract operation
+// https://tc39.github.io/ecma262/#sec-isarray
+module.exports = Array.isArray || function isArray(arg) {
+  return classof(arg) == 'Array';
 };
 
 
@@ -2110,6 +2417,27 @@ addToUnscopables('fill');
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.array.for-each.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.for-each.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var forEach = __webpack_require__(/*! ../internals/array-for-each */ "./node_modules/core-js/internals/array-for-each.js");
+
+// `Array.prototype.forEach` method
+// https://tc39.github.io/ecma262/#sec-array.prototype.foreach
+$({ target: 'Array', proto: true, forced: [].forEach != forEach }, {
+  forEach: forEach
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.function.name.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/modules/es.function.name.js ***!
@@ -2159,6 +2487,32 @@ var objectDefinePropertyModile = __webpack_require__(/*! ../internals/object-def
 $({ target: 'Object', stat: true, forced: !DESCRIPTORS, sham: !DESCRIPTORS }, {
   defineProperty: objectDefinePropertyModile.f
 });
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/web.dom-collections.for-each.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/core-js/modules/web.dom-collections.for-each.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var DOMIterables = __webpack_require__(/*! ../internals/dom-iterables */ "./node_modules/core-js/internals/dom-iterables.js");
+var forEach = __webpack_require__(/*! ../internals/array-for-each */ "./node_modules/core-js/internals/array-for-each.js");
+var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
+
+for (var COLLECTION_NAME in DOMIterables) {
+  var Collection = global[COLLECTION_NAME];
+  var CollectionPrototype = Collection && Collection.prototype;
+  // some Chrome versions have non-configurable methods on DOMTokenList
+  if (CollectionPrototype && CollectionPrototype.forEach !== forEach) try {
+    createNonEnumerableProperty(CollectionPrototype, 'forEach', forEach);
+  } catch (error) {
+    CollectionPrototype.forEach = forEach;
+  }
+}
 
 
 /***/ }),
@@ -28403,14 +28757,25 @@ function func() {
 
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
+__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
+__webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
+
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+
+__webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
 var _default = {
   id: 7,
   ttl: "<span></span><br class='u-sp'>",
@@ -28442,43 +28807,151 @@ function func() {
   var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
 
   if (canvas.getContext) {
+    // ------------------------------------------------------------------
+    // ユーティリティー関数
+    //円のスピードの反転
+    var rotate = function rotate(velocity, angle) {
+      var rotatedVelocities = {
+        x: velocity.x * Math.cos(angle) - velocity.y * Math.sin(angle),
+        y: velocity.x * Math.sin(angle) + velocity.y * Math.cos(angle)
+      };
+      return rotatedVelocities;
+    }; //円の反射
+
+
+    var resolveCollision = function resolveCollision(particle, otherParticle) {
+      var xVelocityDiff = particle.velocity.x - otherParticle.velocity.x;
+      var yVelocityDiff = particle.velocity.y - otherParticle.velocity.y;
+      var xDist = otherParticle.x - particle.x;
+      var yDist = otherParticle.y - particle.y; // Prevent accidental overlap of particles
+
+      if (xVelocityDiff * xDist + yVelocityDiff * yDist >= 0) {
+        //Grab angle between the Two colliding particles
+        var angle = -Math.atan2(otherParticle.y - particle.y, otherParticle.x - particle.x); //Store mass invar for better readability in collision equation
+
+        var m1 = particle.mass;
+        var m2 = otherParticle.mass; //Velocity before equation
+
+        var u1 = rotate(particle.velocity, angle);
+        var u2 = rotate(otherParticle.velocity, angle); //Velocity after 1d collision equation
+
+        var v1 = {
+          x: u1.x * (m1 - m2) / (m1 + m2) + u2.x * 2 * m2 / (m1 + m2),
+          y: u1.y
+        };
+        var v2 = {
+          x: u2.x * (m1 - m2) / (m1 + m2) + u1.x * 2 * m2 / (m1 + m2),
+          y: u2.y
+        }; //Final velocity after rotating axis back to original location
+
+        var vFinal1 = rotate(v1, -angle);
+        var vFinal2 = rotate(v2, -angle); //Swap particle velocities for realistic bounce effect
+
+        particle.velocity.x = vFinal1.x;
+        particle.velocity.y = vFinal1.y;
+        otherParticle.velocity.x = vFinal2.x;
+        otherParticle.velocity.y = vFinal2.y;
+      }
+    }; // 円の描画座標出力
+
+
+    var randomIntFromRange = function randomIntFromRange(area, radius) {
+      return Math.floor(Math.random() * (area - radius + 1) + radius);
+    }; // 円と円の距離を測る
+
+
+    var distance = function distance(x1, y1, x2, y2) {
+      var xDist = x2 - x1;
+      var yDist = y2 - y1;
+      return Math.sqrt(Math.pow(xDist, 2) + Math.pow(yDist, 2));
+    }; // ------------------------------------------------------------------
     //関数オブジェクトを設定
-    var Circle = function Circle(x, y, speedX, speedY, radius) {
+
+
+    var Particle = function Particle(x, y, radius) {
       var _this = this;
 
       this.x = x;
       this.y = y;
-      this.speedX = speedX;
-      this.speedY = speedY;
-      this.radius = radius; // 円の初期サイズ
+      this.velocity = {
+        x: (Math.random() - 0.5) * val.velocityRange,
+        y: (Math.random() - 0.5) * val.velocityRange
+      };
+      this.radius = radius;
+      this.mass = 1; // colorArrayに格納された色をランダムに割り振る
 
-      this.firstRadius = radius; // colorArrayに格納された色をランダムに割り振る
-
-      this.color = colorArray[Math.floor(Math.random() * colorArray.length)]; // 円を描画する処理
+      this.color = val.colorArray[Math.floor(Math.random() * val.colorArray.length)];
+      this.stroke = this.color[0];
+      this.fill = this.color[1]; // 円を描画する処理
 
       this.draw = function () {
         c.beginPath();
         c.arc(_this.x, _this.y, _this.radius, 0, Math.PI * 2, false);
-        c.fillStyle = _this.color;
+        c.fillStyle = _this.fill;
         c.fill();
+        c.lineWidth = val.strokeWidth;
+        c.strokeStyle = _this.stroke;
+        c.stroke();
       }; // 座標をズラしながら円を描画していく処理
 
 
-      this.update = function () {
-        // 範囲の端にきたら折り返す処理
+      this.update = function (particles) {
+        // 円を描画する
+        _this.draw(); //円と円がぶつかったら円を反転させる
+
+
+        for (var i = 0; i < particles.length; i++) {
+          if (_this === particles[i]) continue;
+
+          if (distance(_this.x, _this.y, particles[i].x, particles[i].y) - _this.radius * 2 < 0) {
+            resolveCollision(_this, particles[i]);
+          }
+        } // 範囲の端にきたら折り返す処理
+
+
         if (_this.x + _this.radius > canvas.width || _this.x - _this.radius < 0) {
-          _this.speedX = -_this.speedX;
+          _this.velocity.x = -_this.velocity.x;
         } else if (_this.y + _this.radius > canvas.height || _this.y - _this.radius < 0) {
-          _this.speedY = -_this.speedY;
+          _this.velocity.y = -_this.velocity.y;
         } // 座標の値を変えていく
 
 
-        _this.x += _this.speedX;
-        _this.y += _this.speedY; // 円を描画する
-
-        _this.draw();
+        _this.x += _this.velocity.x;
+        _this.y += _this.velocity.y;
       };
-    }; // 円の値を格納する配列
+    }; // ------------------------------------------------------------------
+    // 変数をグローバルに置いておく
+    // 円それぞれの値を配列に格納する関数
+
+
+    var init = function init() {
+      // 格納する配列
+      particles = []; // 円の値を円の個数分出力し、それぞれの円の値を配列に格納する
+
+      for (var i = 0; i < val.quantity; i++) {
+        // 円の半径
+        var radius = val.radius; // 円の初期x座標
+
+        var x = randomIntFromRange(canvas.width, radius); // 円の初期y座標
+
+        var y = randomIntFromRange(canvas.height, radius); // 円が重ならないか確認
+
+        if (i !== 0) {
+          for (var j = 0; j < particles.length; j++) {
+            if (distance(x, y, particles[j].x, particles[j].y) - radius * 2 < 0) {
+              // 重なってたら、再度円の座標を生成
+              x = randomIntFromRange(canvas.width, radius);
+              y = randomIntFromRange(canvas.height, radius); // もう一度jの処理を行うため、jを1減算
+
+              j = -1;
+            }
+          }
+        } //値を配列に格納していく
+
+
+        particles.push(new Particle(x, y, radius));
+      }
+    }; // ------------------------------------------------------------------
     // 円を描画&アニメーションさせる関数
 
 
@@ -28486,64 +28959,31 @@ function func() {
       // animate関数をループさせる関数
       requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
 
-      c.clearRect(0, 0, canvas.width, canvas.height); //円をcircleArrayの数だけ描画する
+      c.clearRect(0, 0, canvas.width, canvas.height); // update関数をそれぞれの円で実行
 
-      for (var _i = 0; _i < circleArray.length; _i++) {
-        circleArray[_i].update();
-      }
-    }; // animate関数を実行する
+      particles.forEach(function (particle) {
+        particle.update(particles);
+      });
+    }; // ------------------------------------------------------------------
+    // init関数の実行
     // canvasの幅と高さを親要素のサイズに合わせる
 
 
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
 
-    var c = canvas.getContext('2d'); // canvasのサイズを取得
+    var c = canvas.getContext('2d'); // ------------------------------------------------------------------
+    // 円の描画&アニメーションに必要な値をオブジェクト化しておく
 
-    var canvasSize = canvas.getBoundingClientRect(); // 画面左端からcanvasまでの距離を取得
-
-    var canvasLeft = canvasSize.left; // 画面上端からcanvasまでの距離を取得
-
-    var canvasTop = canvasSize.top; // canvas上でのカーソル位置の値を格納するための変数
-
-    var mouse = {
-      x: undefined,
-      y: undefined
-    }; // カーソル移動があるたびにカーソル位置の値を格納する
-
-    window.addEventListener("mousemove", function (event) {
-      mouse.x = event.pageX - canvasLeft;
-      mouse.y = event.pageY - canvasTop;
-    });
-    canvas.addEventListener("touchmove", function (event) {
-      // タッチの情報を含むオブジェクト
-      var touchObject = event.changedTouches[0]; // 位置座標を取得する
-
-      mouse.x = touchObject.pageX - canvasLeft;
-      mouse.y = touchObject.pageY - canvasTop; // タッチによる画面スクロールを止める
-
-      event.preventDefault();
-    }); //  円の配色
-
-    var colorArray = ['#092140', '#049DD9', '#F2B705', '#F29F05', '#F26835']; // 描画する円の個数
-
-    var quantity = 300;
-    var circleArray = []; // 円の値を円の個数分出力し、それぞれの円の値を配列に格納する
-
-    for (var i = 0; i < quantity; i++) {
-      // 円の半径
-      var radius = Math.random() * 10 + 1; // 円の初期x座標
-
-      var x = Math.random() * (canvas.width - radius * 2) + radius; // 円の初期y座標
-
-      var y = Math.random() * (canvas.height - radius * 2) + radius; // 円のx軸でのスピード
-
-      var speedX = (Math.random() - 0.5) * 4; // 円のy軸でのスピード
-
-      var speedY = (Math.random() - 0.5) * 4; //ランダムで決められた値を配列に格納していく
-
-      circleArray.push(new Circle(x, y, speedX, speedY, radius));
-    }
+    var val = {
+      quantity: 100,
+      radius: 20,
+      colorArray: [["#F27EBE", "#fff5fa"], ["#3DF2BF", "#e6fff8"], ["#05AFF2", "#def6ff"], ["#F2E085", "#fffae0"], ["#F24822", "#ffd1c7"]],
+      velocityRange: 5,
+      strokeWidth: 2
+    };
+    var particles;
+    init(); // animate関数の実行
 
     animate();
   }
