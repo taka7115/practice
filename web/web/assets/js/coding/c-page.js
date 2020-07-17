@@ -29051,7 +29051,7 @@ function func() {
   if (canvas.getContext) {
     // ------------------------------------------------------------------
     // ユーティリティー関数
-    // // 円の描画座標出力
+    // // 点の描画座標出力
     var randomIntFromRange = function randomIntFromRange(area, radius) {
       return Math.floor(Math.random() * (area - radius + 1) + radius);
     }; // ------------------------------------------------------------------
@@ -29064,61 +29064,61 @@ function func() {
       this.x = x;
       this.y = y;
       this.velocity = 0.05;
-      this.radius = radius; // this.velocity = {
-      //   x: (Math.random() - 0.5) * val.velocityRange,
-      //   y: (Math.random() - 0.5) * val.velocityRange
-      // }
-
+      this.radius = radius;
       this.radians = Math.random() * Math.PI * 2; // colorArrayに格納された色をランダムに割り振る
 
       this.color = val.colorArray[Math.floor(Math.random() * val.colorArray.length)];
-      this.distanceFromCenter = randomIntFromRange(50, 120); // 円を描画する処理
-
-      this.draw = function () {
-        c.beginPath();
-        c.strokeStyle = _this.color;
-        c.lineWidth = _this.radius;
-        c.moveTo();
-        c.lineTo();
-        c.stroke();
-        c.closePath();
-      };
-
+      this.distanceFromCenter = randomIntFromRange(50, 120);
       this.lastMouse = {
         x: x,
         y: y
-      }; // 座標をズラしながら円を描画していく処理
+      };
+      this.lastMouse = {
+        x: x,
+        y: y
+      }; // 座標をズラしながら点を描画していく処理
 
       this.update = function () {
-        // move points over timers
-        _this.radians += _this.velocity; // 円形移動
+        var lastPoint = {
+          x: _this.x,
+          y: _this.y
+        }; // 繰り返し描画
 
-        _this.x = x + Math.cos(_this.radians) * _this.distanceFromCenter;
-        _this.y = y + Math.sin(_this.radians) * _this.distanceFromCenter; // // 範囲の端にきたら折り返す処理
-        // if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
-        //   this.velocity.x = -this.velocity.x;
-        // } else if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
-        //   this.velocity.y = -this.velocity.y;
-        // }
-        // 座標の値を変えていく
+        _this.radians += _this.velocity; //カーソルを移動させたときの慣性エフェクト
 
-        _this.x += _this.velocity.x;
-        _this.y += _this.velocity.y; // 円を描画する
+        _this.lastMouse.x += (mouse.x - _this.lastMouse.x) * 0.05;
+        _this.lastMouse.y += (mouse.y - _this.lastMouse.y) * 0.05; // 円形移動
 
-        _this.draw();
+        _this.x = _this.lastMouse.x + Math.cos(_this.radians) * _this.distanceFromCenter;
+        _this.y = _this.lastMouse.y + Math.sin(_this.radians) * _this.distanceFromCenter; // 点を描画する
+
+        _this.draw(lastPoint);
+      }; // 点を描画する処理
+
+
+      this.draw = function (lastPoint) {
+        c.beginPath();
+        c.strokeStyle = _this.color;
+        c.lineWidth = _this.radius;
+        c.moveTo(lastPoint.x, lastPoint.y);
+        c.lineTo(_this.x, _this.y);
+        c.stroke();
+        c.closePath();
       };
     }; // ------------------------------------------------------------------
-    // 円それぞれの値を配列に格納する関数
+    // 変数設定
+    // 点それぞれの値を配列に格納する関数
 
 
     var init = function init() {
       particles = [];
 
       for (var i = 0; i < 50; i++) {
-        particles.push(new Particle(canvas.width / 2, canvas.height / 2, 5, "blue"));
+        var radius = Math.random() * 2 + 1;
+        particles.push(new Particle(canvas.width / 2, canvas.height / 2, radius, "blue"));
       }
     }; // ------------------------------------------------------------------
-    // 円を描画&アニメーションさせる関数
+    // 点を描画&アニメーションさせる関数
 
 
     var animate = function animate() {
@@ -29126,7 +29126,7 @@ function func() {
       requestAnimationFrame(animate);
       c.fillStyle = 'rgba(255,255,255,0.05)'; // 指定した範囲の描画内容をリセットする
 
-      c.clearRect(0, 0, canvas.width, canvas.height);
+      c.fillRect(0, 0, canvas.width, canvas.height);
       particles.forEach(function (particle) {
         particle.update();
       });
@@ -29136,15 +29136,31 @@ function func() {
 
 
     canvas.width = canvasParent.clientWidth;
-    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+    canvas.height = canvasParent.clientHeight; // canvasのサイズを取得
 
-    var c = canvas.getContext('2d'); // ------------------------------------------------------------------
-    // 円の描画&アニメーションに必要な値をオブジェクト化しておく
+    var canvasSize = canvas.getBoundingClientRect(); // 画面左端からcanvasまでの距離を取得
+
+    var canvasLeft = canvasSize.left; // 画面上端からcanvasまでの距離を取得
+
+    var canvasTop = canvasSize.top; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d'); // マウスの座標
+
+    var mouse = {
+      x: canvas.width / 2,
+      y: canvas.height / 2
+    }; // カーソル移動があるたびにカーソル位置の値を格納する
+
+    canvas.addEventListener("mousemove", function (event) {
+      mouse.x = event.pageX - canvasLeft;
+      mouse.y = event.pageY - canvasTop;
+    }); // ------------------------------------------------------------------
+    // 点の描画&アニメーションに必要な値をオブジェクト化しておく
 
     var val = {
       quantity: 100,
       radius: 20,
-      colorArray: ["#F27EBE", "#3DF2BF", "#05AFF2", "#F2E085", "#F24822"],
+      colorArray: ["#F27EBE", "#3DF2BF", "#05AFF2"],
       velocityRange: 5,
       lineWidth: 2
     };

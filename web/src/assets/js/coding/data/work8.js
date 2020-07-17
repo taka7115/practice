@@ -40,12 +40,33 @@ function func() {
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight;
 
+    // canvasのサイズを取得
+    var canvasSize = canvas.getBoundingClientRect();
+    // 画面左端からcanvasまでの距離を取得
+    var canvasLeft = canvasSize.left;
+    // 画面上端からcanvasまでの距離を取得
+    var canvasTop = canvasSize.top;
+
+
     // Canvasに描画機能を付与
     let c = canvas.getContext('2d');
 
+    // マウスの座標
+    const mouse = {
+      x: canvas.width / 2,
+      y: canvas.height / 2
+    }
+
+    // カーソル移動があるたびにカーソル位置の値を格納する
+    canvas.addEventListener("mousemove", (event) => {
+      mouse.x = event.pageX - canvasLeft;
+      mouse.y = event.pageY - canvasTop;
+    })
+
+
     // ------------------------------------------------------------------
 
-    // 円の描画&アニメーションに必要な値をオブジェクト化しておく
+    // 点の描画&アニメーションに必要な値をオブジェクト化しておく
     let val = {
       quantity: 100,
       radius: 20,
@@ -53,8 +74,6 @@ function func() {
         "#F27EBE",
         "#3DF2BF",
         "#05AFF2",
-        "#F2E085",
-        "#F24822"
       ],
       velocityRange: 5,
       lineWidth: 2
@@ -64,12 +83,10 @@ function func() {
 
     // ユーティリティー関数
 
-    // // 円の描画座標出力
+    // // 点の描画座標出力
     function randomIntFromRange(area, radius) {
       return Math.floor(Math.random() * (area - radius + 1) + radius);
     }
-
-
 
     // ------------------------------------------------------------------
 
@@ -79,56 +96,56 @@ function func() {
       this.y = y;
       this.velocity = 0.05;
       this.radius = radius;
-      // this.velocity = {
-      //   x: (Math.random() - 0.5) * val.velocityRange,
-      //   y: (Math.random() - 0.5) * val.velocityRange
-      // }
       this.radians = Math.random() * Math.PI * 2;
       // colorArrayに格納された色をランダムに割り振る
       this.color = val.colorArray[Math.floor(Math.random() * val.colorArray.length)];
       this.distanceFromCenter = randomIntFromRange(50, 120);
-
-      // 円を描画する処理
-      this.draw = () => {
-        c.beginPath();
-        c.strokeStyle = this.color;
-        c.lineWidth = this.radius;
-        c.moveTo();
-        c.lineTo();
-        c.stroke();
-        c.closePath();
+      this.lastMouse = {
+        x: x,
+        y: y
       }
+
 
       this.lastMouse = {
         x: x,
         y: y
       };
 
-      // 座標をズラしながら円を描画していく処理
+      // 座標をズラしながら点を描画していく処理
       this.update = () => {
 
-        // move points over timers
+
+        const lastPoint = {
+          x: this.x,
+          y: this.y
+        };
+
+        // 繰り返し描画
         this.radians += this.velocity;
 
+        //カーソルを移動させたときの慣性エフェクト
+        this.lastMouse.x += (mouse.x - this.lastMouse.x) * 0.05;
+        this.lastMouse.y += (mouse.y - this.lastMouse.y) * 0.05;
+
         // 円形移動
-        this.x = x + Math.cos(this.radians) * this.distanceFromCenter;
-        this.y = y + Math.sin(this.radians) * this.distanceFromCenter;
+        this.x = this.lastMouse.x + Math.cos(this.radians) * this.distanceFromCenter;
+        this.y = this.lastMouse.y + Math.sin(this.radians) * this.distanceFromCenter;
+
+        // 点を描画する
+        this.draw(lastPoint);
+
+      }
 
 
-        // // 範囲の端にきたら折り返す処理
-        // if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
-        //   this.velocity.x = -this.velocity.x;
-        // } else if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
-        //   this.velocity.y = -this.velocity.y;
-        // }
-
-        // 座標の値を変えていく
-        this.x += this.velocity.x;
-        this.y += this.velocity.y;
-
-        // 円を描画する
-        this.draw();
-
+      // 点を描画する処理
+      this.draw = lastPoint => {
+        c.beginPath();
+        c.strokeStyle = this.color;
+        c.lineWidth = this.radius;
+        c.moveTo(lastPoint.x, lastPoint.y);
+        c.lineTo(this.x, this.y);
+        c.stroke();
+        c.closePath();
       }
 
     }
@@ -136,23 +153,23 @@ function func() {
 
     // ------------------------------------------------------------------
 
+    // 変数設定
     let particles;
 
-    // 円それぞれの値を配列に格納する関数
+    // 点それぞれの値を配列に格納する関数
     function init() {
       particles = [];
 
       for (let i = 0; i < 50; i++) {
-        particles.push(new Particle(canvas.width / 2, canvas.height / 2, 5, "blue"))
+        const radius = (Math.random() * 2) + 1;
+        particles.push(new Particle(canvas.width / 2, canvas.height / 2, radius, "blue"));
       }
-
-
 
     }
 
     // ------------------------------------------------------------------
 
-    // 円を描画&アニメーションさせる関数
+    // 点を描画&アニメーションさせる関数
     function animate() {
 
       // animate関数をループさせる関数
@@ -161,7 +178,7 @@ function func() {
       c.fillStyle = 'rgba(255,255,255,0.05)';
 
       // 指定した範囲の描画内容をリセットする
-      c.clearRect(0, 0, canvas.width, canvas.height);
+      c.fillRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach(particle => {
         particle.update();
