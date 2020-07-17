@@ -61,7 +61,7 @@ export default {
       arrays: {
         // work10,
         // work9,
-        // work8,
+        work8,
         work7,
         work6,
         work5,
