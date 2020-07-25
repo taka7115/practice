@@ -45,6 +45,8 @@
 
 
 <script>
+import work22 from "../../../data/work22.js";
+import work21 from "../../../data/work21.js";
 import work10 from "../../../data/work10.js";
 import work9 from "../../../data/work9.js";
 import work8 from "../../../data/work8.js";
@@ -59,6 +61,8 @@ export default {
   data() {
     return {
       arrays: {
+        work22,
+        work21,
         work10,
         work9,
         work8,
@@ -68,19 +72,19 @@ export default {
         work4,
         work3,
         work2,
-        work1
-      }
+        work1,
+      },
     };
   },
   // if the number of work is less than 10, return with 0
   filters: {
-    checkNum: function(val) {
+    checkNum: function (val) {
       if (String(val).length == 1) {
         return "0" + val;
       } else {
         return val;
       }
-    }
-  }
+    },
+  },
 };
 </script>

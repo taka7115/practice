@@ -176,6 +176,8 @@
 
 
 <script>
+import work22 from "../../../data/work22.js";
+import work21 from "../../../data/work21.js";
 import work10 from "../../../data/work10.js";
 import work9 from "../../../data/work9.js";
 import work8 from "../../../data/work8.js";
@@ -196,6 +198,8 @@ export default {
   data() {
     return {
       arrays: {
+        work22,
+        work21,
         work10,
         work9,
         work8,
