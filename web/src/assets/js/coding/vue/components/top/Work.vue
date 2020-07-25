@@ -59,8 +59,8 @@ export default {
   data() {
     return {
       arrays: {
-        // work10,
-        // work9,
+        work10,
+        work9,
         work8,
         work7,
         work6,

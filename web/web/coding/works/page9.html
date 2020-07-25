@@ -30,22 +30,113 @@
 <div id="c-page">
   <main class="c-page">
 
-    <page name="work3" tab="3">
+    <page name="work9" tab="3">
 
       <template slot="mainCont">
-        <!-- kvに入るhtmlを記述 -->
+        <div class="canvas-parent" id="canvasParent">
+          <canvas id="canvas"></canvas>
+        </div>
       </template>
 
       <template slot="html">
-        <!-- ソースとしてhtmlを記述 -->
+        &lt;div class="canvas-parent" id="canvasParent"&gt;
+        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
       </template>
 
       <template slot="css">
-        <!-- ソースとしてcssを記述 -->
+        .canvas-parent {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        }
       </template>
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
+
+        //親要素とcanvas要素を取得
+        let canvasParent = document.getElementById("canvasParent");
+        let canvas = document.getElementById("canvas");
+
+        // Canvas利用不可の環境では実行しないようにif文で囲む
+        if (canvas.getContext) {
+
+        // canvasの幅と高さを親要素のサイズに合わせる
+        canvas.width = canvasParent.clientWidth;
+        canvas.height = canvasParent.clientHeight;
+
+        // Canvasに描画機能を付与
+        let c = canvas.getContext('2d');
+
+        // ウェーブラインの値
+        const wave = {
+        y: canvas.height / 2,
+        // ウェーブの間隔
+        length: 0.01,
+        // ウェーブの振幅
+        amplitude: 100,
+        // ウェーブの速さ
+        frequency: 0.01
+        }
+
+        // ウェーブラインの色相
+        const strokeColor = {
+        h: 200,
+        s: 50,
+        l: 50
+        }
+
+        // キャンバスの背景色
+        const backgroundColor = {
+        r: 0,
+        g: 0,
+        b: 0,
+        a: 0.01
+        }
+
+        // 速さを加算するための変数
+        let increment = wave.frequency;
+
+        // アニメーション関数
+        function animate() {
+
+        // アニメーションをループさせる
+        requestAnimationFrame(animate)
+
+        // キャンバスの背景色を設定
+        c.fillStyle = `rgba(${backgroundColor.r},${backgroundColor.g},
+        ${backgroundColor.b},${backgroundColor.a})`;
+
+        // ラインの残像を表現
+        c.fillRect(0, 0, canvas.width, canvas.height);
+
+        // ウェーブラインの描画
+        c.beginPath();
+        c.moveTo(0, canvas.height / 2);
+
+        // ラインがウェーブがかるように調整
+        for (let i = 0; i &lt; canvas.width; i++) {
+        c.lineTo(i, wave.y + Math.sin(i * wave.length + increment) *
+        wave.amplitude * Math.sin(increment))
+        }
+
+        // ライン色を変えるため、色相(hsl)のhを0&lt;h&lt;200の間で変動させる
+        c.strokeStyle = `hsl(${Math.abs(strokeColor.h * Math.sin(increment))},
+        ${strokeColor.s}%,${strokeColor.l}%)`
+
+        // ラインを描画
+        c.stroke();
+
+        // 速さを加算
+        increment += wave.frequency;
+
+        }
+
+        // 関数実行
+        animate()
+
+        }
+
       </template>
     </page>
   </main>
@@ -88,7 +179,11 @@
 
 <!-- css manipulation ----------------------------------------- -->
 <style type="text/css">
-  /* kvのhtmlをスタイリングするcssを記述 */
+  .canvas-parent {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
 
 </style>
 
