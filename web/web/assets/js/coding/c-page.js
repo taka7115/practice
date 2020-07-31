@@ -1031,6 +1031,36 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/array-method-has-species-support.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/core-js/internals/array-method-has-species-support.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var V8_VERSION = __webpack_require__(/*! ../internals/engine-v8-version */ "./node_modules/core-js/internals/engine-v8-version.js");
+
+var SPECIES = wellKnownSymbol('species');
+
+module.exports = function (METHOD_NAME) {
+  // We can't use this feature detection in V8 since it causes
+  // deoptimization and serious performance degradation
+  // https://github.com/zloirock/core-js/issues/677
+  return V8_VERSION >= 51 || !fails(function () {
+    var array = [];
+    var constructor = array.constructor = {};
+    constructor[SPECIES] = function () {
+      return { foo: 1 };
+    };
+    return array[METHOD_NAME](Boolean).foo !== 1;
+  });
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/array-method-is-strict.js":
 /*!******************************************************************!*\
   !*** ./node_modules/core-js/internals/array-method-is-strict.js ***!
@@ -1203,6 +1233,28 @@ module.exports = function (bitmap, value) {
 
 /***/ }),
 
+/***/ "./node_modules/core-js/internals/create-property.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/internals/create-property.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var toPrimitive = __webpack_require__(/*! ../internals/to-primitive */ "./node_modules/core-js/internals/to-primitive.js");
+var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
+var createPropertyDescriptor = __webpack_require__(/*! ../internals/create-property-descriptor */ "./node_modules/core-js/internals/create-property-descriptor.js");
+
+module.exports = function (object, key, value) {
+  var propertyKey = toPrimitive(key);
+  if (propertyKey in object) definePropertyModule.f(object, propertyKey, createPropertyDescriptor(0, value));
+  else object[propertyKey] = value;
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/descriptors.js":
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/internals/descriptors.js ***!
@@ -1283,6 +1335,51 @@ module.exports = {
   TextTrackList: 0,
   TouchList: 0
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/engine-user-agent.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js/internals/engine-user-agent.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js/internals/get-built-in.js");
+
+module.exports = getBuiltIn('navigator', 'userAgent') || '';
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/engine-v8-version.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/core-js/internals/engine-v8-version.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
+var userAgent = __webpack_require__(/*! ../internals/engine-user-agent */ "./node_modules/core-js/internals/engine-user-agent.js");
+
+var process = global.process;
+var versions = process && process.versions;
+var v8 = versions && versions.v8;
+var match, version;
+
+if (v8) {
+  match = v8.split('.');
+  version = match[0] + match[1];
+} else if (userAgent) {
+  match = userAgent.match(/Edge\/(\d+)/);
+  if (!match || match[1] >= 74) {
+    match = userAgent.match(/Chrome\/(\d+)/);
+    if (match) version = match[1];
+  }
+}
+
+module.exports = version && +version;
 
 
 /***/ }),
@@ -2408,6 +2505,78 @@ module.exports = function (name) {
     else WellKnownSymbolsStore[name] = createWellKnownSymbol('Symbol.' + name);
   } return WellKnownSymbolsStore[name];
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/modules/es.array.concat.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.concat.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js/internals/is-array.js");
+var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js/internals/to-length.js");
+var createProperty = __webpack_require__(/*! ../internals/create-property */ "./node_modules/core-js/internals/create-property.js");
+var arraySpeciesCreate = __webpack_require__(/*! ../internals/array-species-create */ "./node_modules/core-js/internals/array-species-create.js");
+var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js/internals/array-method-has-species-support.js");
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var V8_VERSION = __webpack_require__(/*! ../internals/engine-v8-version */ "./node_modules/core-js/internals/engine-v8-version.js");
+
+var IS_CONCAT_SPREADABLE = wellKnownSymbol('isConcatSpreadable');
+var MAX_SAFE_INTEGER = 0x1FFFFFFFFFFFFF;
+var MAXIMUM_ALLOWED_INDEX_EXCEEDED = 'Maximum allowed index exceeded';
+
+// We can't use this feature detection in V8 since it causes
+// deoptimization and serious performance degradation
+// https://github.com/zloirock/core-js/issues/679
+var IS_CONCAT_SPREADABLE_SUPPORT = V8_VERSION >= 51 || !fails(function () {
+  var array = [];
+  array[IS_CONCAT_SPREADABLE] = false;
+  return array.concat()[0] !== array;
+});
+
+var SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('concat');
+
+var isConcatSpreadable = function (O) {
+  if (!isObject(O)) return false;
+  var spreadable = O[IS_CONCAT_SPREADABLE];
+  return spreadable !== undefined ? !!spreadable : isArray(O);
+};
+
+var FORCED = !IS_CONCAT_SPREADABLE_SUPPORT || !SPECIES_SUPPORT;
+
+// `Array.prototype.concat` method
+// https://tc39.github.io/ecma262/#sec-array.prototype.concat
+// with adding support of @@isConcatSpreadable and @@species
+$({ target: 'Array', proto: true, forced: FORCED }, {
+  concat: function concat(arg) { // eslint-disable-line no-unused-vars
+    var O = toObject(this);
+    var A = arraySpeciesCreate(O, 0);
+    var n = 0;
+    var i, k, length, len, E;
+    for (i = -1, length = arguments.length; i < length; i++) {
+      E = i === -1 ? O : arguments[i];
+      if (isConcatSpreadable(E)) {
+        len = toLength(E.length);
+        if (n + len > MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
+        for (k = 0; k < len; k++, n++) if (k in E) createProperty(A, n, E[k]);
+      } else {
+        if (n >= MAX_SAFE_INTEGER) throw TypeError(MAXIMUM_ALLOWED_INDEX_EXCEEDED);
+        createProperty(A, n++, E);
+      }
+    }
+    A.length = n;
+    return A;
+  }
+});
 
 
 /***/ }),
@@ -27864,7 +28033,6 @@ var scrollCurve = function scrollCurve() {
     var footer = document.querySelector('.footer');
     var footerH = footer.clientHeight * 1.1;
     var anchorPosition = anchor.offsetTop + footerH;
-    console.log("\u8DDD\u96E2\u306F".concat(anchor));
     window.addEventListener('scroll', function () {
       var wH = window.innerHeight;
       var y = window.pageYOffset + wH;
@@ -27995,10 +28163,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _default = {
-  id: 3,
+  id: 10,
   ttl: "<span></span><br class='u-sp'>",
-  txt: "3作品目の情報が入ります。",
-  alt: "3作品目の情報が入ります。",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
   p1: "",
   p1_color: "js-yellow",
   p1_list1: "<span data='dot'>&#9642;</span>",
@@ -28019,7 +28187,19 @@ var _default = {
 
 exports["default"] = _default;
 
-function func() {}
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d');
+  }
+}
 
 /***/ }),
 
@@ -29138,21 +29318,21 @@ var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jque
 
 var _default = {
   id: 7,
-  ttl: "<span></span><br class='u-sp'>",
-  txt: "3作品目の情報が入ります。",
-  alt: "3作品目の情報が入ります。",
-  p1: "",
+  ttl: "<span>C</span>anvasで<br class='u-sp'>円の反射運動を表現する<br class='u-sp'>【アークタンジェントの活用】",
+  txt: "Canvasで<br>美しい円形運動を<br>描画する【アークタンジェントの活用】",
+  alt: "Canvasで美しい円形運動を描画する【アークタンジェントの活用】",
+  p1: "Math.atan2()を使って反射角を求める。",
   p1_color: "js-yellow",
-  p1_list1: "<span data='dot'>&#9642;</span>",
-  p1_list2: "<span data='dot'>&#9642;</span>",
+  p1_list1: "JavaScriptの59行目。Math.atan2()により、衝突する2つの円の反射角を求めます。",
+  p1_list2: "<span data='dot'>&#9642;</span><a href='https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/atan2' target='_blank'>Math.atan2()の使い方</a>",
   p2: "",
-  p2_color: "js-yellow",
-  p2_list1: "<span data='dot'>&#9642;</span>",
-  p2_list2: "<span data='dot'>&#9642;</span>",
+  p2_color: "",
+  p2_list1: "",
+  p2_list2: "",
   p3: "",
-  p3_color: "js-yellow",
-  p3_list1: "<span data='dot'>&#9642;</span>",
-  p3_list2: "<span data='dot'>&#9642;</span>",
+  p3_color: "",
+  p3_list1: "",
+  p3_list2: "",
   func: func
 };
 /**
@@ -29336,7 +29516,7 @@ function func() {
     // 円の描画&アニメーションに必要な値をオブジェクト化しておく
 
     var val = {
-      quantity: 100,
+      quantity: 50,
       radius: 20,
       colorArray: [["#F27EBE", "#fff5fa"], ["#3DF2BF", "#e6fff8"], ["#05AFF2", "#def6ff"], ["#F2E085", "#fffae0"], ["#F24822", "#ffd1c7"]],
       velocityRange: 5,
@@ -29375,26 +29555,23 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
-var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
 var _default = {
   id: 8,
-  ttl: "<span></span><br class='u-sp'>",
-  txt: "8作品目の情報が入ります。",
-  alt: "8作品目の情報が入ります。",
-  p1: "",
+  ttl: "<span>C</span>anvasで<br class='u-sp'>美しい円形運動を描画する<br class='u-sp'>【ラジアンの活用】",
+  txt: "Canvasで<br>美しい円形運動を<br>描画する【ラジアンの活用】",
+  alt: "Canvasで美しい円形運動を描画する【ラジアンの活用】",
+  p1: "Math.cos(sin)とradiansによる計算で点を円形運動させる",
   p1_color: "js-yellow",
-  p1_list1: "<span data='dot'>&#9642;</span>",
-  p1_list2: "<span data='dot'>&#9642;</span>",
-  p2: "",
+  p1_list1: "<span data='dot'>&#9642;</span>サイン、コサイン、タンジェントといった三角関数と、円の弧度を表すラジアンによる計算式で、点の描画座標を決めていきます(JavaScriptの72行目、99～100行目)。",
+  p1_list2: "<span data='dot'>&#9642;</span><a href='https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/cos' target='_blank'>Math.cos()の使い方</a>",
+  p2: "<br class='u-sp'>点の残像を表現する",
   p2_color: "js-yellow",
-  p2_list1: "<span data='dot'>&#9642;</span>",
-  p2_list2: "<span data='dot'>&#9642;</span>",
+  p2_list1: "<span data='dot'>&#9642;</span>JavaScriptの145行目。点の残像を表現するために、点1描画毎にキャンバスを白色で塗りつぶします。このとき、白色の透明度(今回は0.05)を設定することで残像の加減を調整できます。",
+  p2_list2: "",
   p3: "",
-  p3_color: "js-yellow",
-  p3_list1: "<span data='dot'>&#9642;</span>",
-  p3_list2: "<span data='dot'>&#9642;</span>",
+  p3_color: "",
+  p3_list1: "",
+  p3_list2: "",
   func: func
 };
 /**
@@ -29415,7 +29592,7 @@ function func() {
     var randomIntFromRange = function randomIntFromRange(area, radius) {
       return Math.floor(Math.random() * (area - radius + 1) + radius);
     }; // ------------------------------------------------------------------
-    //関数オブジェクトを設定
+    // 関数オブジェクトを設定
 
 
     var Particle = function Particle(x, y, radius) {
@@ -29423,31 +29600,35 @@ function func() {
 
       this.x = x;
       this.y = y;
-      this.velocity = 0.05;
-      this.radius = radius;
+      this.velocity = val.velocity;
+      this.radius = radius; // 円における、2つの半径の中心角度(360までの値をランダムに出力)
+
       this.radians = Math.random() * Math.PI * 2; // colorArrayに格納された色をランダムに割り振る
 
-      this.color = val.colorArray[Math.floor(Math.random() * val.colorArray.length)];
-      this.distanceFromCenter = randomIntFromRange(50, 120);
+      this.color = val.colorArray[Math.floor(Math.random() * val.colorArray.length)]; // 円の中心と点の距離を調整
+
+      if (window.innerWidth > 750) {
+        this.distanceFromCenter = randomIntFromRange(50, 130);
+      } else {
+        this.distanceFromCenter = randomIntFromRange(20, 60);
+      } // 直前のマウス位置を設定
+
+
       this.lastMouse = {
         x: x,
         y: y
-      };
-      this.lastMouse = {
-        x: x,
-        y: y
-      }; // 座標をズラしながら点を描画していく処理
+      }; // 点を描画していく処理
 
       this.update = function () {
         var lastPoint = {
           x: _this.x,
           y: _this.y
-        }; // 繰り返し描画
+        }; // 中心角度を変えていく(velocityの値だけ点は円形運動)
 
         _this.radians += _this.velocity; //カーソルを移動させたときの慣性エフェクト
 
-        _this.lastMouse.x += (mouse.x - _this.lastMouse.x) * 0.05;
-        _this.lastMouse.y += (mouse.y - _this.lastMouse.y) * 0.05; // 円形移動
+        _this.lastMouse.x += (mouse.x - _this.lastMouse.x) * val.inertia;
+        _this.lastMouse.y += (mouse.y - _this.lastMouse.y) * val.inertia; // 円形運動
 
         _this.x = _this.lastMouse.x + Math.cos(_this.radians) * _this.distanceFromCenter;
         _this.y = _this.lastMouse.y + Math.sin(_this.radians) * _this.distanceFromCenter; // 点を描画する
@@ -29473,9 +29654,9 @@ function func() {
     var init = function init() {
       particles = [];
 
-      for (var i = 0; i < 50; i++) {
-        var radius = Math.random() * 2 + 1;
-        particles.push(new Particle(canvas.width / 2, canvas.height / 2, radius, "blue"));
+      for (var i = 0; i < val.quantity; i++) {
+        var radius = Math.random() * val.maxRadius + 1;
+        particles.push(new Particle(canvas.width / 2, canvas.height / 2, radius));
       }
     }; // ------------------------------------------------------------------
     // 点を描画&アニメーションさせる関数
@@ -29483,10 +29664,11 @@ function func() {
 
     var animate = function animate() {
       // animate関数をループさせる関数
-      requestAnimationFrame(animate);
-      c.fillStyle = 'rgba(255,255,255,0.05)'; // 指定した範囲の描画内容をリセットする
+      requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
 
-      c.fillRect(0, 0, canvas.width, canvas.height);
+      c.fillRect(0, 0, canvas.width, canvas.height); //点の残像を表現する
+
+      c.fillStyle = 'rgba(255, 255, 255, 0.05)';
       particles.forEach(function (particle) {
         particle.update();
       });
@@ -29496,15 +29678,17 @@ function func() {
 
 
     canvas.width = canvasParent.clientWidth;
-    canvas.height = canvasParent.clientHeight; // canvasのサイズを取得
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d'); // canvasのサイズを取得
 
     var canvasSize = canvas.getBoundingClientRect(); // 画面左端からcanvasまでの距離を取得
 
     var canvasLeft = canvasSize.left; // 画面上端からcanvasまでの距離を取得
 
-    var canvasTop = canvasSize.top; // Canvasに描画機能を付与
+    var canvasTop = canvasSize.top; // 画面のスクロール量を取得
 
-    var c = canvas.getContext('2d'); // マウスの座標
+    var windowS = window.scrollY; // ページ読み込み時のマウス座標は、キャンバスの中央に設定
 
     var mouse = {
       x: canvas.width / 2,
@@ -29513,16 +29697,16 @@ function func() {
 
     canvas.addEventListener("mousemove", function (event) {
       mouse.x = event.pageX - canvasLeft;
-      mouse.y = event.pageY - canvasTop;
+      mouse.y = event.pageY - canvasTop - windowS;
     }); // ------------------------------------------------------------------
     // 点の描画&アニメーションに必要な値をオブジェクト化しておく
 
     var val = {
-      quantity: 100,
-      radius: 20,
-      colorArray: ["#F27EBE", "#3DF2BF", "#05AFF2"],
-      velocityRange: 5,
-      lineWidth: 2
+      quantity: 60,
+      maxRadius: 4,
+      velocity: 0.05,
+      inertia: 0.05,
+      colorArray: ["#00E1FF", "#FFFB00", "#FFB700", "#FF8800", "#FF510D"]
     };
     var particles;
     init(); // animate関数の実行
@@ -29543,29 +29727,33 @@ function func() {
 "use strict";
 
 
+__webpack_require__(/*! core-js/modules/es.array.concat */ "./node_modules/core-js/modules/es.array.concat.js");
+
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.concat */ "./node_modules/core-js/modules/es.array.concat.js");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 var _default = {
-  id: 3,
-  ttl: "<span></span><br class='u-sp'>",
-  txt: "3作品目の情報が入ります。",
-  alt: "3作品目の情報が入ります。",
-  p1: "",
+  id: 9,
+  ttl: "<span>C</span>anvasでサインウェーブを<br class='u-sp'>表現してみた<br>【PCの待機画面でよく見るアレ】",
+  txt: "Canvasでサインウェーブを<br>表現してみた<br>【PCの待機画面でよく見るアレ】",
+  alt: "Canvasでサインウェーブを表現してみた【PCの待機画面でよく見るアレ】",
+  p1: "<br class='u-sp'>波打つような線を描画する",
   p1_color: "js-yellow",
-  p1_list1: "<span data='dot'>&#9642;</span>",
-  p1_list2: "<span data='dot'>&#9642;</span>",
-  p2: "",
+  p1_list1: "<span data='dot'>&#9642;</span>JavaScriptの64～68行目。描画開始座標であるx='0'、y='高さの1/2'(62行目で定義)から、for文でcanvas.widthのpx数だけ、つまりキャンバスのx軸1pxずつに対して、Math.sin()式によりそれぞれのy座標を求め、パスを置いていきます。",
+  p1_list2: "<span data='dot'>&#9642;</span>置いたパスを線で繋いでいくことで波打つような線を表現します。",
+  p2: "<br class='u-sp'>ラインの残像を表現",
   p2_color: "js-yellow",
-  p2_list1: "<span data='dot'>&#9642;</span>",
-  p2_list2: "<span data='dot'>&#9642;</span>",
-  p3: "",
+  p2_list1: "<span data='dot'>&#9642;</span>JavaScriptの53～58行目。c.fillRectにより、キャンバスを黒色(透明度0.01)で継続的に塗りつぶすことで、ラインの残像を表現します。",
+  p2_list2: "<span data='dot'>&#9642;</span>しかし、この方法ではページロード直後、キャンバスの背景が白色から黒色に変色するというアニメーションが発生してしまう。最初から黒色にしてほしいと言われた場合、いかに対象すべきか。あと、完全な黒色にはならないし。。解決方法模索中。",
+  p3: "色相調整により、ライン色を変えていく",
   p3_color: "js-yellow",
-  p3_list1: "<span data='dot'>&#9642;</span>",
-  p3_list2: "<span data='dot'>&#9642;</span>",
+  p3_list1: "<span data='dot'>&#9642;</span>JavaScriptの70～72行目。色相(hsl)のhを0&lt;h&lt;200の間で変動させることにより、ラインの色を継続的に変えていきます。",
+  p3_list2: "<span data='dot'>&#9642;</span>Math.sin()によって出力した値を、そのまま色相のhに乗算すると、出力される値には負の値も含まれます。hには正の値(絶対値)のみ代入したいので、Math.abs()式を用いて、代入される値を正の値のみとします。<br><br>→<a href='https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/abs' target='_blank'>Math.abs()の使い方</a>",
   func: func
 };
 /**
@@ -29574,7 +29762,67 @@ var _default = {
 
 exports["default"] = _default;
 
-function func() {}
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // アニメーション関数
+    var animate = function animate() {
+      // アニメーションをループさせる
+      requestAnimationFrame(animate); // キャンバスの背景色を設定
+
+      c.fillStyle = "rgba(".concat(backgroundColor.r, ",").concat(backgroundColor.g, ",\n        ").concat(backgroundColor.b, ",").concat(backgroundColor.a, ")");
+      c.fillRect(0, 0, canvas.width, canvas.height); // ウェーブラインの描画
+
+      c.beginPath();
+      c.moveTo(0, canvas.height / 2); // ラインをウェーブがかるように描画
+
+      for (var i = 0; i < canvas.width; i++) {
+        c.lineTo(i, wave.y + Math.sin(i * wave.length + increment) * wave.amplitude * Math.sin(increment));
+      } // ライン色を変えるため、色相(hsl)のhを0<h<200で変動させる
+
+
+      c.strokeStyle = "hsl(".concat(Math.abs(strokeColor.h * Math.sin(increment)), ",").concat(strokeColor.s, "%,").concat(strokeColor.l, "%)");
+      c.stroke();
+      increment += wave.frequency;
+    }; // 関数実行
+    // canvasの幅と高さを親要素のサイズに合わせる
+
+
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d'); // ウェーブラインの値
+
+    var wave = {
+      y: canvas.height / 2,
+      // ウェーブの間隔
+      length: 0.01,
+      // ウェーブの振幅
+      amplitude: 100,
+      // ウェーブの速さ
+      frequency: 0.01
+    }; // ウェーブラインの色相
+
+    var strokeColor = {
+      h: 200,
+      s: 50,
+      l: 50
+    }; // キャンバスの背景色
+
+    var backgroundColor = {
+      r: 0,
+      g: 0,
+      b: 0,
+      a: 0.01
+    }; // 変数化
+
+    var increment = wave.frequency;
+    animate();
+  }
+}
 
 /***/ }),
 

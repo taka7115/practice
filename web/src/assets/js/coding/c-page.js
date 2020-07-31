@@ -19,7 +19,6 @@ var scrollCurve = () => {
     var footer = document.querySelector('.footer');
     var footerH = footer.clientHeight * 1.1;
     var anchorPosition = anchor.offsetTop + footerH;
-    console.log(`距離は${anchor}`)
 
     window.addEventListener('scroll', () => {
 

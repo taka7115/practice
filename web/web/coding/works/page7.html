@@ -72,7 +72,7 @@
 
         // 円の描画&アニメーションに必要な値をオブジェクト化しておく
         let val = {
-        quantity: 100,
+        quantity: 50,
         radius: 20,
         colorArray: [
         ["#F27EBE", "#fff5fa"],
@@ -106,10 +106,10 @@
         const xDist = otherParticle.x - particle.x;
         const yDist = otherParticle.y - particle.y;
 
-        // 円の偶然の重なりを解決
+        // 円が衝突したときの処理
         if (xVelocityDiff * xDist + yVelocityDiff * yDist &gt;= 0) {
 
-        // 重なり合う2つの円の角度を取得
+        // 衝突する2つの円の反射角を取得
         const angle = -Math.atan2(otherParticle.y - particle.y, otherParticle.x - particle.x)
 
         // 円の衝突質量を変数化

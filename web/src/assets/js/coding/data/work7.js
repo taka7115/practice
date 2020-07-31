@@ -4,21 +4,21 @@ import {
 
 export default {
   id: 7,
-  ttl: "<span></span><br class='u-sp'>",
-  txt: "3作品目の情報が入ります。",
-  alt: "3作品目の情報が入ります。",
-  p1: "",
+  ttl: "<span>C</span>anvasで<br class='u-sp'>円の反射運動を表現する<br class='u-sp'>【アークタンジェントの活用】",
+  txt: "Canvasで<br>美しい円形運動を<br>描画する【アークタンジェントの活用】",
+  alt: "Canvasで美しい円形運動を描画する【アークタンジェントの活用】",
+  p1: "Math.atan2()を使って反射角を求める。",
   p1_color: "js-yellow",
-  p1_list1: "<span data='dot'>&#9642;</span>",
-  p1_list2: "<span data='dot'>&#9642;</span>",
+  p1_list1: "JavaScriptの59行目。Math.atan2()により、衝突する2つの円の反射角を求めます。",
+  p1_list2: "<span data='dot'>&#9642;</span><a href='https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/atan2' target='_blank'>Math.atan2()の使い方</a>",
   p2: "",
-  p2_color: "js-yellow",
-  p2_list1: "<span data='dot'>&#9642;</span>",
-  p2_list2: "<span data='dot'>&#9642;</span>",
+  p2_color: "",
+  p2_list1: "",
+  p2_list2: "",
   p3: "",
-  p3_color: "js-yellow",
-  p3_list1: "<span data='dot'>&#9642;</span>",
-  p3_list2: "<span data='dot'>&#9642;</span>",
+  p3_color: "",
+  p3_list1: "",
+  p3_list2: "",
   func
 }
 
@@ -47,7 +47,7 @@ function func() {
 
     // 円の描画&アニメーションに必要な値をオブジェクト化しておく
     let val = {
-      quantity: 100,
+      quantity: 50,
       radius: 20,
       colorArray: [
         ["#F27EBE", "#fff5fa"],

@@ -1,223 +1,265 @@
-
-
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <title></title>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title></title>
 
-  <meta name="keywords" content="foo">
-  <meta name="description" content="foo">
-  <meta property="og:title" content="">
-  <meta property="og:description" content="foo">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/img/og/og.jpg">
-  <meta property="og:url" content="http://www.example.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="">
+    <meta name="keywords" content="foo">
+    <meta name="description" content="foo">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="foo">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/og/og.jpg">
+    <meta property="og:url" content="http://www.example.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
 
-  <link rel="stylesheet" href="/assets/css/coding/c-page.css">
-  <link rel="stylesheet" href="/assets/css/coding/prism.css">
-  <script type="text/javascript" src="/assets/js/coding/prism.js"></script>
+    <link rel="stylesheet" href="/assets/css/coding/c-page.css">
+    <link rel="stylesheet" href="/assets/css/coding/prism.css">
+    <script type="text/javascript" src="/assets/js/coding/prism.js"></script>
 </head>
 
 <body>
 
-<div id="c-page">
-  <main class="c-page">
+    <div id="c-page">
+        <main class="c-page">
 
-    <page name="work22" tab="3">
+            <page name="work22" tab="3">
 
-      <template slot="mainCont">
-        <div class="canvas-parent" id="p5Parent">
-        </div>
-      </template>
+                <template slot="mainCont">
+                    <div class="canvas-parent" id="canvasParent">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                </template>
 
-      <template slot="html">
-        &lt;div class="canvas-parent" id="canvasParent"&gt;
-        &lt;/div&gt;
-      </template>
+                <template slot="html">
+                    &lt;div class="canvas-parent" id="canvasParent"&gt;
+                    &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
+                    &lt;/div&gt;
+                </template>
 
-      <template slot="css">
+                <template slot="css">
+                    .canvas-parent {
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                    }
+                </template>
+
+                <template slot="js">
+                </template>
+            </page>
+        </main>
+    </div>
+
+    <footer class="footer">
+
+        <nav class="f-nav">
+            <ul class="f-ul">
+                <li class="f-li f-li--ttl">Web制作</li>
+                <li class="f-li"><a href="/coding">コーディングの部屋</a></li>
+                <li class="f-li"><a href="">プログラミングの部屋</a></li>
+                <li class="f-li"><a href="">デザインの部屋</a></li>
+            </ul>
+            <ul class="f-ul">
+                <li class="f-li f-li--ttl">趣味嗜好</li>
+                <li class="f-li"><a href="">花の部屋</a></li>
+                <li class="f-li"><a href="">言語の部屋</a></li>
+                <li class="f-li"><a href="">願望の部屋</a></li>
+            </ul>
+            <ul class="f-ul">
+                <li class="f-li f-li--ttl">このサイトについて</li>
+                <li class="f-li"><a href="" target="_blank">サイトの目的</a></li>
+                <li class="f-li"><a href="" target="_blank">免責事項</a></li>
+                <li class="f-li"><a href="" target="_blank">利用規約</a></li>
+            </ul>
+            <ul class="f-ul">
+                <li class="f-li f-li--ttl">47fkin</li>
+                <li class="f-li"><a href="" target="_blank">47fkinについて</a></li>
+            </ul>
+            <a href="" target="_blank"></a>
+
+        </nav>
+
+        <p class="f-copy">
+            COPYRIGHT © 47fkin. ALL RIGHTS RESERVED.
+        </p>
+
+    </footer>
+
+    <!-- css manipulation ----------------------------------------- -->
+    <style type="text/css">
         .canvas-parent {
-        width: 100%;
-        height: 100%;
-        background-color: skyblue;
-        cursor: pointer;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
         }
-      </template>
 
-      <template slot="js">
-        // p5.jsをnode moduleから読み込み
-        const p5 = require('p5');
+        <template slot="mainCont"><div class="canvas-parent"id="p5Parent"></div></template><template slot="html">&lt;
+        div class="canvas-parent"id="canvasParent"&gt;
+        &lt;/div&gt;
+
+        </template><template slot="css">.canvas-parent {
+            width: 100%;
+            height: 100%;
+            background-color: skyblue;
+            cursor: pointer;
+        }
+
+        </template><template slot="js"> // p5.jsをnode moduleから読み込み
+        const p5=require('p5');
 
         //親要素を取得
-        const parent = document.getElementById("p5Parent");
+        const parent=document.getElementById("p5Parent");
 
         // 親要素の幅と高さを変数化
-        let cW = parent.clientWidth;
-        let cH = parent.clientHeight;
+        let cW=parent.clientWidth;
+        let cH=parent.clientHeight;
 
         // 粒子の数(canvasサイズをもとに数を調整)
-        let quantity = Math.floor(window.innerWidth / 10);
+        let quantity=Math.floor(window.innerWidth / 10);
 
         // 粒子情報の配列
-        let ptcArray = [];
+        let ptcArray=[];
 
         // ---------------------------------------------------------------------------
 
         /**
         * インスタンスモードで記述
         */
-        const sketch = (p) =&gt; {
+        const sketch=(p)=&gt;
 
-        /**
+            {
+
+            /**
         * 最初に1回だけ実行される処理
         */
-        p.setup = () =&gt; {
+            p.setup=()=&gt;
 
-        // キャンバスを親要素のサイズに合わせて作成
-        let canvas = p.createCanvas(cW, cH);
+                {
 
-        //キャンバスにclassを付与
-        canvas.class('p5Canvas');
+                // キャンバスを親要素のサイズに合わせて作成
+                let canvas=p.createCanvas(cW, cH);
 
-        // Particle()によって出力された粒子の情報を、配列に格納
-        for (let i = 0; i &lt; quantity; i++) {
-        ptcArray.push(new Particle());
-        }
+                //キャンバスにclassを付与
+                canvas.class('p5Canvas');
 
-        } //p.setup()
+                // Particle()によって出力された粒子の情報を、配列に格納
+                for (let i=0; i &lt; quantity; i++) {
+                    ptcArray.push(new Particle());
+                }
 
-        // --------------------------------------------------------------------------
+            }
 
-        /**
+            //p.setup()
+
+            // --------------------------------------------------------------------------
+
+            /**
         * 繰り返し実行される処理
         */
-        p.draw = () =&gt; {
+            p.draw=()=&gt;
 
-        // スタイルをリセット
-        p.background('rgb(237, 255, 194)');
+                {
 
-        // 粒子をそれぞれ描画
-        ptcArray.forEach(function (el, index) {
-        el.update();
-        el.draw();
-        });
+                // スタイルをリセット
+                p.background('rgb(237, 255, 194)');
 
-        } // p.draw()
+                // 粒子をそれぞれ描画
+                ptcArray.forEach(function (el, index) {
+                        el.update();
+                        el.draw();
+                    }
 
-        // --------------------------------------------------------------------------
+                );
 
-        /**
+            }
+
+            // p.draw()
+
+            // --------------------------------------------------------------------------
+
+            /**
         * クラスの定義
         */
-        class Particle {
-        constructor() {
-        // 座標
-        this.pos = p.createVector(p.random(p.width), p.random(p.height));
-        // 大きさ
-        this.r = p.random(5, 25);
-        // 速さ
-        this.v = p.createVector(p.random(-2, 2), p.random(-2, 2));
+            class Particle {
+                constructor() {
+                    // 座標
+                    this.pos=p.createVector(p.random(p.width), p.random(p.height));
+                    // 大きさ
+                    this.r=p.random(5, 25);
+                    // 速さ
+                    this.v=p.createVector(p.random(-2, 2), p.random(-2, 2));
+                }
+
+                // 粒子の移動操作関数
+                update() {
+                    this.pos.add(this.v);
+                    this.reflection();
+                }
+
+                // 描画関数
+                draw() {
+                    // 粒子の色を明るい緑に配色
+                    let g=p.random(127, 255);
+                    let r=p.random(g);
+                    let b=p.random(b);
+                    p.fill(r, g, b);
+
+                    // 粒子描画
+                    p.ellipse(this.pos.x, this.pos.y, this.r, this.r);
+                }
+
+                // 粒子反射関数
+                reflection() {
+                    if (this.pos.x &lt; 0 || this.pos.x &gt; p.width) {
+                        this.v.x *=-1;
+                    }
+
+                    if (this.pos.y &lt; 0 || this.pos.y &gt; p.height) {
+                        this.v.y *=-1;
+                    }
+                }
+
+            }
+
+            // class Particle
+
         }
 
-        // 粒子の移動操作関数
-        update() {
-        this.pos.add(this.v);
-        this.reflection();
-        }
-
-        // 描画関数
-        draw() {
-        // 粒子の色を明るい緑に配色
-        let g = p.random(127, 255);
-        let r = p.random(g);
-        let b = p.random(b);
-        p.fill(r, g, b);
-
-        // 粒子描画
-        p.ellipse(this.pos.x, this.pos.y, this.r, this.r);
-        }
-
-        // 粒子反射関数
-        reflection() {
-        if (this.pos.x &lt; 0 || this.pos.x &gt; p.width) {
-        this.v.x *= -1;
-        }
-        if (this.pos.y &lt; 0 || this.pos.y &gt; p.height) {
-        this.v.y *= -1;
-        }
-        }
-
-        } // class Particle
-
-        } // sketch()
+        // sketch()
 
         // --------------------------------------------------------------------------
 
         // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
         // canvas.parent(parent);
         new p5(sketch, parent);
-      </template>
-    </page>
-  </main>
-</div>
 
-<footer class="footer">
+        </template></page></main></div><footer class="footer"><nav class="f-nav"><ul class="f-ul"><li class="f-li f-li--ttl">Web制作</li><li class="f-li"><a href="/coding">コーディングの部屋</a></li><li class="f-li"><a href="">プログラミングの部屋</a></li><li class="f-li"><a href="">デザインの部屋</a></li></ul><ul class="f-ul"><li class="f-li f-li--ttl">趣味嗜好</li><li class="f-li"><a href="">花の部屋</a></li><li class="f-li"><a href="">言語の部屋</a></li><li class="f-li"><a href="">願望の部屋</a></li></ul><ul class="f-ul"><li class="f-li f-li--ttl">このサイトについて</li><li class="f-li"><a href=""target="_blank">サイトの目的</a></li><li class="f-li"><a href=""target="_blank">免責事項</a></li><li class="f-li"><a href=""target="_blank">利用規約</a></li></ul><ul class="f-ul"><li class="f-li f-li--ttl">47fkin</li><li class="f-li"><a href=""target="_blank">47fkinについて</a></li></ul><a href=""target="_blank"></a></nav><p class="f-copy">COPYRIGHT © 47fkin. ALL RIGHTS RESERVED. </p></footer>< !-- css manipulation ----------------------------------------- --><style type="text/css">.canvas-parent {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(237, 255, 194);
+            cursor: pointer;
+        }
 
-  <nav class="f-nav">
-    <ul class="f-ul">
-      <li class="f-li f-li--ttl">Web制作</li>
-      <li class="f-li"><a href="/coding">コーディングの部屋</a></li>
-      <li class="f-li"><a href="">プログラミングの部屋</a></li>
-      <li class="f-li"><a href="">デザインの部屋</a></li>
-    </ul>
-    <ul class="f-ul">
-      <li class="f-li f-li--ttl">趣味嗜好</li>
-      <li class="f-li"><a href="">花の部屋</a></li>
-      <li class="f-li"><a href="">言語の部屋</a></li>
-      <li class="f-li"><a href="">願望の部屋</a></li>
-    </ul>
-    <ul class="f-ul">
-      <li class="f-li f-li--ttl">このサイトについて</li>
-      <li class="f-li"><a href="" target="_blank">サイトの目的</a></li>
-      <li class="f-li"><a href="" target="_blank">免責事項</a></li>
-      <li class="f-li"><a href="" target="_blank">利用規約</a></li>
-    </ul>
-    <ul class="f-ul">
-      <li class="f-li f-li--ttl">47fkin</li>
-      <li class="f-li"><a href="" target="_blank">47fkinについて</a></li>
-    </ul>
-    <a href="" target="_blank"></a>
+    </style>
 
-  </nav>
+    <!-- javascript manipulation----------------------------------------- -->
 
-  <p class="f-copy">
-    COPYRIGHT © 47fkin. ALL RIGHTS RESERVED.
-  </p>
+    <!-- call the common javascript -->
+    <script type="text/javascript" src="/assets/js/coding/c-page.js"></script>
 
-</footer>
+    </style>
 
-<!-- css manipulation ----------------------------------------- -->
-<style type="text/css">
-  .canvas-parent {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(237, 255, 194);
-    cursor: pointer;
-  }
+    <!-- call the common javascript ------------------------------------ -->
+    <script type="text/javascript" src="/assets/js/coding/c-page.js"></script>
 
-</style>
+    <!------------------------------------------- javascript manipulatio -->
 
-<!-- javascript manipulation----------------------------------------- -->
-
-<!-- call the common javascript -->
-<script type="text/javascript" src="/assets/js/coding/c-page.js"></script>
 
 </body>
 
