@@ -30,12 +30,12 @@ export default {
   props: {
     name: {
       type: String,
-      default: ""
+      default: "",
     },
     portrait: {
       type: Boolean,
-      default: ""
-    }
+      default: "",
+    },
   },
   data() {
     return {
@@ -51,13 +51,13 @@ export default {
         work4,
         work3,
         work2,
-        work1
-      }
+        work1,
+      },
     };
   },
   mounted() {
     return this.arrays[this.name].func();
-  }
+  },
 };
 </script>
 
