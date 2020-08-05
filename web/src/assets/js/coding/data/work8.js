@@ -40,13 +40,13 @@ function func() {
     let c = canvas.getContext('2d');
 
     // canvasのサイズを取得
-    var canvasSize = canvas.getBoundingClientRect();
+    const canvasSize = canvas.getBoundingClientRect();
     // 画面左端からcanvasまでの距離を取得
-    var canvasLeft = canvasSize.left;
+    const canvasLeft = canvasSize.left;
     // 画面上端からcanvasまでの距離を取得
-    var canvasTop = canvasSize.top;
+    const canvasTop = canvasSize.top;
     // 画面のスクロール量を取得
-    var windowS = window.scrollY;
+    const windowS = window.scrollY;
 
     // ページ読み込み時のマウス座標は、キャンバスの中央に設定
     const mouse = {
@@ -106,6 +106,7 @@ function func() {
       } else {
         this.distanceFromCenter = randomIntFromRange(20, 60);
       }
+
       // 直前のマウス位置を設定
       this.lastMouse = {
         x: x,

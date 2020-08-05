@@ -26,8 +26,8 @@ export default {
 function func() {
 
   //親要素とcanvas要素を取得
-  let canvasParent = document.getElementById("canvasParent");
-  let canvas = document.getElementById("canvas");
+  const canvasParent = document.getElementById("canvasParent");
+  const canvas = document.getElementById("canvas");
 
   // Canvas利用不可の環境では実行しないようにif文で囲む
   if (canvas.getContext) {
@@ -39,9 +39,66 @@ function func() {
     // Canvasに描画機能を付与
     let c = canvas.getContext('2d');
 
+    // canvasのサイズを取得
+    let canvasSize = canvas.getBoundingClientRect();
+    // 画面左端からcanvasまでの距離を取得
+    let canvasLeft = canvasSize.left;
+    // 画面上端からcanvasまでの距離を取得
+    let canvasTop = canvasSize.top;
+    // 画面の初期スクロール量を取得
+    const windowFirstS = window.scrollY;
 
+    //マウスの初期値を設定
+    let e = {
+      clientX: undefined,
+      clientY: undefined
+    }
 
+    // 描画するか、しないかの真偽を定めた変数
+    let painting = false;
 
+    // 描画実行関数
+    function startPosition() {
+      painting = true;
+      draw(e);
+    }
+
+    // 描画不実行関数
+    function endPosition() {
+      painting = false;
+      c.beginPath();
+    }
+
+    /**
+     * 線を描画する関数
+     */
+    function draw(e) {
+
+      // 変数paintingがfalseの場合は、下記の記述を読み込まない
+      if (!painting) return;
+
+      // 画面のスクロール量を取得
+      let windowS = window.scrollY;
+
+      c.clientWidth = 10;
+      c.lineCap = "round";
+
+      let x = e.clientX - canvasLeft;
+      let y = e.clientY - canvasTop - windowFirstS + windowS;
+
+      c.lineTo(x, y);
+      c.stroke();
+      c.beginPath();
+      c.moveTo(x, y);
+
+    }
+
+    /**
+     * 線の描画を操作するイベント処理
+     */
+    canvas.addEventListener("mousedown", startPosition);
+    canvas.addEventListener("mouseup", endPosition);
+    canvas.addEventListener("mousemove", draw);
 
 
   }

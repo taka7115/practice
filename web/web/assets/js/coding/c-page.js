@@ -34195,6 +34195,7 @@ function func() {
   // p5.jsをnode moduleから読み込み
   var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
 
+<<<<<<< HEAD
 
   var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
 
@@ -34230,6 +34231,68 @@ function func() {
 
 
   new p5(sketch, parent);
+=======
+  if (canvas.getContext) {
+    // 描画実行関数
+    var startPosition = function startPosition() {
+      painting = true;
+      draw(e);
+    }; // 描画不実行関数
+
+
+    var endPosition = function endPosition() {
+      painting = false;
+      c.beginPath();
+    };
+    /**
+     * 線を描画する関数
+     */
+
+
+    var draw = function draw(e) {
+      // 変数paintingがfalseの場合は、下記の記述を読み込まない
+      if (!painting) return; // 画面のスクロール量を取得
+
+      var windowS = window.scrollY;
+      c.clientWidth = 10;
+      c.lineCap = "round";
+      var x = e.clientX - canvasLeft;
+      var y = e.clientY - canvasTop - windowFirstS + windowS;
+      c.lineTo(x, y);
+      c.stroke();
+      c.beginPath();
+      c.moveTo(x, y);
+    };
+    /**
+     * 線の描画を操作するイベント処理
+     */
+    // canvasの幅と高さを親要素のサイズに合わせる
+
+
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d'); // canvasのサイズを取得
+
+    var canvasSize = canvas.getBoundingClientRect(); // 画面左端からcanvasまでの距離を取得
+
+    var canvasLeft = canvasSize.left; // 画面上端からcanvasまでの距離を取得
+
+    var canvasTop = canvasSize.top; // 画面の初期スクロール量を取得
+
+    var windowFirstS = window.scrollY; //マウスの初期値を設定
+
+    var e = {
+      clientX: undefined,
+      clientY: undefined
+    }; // 描画するか、しないかの真偽を定めた変数
+
+    var painting = false;
+    canvas.addEventListener("mousedown", startPosition);
+    canvas.addEventListener("mouseup", endPosition);
+    canvas.addEventListener("mousemove", draw);
+  }
+>>>>>>> b68130649752ef7ac9f44ef6629107e3c7d17057
 }
 
 /***/ }),
@@ -35659,7 +35722,7 @@ exports["default"] = void 0;
 var _default = {
   id: 9,
   ttl: "<span>C</span>anvasでサインウェーブを<br class='u-sp'>表現してみた<br>【PCの待機画面でよく見るアレ】",
-  txt: "Canvasでサインウェーブを<br>表現してみた<br>【PCの待機画面でよく見るアレ】",
+  txt: "Canvasでサインウェーブ<br>を表現してみた<br>【PC待機画面でよく見るアレ】",
   alt: "Canvasでサインウェーブを表現してみた【PCの待機画面でよく見るアレ】",
   p1: "<br class='u-sp'>波打つような線を描画する",
   p1_color: "js-yellow",

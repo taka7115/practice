@@ -1,7 +1,7 @@
 export default {
   id: 9,
   ttl: "<span>C</span>anvasでサインウェーブを<br class='u-sp'>表現してみた<br>【PCの待機画面でよく見るアレ】",
-  txt: "Canvasでサインウェーブを<br>表現してみた<br>【PCの待機画面でよく見るアレ】",
+  txt: "Canvasでサインウェーブ<br>を表現してみた<br>【PC待機画面でよく見るアレ】",
   alt: "Canvasでサインウェーブを表現してみた【PCの待機画面でよく見るアレ】",
   p1: "<br class='u-sp'>波打つような線を描画する",
   p1_color: "js-yellow",
