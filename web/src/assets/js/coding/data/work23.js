@@ -141,11 +141,11 @@ function func() {
       // 粒子接続関数
       connection() {
 
+        // 粒子一つ一つの座標を他の粒子の座標と比較
+        // 80より近ければ線で結ぶ
         for (let i = 0; i < ptcArray.length; i++) {
 
-
           const d = p.dist(this.pos.x, this.pos.y, ptcArray[i].pos.x, ptcArray[i].pos.y)
-
 
           if (d < 80) {
             p.stroke('#fff');

@@ -511,31 +511,33 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work23.js */ "./src/assets/js/coding/data/work23.js"));
+var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work24.js */ "./src/assets/js/coding/data/work24.js"));
 
-var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work22.js */ "./src/assets/js/coding/data/work22.js"));
+var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work23.js */ "./src/assets/js/coding/data/work23.js"));
 
-var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work21.js */ "./src/assets/js/coding/data/work21.js"));
+var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work22.js */ "./src/assets/js/coding/data/work22.js"));
 
-var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
+var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work21.js */ "./src/assets/js/coding/data/work21.js"));
 
-var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
+var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
 
-var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
+var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
 
-var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
+var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
 
-var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
+var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
 
-var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
+var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
 
-var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
+var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
 
-var _work11 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
+var _work11 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
 
-var _work12 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+var _work12 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
 
-var _work13 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
+var _work13 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+
+var _work14 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -601,12 +603,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // import work27 from "../../../data/work27.js";
 // import work26 from "../../../data/work26.js";
 // import work25 from "../../../data/work25.js";
-// import work24 from "../../../data/work24.js";
 var _default = {
   data: function data() {
     return {
       arrays: {
-<<<<<<< HEAD
         // work40,
         // work39,
         // work38,
@@ -623,34 +623,20 @@ var _default = {
         // work27,
         // work26,
         // work25,
-        // work24,
-        work23: _work["default"],
-        work22: _work2["default"],
-        work21: _work3["default"],
-        work10: _work4["default"],
-        work9: _work5["default"],
-        work8: _work6["default"],
-        work7: _work7["default"],
-        work6: _work8["default"],
-        work5: _work9["default"],
-        work4: _work10["default"],
-        work3: _work11["default"],
-        work2: _work12["default"],
-        work1: _work13["default"]
-=======
-        work22: _work["default"],
-        work21: _work2["default"],
-        work10: _work3["default"],
-        work9: _work4["default"],
-        work8: _work5["default"],
-        work7: _work6["default"],
-        work6: _work7["default"],
-        work5: _work8["default"],
-        work4: _work9["default"],
-        work3: _work10["default"],
-        work2: _work11["default"],
-        work1: _work12["default"]
->>>>>>> b68130649752ef7ac9f44ef6629107e3c7d17057
+        work24: _work["default"],
+        work23: _work2["default"],
+        work22: _work3["default"],
+        work21: _work4["default"],
+        work10: _work5["default"],
+        work9: _work6["default"],
+        work8: _work7["default"],
+        work7: _work8["default"],
+        work6: _work9["default"],
+        work5: _work10["default"],
+        work4: _work11["default"],
+        work3: _work12["default"],
+        work2: _work13["default"],
+        work1: _work14["default"]
       }
     };
   },
@@ -35581,6 +35567,8 @@ function func() {
       }, {
         key: "connection",
         value: function connection() {
+          // 粒子一つ一つの座標を他の粒子の座標と比較
+          // 80より近ければ線で結ぶ
           for (var i = 0; i < ptcArray.length; i++) {
             var d = p.dist(this.pos.x, this.pos.y, ptcArray[i].pos.x, ptcArray[i].pos.y);
 
@@ -35601,6 +35589,127 @@ function func() {
 
 
   new p5(sketch, parent);
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work24.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work24.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 24,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "画像読み込み中に表示される要素を指定する",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>p5.jsのpreload()を使用するとデフォルトでloadingというテキストがでてしまう。HTMLにp5_loadingという指定のidを付与すると、付与された要素がloading中に表示される要素となる。今回は空divにIDを付与して、loadingというテキストを非表示にする。",
+  p3_list2: "<span data='dot'>&#9642;</span>preload()関数では、loadImage(画像)、loadJSON(JSONデータ)、loadFont(フォント)、などなど。<br><br>詳しくは<a href='https://p5js.org/reference/' target='_blank'>p5.jsの公式リファレンス</a>を確認。",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  // p5.jsをnode moduleから読み込み
+  var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
+
+
+  var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
+
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // 情報を変数化
+
+  var img;
+  var size, dotNum; // -------------------------------
+
+  /**
+   * インスタンスモードで記述
+   */
+
+  var imgSketch = function imgSketch(p) {
+    // 画像の読み込み
+    p.preload = function () {
+      img = p.loadImage("../../../assets/img/coding/page/hallstatt.jpg ");
+    };
+    /**
+     * 最初に1回だけ実行される処理
+     */
+
+
+    p.setup = function () {
+      // キャンバスを親要素のサイズに合わせて作成
+      var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
+
+      canvas["class"]('p5Canvas'); // スタイルを定義
+
+      size = 5;
+      dotNum = 500;
+      p.noStroke(); // ?
+
+      img.loadPixels();
+    }; //p.setup()
+    // ------------------------------
+
+    /**
+     * 繰り返し実行される処理
+     */
+
+
+    p.draw = function () {
+      dotDraw();
+    }; // p.draw()
+    // ------------------------------
+
+
+    var dotDraw = function dotDraw() {
+      // dotNumの数値でrectの描画量(キャンバス内の塗りつぶされるスピード)を指定
+      for (var i = 0; i < dotNum; i++) {
+        // 画像上の特定の座標を出力
+        var x = p.floor(p.random(p.width));
+        var y = p.floor(p.random(p.height)); // 出力された特定の座標の色を取得
+
+        var pix = img.get(x, y); // 取得した色で四角形を描画
+
+        p.fill(pix);
+        p.rect(x, y, size, size);
+      }
+    }; // dotDraw()
+
+  }; // sketch()
+  // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
+  // canvas.parent(parent);
+
+
+  new p5(imgSketch, parent);
 }
 
 /***/ }),

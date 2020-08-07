@@ -61,7 +61,7 @@
 // import work27 from "../../../data/work27.js";
 // import work26 from "../../../data/work26.js";
 // import work25 from "../../../data/work25.js";
-// import work24 from "../../../data/work24.js";
+import work24 from "../../../data/work24.js";
 import work23 from "../../../data/work23.js";
 import work22 from "../../../data/work22.js";
 import work21 from "../../../data/work21.js";
@@ -95,7 +95,7 @@ export default {
         // work27,
         // work26,
         // work25,
-        // work24,
+        work24,
         work23,
         work22,
         work21,

@@ -32480,11 +32480,64 @@ function func() {
   var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
 
   if (canvas.getContext) {
+    // 描画実行関数
+    var startPosition = function startPosition() {
+      painting = true;
+      draw(e);
+    }; // 描画不実行関数
+
+
+    var endPosition = function endPosition() {
+      painting = false;
+      c.beginPath();
+    };
+    /**
+     * 線を描画する関数
+     */
+
+
+    var draw = function draw(e) {
+      // 変数paintingがfalseの場合は、下記の記述を読み込まない
+      if (!painting) return; // 画面のスクロール量を取得
+
+      var windowS = window.scrollY;
+      c.clientWidth = 10;
+      c.lineCap = "round";
+      var x = e.clientX - canvasLeft;
+      var y = e.clientY - canvasTop - windowFirstS + windowS;
+      c.lineTo(x, y);
+      c.stroke();
+      c.beginPath();
+      c.moveTo(x, y);
+    };
+    /**
+     * 線の描画を操作するイベント処理
+     */
     // canvasの幅と高さを親要素のサイズに合わせる
+
+
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
 
-    var c = canvas.getContext('2d');
+    var c = canvas.getContext('2d'); // canvasのサイズを取得
+
+    var canvasSize = canvas.getBoundingClientRect(); // 画面左端からcanvasまでの距離を取得
+
+    var canvasLeft = canvasSize.left; // 画面上端からcanvasまでの距離を取得
+
+    var canvasTop = canvasSize.top; // 画面の初期スクロール量を取得
+
+    var windowFirstS = window.scrollY; //マウスの初期値を設定
+
+    var e = {
+      clientX: undefined,
+      clientY: undefined
+    }; // 描画するか、しないかの真偽を定めた変数
+
+    var painting = false;
+    canvas.addEventListener("mousedown", startPosition);
+    canvas.addEventListener("mouseup", endPosition);
+    canvas.addEventListener("mousemove", draw);
   }
 }
 
@@ -33175,6 +33228,8 @@ function func() {
       }, {
         key: "connection",
         value: function connection() {
+          // 粒子一つ一つの座標を他の粒子の座標と比較
+          // 80より近ければ線で結ぶ
           for (var i = 0; i < ptcArray.length; i++) {
             var d = p.dist(this.pos.x, this.pos.y, ptcArray[i].pos.x, ptcArray[i].pos.y);
 
@@ -33209,14 +33264,18 @@ function func() {
 "use strict";
 
 
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 var _default = {
-  id: 23,
+  id: 24,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -33228,10 +33287,10 @@ var _default = {
   p2_color: "js-yellow",
   p2_list1: "<span data='dot'>&#9642;</span>",
   p2_list2: "<span data='dot'>&#9642;</span>",
-  p3: "",
+  p3: "画像読み込み中に表示される要素を指定する",
   p3_color: "js-yellow",
-  p3_list1: "<span data='dot'>&#9642;</span>",
-  p3_list2: "<span data='dot'>&#9642;</span>",
+  p3_list1: "<span data='dot'>&#9642;</span>p5.jsのpreload()を使用するとデフォルトでloadingというテキストがでてしまう。HTMLにp5_loadingという指定のidを付与すると、付与された要素がloading中に表示される要素となる。今回は空divにIDを付与して、loadingというテキストを非表示にする。",
+  p3_list2: "<span data='dot'>&#9642;</span>preload()関数では、loadImage(画像)、loadJSON(JSONデータ)、loadFont(フォント)、などなど。<br><br>詳しくは<a href='https://p5js.org/reference/' target='_blank'>p5.jsの公式リファレンス</a>を確認。",
   func: func
 };
 /**
@@ -33248,21 +33307,36 @@ function func() {
   var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
 
   var cW = parent.clientWidth;
-  var cH = parent.clientHeight; // -------------------------------
+  var cH = parent.clientHeight; // 情報を変数化
+
+  var img;
+  var size, dotNum; // -------------------------------
 
   /**
    * インスタンスモードで記述
    */
 
-  var sketch = function sketch(p) {
+  var imgSketch = function imgSketch(p) {
+    // 画像の読み込み
+    p.preload = function () {
+      img = p.loadImage("../../../assets/img/coding/page/hallstatt.jpg ");
+    };
     /**
      * 最初に1回だけ実行される処理
      */
+
+
     p.setup = function () {
       // キャンバスを親要素のサイズに合わせて作成
       var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
 
-      canvas["class"]('p5Canvas');
+      canvas["class"]('p5Canvas'); // スタイルを定義
+
+      size = 5;
+      dotNum = 500;
+      p.noStroke(); // ?
+
+      img.loadPixels();
     }; //p.setup()
     // ------------------------------
 
@@ -33271,14 +33345,32 @@ function func() {
      */
 
 
-    p.draw = function () {}; // p.draw()
+    p.draw = function () {
+      dotDraw();
+    }; // p.draw()
+    // ------------------------------
+
+
+    var dotDraw = function dotDraw() {
+      // dotNumの数値でrectの描画量(キャンバス内の塗りつぶされるスピード)を指定
+      for (var i = 0; i < dotNum; i++) {
+        // 画像上の特定の座標を出力
+        var x = p.floor(p.random(p.width));
+        var y = p.floor(p.random(p.height)); // 出力された特定の座標の色を取得
+
+        var pix = img.get(x, y); // 取得した色で四角形を描画
+
+        p.fill(pix);
+        p.rect(x, y, size, size);
+      }
+    }; // dotDraw()
 
   }; // sketch()
   // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
   // canvas.parent(parent);
 
 
-  new p5(sketch, parent);
+  new p5(imgSketch, parent);
 }
 
 /***/ }),
@@ -34195,7 +34287,6 @@ function func() {
   // p5.jsをnode moduleから読み込み
   var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
 
-<<<<<<< HEAD
 
   var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
 
@@ -34231,68 +34322,6 @@ function func() {
 
 
   new p5(sketch, parent);
-=======
-  if (canvas.getContext) {
-    // 描画実行関数
-    var startPosition = function startPosition() {
-      painting = true;
-      draw(e);
-    }; // 描画不実行関数
-
-
-    var endPosition = function endPosition() {
-      painting = false;
-      c.beginPath();
-    };
-    /**
-     * 線を描画する関数
-     */
-
-
-    var draw = function draw(e) {
-      // 変数paintingがfalseの場合は、下記の記述を読み込まない
-      if (!painting) return; // 画面のスクロール量を取得
-
-      var windowS = window.scrollY;
-      c.clientWidth = 10;
-      c.lineCap = "round";
-      var x = e.clientX - canvasLeft;
-      var y = e.clientY - canvasTop - windowFirstS + windowS;
-      c.lineTo(x, y);
-      c.stroke();
-      c.beginPath();
-      c.moveTo(x, y);
-    };
-    /**
-     * 線の描画を操作するイベント処理
-     */
-    // canvasの幅と高さを親要素のサイズに合わせる
-
-
-    canvas.width = canvasParent.clientWidth;
-    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
-
-    var c = canvas.getContext('2d'); // canvasのサイズを取得
-
-    var canvasSize = canvas.getBoundingClientRect(); // 画面左端からcanvasまでの距離を取得
-
-    var canvasLeft = canvasSize.left; // 画面上端からcanvasまでの距離を取得
-
-    var canvasTop = canvasSize.top; // 画面の初期スクロール量を取得
-
-    var windowFirstS = window.scrollY; //マウスの初期値を設定
-
-    var e = {
-      clientX: undefined,
-      clientY: undefined
-    }; // 描画するか、しないかの真偽を定めた変数
-
-    var painting = false;
-    canvas.addEventListener("mousedown", startPosition);
-    canvas.addEventListener("mouseup", endPosition);
-    canvas.addEventListener("mousemove", draw);
-  }
->>>>>>> b68130649752ef7ac9f44ef6629107e3c7d17057
 }
 
 /***/ }),
