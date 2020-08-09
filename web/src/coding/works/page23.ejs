@@ -14,12 +14,11 @@
   <main class="c-page">
 
 
-    <page name="work10" tab="3">
+    <page name="work23" tab="3">
 
 
       <template slot="mainCont">
-        <div class="canvas-parent" id="canvasParent">
-          <canvas id="canvas"></canvas>
+        <div class="canvas-parent" id="p5Parent">
         </div>
       </template>
 
@@ -27,7 +26,6 @@
 
       <template slot="html">
         &lt;div class="canvas-parent" id="canvasParent"&gt;
-        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
         &lt;/div&gt;
       </template>
 
@@ -42,7 +40,139 @@
 
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
+        // p5.jsをnode moduleから読み込み
+        const p5 = require('p5');
+
+        //親要素を取得
+        const parent = document.getElementById("p5Parent");
+
+        // 親要素の幅と高さを変数化
+        let cW = parent.clientWidth;
+        let cH = parent.clientHeight;
+
+        // 粒子の数(canvasサイズをもとに調整)
+        let quantity = Math.floor(window.innerWidth / 10);
+
+        // 粒子情報の配列
+        let ptcArray = [];
+
+        // -------------------------------
+
+        /**
+        * インスタンスモードで記述
+        */
+        const sketch = (p) =&gt; {
+
+        /**
+        * 最初に1回だけ実行される処理
+        */
+        p.setup = () =&gt; {
+
+        // キャンバスを親要素のサイズに合わせて作成
+        let canvas = p.createCanvas(cW, cH);
+
+        //キャンバスにclassを付与
+        canvas.class('p5Canvas');
+
+        // スタイルを指定
+        p.noStroke();
+
+        // Particle()によって出力された粒子の情報を、配列に格納
+        for (let i = 0; i &lt; quantity; i++) {
+        ptcArray.push(new Particle());
+        }
+
+        } //p.setup()
+
+        // ------------------------------
+
+        /**
+        * 繰り返し実行される処理
+        */
+        p.draw = () =&gt; {
+
+        // スタイルをリセット
+        p.background('#002049');
+
+        // 粒子をそれぞれ描画
+        ptcArray.forEach(function (el, index) {
+        el.update();
+        el.draw();
+        });
+
+        } // p.draw()
+
+        // ------------------------------
+
+        /**
+        * クラスの定義
+        */
+        class Particle {
+        constructor() {
+        // 座標
+        this.pos = p.createVector(p.random(p.width), p.random(p.height));
+        // 大きさ
+        this.r = 5;
+        // 速さ
+        this.v = p.createVector(p.random(-1, 1), p.random(-1, 1));
+        }// constructor()
+
+
+        // 粒子の移動操作関数
+        update() {
+        this.pos.add(this.v);
+        this.reflection();
+        this.connection();
+        } // update()
+
+
+        // 描画関数
+        draw() {
+        // 粒子の色
+        p.fill(255, 255, 255);
+
+        // 粒子描画
+        p.ellipse(this.pos.x, this.pos.y, this.r, this.r);
+        } // draw()
+
+
+        // 粒子反射関数
+        reflection() {
+        if (this.pos.x &lt; 0 || this.pos.x &gt; p.width) {
+        this.v.x *= -1;
+        }
+        if (this.pos.y &lt; 0 || this.pos.y &gt; p.height) {
+        this.v.y *= -1;
+        }
+        } // reflection()
+
+
+        // 粒子接続関数
+        connection() {
+
+        // 粒子一つ一つの座標を他の粒子の座標と比較
+        // 80より近ければ線で結ぶ
+        for (let i = 0; i &lt; ptcArray.length; i++) {
+
+        const d = p.dist(this.pos.x, this.pos.y, ptcArray[i].pos.x, ptcArray[i].pos.y)
+
+        if (d &lt; 80) {
+        p.stroke('#fff');
+        p.line(this.pos.x, this.pos.y, ptcArray[i].pos.x, ptcArray[i].pos.y)
+        }
+
+        }
+
+        } // connection()
+
+        } // class Particle
+
+        } // sketch()
+
+        // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
+        // canvas.parent(parent);
+        new p5(sketch, parent);
+
       </template>
     </page>
   </main>
@@ -56,6 +186,7 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
+    background-color: #002049;
   }
 
 </style>
