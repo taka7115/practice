@@ -80,12 +80,15 @@ function func() {
       // 画面のスクロール量を取得
       let windowS = window.scrollY;
 
+      // 線のスタイルを設定
       c.clientWidth = 10;
       c.lineCap = "round";
 
+      // カーソルの正しい位置を変数化
       let x = e.clientX - canvasLeft;
       let y = e.clientY - canvasTop - windowFirstS + windowS;
 
+      // 線を引く
       c.lineTo(x, y);
       c.stroke();
       c.beginPath();
@@ -99,7 +102,6 @@ function func() {
     canvas.addEventListener("mousedown", startPosition);
     canvas.addEventListener("mouseup", endPosition);
     canvas.addEventListener("mousemove", draw);
-
 
   }
 

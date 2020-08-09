@@ -28213,11 +28213,14 @@ function func() {
       // 変数paintingがfalseの場合は、下記の記述を読み込まない
       if (!painting) return; // 画面のスクロール量を取得
 
-      var windowS = window.scrollY;
+      var windowS = window.scrollY; // 線のスタイルを設定
+
       c.clientWidth = 10;
-      c.lineCap = "round";
+      c.lineCap = "round"; // カーソルの正しい位置を変数化
+
       var x = e.clientX - canvasLeft;
-      var y = e.clientY - canvasTop - windowFirstS + windowS;
+      var y = e.clientY - canvasTop - windowFirstS + windowS; // 線を引く
+
       c.lineTo(x, y);
       c.stroke();
       c.beginPath();
