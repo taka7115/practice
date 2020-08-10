@@ -1,20 +1,16 @@
-import {
-  Line
-} from 'chartist';
-
 export default {
   id: 23,
-  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
-  txt: "Canvasで<br><br>【HTML5】",
+  ttl: "<span>p</span>5.jsを使って、<br class='u-sp'>近接するパーティクル同士を<br>動的に線でつないでみた【p5.js ②】",
+  txt: "p5.jsを使って<br class='u-sp'>近接する<br class='u-pc'>パーティクル<br class='u-sp'>同士を動的に線でつな<br class='u-sp'>いでみた【p5.js ②】",
   alt: "Canvasで",
-  p1: "",
+  p1: "classとnew演算子を使い、パーティクルの情報を配列に格納",
   p1_color: "js-yellow",
-  p1_list1: "<span data='dot'>&#9642;</span>",
-  p1_list2: "<span data='dot'>&#9642;</span>",
-  p2: "",
+  p1_list1: "<span data='dot'>&#9642;</span>1つのパーティクルは、座標や大きさ、速さといった情報を保持しています。今回は、パーティクル同士が一定の距離内に近づいたら線で結ぶ、という処理をする必要があるため、パーティクル1つ1つの座標を追跡しなければいけません。",
+  p1_list2: "<span data='dot'>&#9642;</span>そのため、new演算子によりclass Particleを実行、出力されるパーティクルの情報をptcArrayに格納していきます(JavaScriptの42~45行目)。",
+  p2: ".distメソッドにより、パーティクルの距離を調べる",
   p2_color: "js-yellow",
-  p2_list1: "<span data='dot'>&#9642;</span>",
-  p2_list2: "<span data='dot'>&#9642;</span>",
+  p2_list1: "<span data='dot'>&#9642;</span>p5.jsの独自メソッドに.dist(x,y,x,y)があります。これは2つの座標の距離を調べるというメソッドです。第1、第2引数に対象となるパーティクルの座標を入力し、第3、第4引数に別のパーティクルの座標を入力します。今回比較するパーティクルは複数存在するため、for文でループさせ、1つのパーティクルに対して、他それぞれのパーティクルとの距離を調べる、という処理をする必要があります(JavaScriptの115~116行目)。",
+  p2_list2: "<span data='dot'>&#9642;</span>今回は調べた距離が80px以下の場合、白い線を結びます(JavaScriptの118~121行目)。",
   p3: "",
   p3_color: "js-yellow",
   p3_list1: "<span data='dot'>&#9642;</span>",
@@ -33,6 +29,7 @@ export default {
 function func() {
 
   // p5.jsをnode moduleから読み込み
+  // 今回p5.jsのjsファイルのみ、npm&gulpによりコンパイルしています。コンパイルしない開発環境の場合、CDNや単一ファイルを読み込んでください。
   const p5 = require('p5');
 
   //親要素を取得
@@ -63,9 +60,6 @@ function func() {
       // キャンバスを親要素のサイズに合わせて作成
       let canvas = p.createCanvas(cW, cH);
 
-      //キャンバスにclassを付与
-      canvas.class('p5Canvas');
-
       // スタイルを指定
       p.noStroke();
 
@@ -89,7 +83,7 @@ function func() {
       p.background('#002049');
 
       // 粒子をそれぞれ描画
-      ptcArray.forEach(function (el, index) {
+      ptcArray.forEach(function (el) {
         el.update();
         el.draw();
       });

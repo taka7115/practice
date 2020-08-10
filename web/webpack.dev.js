@@ -11,6 +11,7 @@ module.exports = {
     'bundle.js': './src/assets/js/main.js',
     'coding/c-top.js': './src/assets/js/coding/c-top.js',
     'coding/c-page.js': './src/assets/js/coding/c-page.js',
+
   },
   output: {
     path: __dirname + '/../',

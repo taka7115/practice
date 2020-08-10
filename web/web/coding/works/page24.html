@@ -52,7 +52,96 @@
       </template>
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
+
+        // p5.jsをnode moduleから読み込み
+        // 今回p5.jsのjsファイルのみ、npm&gulpによりコンパイルしています。コンパイルしない開発環境の場合、
+        // CDNや単一ファイルを読み込んでください。
+        const p5 = require('p5');
+
+        //親要素を取得
+        const parent = document.getElementById("p5Parent");
+
+        // 親要素の幅と高さを変数化
+        let cW = parent.clientWidth;
+        let cH = parent.clientHeight;
+
+        // 情報を変数化
+        var img;
+        var size, dotNum;
+
+        /**
+        * インスタンスモードで記述
+        */
+        const sketch = (p) => {
+
+        // ---------------------------------------------------------------------------
+
+        // 画像の事前読み込み
+        p.preload = () => {
+        img = p.loadImage("../../../assets/img/coding/page/hallstatt.jpg ");
+        } //p.preload()
+
+        // ---------------------------------------------------------------------------
+
+        /**
+        * 最初に1回だけ実行される処理
+        */
+        p.setup = () => {
+
+        // キャンバスを親要素のサイズに合わせて作成
+        let canvas = p.createCanvas(cW, cH);
+
+        // 画像のサイズをキャンバスのサイズに合わせる
+        img.resize(cW, cH);
+
+        // スタイルを定義
+        size = 5;
+        dotNum = 500;
+        p.noStroke();
+
+        } //p.setup()
+
+        // ---------------------------------------------------------------------------
+
+        /**
+        * 繰り返し実行される処理
+        */
+        p.draw = () => {
+        dotDraw();
+        } // p.draw()
+
+        // ---------------------------------------------------------------------------
+
+        /**
+        * 画像の色相を取得しながら、小さな四角形を描画する関数
+        */
+        var dotDraw = () => {
+        // dotNumの数値でrectの描画量(キャンバス内の塗りつぶされるスピード)を指定
+
+        for (let i = 0; i &lt; dotNum; i++) {
+
+        // 画像上の座標をランダムに出力
+        var x = p.floor(p.random(p.width));
+        var y = p.floor(p.random(p.height));
+
+        // 出力された特定の座標の色を取得
+        var pix = img.get(x, y);
+
+        // 取得した色で四角形を描画
+        p.fill(pix);
+        p.rect(x, y, size, size);
+
+        }
+
+        } // dotDraw()
+
+        // ---------------------------------------------------------------------------
+
+        } // sketch()
+
+        // sketch関数実行。第2引数は親要素指定。setup()の中にcanvas.parent(parent);を記述しても同義
+        new p5(sketch, parent);
+
       </template>
     </page>
   </main>

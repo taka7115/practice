@@ -732,7 +732,7 @@ screen and (min-width:751px) {
 }
 .c-page .point__cont {
   width: 800px;
-  padding: 100px 80px;
+  padding: 80px 60px 50px;
   background-color: #f7f8fc;
   border: #00f6ff solid 4px
 }
@@ -750,7 +750,7 @@ screen and (min-width:751px) {
   width: 100%;
   position: relative;
   font-size: 24px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   color: #464646
 }
 @media screen and (max-width:750px) {
@@ -780,7 +780,7 @@ screen and (min-width:751px) {
   text-align: justify
 }
 .c-page .point__list:not(:last-child) {
-  margin-bottom: 50px
+  margin-bottom: 30px
 }
 @media screen and (max-width:750px) {
   .c-page .point__list:not(:last-child) {

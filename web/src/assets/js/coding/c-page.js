@@ -1,3 +1,6 @@
+// p5.js使用の際、 IEで動くようにbabelPolyfillをimport
+import babelPolyfill from 'babel-polyfill';
+
 import Vue from 'vue';
 import Page from './vue/components/Page.vue';
 
