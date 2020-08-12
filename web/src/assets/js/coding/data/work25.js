@@ -1,5 +1,5 @@
 export default {
-  id: 23,
+  id: 25,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -45,6 +45,16 @@ function func() {
    */
   const sketch = (p) => {
 
+    let colorImg, bwImg, area;
+
+    /**
+     * 画像の事前読み込み
+     */
+    p.preload = () => {
+      colorImg = p.loadImage("../../../assets/img/coding/page/kv/umbrella_color.jpg");
+      bwImg = p.loadImage("../../../assets/img/coding/page/kv/umbrella_bw.jpg");
+    } //p.preload()
+
     /**
      * 最初に1回だけ実行される処理
      */
@@ -53,20 +63,39 @@ function func() {
       // キャンバスを親要素のサイズに合わせて作成
       let canvas = p.createCanvas(cW, cH);
 
-      //キャンバスにclassを付与
-      canvas.class('p5Canvas');
+      // 画像のサイズをキャンバスのサイズに合わせる
+      colorImg.resize(cW, cH);
+      bwImg.resize(cW, cH);
+      p.image(colorImg, 0, 0);
+      p.image(bwImg, 0, 0);
 
+      // スタイルを定義
+      p.noCursor();
+      p.cursor("../../../assets/img/coding/page/kv/eraser.png");
 
     } //p.setup()
 
     // ------------------------------
 
     /**
-     * 繰り返し実行される処理
+     * ドラッグしたときに実行される処理
      */
-    p.draw = () => {
+    p.mouseDragged = () => {
 
-    } // p.draw()
+      // pcのとき
+      if (window.innerWidth > 750) {
+        area = 90;
+        // .copy(コピー対象, コピーの始点座標, コピーのx軸範囲, コピーのy軸範囲,
+        // ペーストの始点座標, ペーストのx軸範囲, ペーストのy軸範囲)
+        p.copy(colorImg, p.mouseX, p.mouseY, area, area, p.mouseX, p.mouseY, area, area);
+        // spのとき
+      } else {
+        area = 30;
+        p.copy(colorImg, p.mouseX - (area / 2), p.mouseY - (area / 2), area, area, p.mouseX - (area / 2), p.mouseY - (area / 2), area, area);
+        return false;
+
+      }
+    }
 
 
   } // sketch()

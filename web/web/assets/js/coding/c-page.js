@@ -40245,9 +40245,12 @@ function func() {
 
   var sketch = function sketch(p) {
     // ---------------------------------------------------------------------------
-    // 画像の事前読み込み
+
+    /**
+     * 画像の事前読み込み
+     */
     p.preload = function () {
-      img = p.loadImage("../../../assets/img/coding/page/hallstatt.jpg ");
+      img = p.loadImage("../../../assets/img/coding/page/kv/hallstatt.jpg ");
       img.resize(cW, cH);
     }; //p.preload()
     // ---------------------------------------------------------------------------
@@ -40325,7 +40328,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _default = {
-  id: 23,
+  id: 25,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -40364,24 +40367,53 @@ function func() {
    */
 
   var sketch = function sketch(p) {
+    var colorImg, bwImg, area;
+    /**
+     * 画像の事前読み込み
+     */
+
+    p.preload = function () {
+      colorImg = p.loadImage("../../../assets/img/coding/page/kv/umbrella_color.jpg");
+      bwImg = p.loadImage("../../../assets/img/coding/page/kv/umbrella_bw.jpg");
+    }; //p.preload()
+
     /**
      * 最初に1回だけ実行される処理
      */
+
+
     p.setup = function () {
       // キャンバスを親要素のサイズに合わせて作成
-      var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
+      var canvas = p.createCanvas(cW, cH); // 画像のサイズをキャンバスのサイズに合わせる
 
-      canvas["class"]('p5Canvas');
+      colorImg.resize(cW, cH);
+      bwImg.resize(cW, cH);
+      p.image(colorImg, 0, 0);
+      p.image(bwImg, 0, 0); // スタイルを定義
+
+      p.noCursor();
+      p.cursor("../../../assets/img/coding/page/kv/eraser.png");
     }; //p.setup()
     // ------------------------------
 
     /**
-     * 繰り返し実行される処理
+     * ドラッグしたときに実行される処理
      */
 
 
-    p.draw = function () {}; // p.draw()
+    p.mouseDragged = function () {
+      // pcのとき
+      if (window.innerWidth > 750) {
+        area = 90; // .copy(コピー対象, コピーの始点座標, コピーのx軸範囲, コピーのy軸範囲,
+        // ペーストの始点座標, ペーストのx軸範囲, ペーストのy軸範囲)
 
+        p.copy(colorImg, p.mouseX, p.mouseY, area, area, p.mouseX, p.mouseY, area, area); // spのとき
+      } else {
+        area = 30;
+        p.copy(colorImg, p.mouseX - area / 2, p.mouseY - area / 2, area, area, p.mouseX - area / 2, p.mouseY - area / 2, area, area);
+        return false;
+      }
+    };
   }; // sketch()
   // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
   // canvas.parent(parent);

@@ -61,12 +61,14 @@
         /**
         * インスタンスモードで記述
         */
-        const sketch = (p) => {
+        const sketch = (p) =&gt; {
 
         // ---------------------------------------------------------------------------
 
-        // 画像の事前読み込み
-        p.preload = () => {
+        /**
+        * 画像の事前読み込み
+        */
+        p.preload = () =&gt; {
         img = p.loadImage("../../../assets/img/coding/page/hallstatt.jpg ");
         } //p.preload()
 
@@ -75,7 +77,7 @@
         /**
         * 最初に1回だけ実行される処理
         */
-        p.setup = () => {
+        p.setup = () =&gt; {
 
         // キャンバスを親要素のサイズに合わせて作成
         let canvas = p.createCanvas(cW, cH);
@@ -95,7 +97,7 @@
         /**
         * 繰り返し実行される処理
         */
-        p.draw = () => {
+        p.draw = () =&gt; {
         dotDraw();
         } // p.draw()
 
@@ -104,7 +106,7 @@
         /**
         * 画像の色相を取得しながら、小さな四角形を描画する関数
         */
-        var dotDraw = () => {
+        var dotDraw = () =&gt; {
         // dotNumの数値でrectの描画量(キャンバス内の塗りつぶされるスピード)を指定
 
         for (let i = 0; i &lt; dotNum; i++) {
