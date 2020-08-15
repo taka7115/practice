@@ -51,9 +51,11 @@ function func() {
 
     // ---------------------------------------------------------------------------
 
-    // 画像の事前読み込み
+    /**
+     * 画像の事前読み込み
+     */
     p.preload = () => {
-      img = p.loadImage("../../../assets/img/coding/page/hallstatt.jpg ");
+      img = p.loadImage("../../../assets/img/coding/page/kv/hallstatt.jpg ");
       img.resize(cW, cH);
     } //p.preload()
 
