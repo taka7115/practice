@@ -40434,14 +40434,47 @@ function func() {
 "use strict";
 
 
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
 var _default = {
-  id: 23,
+  id: 26,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -40467,13 +40500,18 @@ exports["default"] = _default;
 
 function func() {
   // p5.jsをnode moduleから読み込み
+  // 今回p5.jsのjsファイルのみ、npm&gulpによりコンパイルしています。コンパイルしない開発環境の場合、CDNや単一ファイルを読み込んでください。
   var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
 
 
   var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
 
   var cW = parent.clientWidth;
-  var cH = parent.clientHeight; // -------------------------------
+  var cH = parent.clientHeight; // 粒子の数(canvasサイズをもとに調整)
+
+  var quantity = Math.floor(window.innerWidth / 10); // 粒子情報の配列
+
+  var triArray = []; // -------------------------------
 
   /**
    * インスタンスモードで記述
@@ -40487,7 +40525,14 @@ function func() {
       // キャンバスを親要素のサイズに合わせて作成
       var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
 
-      canvas["class"]('p5Canvas');
+      canvas["class"]('p5Canvas'); // スタイルを定義
+
+      p.noStroke();
+      p.fill(255, 255, 255); // Triangle()によって出力された粒子の情報を、配列に格納
+
+      for (var i = 0; i < quantity; i++) {
+        triArray.push(new Triangle());
+      }
     }; //p.setup()
     // ------------------------------
 
@@ -40496,7 +40541,56 @@ function func() {
      */
 
 
-    p.draw = function () {}; // p.draw()
+    p.draw = function () {
+      // 粒子をそれぞれ描画
+      triArray.forEach(function (el) {
+        // el.update();
+        el.draw();
+      });
+    }; // p.draw()
+    // ------------------------------
+
+    /**
+     * クラスの定義
+     */
+
+
+    var Triangle = /*#__PURE__*/function () {
+      function Triangle() {
+        _classCallCheck(this, Triangle); // 大きさ
+
+
+        this.r = p.random(10, 24); // 頂点A
+
+        this.posA = p.createVector(p.random(p.width), p.random(p.height)); // 頂点B
+
+        this.posB = p.createVector(this.posA.x + this.r, this.posA.y); // 頂点Cのy座標を求めるための計算
+
+        this.disY = Math.sqrt(3) / 2 * this.r; // 頂点C
+
+        this.posC = p.createVector(this.posA.x + this.r / 2, this.posA.y - this.disY); // // 速さ
+        // this.v = p.createVector(p.random(-1, 1), p.random(-1, 1));
+      } // // 粒子の移動操作関数
+      // update() {
+      //   this.pos.add(this.v);
+      // } // update()
+      // 描画関数
+
+
+      _createClass(Triangle, [{
+        key: "draw",
+        value: function draw() {
+          // 粒子の色
+          p.fill(0, 0, 0); // 粒子描画
+
+          p.triangle(this.posA.x, this.posA.y, this.posB.x, this.posB.y, this.posC.x, this.posC.y);
+        } // draw()
+
+      }]);
+
+      return Triangle;
+    }(); // class Triangle
+    // ---------------------------------------------------
 
   }; // sketch()
   // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
