@@ -11,37 +11,6 @@
       <div class="lang__tab" :class="{'js-current':isActive3}" v-on:click="slideActivate3()">
         <img src="/assets/img/coding/page/js.svg" alt="javascript" />
       </div>
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 58" class="arrow arrow--right u-sp">
-        <g transform="translate(-1579 -1549)">
-          <path
-            d="M31.974,20.5,24.724,8H2.974l29,50,29-50H39.224Z"
-            transform="translate(1621 1609.974) rotate(-90)"
-            fill="#41b883"
-          />
-          <path
-            d="M36.147,8,28.889,20.4,21.631,8H11.146L28.889,38.306,46.632,8Z"
-            transform="translate(1621 1606.889) rotate(-90)"
-            fill="#36495e"
-          />
-          <rect width="100" height="58" transform="translate(1579 1549)" fill="none" />
-        </g>
-      </svg>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 58" class="arrow arrow--left u-sp">
-        <g transform="translate(1679 1607) rotate(180)">
-          <path
-            d="M31.974,20.5,24.724,8H2.974l29,50,29-50H39.224Z"
-            transform="translate(1621 1609.974) rotate(-90)"
-            fill="#41b883"
-          />
-          <path
-            d="M36.147,8,28.889,20.4,21.631,8H11.146L28.889,38.306,46.632,8Z"
-            transform="translate(1621 1606.889) rotate(-90)"
-            fill="#36495e"
-          />
-          <rect width="100" height="58" transform="translate(1579 1549)" fill="none" />
-        </g>
-      </svg>
     </div>
     <div class="slide">
       <div class="slide__cont" v-show="slide1">
