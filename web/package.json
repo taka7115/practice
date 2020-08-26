@@ -31,6 +31,7 @@
     "env": "0.0.2",
     "es6-promise": "^4.2.8",
     "fs": "0.0.1-security",
+    "gsap": "^3.5.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-clean-css": "^4.2.0",
