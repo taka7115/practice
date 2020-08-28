@@ -1,5 +1,5 @@
 export default {
-  id: 23,
+  id: 28,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -38,6 +38,11 @@ function func() {
   let cW = parent.clientWidth;
   let cH = parent.clientHeight;
 
+  let quantity = 50;
+
+  // 六角形の配列
+  let hexArray = [];
+
   // -------------------------------
 
   /**
@@ -56,6 +61,15 @@ function func() {
       //キャンバスにclassを付与
       canvas.class('p5Canvas');
 
+      // スタイルの定義
+      p.angleMode(p.DEGREES);
+      p.stroke("green");
+      p.strokeWeight(1);
+
+      // Hexagon()によって出力された六角形の情報を、配列に格納
+      for (let i = 0; i < quantity; i++) {
+        hexArray.push(new Hexagon(i));
+      }
 
     } //p.setup()
 
@@ -65,8 +79,52 @@ function func() {
      * 繰り返し実行される処理
      */
     p.draw = () => {
+      // スタイルをリセット
+      p.background("#fff");
+
+      // 六角形をそれぞれ描画
+      hexArray.forEach(function (el) {
+        el.draw();
+        // el.update();
+      });
 
     } // p.draw()
+
+    // ------------------------------
+
+    class Hexagon {
+      constructor(n) {
+        this.vertexNum = 6;
+        this.s = 20;
+        this.x, this.y, this.theta;
+        this.num = n;
+        this.pos = {
+          x: 0,
+          // 正六角形の高さを求める
+          y: n * 2 * this.s * p.cos(30)
+        }
+      }
+
+      draw() {
+
+        // 六角形の作成
+        p.push();
+        p.fill('limegreen');
+        p.beginShape();
+
+        p.translate(this.pos.x, this.pos.y);
+        // 360度を頂点の数で割り、三角関数で頂点の座標を求め、各頂点を線で結んでいくイメージ
+        for (let i = 0; i < this.vertexNum; i++) {
+          this.theta = i * 360 / this.vertexNum;
+          this.x = this.s * p.cos(this.theta);
+          this.y = this.s * p.sin(this.theta);
+          p.vertex(this.x, this.y);
+        }
+        p.endShape(p.CLOSE);
+        p.pop();
+      } //draw()
+
+    }
 
 
   } // sketch()
