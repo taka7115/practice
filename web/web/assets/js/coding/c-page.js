@@ -53191,7 +53191,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _default = {
   id: 2,
-  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた①<br class="u-sp">【基本的な描画】',
+  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた①<br>【基本的な描画】',
   txt: "HTML5のCanvasを<br>独学で勉強してみた①<br>【基本的な描画】",
   alt: "HTML5のCanvasを独学で勉強してみた①【基本的な描画】",
   p1: "Canvasに描画機能を付与する",
@@ -54026,9 +54026,9 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _default = {
   id: 25,
-  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
-  txt: "Canvasで<br><br>【HTML5】",
-  alt: "Canvasで",
+  ttl: "<span>p</span>5.jsを使って、消しゴム<br class='u-sp'>ツール風の<br>色彩復活アニメーション<br class='u-sp'>【p5.js ④】",
+  txt: "p5.jsを使って、<br>消しゴムツール風の<br>色彩復活アニメーション<br>【p5.js ④】",
+  alt: "p5.jsを使って、消しゴムツール風の色彩復活アニメーション【p5.js ④】",
   p1: "",
   p1_color: "js-yellow",
   p1_list1: "<span data='dot'>&#9642;</span>",
@@ -54172,9 +54172,9 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 var _default = {
   id: 26,
-  ttl: "<span>p</span>5.jsを使って、回転&拡大する三角形を<br class='u-pc'>浮遊させてみた【p5.js ③】",
-  txt: "p5.jsを使って、<br>回転&拡大する三角形を<br>浮遊させてみた<br>【p5.js ③】",
-  alt: "p5.jsを使って、回転&拡大する三角形を浮遊させてみた【p5.js ③】",
+  ttl: "<span>p</span>5.jsを使って、回転&拡大する三角形を<br class='u-pc'>浮遊させてみた【p5.js ⑤】",
+  txt: "p5.jsを使って、<br>回転&拡大する三角形を<br>浮遊させてみた<br>【p5.js ⑤】",
+  alt: "p5.jsを使って、回転&拡大する三角形を浮遊させてみた【p5.js ⑤】",
   p1: "",
   p1_color: "js-yellow",
   p1_list1: "<span data='dot'>&#9642;</span>",
@@ -54398,9 +54398,9 @@ function _interopRequireDefault(obj) {
 
 var _default = {
   id: 27,
-  ttl: "<span>T</span>weenMaxとTimelineMaxを<br class='u-sp'>使った、<br class='u-pc'>印象に残るテキスト<br class='u-sp'>アニメーション【GSAP】",
-  txt: "TweenMaxと<br>TimelineMaxを使った、<br>印象に残るテキストアニメーション【GSAP】",
-  alt: "TweenMaxとTimelineMaxを使った、印象に残るテキストアニメーション【GSAP】",
+  ttl: "<span>T</span>weenMaxとTimelineMaxによる、<br class='u-pc'>印象強いテキスト<br class='u-sp'>アニメーション【GSAP】",
+  txt: "TweenMaxと<br>TimelineMaxによる、<br>印象強いテキストアニメーション【GSAP】",
+  alt: "TweenMaxとTimelineMaxによる、印象強いテキストアニメーション【GSAP】",
   p1: "",
   p1_color: "js-yellow",
   p1_list1: "<span data='dot'>&#9642;</span>",
@@ -54871,7 +54871,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _default = {
   id: 3,
-  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた②<br class="u-sp">【基本的なアニメーション】',
+  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた②<br>【基本的なアニメーション】',
   txt: "HTML5のCanvasを<br>独学で勉強してみた②<br>【基本的なアニメーション】",
   alt: "HTML5のCanvasを独学で勉強してみた②【基本的なアニメーション】",
   p1: "<br class='u-sp'>アニメーションの仕組み",
@@ -55818,7 +55818,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _default = {
   id: 4,
-  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた③<br class="u-sp">【簡単なアニメーション】',
+  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた③<br>【簡単なアニメーション】',
   txt: "HTML5のCanvasを<br>独学で勉強してみた③<br>【簡単なアニメーション】",
   alt: "HTML5のCanvasを独学で勉強してみた③【簡単なアニメーション】",
   p1: "<br class='u-sp'>アニメーション処理の流れ",
@@ -56031,7 +56031,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _default = {
   id: 5,
-  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた④<br class="u-sp">【アニメーションのイベント処理】',
+  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた④<br>【アニメーションのイベント処理】',
   txt: "HTML5のCanvasを<br>独学で勉強してみた④<br>【アニメーションのイベント処理】",
   alt: "HTML5のCanvasを独学で勉強してみた④【アニメーションのイベント処理】",
   p1: "<br class='u-sp'>アニメーション処理の流れ",
@@ -56378,12 +56378,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-
-var _jquery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
 var _default = {
   id: 7,
-  ttl: "<span>C</span>anvasで<br class='u-sp'>円の反射運動を表現する<br class='u-sp'>【アークタンジェントの活用】",
+  ttl: "<span>C</span>anvasで<br class='u-sp'>円の反射運動を表現する<br>【アークタンジェントの活用】",
   txt: "Canvasで<br>美しい円形運動を<br>描画する【アークタンジェントの活用】",
   alt: "Canvasで美しい円形運動を描画する【アークタンジェントの活用】",
   p1: "Math.atan2()を使って反射角を求める。",
@@ -56622,7 +56619,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _default = {
   id: 8,
-  ttl: "<span>C</span>anvasで<br class='u-sp'>美しい円形運動を描画する<br class='u-sp'>【ラジアンの活用】",
+  ttl: "<span>C</span>anvasで<br class='u-sp'>美しい円形運動を描画する<br>【ラジアンの活用】",
   txt: "Canvasで<br>美しい円形運動を<br>描画する【ラジアンの活用】",
   alt: "Canvasで美しい円形運動を描画する【ラジアンの活用】",
   p1: "Math.cos(sin)とradiansによる計算で点を円形運動させる",

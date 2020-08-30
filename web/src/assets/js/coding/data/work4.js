@@ -1,6 +1,6 @@
 export default {
   id: 4,
-  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた③<br class="u-sp">【簡単なアニメーション】',
+  ttl: '<span>H</span>TML5のCanvasを<br class="u-sp">独学で勉強してみた③<br>【簡単なアニメーション】',
   txt: "HTML5のCanvasを<br>独学で勉強してみた③<br>【簡単なアニメーション】",
   alt: "HTML5のCanvasを独学で勉強してみた③【簡単なアニメーション】",
   p1: "<br class='u-sp'>アニメーション処理の流れ",

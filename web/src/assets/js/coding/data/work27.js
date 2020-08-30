@@ -1,8 +1,8 @@
 export default {
   id: 27,
-  ttl: "<span>T</span>weenMaxとTimelineMaxを<br class='u-sp'>使った、<br class='u-pc'>印象に残るテキスト<br class='u-sp'>アニメーション【GSAP】",
-  txt: "TweenMaxと<br>TimelineMaxを使った、<br>印象に残るテキストアニメーション【GSAP】",
-  alt: "TweenMaxとTimelineMaxを使った、印象に残るテキストアニメーション【GSAP】",
+  ttl: "<span>T</span>weenMaxとTimelineMaxによる、<br class='u-pc'>印象強いテキスト<br class='u-sp'>アニメーション【GSAP】",
+  txt: "TweenMaxと<br>TimelineMaxによる、<br>印象強いテキストアニメーション【GSAP】",
+  alt: "TweenMaxとTimelineMaxによる、印象強いテキストアニメーション【GSAP】",
   p1: "",
   p1_color: "js-yellow",
   p1_list1: "<span data='dot'>&#9642;</span>",

@@ -1,8 +1,8 @@
 export default {
   id: 26,
-  ttl: "<span>p</span>5.jsを使って、回転&拡大する三角形を<br class='u-pc'>浮遊させてみた【p5.js ③】",
-  txt: "p5.jsを使って、<br>回転&拡大する三角形を<br>浮遊させてみた<br>【p5.js ③】",
-  alt: "p5.jsを使って、回転&拡大する三角形を浮遊させてみた【p5.js ③】",
+  ttl: "<span>p</span>5.jsを使って、回転&拡大する三角形を<br class='u-pc'>浮遊させてみた【p5.js ⑤】",
+  txt: "p5.jsを使って、<br>回転&拡大する三角形を<br>浮遊させてみた<br>【p5.js ⑤】",
+  alt: "p5.jsを使って、回転&拡大する三角形を浮遊させてみた【p5.js ⑤】",
   p1: "",
   p1_color: "js-yellow",
   p1_list1: "<span data='dot'>&#9642;</span>",

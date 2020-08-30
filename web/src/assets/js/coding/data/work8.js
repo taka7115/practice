@@ -1,6 +1,6 @@
 export default {
   id: 8,
-  ttl: "<span>C</span>anvasで<br class='u-sp'>美しい円形運動を描画する<br class='u-sp'>【ラジアンの活用】",
+  ttl: "<span>C</span>anvasで<br class='u-sp'>美しい円形運動を描画する<br>【ラジアンの活用】",
   txt: "Canvasで<br>美しい円形運動を<br>描画する【ラジアンの活用】",
   alt: "Canvasで美しい円形運動を描画する【ラジアンの活用】",
   p1: "Math.cos(sin)とradiansによる計算で点を円形運動させる",

@@ -1,10 +1,6 @@
-import {
-  unique
-} from "jquery";
-
 export default {
   id: 7,
-  ttl: "<span>C</span>anvasで<br class='u-sp'>円の反射運動を表現する<br class='u-sp'>【アークタンジェントの活用】",
+  ttl: "<span>C</span>anvasで<br class='u-sp'>円の反射運動を表現する<br>【アークタンジェントの活用】",
   txt: "Canvasで<br>美しい円形運動を<br>描画する【アークタンジェントの活用】",
   alt: "Canvasで美しい円形運動を描画する【アークタンジェントの活用】",
   p1: "Math.atan2()を使って反射角を求める。",

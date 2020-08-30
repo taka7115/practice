@@ -1,8 +1,8 @@
 export default {
   id: 25,
-  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
-  txt: "Canvasで<br><br>【HTML5】",
-  alt: "Canvasで",
+  ttl: "<span>p</span>5.jsを使って、消しゴム<br class='u-sp'>ツール風の<br>色彩復活アニメーション<br class='u-sp'>【p5.js ④】",
+  txt: "p5.jsを使って、<br>消しゴムツール風の<br>色彩復活アニメーション<br>【p5.js ④】",
+  alt: "p5.jsを使って、消しゴムツール風の色彩復活アニメーション【p5.js ④】",
   p1: "",
   p1_color: "js-yellow",
   p1_list1: "<span data='dot'>&#9642;</span>",
