@@ -54691,14 +54691,47 @@ function func() {
 "use strict";
 
 
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
 var _default = {
-  id: 23,
+  id: 28,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -54730,7 +54763,10 @@ function func() {
   var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
 
   var cW = parent.clientWidth;
-  var cH = parent.clientHeight; // -------------------------------
+  var cH = parent.clientHeight;
+  var quantity = 50; // 六角形の配列
+
+  var hexArray = []; // -------------------------------
 
   /**
    * インスタンスモードで記述
@@ -54744,7 +54780,15 @@ function func() {
       // キャンバスを親要素のサイズに合わせて作成
       var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
 
-      canvas["class"]('p5Canvas');
+      canvas["class"]('p5Canvas'); // スタイルの定義
+
+      p.angleMode(p.DEGREES);
+      p.stroke("green");
+      p.strokeWeight(1); // Hexagon()によって出力された六角形の情報を、配列に格納
+
+      for (var i = 0; i < quantity; i++) {
+        hexArray.push(new Hexagon(i));
+      }
     }; //p.setup()
     // ------------------------------
 
@@ -54753,8 +54797,56 @@ function func() {
      */
 
 
-    p.draw = function () {}; // p.draw()
+    p.draw = function () {
+      // スタイルをリセット
+      p.background("#fff"); // 六角形をそれぞれ描画
 
+      hexArray.forEach(function (el) {
+        el.draw(); // el.update();
+      });
+    }; // p.draw()
+    // ------------------------------
+
+
+    var Hexagon = /*#__PURE__*/function () {
+      function Hexagon(n) {
+        _classCallCheck(this, Hexagon);
+
+        this.vertexNum = 6;
+        this.s = 20;
+        this.x, this.y, this.theta;
+        this.num = n;
+        this.pos = {
+          x: 0,
+          // 正六角形の高さを求める
+          y: n * 2 * this.s * p.cos(30)
+        };
+      }
+
+      _createClass(Hexagon, [{
+        key: "draw",
+        value: function draw() {
+          // 六角形の作成
+          p.push();
+          p.fill('limegreen');
+          p.beginShape();
+          p.translate(this.pos.x, this.pos.y); // 360度を頂点の数で割り、三角関数で頂点の座標を求め、各頂点を線で結んでいくイメージ
+
+          for (var i = 0; i < this.vertexNum; i++) {
+            this.theta = i * 360 / this.vertexNum;
+            this.x = this.s * p.cos(this.theta);
+            this.y = this.s * p.sin(this.theta);
+            p.vertex(this.x, this.y);
+          }
+
+          p.endShape(p.CLOSE);
+          p.pop();
+        } //draw()
+
+      }]);
+
+      return Hexagon;
+    }();
   }; // sketch()
   // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
   // canvas.parent(parent);

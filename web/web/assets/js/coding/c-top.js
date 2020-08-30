@@ -511,39 +511,41 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work27.js */ "./src/assets/js/coding/data/work27.js"));
+var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work28.js */ "./src/assets/js/coding/data/work28.js"));
 
-var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work26.js */ "./src/assets/js/coding/data/work26.js"));
+var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work27.js */ "./src/assets/js/coding/data/work27.js"));
 
-var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work25.js */ "./src/assets/js/coding/data/work25.js"));
+var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work26.js */ "./src/assets/js/coding/data/work26.js"));
 
-var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work24.js */ "./src/assets/js/coding/data/work24.js"));
+var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work25.js */ "./src/assets/js/coding/data/work25.js"));
 
-var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work23.js */ "./src/assets/js/coding/data/work23.js"));
+var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work24.js */ "./src/assets/js/coding/data/work24.js"));
 
-var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work22.js */ "./src/assets/js/coding/data/work22.js"));
+var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work23.js */ "./src/assets/js/coding/data/work23.js"));
 
-var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work21.js */ "./src/assets/js/coding/data/work21.js"));
+var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work22.js */ "./src/assets/js/coding/data/work22.js"));
 
-var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
+var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work21.js */ "./src/assets/js/coding/data/work21.js"));
 
-var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
+var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
 
-var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
+var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
 
-var _work11 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
+var _work11 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
 
-var _work12 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
+var _work12 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
 
-var _work13 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
+var _work13 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
 
-var _work14 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
+var _work14 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
 
-var _work15 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
+var _work15 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
 
-var _work16 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+var _work16 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
 
-var _work17 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
+var _work17 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+
+var _work18 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -605,7 +607,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // import work31 from "../../../data/work31.js";
 // import work30 from "../../../data/work30.js";
 // import work29 from "../../../data/work29.js";
-// import work28 from "../../../data/work28.js";
 var _default = {
   data: function data() {
     return {
@@ -622,24 +623,24 @@ var _default = {
         // work31,
         // work30,
         // work29,
-        // work28,
-        work27: _work["default"],
-        work26: _work2["default"],
-        work25: _work3["default"],
-        work24: _work4["default"],
-        work23: _work5["default"],
-        work22: _work6["default"],
-        work21: _work7["default"],
-        work10: _work8["default"],
-        work9: _work9["default"],
-        work8: _work10["default"],
-        work7: _work11["default"],
-        work6: _work12["default"],
-        work5: _work13["default"],
-        work4: _work14["default"],
-        work3: _work15["default"],
-        work2: _work16["default"],
-        work1: _work17["default"]
+        work28: _work["default"],
+        work27: _work2["default"],
+        work26: _work3["default"],
+        work25: _work4["default"],
+        work24: _work5["default"],
+        work23: _work6["default"],
+        work22: _work7["default"],
+        work21: _work8["default"],
+        work10: _work9["default"],
+        work9: _work10["default"],
+        work8: _work11["default"],
+        work7: _work12["default"],
+        work6: _work13["default"],
+        work5: _work14["default"],
+        work4: _work15["default"],
+        work3: _work16["default"],
+        work2: _work17["default"],
+        work1: _work18["default"]
       }
     };
   },
@@ -46077,6 +46078,182 @@ function func() {
     setting();
     ani();
   });
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work28.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work28.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
+
+__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+var _default = {
+  id: 28,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  // p5.jsをnode moduleから読み込み
+  var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
+
+
+  var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
+
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight;
+  var quantity = 50; // 六角形の配列
+
+  var hexArray = []; // -------------------------------
+
+  /**
+   * インスタンスモードで記述
+   */
+
+  var sketch = function sketch(p) {
+    /**
+     * 最初に1回だけ実行される処理
+     */
+    p.setup = function () {
+      // キャンバスを親要素のサイズに合わせて作成
+      var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
+
+      canvas["class"]('p5Canvas'); // スタイルの定義
+
+      p.angleMode(p.DEGREES);
+      p.stroke("green");
+      p.strokeWeight(1); // Hexagon()によって出力された六角形の情報を、配列に格納
+
+      for (var i = 0; i < quantity; i++) {
+        hexArray.push(new Hexagon(i));
+      }
+    }; //p.setup()
+    // ------------------------------
+
+    /**
+     * 繰り返し実行される処理
+     */
+
+
+    p.draw = function () {
+      // スタイルをリセット
+      p.background("#fff"); // 六角形をそれぞれ描画
+
+      hexArray.forEach(function (el) {
+        el.draw(); // el.update();
+      });
+    }; // p.draw()
+    // ------------------------------
+
+
+    var Hexagon = /*#__PURE__*/function () {
+      function Hexagon(n) {
+        _classCallCheck(this, Hexagon);
+
+        this.vertexNum = 6;
+        this.s = 20;
+        this.x, this.y, this.theta;
+        this.num = n;
+        this.pos = {
+          x: 0,
+          // 正六角形の高さを求める
+          y: n * 2 * this.s * p.cos(30)
+        };
+      }
+
+      _createClass(Hexagon, [{
+        key: "draw",
+        value: function draw() {
+          // 六角形の作成
+          p.push();
+          p.fill('limegreen');
+          p.beginShape();
+          p.translate(this.pos.x, this.pos.y); // 360度を頂点の数で割り、三角関数で頂点の座標を求め、各頂点を線で結んでいくイメージ
+
+          for (var i = 0; i < this.vertexNum; i++) {
+            this.theta = i * 360 / this.vertexNum;
+            this.x = this.s * p.cos(this.theta);
+            this.y = this.s * p.sin(this.theta);
+            p.vertex(this.x, this.y);
+          }
+
+          p.endShape(p.CLOSE);
+          p.pop();
+        } //draw()
+
+      }]);
+
+      return Hexagon;
+    }();
+  }; // sketch()
+  // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
+  // canvas.parent(parent);
+
+
+  new p5(sketch, parent);
 }
 
 /***/ }),
