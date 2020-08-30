@@ -54812,14 +54812,17 @@ function func() {
       function Hexagon(n) {
         _classCallCheck(this, Hexagon);
 
-        this.vertexNum = 6;
-        this.s = 20;
+        this.vertexNum = 6; // 六角形のperpendicular(垂線)の長さ
+
+        this.p = p.height / 50; // 六角形の1辺の長さ
+
+        this.s = this.p / 2 / p.cos(30);
         this.x, this.y, this.theta;
         this.num = n;
         this.pos = {
           x: 0,
           // 正六角形の高さを求める
-          y: n * 2 * this.s * p.cos(30)
+          y: n * this.p
         };
       }
 

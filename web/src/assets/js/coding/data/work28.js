@@ -95,13 +95,17 @@ function func() {
     class Hexagon {
       constructor(n) {
         this.vertexNum = 6;
-        this.s = 20;
+        // 六角形のperpendicular(垂線)の長さ
+        this.p = p.height / 50;
+        // 六角形の1辺の長さ
+        this.s = this.p / 2 / p.cos(30);
+
         this.x, this.y, this.theta;
         this.num = n;
         this.pos = {
           x: 0,
           // 正六角形の高さを求める
-          y: n * 2 * this.s * p.cos(30)
+          y: n * this.p
         }
       }
 
@@ -111,7 +115,6 @@ function func() {
         p.push();
         p.fill('limegreen');
         p.beginShape();
-
         p.translate(this.pos.x, this.pos.y);
         // 360度を頂点の数で割り、三角関数で頂点の座標を求め、各頂点を線で結んでいくイメージ
         for (let i = 0; i < this.vertexNum; i++) {
