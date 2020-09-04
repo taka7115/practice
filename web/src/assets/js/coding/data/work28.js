@@ -38,7 +38,11 @@ function func() {
   let cW = parent.clientWidth;
   let cH = parent.clientHeight;
 
-  let quantity = 50;
+  // 1列の描画される六角形の数(この数を調整することで全体の見た目を変えられる)
+  let verticalNum = 25;
+  // 横幅いっぱいに配置できる列の数
+  let horizontalNum = cW / (cH / verticalNum);
+
 
   // 六角形の配列
   let hexArray = [];
@@ -66,11 +70,20 @@ function func() {
       p.stroke("green");
       p.strokeWeight(1);
 
-      // Hexagon()によって出力された六角形の情報を、配列に格納
-      for (let i = 0; i < quantity; i++) {
-        hexArray.push(new Hexagon(i));
+      // 縦1列を横幅いっぱいになるまでループ
+      for (let i = 0; i < horizontalNum + 1; i++) {
+        // 六角形の情報を配列へ格納(縦1列の六角形)
+        for (let j = 0; j < verticalNum + 1; j++) {
+          hexArray.push(new Hexagon(i, j));
+        }
       }
 
+      // 六角形をそれぞれ描画
+      hexArray.forEach(function (el) {
+        el.draw();
+      });
+
+      console.log(hexArray)
     } //p.setup()
 
     // ------------------------------
@@ -80,11 +93,10 @@ function func() {
      */
     p.draw = () => {
       // スタイルをリセット
-      p.background("#fff");
+      // p.background("#fff");
 
       // 六角形をそれぞれ描画
       hexArray.forEach(function (el) {
-        el.draw();
         // el.update();
       });
 
@@ -93,19 +105,21 @@ function func() {
     // ------------------------------
 
     class Hexagon {
-      constructor(n) {
+      constructor(row, num) {
+        // 頂点の数(今回は6角形なので6つ)
         this.vertexNum = 6;
         // 六角形のperpendicular(垂線)の長さ
-        this.p = p.height / 50;
+        this.p = p.height / verticalNum;
         // 六角形の1辺の長さ
         this.s = this.p / 2 / p.cos(30);
 
         this.x, this.y, this.theta;
-        this.num = n;
+        this.row = row;
+        this.num = num;
         this.pos = {
-          x: 0,
-          // 正六角形の高さを求める
-          y: n * this.p
+          x: this.row * this.p,
+          // 正六角形の高さを求める(六角形の順番×垂線の長さ)
+          y: this.num * this.p
         }
       }
 
@@ -115,7 +129,22 @@ function func() {
         p.push();
         p.fill('limegreen');
         p.beginShape();
+
+        // 列が偶数の時、列の高さを六角形の高さの半分ズラす
+        if (this.row % 2 == 0) {
+          this.pos.y += this.p / 2
+        }
+
+        // 描画する座標へ移動
         p.translate(this.pos.x, this.pos.y);
+        if (this.row == 1) {
+          console.log(`x座標1は${this.pos.x}`)
+          console.log(`垂線は${this.p}`)
+        } else if (this.row == 2) {
+          console.log(`x座標2は${this.pos.x}`)
+        }
+
+
         // 360度を頂点の数で割り、三角関数で頂点の座標を求め、各頂点を線で結んでいくイメージ
         for (let i = 0; i < this.vertexNum; i++) {
           this.theta = i * 360 / this.vertexNum;
@@ -126,6 +155,8 @@ function func() {
         p.endShape(p.CLOSE);
         p.pop();
       } //draw()
+
+
 
     }
 
