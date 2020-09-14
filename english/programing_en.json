@@ -1,143 +1,284 @@
 {
   "concatenation": {
-    "example": "Concatenation, in the context of programming, is the operation of joining two strings together. The term \"concatenation\" literally means to merge two things together.",
-    "ja": "連結"
+    "ja": "連結",
+    "example": "Concatenation, in the context of programming, is the operation of joining two strings together. The term \"concatenation\" literally means to merge two things together."
   },
   "left out of the conversation": {
-    "example": "",
-    "ja": "時代遅れの。会話に入れない、ついていけない。"
+    "ja": "時代遅れの。会話に入れない、ついていけない。",
+    "example": ""
   },
   "case sensitive": {
-    "example": "Capable of distinguishing between uppercase and lowercase letters. A case-sensitive search finds only text that is an exact match of uppercase and lowercase letters.",
-    "ja": "大文字と小文字を区別"
+    "ja": "大文字と小文字を区別",
+    "example": "Capable of distinguishing between uppercase and lowercase letters. A case-sensitive search finds only text that is an exact match of uppercase and lowercase letters."
+  },
+  "parentheses": {
+    "ja": "小括弧",
+    "example": "The values enclosed in parentheses (( )) are for information only."
+  },
+  "curly brackets": {
+    "ja": "中括弧",
+    "example": "We created a code block with curly brackets ({ }). The code inside this code block will execute when our function is invoked."
+  },
+  "square brackets": {
+    "ja": "大括弧",
+    "example": "Square brackets([ ]) indicate that the enclosed element is string."
+  },
+  "camel case": {
+    "ja": "キャメルケース",
+    "example": "Camel case is the use of a capital letter to begin the second word in a compound name or phrase, when it is not separated from the first word by a space:"
+  },
+  "snake case": {
+    "ja": "スネークケース",
+    "example": "Frankly speaking, forExample is a camel case, for_example is a snake case"
+  },
+  "placeholder ": {
+    "ja": "代替物",
+    "example": ""
+  },
+  "exclamation mark": {
+    "ja": "!",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
   }
+
 
 }

@@ -1,690 +1,143 @@
 {
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
-  },
-  "": {
-    "example": "",
-    "ja": ""
+  "just for kicks": {
+    "ja": "ただ単にスリルと快感を得るために",
+    "example": "Just for kicks, throw away everything you feel confortable. Things that make your life fun is something new."
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
   "": {
-    "example": "",
-    "ja": ""
+    "ja": "",
+    "example": ""
   },
+
 }
