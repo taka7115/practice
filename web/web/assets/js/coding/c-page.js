@@ -54765,11 +54765,21 @@ function func() {
   var cW = parent.clientWidth;
   var cH = parent.clientHeight; // 1列の描画される六角形の数(この数を調整することで全体の見た目を変えられる)
 
-  var verticalNum = 25; // 横幅いっぱいに配置できる列の数
+  var verticalNum = 18; // 頂点の数(今回は6角形なので6つ)
 
-  var horizontalNum = cW / (cH / verticalNum); // 六角形の配列
+  var vertexNum = 6; // 六角形のperpendicular(垂線)の長さ
 
-  var hexArray = []; // -------------------------------
+  var per = cH / verticalNum; // 六角形の1辺の長さ
+
+  var s = per / 2 / Math.cos(Math.PI / 6); // 横幅いっぱいに配置できる列の数
+
+  var horizontalNum = cW / (per / 2 + s / 2); // 六角形の配列
+
+  var hexArray = []; // 六角形のfillの配色
+
+  var fillArray = ["#f5ae01", "#fcd923", "#ff7a00", "#ffeb00"]; // 六角形のstrokeの配色
+
+  var strokeArray = ["#a87700 "]; // -------------------------------
 
   /**
    * インスタンスモードで記述
@@ -54777,17 +54787,27 @@ function func() {
 
   var sketch = function sketch(p) {
     /**
+     * 画像の事前読み込み
+     */
+    var bgImg;
+
+    p.preload = function () {
+      bgImg = p.loadImage("../../../assets/img/coding/page/kv/dubrovnik.jpg");
+    }; //p.preload()
+
+    /**
      * 最初に1回だけ実行される処理
      */
+
+
     p.setup = function () {
       // キャンバスを親要素のサイズに合わせて作成
-      var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
+      var canvas = p.createCanvas(cW, cH); // 画像のサイズをキャンバスのサイズに合わせる
 
-      canvas["class"]('p5Canvas'); // スタイルの定義
+      bgImg.resize(cW, cH);
+      p.background(bgImg, 0, 0); // スタイルの定義
 
-      p.angleMode(p.DEGREES);
-      p.stroke("green");
-      p.strokeWeight(1); // 縦1列を横幅いっぱいになるまでループ
+      p.angleMode(p.DEGREES); // 縦1列を横幅いっぱいになるまでループ
 
       for (var i = 0; i < horizontalNum + 1; i++) {
         // 六角形の情報を配列へ格納(縦1列の六角形)
@@ -54798,7 +54818,7 @@ function func() {
 
 
       hexArray.forEach(function (el) {
-        el.draw();
+        el.setup();
       });
       console.log(hexArray);
     }; //p.setup()
@@ -54811,12 +54831,56 @@ function func() {
 
     p.draw = function () {
       // スタイルをリセット
-      // p.background("#fff");
-      // 六角形をそれぞれ描画
-      hexArray.forEach(function (el) {// el.update();
+      p.image(bgImg, 0, 0); // 落ちる六角形が、落ちない六角形の上を、
+      // 落ちるように、描画される順番を調整
+      // 落ちない六角形を描画
+
+      hexArray.forEach(function (el) {
+        if (el.fallState == false) {
+          el.draw();
+        }
+      }); // 落ちる六角形を描画
+
+      hexArray.forEach(function (el) {
+        if (el.fallState == true) {
+          el.draw();
+        }
       });
+      /**
+       * クリックしたら実行される処理
+       */
+
+      p.mouseClicked = function () {
+        // 六角形をそれぞれ描画
+        hexArray.forEach(function (el) {
+          el.fall();
+        }); // デバイスのデフォルト挙動防止
+
+        return false;
+      }; // p.mouseClicked()
+
+      /**
+       * ドラッグしたら実行される処理
+       * 
+       */
+
+
+      p.mouseDragged = function () {
+        // 六角形をそれぞれ描画
+        hexArray.forEach(function (el) {
+          el.fall();
+        }); // デバイスのデフォルト挙動防止
+
+        return false;
+      }; // p.mouseDragged()
+
     }; // p.draw()
     // ------------------------------
+    // ------------------------------
+
+    /**
+     * クラスの定義
+     */
 
 
     var Hexagon = /*#__PURE__*/function () {
@@ -54824,59 +54888,106 @@ function func() {
         _classCallCheck(this, Hexagon); // 頂点の数(今回は6角形なので6つ)
 
 
-        this.vertexNum = 6; // 六角形のperpendicular(垂線)の長さ
+        this.vertexNum = vertexNum; // 六角形のperpendicular(垂線)の長さ
 
-        this.p = p.height / verticalNum; // 六角形の1辺の長さ
+        this.per = per; // 六角形の1辺の長さ
 
-        this.s = this.p / 2 / p.cos(30);
+        this.s = s; // 六角形の列ごとに座標をズラす値
+
+        this.move = {
+          x: s / 2 * 3,
+          y: per / 2
+        }; // 六角形を落とすかの真偽
+
+        this.fallState = false;
         this.x, this.y, this.theta;
         this.row = row;
-        this.num = num;
+        this.num = num; // 六角形の座標を定義
+
         this.pos = {
-          x: this.row * this.p,
-          // 正六角形の高さを求める(六角形の順番×垂線の長さ)
-          y: this.num * this.p
+          x: this.row * this.move.x,
+          y: this.num * this.per
         };
-      }
+        this.fill = fillArray[Math.floor(p.random(0, fillArray.length))];
+        this.stroke = strokeArray[Math.floor(p.random(0, strokeArray.length))]; // 列が偶数の時、列の高さを六角形の高さの半分ズラす
+
+        if (this.row % 2 == 0) {
+          this.pos.y = this.pos.y + this.move.y;
+        }
+      } //constructor(row, num) 
+
+      /**
+       * 六角形の描画
+       */
+
 
       _createClass(Hexagon, [{
+        key: "setup",
+        value: function setup() {
+          p.push();
+          p.fill(this.fill);
+          p.stroke(this.stroke);
+          p.beginShape(); // 描画する座標へ移動
+
+          p.translate(this.pos.x, this.pos.y); // createHex関数
+
+          this.createHex();
+          p.endShape(p.CLOSE);
+          p.pop();
+        } //setup()
+
+        /**
+         * 六角形の描画
+         */
+
+      }, {
         key: "draw",
         value: function draw() {
-          // 六角形の作成
           p.push();
-          p.fill('limegreen');
-          p.beginShape(); // 列が偶数の時、列の高さを六角形の高さの半分ズラす
+          p.fill(this.fill);
+          p.stroke(this.stroke);
+          p.beginShape();
 
-          if (this.row % 2 == 0) {
-            this.pos.y += this.p / 2;
+          if (this.fallState == true) {
+            // クリックされてfallStateがtrueになったら、y座標を下にズラしていく
+            this.pos.y += 10;
           } // 描画する座標へ移動
 
 
-          p.translate(this.pos.x, this.pos.y);
+          p.translate(this.pos.x, this.pos.y); // createHex関数
 
-          if (this.row == 1) {
-            console.log("x\u5EA7\u6A191\u306F".concat(this.pos.x));
-            console.log("\u5782\u7DDA\u306F".concat(this.p));
-          } else if (this.row == 2) {
-            console.log("x\u5EA7\u6A192\u306F".concat(this.pos.x));
-          } // 360度を頂点の数で割り、三角関数で頂点の座標を求め、各頂点を線で結んでいくイメージ
+          this.createHex();
+          p.endShape(p.CLOSE);
+          p.pop();
+        } //draw()
+        // 360度を頂点の数で割り、三角関数で頂点の座標を求め、各頂点を線で結んでいくイメージ
 
-
+      }, {
+        key: "createHex",
+        value: function createHex() {
           for (var i = 0; i < this.vertexNum; i++) {
             this.theta = i * 360 / this.vertexNum;
             this.x = this.s * p.cos(this.theta);
             this.y = this.s * p.sin(this.theta);
             p.vertex(this.x, this.y);
           }
+        } // 六角形の移動
 
-          p.endShape(p.CLOSE);
-          p.pop();
-        } //draw()
+      }, {
+        key: "fall",
+        value: function fall() {
+          if (this.pos.x - this.per / 2 < p.mouseX && this.pos.x + this.per / 2 > p.mouseX) {
+            if (this.pos.y - this.per / 2 < p.mouseY && this.pos.y + this.per / 2 > p.mouseY) {
+              this.fallState = true;
+            }
+          }
+        } //fall()
 
       }]);
 
       return Hexagon;
-    }();
+    }(); //class Hexagon
+
   }; // sketch()
   // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
   // canvas.parent(parent);
