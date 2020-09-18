@@ -1,5 +1,5 @@
 export default {
-  id: 23,
+  id: 30,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -25,55 +25,109 @@ export default {
  */
 
 
+// three.jsをnode moduleから読み込み
+import * as THREE from 'three';
 
 function func() {
 
-  // p5.jsをnode moduleから読み込み
-  const p5 = require('p5');
+  /**
+   *  createdのタイミングでinit()関数実行
+   */
+  window.addEventListener('load', init);
+
+  // ---------------------------------------------------------------------------------------------------
 
   //親要素を取得
-  const parent = document.getElementById("p5Parent");
+  let parent = document.getElementById("parent");
 
   // 親要素の幅と高さを変数化
   let cW = parent.clientWidth;
   let cH = parent.clientHeight;
 
-  // -------------------------------
+  // 変数のグローバル定義
+  let scene, camera, directionalLight, geometry, material, box;
+
+  // rendererインスタンス定義(canvas要素にWebGL使用定義)
+  const renderer = new THREE.WebGLRenderer({
+    canvas: document.querySelector('#myCanvas')
+  });
+
+  // rendererインスタンスにキャンバスのプロパティを定義
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(cW, cH);
+  renderer.setClearColor("rgb(255, 255, 200)", 1);
+
+  // ---------------------------------------------------------------------------------------------------
 
   /**
-   * インスタンスモードで記述
+   *  キャンバスの描画内容
    */
-  const sketch = (p) => {
+  function init() {
 
-    /**
-     * 最初に1回だけ実行される処理
-     */
-    p.setup = () => {
+    // sceneはこれから描画していく3D世界
+    scene = new THREE.Scene();
 
-      // キャンバスを親要素のサイズに合わせて作成
-      let canvas = p.createCanvas(cW, cH);
+    // シーンの状態を撮影するカメラ。 カメラに写った内容が最終的にブラウザ上で表示される
+    // THREE.PerspectiveCamera(fov, aspect, near, far);
+    // fov:カメラの画角
+    // aspect:撮影結果の縦横比。別段指定がなければ、キャンバスの幅 / キャンバスの高さ
+    // near:ニアークリップの距離。nearより近い領域は非表示
+    // far:ファークリップの距離。farより遠い領域は非表示
+    camera = new THREE.PerspectiveCamera(45, cW / cH, 1, 30000);
 
-      //キャンバスにclassを付与
-      canvas.class('p5Canvas');
+    // カメラの位置。camera.position.set(x, y, z);
+    // 中心から手前に1000の位置にカメラを置く。
+    camera.position.set(1, 1, 500);
 
+    // シーンにカメラを定義
+    scene.add(camera);
 
-    } //p.setup()
+    // 光源(シーンを照らす光)
+    directionalLight = new THREE.DirectionalLight('#fff');
+    // (0, .7, .7)であれば上方向と手前方向、つまり斜め上前からの光
+    directionalLight.position.set(0, .7, .7);
+    // シーンに光源を定義
+    scene.add(directionalLight);
 
-    // ------------------------------
+    // オブジェクトの形式を定義。GeometryにはBoxの他にもCube、Sphere、
+    // Plane、Cone、Cylinder、Torusがある
+    geometry = new THREE.BoxGeometry(50, 50, 50);
 
-    /**
-     * 繰り返し実行される処理
-     */
-    p.draw = () => {
+    // オブジェクトの表面のスタイルの定義
+    material = new THREE.MeshPhongMaterial({
+      color: 'lime'
+    });
 
-    } // p.draw()
+    // 定義した形式とスタイルをもとに、オブジェクトを生成
+    box = new THREE.Mesh(geometry, material);
+    scene.add(box);
 
+    // 常に連続的に描画するため、animate()関数実行
+    animate();
 
-  } // sketch()
+  }
 
-  // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
-  // canvas.parent(parent);
-  new p5(sketch, parent);
+  // ---------------------------------------------------------------------------------------------------
 
+  /**
+   *  常に連続的に描画するためのアニメーション関数
+   */
+  function animate() {
+    requestAnimationFrame(animate);
+    // rendererインスタンスにシーンとカメラを渡し、レンダリング
+    renderer.render(scene, camera);
+    rotation();
+  }
+
+  /**
+   *  オブジェクトを回転させる関数
+   */
+  function rotation() {
+    box.rotation.set(
+      0,
+      box.rotation.y + 0.01,
+      box.rotation.z + 0.01
+    )
+  }
 
 }
