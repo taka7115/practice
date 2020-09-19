@@ -1,5 +1,5 @@
 export default {
-  id: 23,
+  id: 31,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -25,55 +25,126 @@ export default {
  */
 
 
+// three.jsをnode moduleから読み込み
+import * as THREE from 'three';
+// orbitControls.jsをnode moduleから読み込み
+import {
+  OrbitControls
+} from "three/examples/jsm/controls/OrbitControls";
 
 function func() {
 
-  // p5.jsをnode moduleから読み込み
-  const p5 = require('p5');
+  /**
+   *  createdのタイミングでinit()関数実行
+   */
+  window.addEventListener('load', init);
+
+  // ----------------------------------------------------------------------
 
   //親要素を取得
-  const parent = document.getElementById("p5Parent");
+  let parent = document.getElementById("parent");
 
   // 親要素の幅と高さを変数化
   let cW = parent.clientWidth;
   let cH = parent.clientHeight;
 
-  // -------------------------------
+  // グローバルでの変数定義
+  var renderer, scene, camera, controls, directionalLight, geometry, material, sphere, loader, texture;
+
+  // OrbitControls用domElement変数
+  let domElement = document.getElementById("myCanvas");
+
+  // カメラ位置
+  var cameraPos = {
+    x: 1,
+    y: 1,
+    z: 500
+  }
+
+  // 光源位置
+  var lightPos = {
+    x: -.3,
+    y: .7,
+    z: .6
+  }
+
+  // ----------------------------------------------------------------------
 
   /**
-   * インスタンスモードで記述
+   *  キャンバスの描画内容
    */
-  const sketch = (p) => {
+  function init() {
 
-    /**
-     * 最初に1回だけ実行される処理
-     */
-    p.setup = () => {
+    // rendererインスタンス定義(canvas要素にWebGL使用定義)
+    renderer = new THREE.WebGLRenderer({
+      canvas: document.querySelector('#myCanvas')
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH);
+    renderer.setClearColor("rgb(0, 0, 30)", 1);
 
-      // キャンバスを親要素のサイズに合わせて作成
-      let canvas = p.createCanvas(cW, cH);
+    // シーンを定義
+    scene = new THREE.Scene();
 
-      //キャンバスにclassを付与
-      canvas.class('p5Canvas');
+    // シーンにカメラを定義
+    camera = new THREE.PerspectiveCamera(45, cW / cH, 1, 30000);
+    // mousedragで、カメラ位置変更
+    controls = new OrbitControls(camera, domElement);
+    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
+    scene.add(camera);
 
+    // シーンに光源(シーンを照らす光)を定義
+    directionalLight = new THREE.DirectionalLight('#fff');
+    directionalLight.position.set(lightPos.x, lightPos.y, lightPos.z);
+    directionalLight.intensity = 1.5;
+    scene.add(directionalLight);
 
-    } //p.setup()
+    // オブジェクトの形式を定義
+    geometry = new THREE.SphereGeometry(100, 100, 100);
 
-    // ------------------------------
+    // テクスチャ用の画像を読み込む
+    loader = new THREE.TextureLoader();
+    texture = loader.load('../../../assets/img/coding/page/kv/planet/earth.jpg');
 
-    /**
-     * 繰り返し実行される処理
-     */
-    p.draw = () => {
+    // オブジェクトの質感を定義
+    material = new THREE.MeshStandardMaterial({
+      map: texture
+    });
 
-    } // p.draw()
+    // 定義した形式とスタイルをもとに、オブジェクトを生成
+    sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
 
+    // 常に連続的に描画するため、animate()関数実行
+    animate();
 
-  } // sketch()
+  }
 
-  // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
-  // canvas.parent(parent);
-  new p5(sketch, parent);
+  // ----------------------------------------------------------------------
 
+  /**
+   *  常に連続的に描画するためのアニメーション関数
+   */
+  function animate() {
+    // 球体の自転
+    rotation()
+    // mousedragでカメラ位置変更
+    controls.update();
+    // rendererインスタンスにシーンとカメラを渡し、レンダリング
+    renderer.render(scene, camera);
+    // animate()関数を連続実行
+    requestAnimationFrame(animate);
+  }
+
+  /**
+   * 球体を自転させる関数
+   */
+  function rotation() {
+    sphere.rotation.set(
+      0,
+      sphere.rotation.y + 0.005,
+      sphere.rotation.z + 0.005
+    )
+  }
 
 }
