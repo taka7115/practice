@@ -51,6 +51,13 @@
       </template>
 
       <template slot="js">
+        // three.jsをnode moduleから読み込み
+        import * as THREE from 'three';
+        // orbitControls.jsをnode moduleから読み込み
+        import {
+        OrbitControls
+        } from "three/examples/jsm/controls/OrbitControls";
+
         /**
         * createdのタイミングでinit()関数実行
         */
@@ -66,7 +73,8 @@
         let cH = parent.clientHeight;
 
         // グローバルでの変数定義
-        var renderer, scene, camera, controls, directionalLight, geometry, material, sphere, loader, texture;
+        var renderer, scene, camera, controls, directionalLight,
+        geometry, material, sphere, loader, texture;
 
         // OrbitControls用domElement変数
         let domElement = document.getElementById("myCanvas");
@@ -124,7 +132,7 @@
         texture = loader.load('../../../assets/img/coding/page/kv/planet/earth.jpg');
 
         // オブジェクトの質感を定義
-        material = new THREE.MeshStandardMaterial({
+        material = new THREE.MeshPhongMaterial({
         map: texture
         });
 

@@ -3999,6 +3999,36 @@ addToUnscopables('entries');
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.array.map.js":
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.map.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var $map = __webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").map;
+var arrayMethodHasSpeciesSupport = __webpack_require__(/*! ../internals/array-method-has-species-support */ "./node_modules/core-js/internals/array-method-has-species-support.js");
+var arrayMethodUsesToLength = __webpack_require__(/*! ../internals/array-method-uses-to-length */ "./node_modules/core-js/internals/array-method-uses-to-length.js");
+
+var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('map');
+// FF49- issue
+var USES_TO_LENGTH = arrayMethodUsesToLength('map');
+
+// `Array.prototype.map` method
+// https://tc39.github.io/ecma262/#sec-array.prototype.map
+// with adding support of @@species
+$({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT || !USES_TO_LENGTH }, {
+  map: function map(callbackfn /* , thisArg */) {
+    return $map(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.object.define-property.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/core-js/modules/es.object.define-property.js ***!
@@ -101249,7 +101279,7 @@ function func() {
     loader = new THREE.TextureLoader();
     texture = loader.load('../../../assets/img/coding/page/kv/planet/earth.jpg'); // オブジェクトの質感を定義
 
-    material = new THREE.MeshStandardMaterial({
+    material = new THREE.MeshPhongMaterial({
       map: texture
     }); // 定義した形式とスタイルをもとに、オブジェクトを生成
 
@@ -101304,6 +101334,8 @@ __webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/co
 
 __webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
 
+__webpack_require__(/*! core-js/modules/es.array.map */ "./node_modules/core-js/modules/es.array.map.js");
+
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 __webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptor */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
@@ -101331,6 +101363,8 @@ function _typeof(obj) {
 
   return _typeof(obj);
 }
+
+__webpack_require__(/*! core-js/modules/es.array.map */ "./node_modules/core-js/modules/es.array.map.js");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -101431,21 +101465,23 @@ function func() {
   var cW = parent.clientWidth;
   var cH = parent.clientHeight; // グローバルでの変数定義
 
-  var renderer, scene, camera, controls, directionalLight, geometry, material, sphere, loader, texture; // OrbitControls用domElement変数
+  var renderer, scene, camera, container, controls, directionalLight, ambientLight, geometryList, material, mesh; // OrbitControls用domElement変数
 
   var domElement = document.getElementById("myCanvas"); // カメラ位置
 
   var cameraPos = {
-    x: 1,
-    y: 1,
-    z: 500
+    x: 0,
+    y: 800,
+    z: 800
   }; // 光源位置
 
   var lightPos = {
     x: -.3,
     y: .7,
     z: .6
-  }; // ----------------------------------------------------------------------
+  }; // オブジェクトの配色
+
+  var colorArray = ["turquoise", "lime", "yellow", "blue", "pink", "purple", "red"]; // ----------------------------------------------------------------------
 
   /**
    *  キャンバスの描画内容
@@ -101458,32 +101494,52 @@ function func() {
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(cW, cH);
-    renderer.setClearColor("rgb(0, 0, 30)", 1); // シーンを定義
+    renderer.setClearColor("grey", .2); // シーンを定義
 
-    scene = new THREE.Scene(); // シーンにカメラを定義
+    scene = new THREE.Scene(); // カメラを定義
 
-    camera = new THREE.PerspectiveCamera(45, cW / cH, 1, 30000); // mousedragで、カメラ位置変更
-
-    controls = new _OrbitControls.OrbitControls(camera, domElement);
+    camera = new THREE.PerspectiveCamera(45, cW / cH, 1, 10000);
     camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
-    scene.add(camera); // シーンに光源(シーンを照らす光)を定義
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
+    scene.add(camera); // mousedragで、カメラ位置変更
 
-    directionalLight = new THREE.DirectionalLight('#fff');
+    controls = new _OrbitControls.OrbitControls(camera, domElement); // 平行光源を定義
+
+    directionalLight = new THREE.DirectionalLight(0xffffff);
     directionalLight.position.set(lightPos.x, lightPos.y, lightPos.z);
-    directionalLight.intensity = 1.5;
-    scene.add(directionalLight); // オブジェクトの形式を定義
+    scene.add(directionalLight); // 環境光源を定義
 
-    geometry = new THREE.SphereGeometry(150, 150, 150); // テクスチャ用の画像を読み込む
+    ambientLight = new THREE.AmbientLight(0x999999);
+    ambientLight.intensity = .5;
+    scene.add(ambientLight); // コンテナー(7つのジオメトリを体系化したオブジェクト)を定義
 
-    loader = new THREE.TextureLoader();
-    texture = loader.load('../../../assets/img/coding/page/kv/planet/earth.jpg'); // オブジェクトの質感を定義
+    container = new THREE.Object3D();
+    scene.add(container); // ジオメトリを定義
 
-    material = new THREE.MeshStandardMaterial({
-      map: texture
-    }); // 定義した形式とスタイルをもとに、オブジェクトを生成
+    geometryList = [new THREE.SphereGeometry(40, 40, 40), // 球体
+    new THREE.BoxGeometry(75, 75, 75), // 直方体
+    new THREE.PlaneGeometry(75, 75), // 平面
+    new THREE.TetrahedronGeometry(75, 0), // カプセル形状
+    new THREE.ConeGeometry(75, 75, 24), // 三角錐
+    new THREE.CylinderGeometry(75, 75, 75, 24), // 円柱
+    new THREE.TorusGeometry(75, 20, 12, 75) // ドーナツ形状
+    ]; // geometryList配列をもとにオブジェクトを定義していく
 
-    sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere); // 常に連続的に描画するため、animate()関数実行
+    geometryList.map(function (geometry, i) {
+      // マテリアルを定義
+      material = new THREE.MeshStandardMaterial({
+        color: colorArray[i],
+        side: THREE.DoubleSide
+      }); // オブジェクトを定義
+
+      mesh = new THREE.Mesh(geometry, material); // オブジェクトを円周上に配置
+
+      mesh.position.x = 300 * Math.sin(i / geometryList.length * Math.PI * 2);
+      mesh.position.z = 300 * Math.cos(i / geometryList.length * Math.PI * 2); // container空間にオブジェクトを定義
+
+      container.add(mesh);
+    }); // 常に連続的に描画するため、animate()関数実行
 
     animate();
   } // ----------------------------------------------------------------------
@@ -101494,22 +101550,12 @@ function func() {
 
 
   function animate() {
-    // 球体の自転
-    rotation(); // mousedragでカメラ位置変更
-
+    // mousedragでカメラ位置変更
     controls.update(); // rendererインスタンスにシーンとカメラを渡し、レンダリング
 
     renderer.render(scene, camera); // animate()関数を連続実行
 
     requestAnimationFrame(animate);
-  }
-  /**
-   * 球体を自転させる関数
-   */
-
-
-  function rotation() {
-    sphere.rotation.set(0, sphere.rotation.y + 0.005, sphere.rotation.z + 0.005);
   }
 }
 

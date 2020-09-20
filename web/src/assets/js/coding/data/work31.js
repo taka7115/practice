@@ -107,7 +107,7 @@ function func() {
     texture = loader.load('../../../assets/img/coding/page/kv/planet/earth.jpg');
 
     // オブジェクトの質感を定義
-    material = new THREE.MeshStandardMaterial({
+    material = new THREE.MeshPhongMaterial({
       map: texture
     });
 
