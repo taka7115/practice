@@ -511,49 +511,51 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work32.js */ "./src/assets/js/coding/data/work32.js"));
+var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work34.js */ "./src/assets/js/coding/data/work34.js"));
 
-var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work31.js */ "./src/assets/js/coding/data/work31.js"));
+var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work32.js */ "./src/assets/js/coding/data/work32.js"));
 
-var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work30.js */ "./src/assets/js/coding/data/work30.js"));
+var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work31.js */ "./src/assets/js/coding/data/work31.js"));
 
-var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work29.js */ "./src/assets/js/coding/data/work29.js"));
+var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work30.js */ "./src/assets/js/coding/data/work30.js"));
 
-var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work28.js */ "./src/assets/js/coding/data/work28.js"));
+var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work29.js */ "./src/assets/js/coding/data/work29.js"));
 
-var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work27.js */ "./src/assets/js/coding/data/work27.js"));
+var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work28.js */ "./src/assets/js/coding/data/work28.js"));
 
-var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work26.js */ "./src/assets/js/coding/data/work26.js"));
+var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work27.js */ "./src/assets/js/coding/data/work27.js"));
 
-var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work25.js */ "./src/assets/js/coding/data/work25.js"));
+var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work26.js */ "./src/assets/js/coding/data/work26.js"));
 
-var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work24.js */ "./src/assets/js/coding/data/work24.js"));
+var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work25.js */ "./src/assets/js/coding/data/work25.js"));
 
-var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work23.js */ "./src/assets/js/coding/data/work23.js"));
+var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work24.js */ "./src/assets/js/coding/data/work24.js"));
 
-var _work11 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work22.js */ "./src/assets/js/coding/data/work22.js"));
+var _work11 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work23.js */ "./src/assets/js/coding/data/work23.js"));
 
-var _work12 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work21.js */ "./src/assets/js/coding/data/work21.js"));
+var _work12 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work22.js */ "./src/assets/js/coding/data/work22.js"));
 
-var _work13 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
+var _work13 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work21.js */ "./src/assets/js/coding/data/work21.js"));
 
-var _work14 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
+var _work14 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
 
-var _work15 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
+var _work15 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
 
-var _work16 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
+var _work16 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
 
-var _work17 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
+var _work17 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
 
-var _work18 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
+var _work18 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
 
-var _work19 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
+var _work19 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
 
-var _work20 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
+var _work20 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
 
-var _work21 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+var _work21 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
 
-var _work22 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
+var _work22 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+
+var _work23 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -609,7 +611,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // import work37 from "../../../data/work37.js";
 // import work36 from "../../../data/work36.js";
 // import work35 from "../../../data/work35.js";
-// import work34 from "../../../data/work34.js";
 // import work33 from "../../../data/work33.js";
 var _default = {
   data: function data() {
@@ -621,30 +622,30 @@ var _default = {
         // work37,
         // work36,
         // work35,
-        // work34,
+        work34: _work["default"],
         // work33,
-        work32: _work["default"],
-        work31: _work2["default"],
-        work30: _work3["default"],
-        work29: _work4["default"],
-        work28: _work5["default"],
-        work27: _work6["default"],
-        work26: _work7["default"],
-        work25: _work8["default"],
-        work24: _work9["default"],
-        work23: _work10["default"],
-        work22: _work11["default"],
-        work21: _work12["default"],
-        work10: _work13["default"],
-        work9: _work14["default"],
-        work8: _work15["default"],
-        work7: _work16["default"],
-        work6: _work17["default"],
-        work5: _work18["default"],
-        work4: _work19["default"],
-        work3: _work20["default"],
-        work2: _work21["default"],
-        work1: _work22["default"]
+        work32: _work2["default"],
+        work31: _work3["default"],
+        work30: _work4["default"],
+        work29: _work5["default"],
+        work28: _work6["default"],
+        work27: _work7["default"],
+        work26: _work8["default"],
+        work25: _work9["default"],
+        work24: _work10["default"],
+        work23: _work11["default"],
+        work22: _work12["default"],
+        work21: _work13["default"],
+        work10: _work14["default"],
+        work9: _work15["default"],
+        work8: _work16["default"],
+        work7: _work17["default"],
+        work6: _work18["default"],
+        work5: _work19["default"],
+        work4: _work20["default"],
+        work3: _work21["default"],
+        work2: _work22["default"],
+        work1: _work23["default"]
       }
     };
   },
@@ -101457,7 +101458,12 @@ function func() {
   /**
    *  createdのタイミングでinit()関数実行
    */
-  window.addEventListener('load', init); // ----------------------------------------------------------------------
+  window.addEventListener('load', init);
+  /**
+   * リサイズイベント発生時に実行
+   */
+
+  window.addEventListener('resize', onResize); // ----------------------------------------------------------------------
   //親要素を取得
 
   var parent = document.getElementById("parent"); // 親要素の幅と高さを変数化
@@ -101557,6 +101563,356 @@ function func() {
 
     requestAnimationFrame(animate);
   }
+  /**
+   *  リサイズ時の調整関数
+   */
+
+
+  function onResize() {
+    // 親要素の幅と高さを変数化
+    var cW = parent.clientWidth;
+    var cH = parent.clientHeight; // レンダラーのサイズを調整する
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH); // カメラのアスペクト比を正す
+
+    camera.aspect = cW / cH;
+    camera.updateProjectionMatrix();
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work34.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work34.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
+
+__webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
+
+__webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/core-js/modules/es.symbol.iterator.js");
+
+__webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptor */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
+
+__webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
+
+__webpack_require__(/*! core-js/modules/es.string.iterator */ "./node_modules/core-js/modules/es.string.iterator.js");
+
+__webpack_require__(/*! core-js/modules/es.weak-map */ "./node_modules/core-js/modules/es.weak-map.js");
+
+__webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_modules/three/build/three.module.js"));
+
+var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
+
+function _getRequireWildcardCache() {
+  if (typeof WeakMap !== "function") return null;
+  var cache = new WeakMap();
+
+  _getRequireWildcardCache = function _getRequireWildcardCache() {
+    return cache;
+  };
+
+  return cache;
+}
+
+function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache();
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
+var _default = {
+  id: 34,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+// three.jsをnode moduleから読み込み
+
+exports["default"] = _default;
+
+function func() {
+  // ----------------------------------------------------------------------
+  //親要素を取得
+  var parent = document.getElementById("parent"); // 親要素の幅と高さを変数化
+
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // グローバルでの変数定義
+
+  var renderer, scene, camera, container, controls, hemisphereLight, directionalLight, ambientLight, geometryList, material, mesh; // OrbitControls用domElement変数
+
+  var domElement = document.getElementById("myCanvas"); // カメラ位置
+
+  var cameraPos = {
+    x: 0,
+    y: 9,
+    z: 16
+  }; // ----------------------------------------------------------------------
+
+  /**
+   *  キャンバスの描画内容
+   */
+
+  var init = function init() {
+    // rendererインスタンス定義(canvas要素にWebGL使用定義)
+    renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      canvas: document.querySelector('#myCanvas')
+    });
+    renderer.setSize(cW, cH);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setClearColor(0xeeeeee);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0xEEEEEE, 0.015);
+    camera = new THREE.PerspectiveCamera(75, cW / cH, 0.1, 1000);
+    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z); // ヘミスフィアライトを定義
+
+    hemisphereLight = new THREE.HemisphereLight(0xF8FCFE, 1);
+    scene.add(hemisphereLight); // mousedragで、カメラ位置変更
+
+    controls = new _OrbitControls.OrbitControls(camera, domElement); // 常に連続的に描画するため、animate()関数実行
+
+    animate();
+  }; // ----------------------------------------------------------------------
+
+  /**
+   *  常に連続的に描画するためのアニメーション関数
+   */
+
+
+  var animate = function animate() {
+    // mousedragでカメラ位置変更
+    controls.update(); // rendererインスタンスにシーンとカメラを渡し、レンダリング
+
+    renderer.render(scene, camera); // animate()関数を連続実行
+
+    requestAnimationFrame(animate);
+  };
+  /**
+   *  リサイズ時の調整関数
+   */
+
+
+  var resize = function resize() {
+    // 親要素の幅と高さを変数化
+    var cW = parent.clientWidth;
+    var cH = parent.clientHeight; // レンダラーのサイズを調整する
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH); // カメラのアスペクト比を正す
+
+    camera.aspect = cW / cH;
+    camera.updateProjectionMatrix();
+  };
+
+  var addPlane = function addPlane() {
+    var geo = new THREE.PlaneBufferGeometry(200, 200, 1);
+    var mat = new THREE.MeshLambertMaterial({
+      color: 0xFFFFFF
+    });
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.receiveShadow = true;
+    mesh.rotateX(THREE.Math.degToRad(-90));
+    scene.add(mesh);
+  };
+
+  var boxAmount = 3;
+  var boxPos = [];
+  var boxScale = [];
+  var boxGroup = new THREE.Group();
+
+  var addBoxes = function addBoxes() {
+    var geo = new THREE.BoxBufferGeometry(2, 2, 2);
+    var mat = new THREE.MeshLambertMaterial({
+      color: 0x2ccf6d
+    });
+
+    for (var i = 0; i < boxAmount; i++) {
+      var _mesh = new THREE.Mesh(geo, mat);
+
+      boxPos.push(_mesh.position);
+      boxScale.push(_mesh.scale);
+
+      _mesh.position.set(i * 4, 2, 0);
+
+      _mesh.castShadow = true;
+      boxGroup.add(_mesh);
+    }
+
+    scene.add(boxGroup);
+    boxGroup.position.set(-4, -1, 0);
+  };
+
+  var addLights = function addLights() {
+    var light = new THREE.SpotLight(0xF3F8FD, 0.2);
+    light.position.set(-10, 40, 50);
+    light.castShadow = true;
+    light.shadow.mapSize.width = 2048;
+    light.shadow.mapSize.height = 2048;
+    light.shadow.camera.near = 1;
+    light.shadow.camera.far = 1000;
+    scene.add(light);
+    var light2 = new THREE.SpotLight(0xF3F8FD, 0.4, 100);
+    light2.position.set(0, 0, 30);
+    scene.add(light2);
+  };
+
+  var animateBoxes = function animateBoxes() {
+    var tl = gsap.timeline({
+      defaults: {
+        duration: 0.15,
+        ease: "sine.inOut"
+      }
+    });
+    tl.to(boxPos, {
+      y: 5.2,
+      stagger: {
+        amount: 0.12,
+        repeat: -1,
+        repeatDelay: 0.25
+      }
+    }, 'in+=0.1').to(boxPos, {
+      y: 2,
+      stagger: {
+        amount: 0.1,
+        repeat: -1,
+        repeatDelay: 0.25
+      },
+      ease: "sine.in"
+    }, 'in+=0.25').to(boxScale, {
+      y: 0.8,
+      x: 1.24,
+      z: 1.24,
+      stagger: {
+        amount: 0.1,
+        repeat: -1,
+        repeatDelay: 0.3
+      },
+      duration: 0.1,
+      ease: "circ.out"
+    }, 'in').to(boxScale, {
+      y: 1.2,
+      x: 1,
+      z: 1,
+      stagger: {
+        amount: 0.1,
+        repeat: -1,
+        repeatDelay: 0.3
+      },
+      duration: 0.1,
+      ease: "power1.in"
+    }, 'in+=0.1').to(boxScale, {
+      y: 1,
+      x: 1,
+      z: 1,
+      stagger: {
+        amount: 0.1,
+        repeat: -1,
+        repeatDelay: 0.3
+      },
+      duration: 0.1
+    }, 'in+=0.2');
+    return tl.timeScale(0.6);
+  };
+
+  window.addEventListener("load", function () {
+    init();
+    addPlane();
+    addLights();
+    addBoxes();
+    animateBoxes();
+    render();
+  });
+  window.addEventListener("resize", function () {
+    resize();
+  });
 }
 
 /***/ }),

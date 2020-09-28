@@ -47,12 +47,12 @@
     "ja": "整数",
     "example": ""
   },
-  "": {
-    "ja": "",
-    "example": ""
+  "vartex": {
+    "ja": "(三角形の)頂点。複数形はvartices",
+    "example": "triangle vertices"
   },
-  "": {
-    "ja": "",
+  "optimize": {
+    "ja": "最適化する",
     "example": ""
   },
   "": {
