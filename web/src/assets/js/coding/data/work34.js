@@ -32,20 +32,25 @@ import {
   OrbitControls
 } from "three/examples/jsm/controls/OrbitControls";
 
-function func() {
+//  gsapをインポート
+import gsap from "gsap";
 
+function func() {
 
   // ----------------------------------------------------------------------
 
   //親要素を取得
   let parent = document.getElementById("parent");
 
+  // キャンバス要素の取得
+  let canvas = document.querySelector('#myCanvas');
+
   // 親要素の幅と高さを変数化
   let cW = parent.clientWidth;
   let cH = parent.clientHeight;
 
   // グローバルでの変数定義
-  var renderer, scene, camera, container, controls, hemisphereLight, directionalLight, ambientLight, geometryList, material, mesh;
+  var renderer, scene, camera, controls, hemisphereLight, spotLight, geo, mat, plane, box;
 
   // OrbitControls用domElement変数
   let domElement = document.getElementById("myCanvas");
@@ -59,6 +64,24 @@ function func() {
 
   // ----------------------------------------------------------------------
 
+  // createdのタイミングで関数実行
+  window.addEventListener("load", () => {
+    init();
+    addPlane();
+    addBoxes();
+  });
+
+  // リサイズのタイミングで関数実行
+  window.addEventListener("resize", () => {
+    resize();
+  });
+
+  // キャンバス内をクリックしたらボックスのアニメーション開始
+  canvas.addEventListener("click", () => {
+    animateBoxes();
+  });
+
+  // ----------------------------------------------------------------------
 
   /**
    *  キャンバスの描画内容
@@ -68,19 +91,19 @@ function func() {
     // rendererインスタンス定義(canvas要素にWebGL使用定義)
     renderer = new THREE.WebGLRenderer({
       antialias: true,
-      canvas: document.querySelector('#myCanvas')
+      canvas: canvas
     });
     renderer.setSize(cW, cH);
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor(0xeeeeee);
+    renderer.setClearColor("black");
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
-
-
-
+    // シーンを定義
     scene = new THREE.Scene();
     scene.fog = new THREE.FogExp2(0xEEEEEE, 0.015);
+
+    // カメラを定義
     camera = new THREE.PerspectiveCamera(
       75,
       cW / cH,
@@ -89,18 +112,26 @@ function func() {
     );
     camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
 
-    // ヘミスフィアライトを定義
-    hemisphereLight = new THREE.HemisphereLight(0xF8FCFE, 1);
-    scene.add(hemisphereLight);
-
     // mousedragで、カメラ位置変更
     controls = new OrbitControls(camera, domElement);
+
+    // ヘミスフィアライトを定義(空の色, 地の色, 光の強さ)
+    hemisphereLight = new THREE.HemisphereLight("#fff", "#000");
+    hemisphereLight.position.set(0, 100, 0);
+    hemisphereLight.intensity = .2;
+    scene.add(hemisphereLight);
+
+    // スポットライトを定義(色, 光の強さ, 距離, 照射角, ボケ具合, 減衰率)
+    spotLight = new THREE.SpotLight("#fff");
+    spotLight.castShadow = true;
+    spotLight.intensity = 1;
+    spotLight.position.set(0, 30, 30);
+    scene.add(spotLight);
 
     // 常に連続的に描画するため、animate()関数実行
     animate();
 
   };
-
 
   // ----------------------------------------------------------------------
 
@@ -133,57 +164,48 @@ function func() {
     camera.updateProjectionMatrix();
   }
 
-
-
+  // ボックスが弾む紺色がかった平面を作成
   const addPlane = () => {
-    let geo = new THREE.PlaneBufferGeometry(200, 200, 1);
-    let mat = new THREE.MeshLambertMaterial({
-      color: 0xFFFFFF
+    geo = new THREE.PlaneBufferGeometry(50, 50, 1);
+    mat = new THREE.MeshLambertMaterial({
+      color: "#01314f"
     });
-    let mesh = new THREE.Mesh(geo, mat);
-    mesh.receiveShadow = true;
-    mesh.rotateX(THREE.Math.degToRad(-90))
-    scene.add(mesh);
+    plane = new THREE.Mesh(geo, mat);
+    plane.receiveShadow = true;
+    plane.rotateX(THREE.Math.degToRad(-90));
+    scene.add(plane);
   }
 
-
-  const boxAmount = 3
+  /**
+   * ボックスの定義
+   */
+  const boxAmount = 3;
   const boxPos = [];
   const boxScale = [];
   let boxGroup = new THREE.Group();
 
   const addBoxes = () => {
-    let geo = new THREE.BoxBufferGeometry(2, 2, 2);
-    let mat = new THREE.MeshLambertMaterial({
+    geo = new THREE.BoxBufferGeometry(2, 2, 2);
+    mat = new THREE.MeshLambertMaterial({
       color: 0x2ccf6d
-    })
+    });
     for (let i = 0; i < boxAmount; i++) {
-      let mesh = new THREE.Mesh(geo, mat);
-      boxPos.push(mesh.position);
-      boxScale.push(mesh.scale);
-      mesh.position.set(i * 4, 2, 0);
-      mesh.castShadow = true;
-      boxGroup.add(mesh);
+      box = new THREE.Mesh(geo, mat);
+      boxPos.push(box.position);
+      boxScale.push(box.scale);
+      box.position.set(i * 4, 2, 0);
+      box.castShadow = true;
+      boxGroup.add(box);
     }
     scene.add(boxGroup);
     boxGroup.position.set(-4, -1, 0);
   }
 
-  const addLights = () => {
-    let light = new THREE.SpotLight(0xF3F8FD, 0.2);
-    light.position.set(-10, 40, 50);
-    light.castShadow = true
-    light.shadow.mapSize.width = 2048;
-    light.shadow.mapSize.height = 2048;
-    light.shadow.camera.near = 1;
-    light.shadow.camera.far = 1000;
-    scene.add(light);
-
-    let light2 = new THREE.SpotLight(0xF3F8FD, 0.4, 100);
-    light2.position.set(0, 0, 30);
-    scene.add(light2);
-  }
-
+  /**
+   * ボックスのアニメーション関数
+   * ※ボックスのアニメーションをループさせたいときは
+   * repeat: -1,にする
+   */
   const animateBoxes = () => {
     const tl = gsap.timeline({
       defaults: {
@@ -195,7 +217,7 @@ function func() {
         y: 5.2,
         stagger: {
           amount: 0.12,
-          repeat: -1,
+          repeat: 2,
           repeatDelay: 0.25
         }
       }, 'in+=0.1')
@@ -203,7 +225,7 @@ function func() {
         y: 2,
         stagger: {
           amount: 0.1,
-          repeat: -1,
+          repeat: 2,
           repeatDelay: 0.25
         },
         ease: "sine.in"
@@ -214,7 +236,7 @@ function func() {
         z: 1.24,
         stagger: {
           amount: 0.1,
-          repeat: -1,
+          repeat: 2,
           repeatDelay: 0.3
         },
         duration: 0.1,
@@ -226,7 +248,7 @@ function func() {
         z: 1,
         stagger: {
           amount: 0.1,
-          repeat: -1,
+          repeat: 2,
           repeatDelay: 0.3
         },
         duration: 0.1,
@@ -238,30 +260,11 @@ function func() {
         z: 1,
         stagger: {
           amount: 0.1,
-          repeat: -1,
+          repeat: 2,
           repeatDelay: 0.3
         },
         duration: 0.1
       }, 'in+=0.2');
     return tl.timeScale(0.6);
   }
-
-  window.addEventListener("load", () => {
-    init();
-    addPlane();
-    addLights();
-    addBoxes();
-    animateBoxes();
-    render();
-  });
-
-  window.addEventListener("resize", () => {
-    resize();
-  });
-
-
-
-
-
-
 }

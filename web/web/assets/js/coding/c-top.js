@@ -101638,6 +101638,14 @@ var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_mod
 
 var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
 
+var _gsap = _interopRequireDefault(__webpack_require__(/*! gsap */ "./node_modules/gsap/index.js"));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
 function _getRequireWildcardCache() {
   if (typeof WeakMap !== "function") return null;
   var cache = new WeakMap();
@@ -101719,12 +101727,14 @@ exports["default"] = _default;
 function func() {
   // ----------------------------------------------------------------------
   //親要素を取得
-  var parent = document.getElementById("parent"); // 親要素の幅と高さを変数化
+  var parent = document.getElementById("parent"); // キャンバス要素の取得
+
+  var canvas = document.querySelector('#myCanvas'); // 親要素の幅と高さを変数化
 
   var cW = parent.clientWidth;
   var cH = parent.clientHeight; // グローバルでの変数定義
 
-  var renderer, scene, camera, container, controls, hemisphereLight, directionalLight, ambientLight, geometryList, material, mesh; // OrbitControls用domElement変数
+  var renderer, scene, camera, controls, hemisphereLight, spotLight, geo, mat, plane, box; // OrbitControls用domElement変数
 
   var domElement = document.getElementById("myCanvas"); // カメラ位置
 
@@ -101733,6 +101743,21 @@ function func() {
     y: 9,
     z: 16
   }; // ----------------------------------------------------------------------
+  // createdのタイミングで関数実行
+
+  window.addEventListener("load", function () {
+    init();
+    addPlane();
+    addBoxes();
+  }); // リサイズのタイミングで関数実行
+
+  window.addEventListener("resize", function () {
+    resize();
+  }); // キャンバス内をクリックしたらボックスのアニメーション開始
+
+  canvas.addEventListener("click", function () {
+    animateBoxes();
+  }); // ----------------------------------------------------------------------
 
   /**
    *  キャンバスの描画内容
@@ -101742,22 +101767,32 @@ function func() {
     // rendererインスタンス定義(canvas要素にWebGL使用定義)
     renderer = new THREE.WebGLRenderer({
       antialias: true,
-      canvas: document.querySelector('#myCanvas')
+      canvas: canvas
     });
     renderer.setSize(cW, cH);
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setClearColor(0xeeeeee);
+    renderer.setClearColor("black");
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap; // シーンを定義
+
     scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0xEEEEEE, 0.015);
+    scene.fog = new THREE.FogExp2(0xEEEEEE, 0.015); // カメラを定義
+
     camera = new THREE.PerspectiveCamera(75, cW / cH, 0.1, 1000);
-    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z); // ヘミスフィアライトを定義
+    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z); // mousedragで、カメラ位置変更
 
-    hemisphereLight = new THREE.HemisphereLight(0xF8FCFE, 1);
-    scene.add(hemisphereLight); // mousedragで、カメラ位置変更
+    controls = new _OrbitControls.OrbitControls(camera, domElement); // ヘミスフィアライトを定義(空の色, 地の色, 光の強さ)
 
-    controls = new _OrbitControls.OrbitControls(camera, domElement); // 常に連続的に描画するため、animate()関数実行
+    hemisphereLight = new THREE.HemisphereLight("#fff", "#000");
+    hemisphereLight.position.set(0, 100, 0);
+    hemisphereLight.intensity = .2;
+    scene.add(hemisphereLight); // スポットライトを定義(色, 光の強さ, 距離, 照射角, ボケ具合, 減衰率)
+
+    spotLight = new THREE.SpotLight("#fff");
+    spotLight.castShadow = true;
+    spotLight.intensity = 1;
+    spotLight.position.set(0, 30, 30);
+    scene.add(spotLight); // 常に連続的に描画するため、animate()関数実行
 
     animate();
   }; // ----------------------------------------------------------------------
@@ -101790,18 +101825,23 @@ function func() {
 
     camera.aspect = cW / cH;
     camera.updateProjectionMatrix();
-  };
+  }; // ボックスが弾む紺色がかった平面を作成
+
 
   var addPlane = function addPlane() {
-    var geo = new THREE.PlaneBufferGeometry(200, 200, 1);
-    var mat = new THREE.MeshLambertMaterial({
-      color: 0xFFFFFF
+    geo = new THREE.PlaneBufferGeometry(50, 50, 1);
+    mat = new THREE.MeshLambertMaterial({
+      color: "#01314f"
     });
-    var mesh = new THREE.Mesh(geo, mat);
-    mesh.receiveShadow = true;
-    mesh.rotateX(THREE.Math.degToRad(-90));
-    scene.add(mesh);
+    plane = new THREE.Mesh(geo, mat);
+    plane.receiveShadow = true;
+    plane.rotateX(THREE.Math.degToRad(-90));
+    scene.add(plane);
   };
+  /**
+   * ボックスの定義
+   */
+
 
   var boxAmount = 3;
   var boxPos = [];
@@ -101809,60 +101849,50 @@ function func() {
   var boxGroup = new THREE.Group();
 
   var addBoxes = function addBoxes() {
-    var geo = new THREE.BoxBufferGeometry(2, 2, 2);
-    var mat = new THREE.MeshLambertMaterial({
+    geo = new THREE.BoxBufferGeometry(2, 2, 2);
+    mat = new THREE.MeshLambertMaterial({
       color: 0x2ccf6d
     });
 
     for (var i = 0; i < boxAmount; i++) {
-      var _mesh = new THREE.Mesh(geo, mat);
-
-      boxPos.push(_mesh.position);
-      boxScale.push(_mesh.scale);
-
-      _mesh.position.set(i * 4, 2, 0);
-
-      _mesh.castShadow = true;
-      boxGroup.add(_mesh);
+      box = new THREE.Mesh(geo, mat);
+      boxPos.push(box.position);
+      boxScale.push(box.scale);
+      box.position.set(i * 4, 2, 0);
+      box.castShadow = true;
+      boxGroup.add(box);
     }
 
     scene.add(boxGroup);
     boxGroup.position.set(-4, -1, 0);
   };
+  /**
+   * ボックスのアニメーション関数
+   * ※ボックスのアニメーションをループさせたいときは
+   * repeat: -1,にする
+   */
 
-  var addLights = function addLights() {
-    var light = new THREE.SpotLight(0xF3F8FD, 0.2);
-    light.position.set(-10, 40, 50);
-    light.castShadow = true;
-    light.shadow.mapSize.width = 2048;
-    light.shadow.mapSize.height = 2048;
-    light.shadow.camera.near = 1;
-    light.shadow.camera.far = 1000;
-    scene.add(light);
-    var light2 = new THREE.SpotLight(0xF3F8FD, 0.4, 100);
-    light2.position.set(0, 0, 30);
-    scene.add(light2);
-  };
 
   var animateBoxes = function animateBoxes() {
-    var tl = gsap.timeline({
+    var tl = _gsap["default"].timeline({
       defaults: {
         duration: 0.15,
         ease: "sine.inOut"
       }
     });
+
     tl.to(boxPos, {
       y: 5.2,
       stagger: {
         amount: 0.12,
-        repeat: -1,
+        repeat: 2,
         repeatDelay: 0.25
       }
     }, 'in+=0.1').to(boxPos, {
       y: 2,
       stagger: {
         amount: 0.1,
-        repeat: -1,
+        repeat: 2,
         repeatDelay: 0.25
       },
       ease: "sine.in"
@@ -101872,7 +101902,7 @@ function func() {
       z: 1.24,
       stagger: {
         amount: 0.1,
-        repeat: -1,
+        repeat: 2,
         repeatDelay: 0.3
       },
       duration: 0.1,
@@ -101883,7 +101913,7 @@ function func() {
       z: 1,
       stagger: {
         amount: 0.1,
-        repeat: -1,
+        repeat: 2,
         repeatDelay: 0.3
       },
       duration: 0.1,
@@ -101894,25 +101924,13 @@ function func() {
       z: 1,
       stagger: {
         amount: 0.1,
-        repeat: -1,
+        repeat: 2,
         repeatDelay: 0.3
       },
       duration: 0.1
     }, 'in+=0.2');
     return tl.timeScale(0.6);
   };
-
-  window.addEventListener("load", function () {
-    init();
-    addPlane();
-    addLights();
-    addBoxes();
-    animateBoxes();
-    render();
-  });
-  window.addEventListener("resize", function () {
-    resize();
-  });
 }
 
 /***/ }),
