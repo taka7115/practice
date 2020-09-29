@@ -1,7 +1,12 @@
 <template>
   <section class="c-works">
     <div class="c-worksWrapper">
-      <div class="c-worksCont" ontouchstart v-for="item in arrays" v-bind:key="item.id">
+      <div
+        class="c-worksCont"
+        ontouchstart
+        v-for="item in arrays"
+        v-bind:key="item.id"
+      >
         <div class="c-worksWrap">
           <img
             :src="`/assets/img/coding/thumbnail/page${item.id}.jpg`"
@@ -51,7 +56,7 @@
 // import work37 from "../../../data/work37.js";
 // import work36 from "../../../data/work36.js";
 // import work35 from "../../../data/work35.js";
-// import work34 from "../../../data/work34.js";
+import work34 from "../../../data/work34.js";
 import work33 from "../../../data/work33.js";
 import work32 from "../../../data/work32.js";
 import work31 from "../../../data/work31.js";
@@ -85,7 +90,7 @@ export default {
         // work37,
         // work36,
         // work35,
-        // work34,
+        work34,
         work33,
         work32,
         work31,

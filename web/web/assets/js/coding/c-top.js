@@ -511,7 +511,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
+<<<<<<< HEAD
 var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work33.js */ "./src/assets/js/coding/data/work33.js"));
+=======
+var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work34.js */ "./src/assets/js/coding/data/work34.js"));
+>>>>>>> acbac7852ab7297952d916df5ac063433e0068a1
 
 var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work32.js */ "./src/assets/js/coding/data/work32.js"));
 
@@ -611,7 +615,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 // import work37 from "../../../data/work37.js";
 // import work36 from "../../../data/work36.js";
 // import work35 from "../../../data/work35.js";
+<<<<<<< HEAD
 // import work34 from "../../../data/work34.js";
+=======
+// import work33 from "../../../data/work33.js";
+>>>>>>> acbac7852ab7297952d916df5ac063433e0068a1
 var _default = {
   data: function data() {
     return {
@@ -622,8 +630,13 @@ var _default = {
         // work37,
         // work36,
         // work35,
+<<<<<<< HEAD
         // work34,
         work33: _work["default"],
+=======
+        work34: _work["default"],
+        // work33,
+>>>>>>> acbac7852ab7297952d916df5ac063433e0068a1
         work32: _work2["default"],
         work31: _work3["default"],
         work30: _work4["default"],
@@ -101459,7 +101472,12 @@ function func() {
   /**
    *  createdのタイミングでinit()関数実行
    */
-  window.addEventListener('load', init); // ----------------------------------------------------------------------
+  window.addEventListener('load', init);
+  /**
+   * リサイズイベント発生時に実行
+   */
+
+  window.addEventListener('resize', onResize); // ----------------------------------------------------------------------
   //親要素を取得
 
   var parent = document.getElementById("parent"); // 親要素の幅と高さを変数化
@@ -101558,6 +101576,374 @@ function func() {
 
     requestAnimationFrame(animate);
   }
+  /**
+   *  リサイズ時の調整関数
+   */
+
+
+  function onResize() {
+    // 親要素の幅と高さを変数化
+    var cW = parent.clientWidth;
+    var cH = parent.clientHeight; // レンダラーのサイズを調整する
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH); // カメラのアスペクト比を正す
+
+    camera.aspect = cW / cH;
+    camera.updateProjectionMatrix();
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work34.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work34.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
+
+__webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
+
+__webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/core-js/modules/es.symbol.iterator.js");
+
+__webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
+
+__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+
+__webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptor */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
+
+__webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
+
+__webpack_require__(/*! core-js/modules/es.string.iterator */ "./node_modules/core-js/modules/es.string.iterator.js");
+
+__webpack_require__(/*! core-js/modules/es.weak-map */ "./node_modules/core-js/modules/es.weak-map.js");
+
+__webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_modules/three/build/three.module.js"));
+
+var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
+
+var _gsap = _interopRequireDefault(__webpack_require__(/*! gsap */ "./node_modules/gsap/index.js"));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+}
+
+function _getRequireWildcardCache() {
+  if (typeof WeakMap !== "function") return null;
+  var cache = new WeakMap();
+
+  _getRequireWildcardCache = function _getRequireWildcardCache() {
+    return cache;
+  };
+
+  return cache;
+}
+
+function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  }
+
+  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
+    return {
+      "default": obj
+    };
+  }
+
+  var cache = _getRequireWildcardCache();
+
+  if (cache && cache.has(obj)) {
+    return cache.get(obj);
+  }
+
+  var newObj = {};
+  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+
+      if (desc && (desc.get || desc.set)) {
+        Object.defineProperty(newObj, key, desc);
+      } else {
+        newObj[key] = obj[key];
+      }
+    }
+  }
+
+  newObj["default"] = obj;
+
+  if (cache) {
+    cache.set(obj, newObj);
+  }
+
+  return newObj;
+}
+
+var _default = {
+  id: 34,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+// three.jsをnode moduleから読み込み
+
+exports["default"] = _default;
+
+function func() {
+  // ----------------------------------------------------------------------
+  //親要素を取得
+  var parent = document.getElementById("parent"); // キャンバス要素の取得
+
+  var canvas = document.querySelector('#myCanvas'); // 親要素の幅と高さを変数化
+
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // グローバルでの変数定義
+
+  var renderer, scene, camera, controls, hemisphereLight, spotLight, geo, mat, plane, box; // OrbitControls用domElement変数
+
+  var domElement = document.getElementById("myCanvas"); // カメラ位置
+
+  var cameraPos = {
+    x: 0,
+    y: 9,
+    z: 16
+  }; // ----------------------------------------------------------------------
+  // createdのタイミングで関数実行
+
+  window.addEventListener("load", function () {
+    init();
+    addPlane();
+    addBoxes();
+  }); // リサイズのタイミングで関数実行
+
+  window.addEventListener("resize", function () {
+    resize();
+  }); // キャンバス内をクリックしたらボックスのアニメーション開始
+
+  canvas.addEventListener("click", function () {
+    animateBoxes();
+  }); // ----------------------------------------------------------------------
+
+  /**
+   *  キャンバスの描画内容
+   */
+
+  var init = function init() {
+    // rendererインスタンス定義(canvas要素にWebGL使用定義)
+    renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      canvas: canvas
+    });
+    renderer.setSize(cW, cH);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setClearColor("black");
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap; // シーンを定義
+
+    scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0xEEEEEE, 0.015); // カメラを定義
+
+    camera = new THREE.PerspectiveCamera(75, cW / cH, 0.1, 1000);
+    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z); // mousedragで、カメラ位置変更
+
+    controls = new _OrbitControls.OrbitControls(camera, domElement); // ヘミスフィアライトを定義(空の色, 地の色, 光の強さ)
+
+    hemisphereLight = new THREE.HemisphereLight("#fff", "#000");
+    hemisphereLight.position.set(0, 100, 0);
+    hemisphereLight.intensity = .2;
+    scene.add(hemisphereLight); // スポットライトを定義(色, 光の強さ, 距離, 照射角, ボケ具合, 減衰率)
+
+    spotLight = new THREE.SpotLight("#fff");
+    spotLight.castShadow = true;
+    spotLight.intensity = 1;
+    spotLight.position.set(0, 30, 30);
+    scene.add(spotLight); // 常に連続的に描画するため、animate()関数実行
+
+    animate();
+  }; // ----------------------------------------------------------------------
+
+  /**
+   *  常に連続的に描画するためのアニメーション関数
+   */
+
+
+  var animate = function animate() {
+    // mousedragでカメラ位置変更
+    controls.update(); // rendererインスタンスにシーンとカメラを渡し、レンダリング
+
+    renderer.render(scene, camera); // animate()関数を連続実行
+
+    requestAnimationFrame(animate);
+  };
+  /**
+   *  リサイズ時の調整関数
+   */
+
+
+  var resize = function resize() {
+    // 親要素の幅と高さを変数化
+    var cW = parent.clientWidth;
+    var cH = parent.clientHeight; // レンダラーのサイズを調整する
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH); // カメラのアスペクト比を正す
+
+    camera.aspect = cW / cH;
+    camera.updateProjectionMatrix();
+  }; // ボックスが弾む紺色がかった平面を作成
+
+
+  var addPlane = function addPlane() {
+    geo = new THREE.PlaneBufferGeometry(50, 50, 1);
+    mat = new THREE.MeshLambertMaterial({
+      color: "#01314f"
+    });
+    plane = new THREE.Mesh(geo, mat);
+    plane.receiveShadow = true;
+    plane.rotateX(THREE.Math.degToRad(-90));
+    scene.add(plane);
+  };
+  /**
+   * ボックスの定義
+   */
+
+
+  var boxAmount = 3;
+  var boxPos = [];
+  var boxScale = [];
+  var boxGroup = new THREE.Group();
+
+  var addBoxes = function addBoxes() {
+    geo = new THREE.BoxBufferGeometry(2, 2, 2);
+    mat = new THREE.MeshLambertMaterial({
+      color: 0x2ccf6d
+    });
+
+    for (var i = 0; i < boxAmount; i++) {
+      box = new THREE.Mesh(geo, mat);
+      boxPos.push(box.position);
+      boxScale.push(box.scale);
+      box.position.set(i * 4, 2, 0);
+      box.castShadow = true;
+      boxGroup.add(box);
+    }
+
+    scene.add(boxGroup);
+    boxGroup.position.set(-4, -1, 0);
+  };
+  /**
+   * ボックスのアニメーション関数
+   * ※ボックスのアニメーションをループさせたいときは
+   * repeat: -1,にする
+   */
+
+
+  var animateBoxes = function animateBoxes() {
+    var tl = _gsap["default"].timeline({
+      defaults: {
+        duration: 0.15,
+        ease: "sine.inOut"
+      }
+    });
+
+    tl.to(boxPos, {
+      y: 5.2,
+      stagger: {
+        amount: 0.12,
+        repeat: 2,
+        repeatDelay: 0.25
+      }
+    }, 'in+=0.1').to(boxPos, {
+      y: 2,
+      stagger: {
+        amount: 0.1,
+        repeat: 2,
+        repeatDelay: 0.25
+      },
+      ease: "sine.in"
+    }, 'in+=0.25').to(boxScale, {
+      y: 0.8,
+      x: 1.24,
+      z: 1.24,
+      stagger: {
+        amount: 0.1,
+        repeat: 2,
+        repeatDelay: 0.3
+      },
+      duration: 0.1,
+      ease: "circ.out"
+    }, 'in').to(boxScale, {
+      y: 1.2,
+      x: 1,
+      z: 1,
+      stagger: {
+        amount: 0.1,
+        repeat: 2,
+        repeatDelay: 0.3
+      },
+      duration: 0.1,
+      ease: "power1.in"
+    }, 'in+=0.1').to(boxScale, {
+      y: 1,
+      x: 1,
+      z: 1,
+      stagger: {
+        amount: 0.1,
+        repeat: 2,
+        repeatDelay: 0.3
+      },
+      duration: 0.1
+    }, 'in+=0.2');
+    return tl.timeScale(0.6);
+  };
 }
 
 /***/ }),

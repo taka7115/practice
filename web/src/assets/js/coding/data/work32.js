@@ -39,6 +39,11 @@ function func() {
    */
   window.addEventListener('load', init);
 
+  /**
+   * リサイズイベント発生時に実行
+   */
+  window.addEventListener('resize', onResize);
+
   // ----------------------------------------------------------------------
 
   //親要素を取得
@@ -168,6 +173,24 @@ function func() {
     renderer.render(scene, camera);
     // animate()関数を連続実行
     requestAnimationFrame(animate);
+  }
+
+
+  /**
+   *  リサイズ時の調整関数
+   */
+  function onResize() {
+    // 親要素の幅と高さを変数化
+    let cW = parent.clientWidth;
+    let cH = parent.clientHeight;
+
+    // レンダラーのサイズを調整する
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH);
+
+    // カメラのアスペクト比を正す
+    camera.aspect = cW / cH;
+    camera.updateProjectionMatrix();
   }
 
 

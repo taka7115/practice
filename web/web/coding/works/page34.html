@@ -30,10 +30,12 @@
 <div id="c-page">
   <main class="c-page">
 
-    <page name="work3" tab="3">
+    <page name="work34" tab="3">
 
       <template slot="mainCont">
-        <!-- kvに入るhtmlを記述 -->
+        <div class="canvas-parent" id="parent">
+          <canvas id="myCanvas"></canvas>
+        </div>
       </template>
 
       <template slot="html">
@@ -41,11 +43,15 @@
       </template>
 
       <template slot="css">
-        <!-- ソースとしてcssを記述 -->
+        .canvas-parent {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        }
       </template>
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
+
       </template>
     </page>
   </main>
@@ -88,7 +94,11 @@
 
 <!-- css manipulation ----------------------------------------- -->
 <style type="text/css">
-  /* kvのhtmlをスタイリングするcssを記述 */
+  .canvas-parent {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
 
 </style>
 

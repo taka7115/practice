@@ -47,20 +47,20 @@
     "ja": "整数",
     "example": ""
   },
-  "": {
-    "ja": "",
+  "vartex": {
+    "ja": "(三角形の)頂点。複数形はvartices",
+    "example": "triangle vertices"
+  },
+  "optimize": {
+    "ja": "最適化する",
     "example": ""
   },
-  "": {
-    "ja": "",
+  "substring": {
+    "ja": "部分文字列(文節)",
     "example": ""
   },
-  "": {
-    "ja": "",
-    "example": ""
-  },
-  "": {
-    "ja": "",
+  "float": {
+    "ja": "浮動小数点値(小数)",
     "example": ""
   },
   "": {
