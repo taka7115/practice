@@ -77,7 +77,8 @@ function func() {
 
     // rendererインスタンス定義(canvas要素にWebGL使用定義)
     renderer = new THREE.WebGLRenderer({
-      canvas: document.querySelector('#myCanvas')
+      canvas: document.querySelector('#myCanvas'),
+      antialias: true
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(cW, cH);

@@ -80,10 +80,12 @@ function func() {
 
     // rendererインスタンス定義(canvas要素にWebGL使用定義)
     renderer = new THREE.WebGLRenderer({
-      canvas: document.querySelector('#myCanvas')
+      canvas: document.querySelector('#myCanvas'),
+      antialias: true
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(cW, cH);
+
     renderer.setClearColor("grey", .2);
 
     // シーンを定義
@@ -98,7 +100,6 @@ function func() {
     );
     camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
-    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
     scene.add(camera);
 
     // mousedragで、カメラ位置変更
@@ -133,8 +134,7 @@ function func() {
 
       // マテリアルを定義
       material = new THREE.MeshStandardMaterial({
-        color: colorArray[i],
-        side: THREE.DoubleSide
+        color: colorArray[i]
       });
 
       // オブジェクトを定義
