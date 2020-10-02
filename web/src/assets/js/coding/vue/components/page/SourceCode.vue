@@ -2,13 +2,25 @@
 <template>
   <section class="code">
     <div class="lang">
-      <div class="lang__tab" :class="{'js-current':isActive1}" v-on:click="slideActivate1()">
+      <div
+        class="lang__tab"
+        :class="{ 'js-current': isActive1 }"
+        v-on:click="slideActivate1()"
+      >
         <img src="/assets/img/coding/page/html.svg" alt="html" />
       </div>
-      <div class="lang__tab" :class="{'js-current':isActive2}" v-on:click="slideActivate2()">
+      <div
+        class="lang__tab"
+        :class="{ 'js-current': isActive2 }"
+        v-on:click="slideActivate2()"
+      >
         <img src="/assets/img/coding/page/css.svg" alt="css" />
       </div>
-      <div class="lang__tab" :class="{'js-current':isActive3}" v-on:click="slideActivate3()">
+      <div
+        class="lang__tab"
+        :class="{ 'js-current': isActive3 }"
+        v-on:click="slideActivate3()"
+      >
         <img src="/assets/img/coding/page/js.svg" alt="javascript" />
       </div>
     </div>
@@ -62,6 +74,16 @@ import work24 from "../../../data/work24.js";
 import work23 from "../../../data/work23.js";
 import work22 from "../../../data/work22.js";
 import work21 from "../../../data/work21.js";
+import work20 from "../../../data/work20.js";
+import work19 from "../../../data/work19.js";
+import work18 from "../../../data/work18.js";
+import work17 from "../../../data/work17.js";
+import work16 from "../../../data/work16.js";
+import work15 from "../../../data/work15.js";
+import work14 from "../../../data/work14.js";
+import work13 from "../../../data/work13.js";
+import work12 from "../../../data/work12.js";
+import work11 from "../../../data/work11.js";
 import work10 from "../../../data/work10.js";
 import work9 from "../../../data/work9.js";
 import work8 from "../../../data/work8.js";
@@ -114,6 +136,16 @@ export default {
         work23,
         work22,
         work21,
+        work20,
+        work19,
+        work18,
+        work17,
+        work16,
+        work15,
+        work14,
+        work13,
+        work12,
+        work11,
         work10,
         work9,
         work8,

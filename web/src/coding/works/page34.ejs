@@ -13,7 +13,9 @@
 <div id="c-page">
   <main class="c-page">
 
+
     <page name="work34" tab="3">
+
 
       <template slot="mainCont">
         <div class="canvas-parent" id="parent">
@@ -21,9 +23,14 @@
         </div>
       </template>
 
+
+
       <template slot="html">
-        <!-- ソースとしてhtmlを記述 -->
+        &lt;div class="canvas-parent" id="parent"&gt;
+        &lt;canvas id="myCanvas"&gt;&lt;/canvas&gt;
+        &lt;/div&gt;
       </template>
+
 
       <template slot="css">
         .canvas-parent {
@@ -33,8 +40,9 @@
         }
       </template>
 
-      <template slot="js">
 
+      <template slot="js">
+        <!-- ソースとしてjavascriptを記述 -->
       </template>
     </page>
   </main>

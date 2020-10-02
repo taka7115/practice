@@ -30,30 +30,165 @@
 <div id="c-page">
   <main class="c-page">
 
-    <page name="work10" tab="3">
+    <page name="work11" tab="1">
 
       <template slot="mainCont">
-        <div class="canvas-parent" id="canvasParent">
-          <canvas id="canvas"></canvas>
-        </div>
+        <div class="agree">
+          <div class="wrap">
+            <input type="checkbox" name="check" class="check cursor" id="checked">
+            <label for="checked" class="cursor">
+              <p class="txt">応募規約に同意する
+              </p>
+            </label>
+            <div class="grey non">
+              <img src="../../assets/img/coding/page/kv/apply_grey.svg" alt="未チェック時の画像">
+            </div>
+            <div class="blue on">
+              <a href="">
+                <img src="../../assets/img/coding/page/kv/apply_red.svg" alt="チェック時の画像">
+              </a>
+            </div>
+          </div>
+        </div><!-- agree -->
       </template>
 
       <template slot="html">
-        &lt;div class="canvas-parent" id="canvasParent"&gt;
-        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
-        &lt;/div&gt;
+        &lt;div class="agree"&gt;
+        　&lt;div class="wrap"&gt;
+        　　&lt;input type="checkbox" name="check" class="check cursor" id="checked"&gt;
+        　　&lt;label for="checked" class="cursor"&gt;
+        　　　&lt;p class="txt"&gt;応募規約に同意する&lt;/p&gt;
+        　　&lt;/label&gt;
+        　　&lt;div class="grey non"&gt;
+        　　　&lt;img src="../../assets/img/coding/page/kv/apply_grey.svg"
+        　　　　　　alt="未チェック時の画像"&gt;
+        　　&lt;/div&gt;
+        　　&lt;div class="blue on"&gt;
+        　　　&lt;a href="※ここに入力フォームなどのページurlを設定します"&gt;
+        　　　　&lt;img src="../../assets/img/coding/page/kv/apply_red.svg" alt="チェック時の画像"&gt;
+        　　　&lt;/a&gt;
+        　　&lt;/div&gt;
+        　&lt;/div&gt;&lt;!-- wrap --&gt;
+        &lt;/div&gt;&lt;!-- agree --&gt;
       </template>
 
       <template slot="css">
-        .canvas-parent {
+        .agree {
         width: 100%;
         height: 100%;
+        display: flex;
+        align-items: center;
+        }
+
+        .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 370px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        }
+
+        .check {
+        width: 25px;
+        height: 25px;
+        }
+
+        .check:checked~.non {
+        display: none;
+        }
+
+        .check:checked~.on {
+        display: block;
+        cursor: default;
+        opacity: 1;
+        }
+
+        .txt {
+        font-size: 20px;
+        margin-left: 10px;
+        }
+
+        .grey {
+        width: 370px;
+        margin: 20px auto 0;
+        }
+
+        .blue {
+        width: 370px;
+        margin: 20px auto 0;
         cursor: pointer;
+        }
+
+        .cursor {
+        cursor: pointer;
+        }
+
+        .non {
+        display: block;
+        }
+
+        .on {
+        display: none;
+        }
+      </template>
+      <template slot="cssSp">
+        .agree {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        }
+
+        .wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        }
+
+        .check {
+        width: 5vw;
+        height: 5vw;
+        }
+
+        .check:checked~.non {
+        display: none;
+        }
+
+        .check:checked~.on {
+        display: block;
+        cursor: default;
+        opacity: 1;
+        }
+
+        .txt {
+        font-size: 4vw;
+        margin-left: 2vw;
+        }
+
+        .grey {
+        width: 60vw;
+        margin: 5vw auto 0;
+        }
+
+        .blue {
+        width: 60vw;
+        margin: 5vw auto 0;
+        }
+
+        .non {
+        display: block;
+        }
+
+        .on {
+        display: none;
         }
       </template>
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
       </template>
     </page>
   </main>
@@ -96,10 +231,120 @@
 
 <!-- css manipulation ----------------------------------------- -->
 <style type="text/css">
-  .canvas-parent {
+  .agree {
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 370px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .check {
+    width: 25px;
+    height: 25px;
+  }
+
+  .check:checked~.non {
+    display: none;
+  }
+
+  .check:checked~.on {
+    display: block;
+    cursor: default;
+    opacity: 1;
+  }
+
+  .txt {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .grey {
+    width: 370px;
+    margin: 20px auto 0;
+  }
+
+  .blue {
+    width: 370px;
+    margin: 20px auto 0;
     cursor: pointer;
+  }
+
+  .cursor {
+    cursor: pointer;
+  }
+
+  .non {
+    display: block;
+  }
+
+  .on {
+    display: none;
+  }
+
+  @media screen and (max-width:768px) {
+
+    .agree {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    .wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .check {
+      width: 5vw;
+      height: 5vw;
+    }
+
+    .check:checked~.non {
+      display: none;
+    }
+
+    .check:checked~.on {
+      display: block;
+      cursor: default;
+      opacity: 1;
+    }
+
+    .txt {
+      font-size: 4vw;
+      margin-left: 2vw;
+    }
+
+    .grey {
+      width: 60vw;
+      margin: 5vw auto 0;
+    }
+
+    .blue {
+      width: 60vw;
+      margin: 5vw auto 0;
+    }
+
+    .non {
+      display: block;
+    }
+
+    .on {
+      display: none;
+    }
   }
 
 </style>

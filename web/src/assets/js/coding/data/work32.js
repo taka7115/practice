@@ -167,6 +167,8 @@ function func() {
    *  常に連続的に描画するためのアニメーション関数
    */
   function animate() {
+    // ジオメトリのグループを自転
+    rotation()
     // mousedragでカメラ位置変更
     controls.update();
     // rendererインスタンスにシーンとカメラを渡し、レンダリング
@@ -191,6 +193,17 @@ function func() {
     // カメラのアスペクト比を正す
     camera.aspect = cW / cH;
     camera.updateProjectionMatrix();
+  }
+
+  /**
+   * ジオメトリのグループを自転させる関数
+   */
+  function rotation() {
+    container.rotation.set(
+      0,
+      container.rotation.y + 0.005,
+      0
+    )
   }
 
 

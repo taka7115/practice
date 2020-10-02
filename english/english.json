@@ -12,27 +12,511 @@
     "example": "If you go drinking with Tom, be prepared to listen to some pretty outlandish cock and bull stories."
   },
   "wild accusation": {
-    "ja": "的外れな、根拠のない非難。",
+    "ja": "的外れな、根拠のない非難",
     "example": "Align the evidence of that I molester on the train before you make wild accusation."
   },
   "false accusations": {
-    "ja": "濡れ衣。",
+    "ja": "濡れ衣",
     "example": "It's false accusations! I did never molester on the train."
   },
   "tap into": {
-    "ja": "うまく利用する。",
+    "ja": "うまく利用する",
     "example": "You should consider tapping into your retirement plan as a last resort."
   },
   "fizzy drink": {
-    "ja": "(ノンアルコールの)炭酸飲料。",
+    "ja": "(ノンアルコールの)炭酸飲料",
     "example": "Fizzy drink is a non-alcoholic, carbonated beverage such as lemonade or cola."
   },
   "big if": {
-    "ja": "まず考えられないこと。",
+    "ja": "まず考えられないこと",
     "example": "It's a big if, someday am I married with someone?"
   },
   "in reverse order": {
     "ja": "逆の順番で",
+    "example": ""
+  },
+  "Q-Tip": {
+    "ja": "綿棒",
+    "example": ""
+  },
+  "conceive": {
+    "ja": "思いつく。想像する。",
+    "example": ""
+  },
+  "throw a tantrum": {
+    "ja": "駄々をこねる。かんしゃくを起こす。",
+    "example": ""
+  },
+  "tenacity": {
+    "ja": "粘り強さ。執着心。",
+    "example": ""
+  },
+  "eulogy": {
+    "ja": "追悼。追悼文。",
+    "example": ""
+  },
+  "whole and bitten": {
+    "ja": "丸かじりされた",
+    "example": ""
+  },
+  "outpouring": {
+    "ja": "流出",
+    "example": ""
+  },
+  "crack a code": {
+    "ja": "暗号を解読する",
+    "example": ""
+  },
+  "head over heels": {
+    "ja": "真っ逆さまに",
+    "example": ""
+  },
+  "win over": {
+    "ja": "口説きおとす",
+    "example": ""
+  },
+  "detail-oriented": {
+    "ja": "細かいことに気を配れる。几帳面な。",
+    "example": ""
+  },
+  "blow off": {
+    "ja": "吹き飛ばす",
+    "example": ""
+  },
+  "butt out": {
+    "ja": "(命令文で)口出しをするな",
+    "example": ""
+  },
+  "infatuate": {
+    "ja": "夢中にさせる。惚れさせる。",
+    "example": ""
+  },
+  "hone my skill": {
+    "ja": "スキルを磨く",
+    "example": ""
+  },
+  "suck it up": {
+    "ja": "(命令文で)ぐだぐだ言うな",
+    "example": ""
+  },
+  "exclamation": {
+    "ja": "(驚き・喜びの)感嘆",
+    "example": ""
+  },
+  "flirt": {
+    "ja": "イチャイチャする",
+    "example": ""
+  },
+  "lucrative": {
+    "ja": "金儲けになる",
+    "example": ""
+  },
+  "social grace": {
+    "ja": "人間力",
+    "example": ""
+  },
+  "realm": {
+    "ja": "領域。国土。分野。",
+    "example": ""
+  },
+  "humiliate": {
+    "ja": "傷つける。恥をかかせる。",
+    "example": ""
+  },
+  "inedible": {
+    "ja": "食べられない",
+    "example": ""
+  },
+  "put a dent in ~": {
+    "ja": "～の表面を凹ませる",
+    "example": ""
+  },
+  "membrane": {
+    "ja": "膜",
+    "example": ""
+  },
+  "a detached retina": {
+    "ja": "網膜剥離",
+    "example": ""
+  },
+  "wag": {
+    "ja": "振り動かす",
+    "example": ""
+  },
+  "topple": {
+    "ja": "(上部が重くて)倒れる",
+    "example": ""
+  },
+  "pancreas": {
+    "ja": "膵臓",
+    "example": ""
+  },
+  "deteriorate": {
+    "ja": "劣化する",
+    "example": ""
+  },
+  "mortality": {
+    "ja": "死の必然性。死すべき人間の運命。",
+    "example": ""
+  },
+  "tarnish": {
+    "ja": "変色",
+    "example": ""
+  },
+  "flog": {
+    "ja": "罰としてたたく。厳しく批判する。",
+    "example": ""
+  },
+  "frenzy": {
+    "ja": "逆上。乱心。",
+    "example": ""
+  },
+  "enunciate": {
+    "ja": "しっかり発音する。発表する。",
+    "example": ""
+  },
+  "levitate": {
+    "ja": "空中浮遊する",
+    "example": ""
+  },
+  "informative": {
+    "ja": "知識を提供する。ためになる。",
+    "example": ""
+  },
+  "erogenous": {
+    "ja": "性欲を刺激するような",
+    "example": ""
+  },
+  "tushy": {
+    "ja": "尻。ケツ。",
+    "example": ""
+  },
+  "fool around": {
+    "ja": "いじくりまわす。遊びまわる。",
+    "example": ""
+  },
+  "candor": {
+    "ja": "率直さ",
+    "example": ""
+  },
+  "swindle": {
+    "ja": "詐欺",
+    "example": ""
+  },
+  "high-end": {
+    "ja": "最高仕様の",
+    "example": ""
+  },
+  "blood bath": {
+    "ja": "大虐殺",
+    "example": ""
+  },
+  "poop": {
+    "ja": "うんち",
+    "example": ""
+  },
+  "thingy": {
+    "ja": "例のアレ。名前を思い出せない事象。",
+    "example": ""
+  },
+  "squirm": {
+    "ja": "身もだえ",
+    "example": ""
+  },
+  "intuitive": {
+    "ja": "直感的な",
+    "example": ""
+  },
+  "succumb": {
+    "ja": "屈する",
+    "example": ""
+  },
+  "gaunt": {
+    "ja": "げっそり痩せた",
+    "example": ""
+  },
+  "uphill battle": {
+    "ja": "苦戦。困難な状況。",
+    "example": ""
+  },
+  "kedney": {
+    "ja": "腎臓",
+    "example": ""
+  },
+  "grab a bite": {
+    "ja": "軽食をとる",
+    "example": ""
+  },
+  "one step at a time": {
+    "ja": "一歩ずつ",
+    "example": ""
+  },
+  "meddle in": {
+    "ja": "首を突っ込む",
+    "example": ""
+  },
+  "industrious": {
+    "ja": "勤勉な",
+    "example": ""
+  },
+  "fumble": {
+    "ja": "手探りで探す。いじくりまわす。",
+    "example": ""
+  },
+  "patch up": {
+    "ja": "(ケンカなどを)一時的に取り繕う",
+    "example": ""
+  },
+  "sweetheart": {
+    "ja": "恋人",
+    "example": ""
+  },
+  "get paranoid in": {
+    "ja": "被害妄想にかられる",
+    "example": ""
+  },
+  "blow one's mind": {
+    "ja": "仰天させる",
+    "example": ""
+  },
+  "in and out": {
+    "ja": "出たり入ったり。見えつ隠れつ。",
+    "example": ""
+  },
+  "done and dusted": {
+    "ja": "作業完全終了",
+    "example": ""
+  },
+  "get the feel of ~": {
+    "ja": "～のコツをつかむ",
+    "example": ""
+  },
+  "pancture": {
+    "ja": "刺し傷。刺された穴。",
+    "example": ""
+  },
+  "stubble": {
+    "ja": "無精ひげ",
+    "example": ""
+  },
+  "blunt": {
+    "ja": "鈍い。とがっていない。",
+    "example": ""
+  },
+  "spur on": {
+    "ja": "駆り立てる。鞭をうつ。奮い立たせる。",
+    "example": ""
+  },
+  "rejuvenate": {
+    "ja": "若返らせる。元気を回復させる。",
+    "example": ""
+  },
+  "nimble": {
+    "ja": "動きが素早い。軽快な。",
+    "example": ""
+  },
+  "invigorate": {
+    "ja": "活力を与える",
+    "example": ""
+  },
+  "how dare you!": {
+    "ja": "よくもそんなことが言えるな！",
+    "example": ""
+  },
+  "krill": {
+    "ja": "オキアミ",
+    "example": ""
+  },
+  "tough on someone": {
+    "ja": "精神的に辛い",
+    "example": ""
+  },
+  "in a matter of seconds": {
+    "ja": "あっという間に",
+    "example": ""
+  },
+  "twirl": {
+    "ja": "クルクル回す",
+    "example": ""
+  },
+  "hook up with ~": {
+    "ja": "～と遊ぶ",
+    "example": ""
+  },
+  "exuberant": {
+    "ja": "あふれんばかりの。熱狂的な。",
+    "example": ""
+  },
+  "on and off": {
+    "ja": "時々。不規則に。",
+    "example": ""
+  },
+  "eye-popping": {
+    "ja": "目玉が飛び出すほどの。驚くほど印象に残る",
+    "example": ""
+  },
+  "scramble": {
+    "ja": "よじ登る。急いで~する。",
+    "example": "They were scrambling to convince the company to move its headquarter from New York."
+  },
+  "earmuffs": {
+    "ja": "耳あて。イヤーマフラー。",
+    "example": ""
+  },
+  "last resort": {
+    "ja": "最後の手段。苦肉の策。",
+    "example": ""
+  },
+  "live and breathe ~": {
+    "ja": "～に熱中する",
+    "example": ""
+  },
+  "paramount": {
+    "ja": "最優先",
+    "example": ""
+  },
+  "as such": {
+    "ja": "したがって。つまり。",
+    "example": ""
+  },
+  "predisposition": {
+    "ja": "傾向。～になりやすい体質",
+    "example": "He has a predisposition to obesity."
+  },
+  "bewitch": {
+    "ja": "魔法をかける。魔法でいいなりにさせる。",
+    "example": ""
+  },
+  "ensnare": {
+    "ja": "罠にかける。誘惑する。",
+    "example": ""
+  },
+  "put a stopper on ~": {
+    "ja": "～を抑制する",
+    "example": ""
+  },
+  "but then (again)": {
+    "ja": "しかしまた一方では",
+    "example": "There could be a war, but then again nothing might happen."
+  },
+  "torn down ~": {
+    "ja": "～を破壊した",
+    "example": ""
+  },
+  "it's just the way world works": {
+    "ja": "そのように世界は回っている",
+    "example": ""
+  },
+  "tailor-made": {
+    "ja": "オーダーメイド",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
+    "example": ""
+  },
+  "": {
+    "ja": "",
     "example": ""
   },
   "": {

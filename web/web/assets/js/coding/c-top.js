@@ -511,55 +511,85 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-<<<<<<< HEAD
-var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work33.js */ "./src/assets/js/coding/data/work33.js"));
-=======
-var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work34.js */ "./src/assets/js/coding/data/work34.js"));
->>>>>>> acbac7852ab7297952d916df5ac063433e0068a1
+var _work = _interopRequireDefault(__webpack_require__(/*! ../../../data/work40.js */ "./src/assets/js/coding/data/work40.js"));
 
-var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work32.js */ "./src/assets/js/coding/data/work32.js"));
+var _work2 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work39.js */ "./src/assets/js/coding/data/work39.js"));
 
-var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work31.js */ "./src/assets/js/coding/data/work31.js"));
+var _work3 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work38.js */ "./src/assets/js/coding/data/work38.js"));
 
-var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work30.js */ "./src/assets/js/coding/data/work30.js"));
+var _work4 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work37.js */ "./src/assets/js/coding/data/work37.js"));
 
-var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work29.js */ "./src/assets/js/coding/data/work29.js"));
+var _work5 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work36.js */ "./src/assets/js/coding/data/work36.js"));
 
-var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work28.js */ "./src/assets/js/coding/data/work28.js"));
+var _work6 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work35.js */ "./src/assets/js/coding/data/work35.js"));
 
-var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work27.js */ "./src/assets/js/coding/data/work27.js"));
+var _work7 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work34.js */ "./src/assets/js/coding/data/work34.js"));
 
-var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work26.js */ "./src/assets/js/coding/data/work26.js"));
+var _work8 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work33.js */ "./src/assets/js/coding/data/work33.js"));
 
-var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work25.js */ "./src/assets/js/coding/data/work25.js"));
+var _work9 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work32.js */ "./src/assets/js/coding/data/work32.js"));
 
-var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work24.js */ "./src/assets/js/coding/data/work24.js"));
+var _work10 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work31.js */ "./src/assets/js/coding/data/work31.js"));
 
-var _work11 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work23.js */ "./src/assets/js/coding/data/work23.js"));
+var _work11 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work30.js */ "./src/assets/js/coding/data/work30.js"));
 
-var _work12 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work22.js */ "./src/assets/js/coding/data/work22.js"));
+var _work12 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work29.js */ "./src/assets/js/coding/data/work29.js"));
 
-var _work13 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work21.js */ "./src/assets/js/coding/data/work21.js"));
+var _work13 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work28.js */ "./src/assets/js/coding/data/work28.js"));
 
-var _work14 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
+var _work14 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work27.js */ "./src/assets/js/coding/data/work27.js"));
 
-var _work15 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
+var _work15 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work26.js */ "./src/assets/js/coding/data/work26.js"));
 
-var _work16 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
+var _work16 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work25.js */ "./src/assets/js/coding/data/work25.js"));
 
-var _work17 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
+var _work17 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work24.js */ "./src/assets/js/coding/data/work24.js"));
 
-var _work18 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
+var _work18 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work23.js */ "./src/assets/js/coding/data/work23.js"));
 
-var _work19 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
+var _work19 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work22.js */ "./src/assets/js/coding/data/work22.js"));
 
-var _work20 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
+var _work20 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work21.js */ "./src/assets/js/coding/data/work21.js"));
 
-var _work21 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
+var _work21 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work20.js */ "./src/assets/js/coding/data/work20.js"));
 
-var _work22 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+var _work22 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work19.js */ "./src/assets/js/coding/data/work19.js"));
 
-var _work23 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
+var _work23 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work18.js */ "./src/assets/js/coding/data/work18.js"));
+
+var _work24 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work17.js */ "./src/assets/js/coding/data/work17.js"));
+
+var _work25 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work16.js */ "./src/assets/js/coding/data/work16.js"));
+
+var _work26 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work15.js */ "./src/assets/js/coding/data/work15.js"));
+
+var _work27 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work14.js */ "./src/assets/js/coding/data/work14.js"));
+
+var _work28 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work13.js */ "./src/assets/js/coding/data/work13.js"));
+
+var _work29 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work12.js */ "./src/assets/js/coding/data/work12.js"));
+
+var _work30 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work11.js */ "./src/assets/js/coding/data/work11.js"));
+
+var _work31 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work10.js */ "./src/assets/js/coding/data/work10.js"));
+
+var _work32 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work9.js */ "./src/assets/js/coding/data/work9.js"));
+
+var _work33 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work8.js */ "./src/assets/js/coding/data/work8.js"));
+
+var _work34 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work7.js */ "./src/assets/js/coding/data/work7.js"));
+
+var _work35 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work6.js */ "./src/assets/js/coding/data/work6.js"));
+
+var _work36 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work5.js */ "./src/assets/js/coding/data/work5.js"));
+
+var _work37 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work4.js */ "./src/assets/js/coding/data/work4.js"));
+
+var _work38 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work3.js */ "./src/assets/js/coding/data/work3.js"));
+
+var _work39 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work2.js */ "./src/assets/js/coding/data/work2.js"));
+
+var _work40 = _interopRequireDefault(__webpack_require__(/*! ../../../data/work1.js */ "./src/assets/js/coding/data/work1.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -609,56 +639,55 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 //
 //
 //
-// import work40 from "../../../data/work40.js";
-// import work39 from "../../../data/work39.js";
-// import work38 from "../../../data/work38.js";
-// import work37 from "../../../data/work37.js";
-// import work36 from "../../../data/work36.js";
-// import work35 from "../../../data/work35.js";
-<<<<<<< HEAD
-// import work34 from "../../../data/work34.js";
-=======
-// import work33 from "../../../data/work33.js";
->>>>>>> acbac7852ab7297952d916df5ac063433e0068a1
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
       arrays: {
-        // work40,
-        // work39,
-        // work38,
-        // work37,
-        // work36,
-        // work35,
-<<<<<<< HEAD
-        // work34,
-        work33: _work["default"],
-=======
-        work34: _work["default"],
-        // work33,
->>>>>>> acbac7852ab7297952d916df5ac063433e0068a1
-        work32: _work2["default"],
-        work31: _work3["default"],
-        work30: _work4["default"],
-        work29: _work5["default"],
-        work28: _work6["default"],
-        work27: _work7["default"],
-        work26: _work8["default"],
-        work25: _work9["default"],
-        work24: _work10["default"],
-        work23: _work11["default"],
-        work22: _work12["default"],
-        work21: _work13["default"],
-        work10: _work14["default"],
-        work9: _work15["default"],
-        work8: _work16["default"],
-        work7: _work17["default"],
-        work6: _work18["default"],
-        work5: _work19["default"],
-        work4: _work20["default"],
-        work3: _work21["default"],
-        work2: _work22["default"],
-        work1: _work23["default"]
+        work40: _work["default"],
+        work39: _work2["default"],
+        work38: _work3["default"],
+        work37: _work4["default"],
+        work36: _work5["default"],
+        work35: _work6["default"],
+        work34: _work7["default"],
+        work33: _work8["default"],
+        work32: _work9["default"],
+        work31: _work10["default"],
+        work30: _work11["default"],
+        work29: _work12["default"],
+        work28: _work13["default"],
+        work27: _work14["default"],
+        work26: _work15["default"],
+        work25: _work16["default"],
+        work24: _work17["default"],
+        work23: _work18["default"],
+        work22: _work19["default"],
+        work21: _work20["default"],
+        work20: _work21["default"],
+        work19: _work22["default"],
+        work18: _work23["default"],
+        work17: _work24["default"],
+        work16: _work25["default"],
+        work15: _work26["default"],
+        work14: _work27["default"],
+        work13: _work28["default"],
+        work12: _work29["default"],
+        work11: _work30["default"],
+        work10: _work31["default"],
+        work9: _work32["default"],
+        work8: _work33["default"],
+        work7: _work34["default"],
+        work6: _work35["default"],
+        work5: _work36["default"],
+        work4: _work37["default"],
+        work3: _work38["default"],
+        work2: _work39["default"],
+        work1: _work40["default"]
       }
     };
   },
@@ -693,24 +722,6 @@ module.exports = function (it) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/a-possible-prototype.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/core-js/internals/a-possible-prototype.js ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-
-module.exports = function (it) {
-  if (!isObject(it) && it !== null) {
-    throw TypeError("Can't set " + String(it) + ' as a prototype');
-  } return it;
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/add-to-unscopables.js":
 /*!**************************************************************!*\
   !*** ./node_modules/core-js/internals/add-to-unscopables.js ***!
@@ -737,6 +748,26 @@ if (ArrayPrototype[UNSCOPABLES] == undefined) {
 // add a key to Array.prototype[@@unscopables]
 module.exports = function (key) {
   ArrayPrototype[UNSCOPABLES][key] = true;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/advance-string-index.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js/internals/advance-string-index.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var charAt = __webpack_require__(/*! ../internals/string-multibyte */ "./node_modules/core-js/internals/string-multibyte.js").charAt;
+
+// `AdvanceStringIndex` abstract operation
+// https://tc39.github.io/ecma262/#sec-advancestringindex
+module.exports = function (S, index, unicode) {
+  return index + (unicode ? charAt(S, index).length : 1);
 };
 
 
@@ -1196,250 +1227,6 @@ module.exports = TO_STRING_TAG_SUPPORT ? classofRaw : function (it) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/collection-weak.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js/internals/collection-weak.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var redefineAll = __webpack_require__(/*! ../internals/redefine-all */ "./node_modules/core-js/internals/redefine-all.js");
-var getWeakData = __webpack_require__(/*! ../internals/internal-metadata */ "./node_modules/core-js/internals/internal-metadata.js").getWeakData;
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var anInstance = __webpack_require__(/*! ../internals/an-instance */ "./node_modules/core-js/internals/an-instance.js");
-var iterate = __webpack_require__(/*! ../internals/iterate */ "./node_modules/core-js/internals/iterate.js");
-var ArrayIterationModule = __webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js");
-var $has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
-
-var setInternalState = InternalStateModule.set;
-var internalStateGetterFor = InternalStateModule.getterFor;
-var find = ArrayIterationModule.find;
-var findIndex = ArrayIterationModule.findIndex;
-var id = 0;
-
-// fallback for uncaught frozen keys
-var uncaughtFrozenStore = function (store) {
-  return store.frozen || (store.frozen = new UncaughtFrozenStore());
-};
-
-var UncaughtFrozenStore = function () {
-  this.entries = [];
-};
-
-var findUncaughtFrozen = function (store, key) {
-  return find(store.entries, function (it) {
-    return it[0] === key;
-  });
-};
-
-UncaughtFrozenStore.prototype = {
-  get: function (key) {
-    var entry = findUncaughtFrozen(this, key);
-    if (entry) return entry[1];
-  },
-  has: function (key) {
-    return !!findUncaughtFrozen(this, key);
-  },
-  set: function (key, value) {
-    var entry = findUncaughtFrozen(this, key);
-    if (entry) entry[1] = value;
-    else this.entries.push([key, value]);
-  },
-  'delete': function (key) {
-    var index = findIndex(this.entries, function (it) {
-      return it[0] === key;
-    });
-    if (~index) this.entries.splice(index, 1);
-    return !!~index;
-  }
-};
-
-module.exports = {
-  getConstructor: function (wrapper, CONSTRUCTOR_NAME, IS_MAP, ADDER) {
-    var C = wrapper(function (that, iterable) {
-      anInstance(that, C, CONSTRUCTOR_NAME);
-      setInternalState(that, {
-        type: CONSTRUCTOR_NAME,
-        id: id++,
-        frozen: undefined
-      });
-      if (iterable != undefined) iterate(iterable, that[ADDER], that, IS_MAP);
-    });
-
-    var getInternalState = internalStateGetterFor(CONSTRUCTOR_NAME);
-
-    var define = function (that, key, value) {
-      var state = getInternalState(that);
-      var data = getWeakData(anObject(key), true);
-      if (data === true) uncaughtFrozenStore(state).set(key, value);
-      else data[state.id] = value;
-      return that;
-    };
-
-    redefineAll(C.prototype, {
-      // 23.3.3.2 WeakMap.prototype.delete(key)
-      // 23.4.3.3 WeakSet.prototype.delete(value)
-      'delete': function (key) {
-        var state = getInternalState(this);
-        if (!isObject(key)) return false;
-        var data = getWeakData(key);
-        if (data === true) return uncaughtFrozenStore(state)['delete'](key);
-        return data && $has(data, state.id) && delete data[state.id];
-      },
-      // 23.3.3.4 WeakMap.prototype.has(key)
-      // 23.4.3.4 WeakSet.prototype.has(value)
-      has: function has(key) {
-        var state = getInternalState(this);
-        if (!isObject(key)) return false;
-        var data = getWeakData(key);
-        if (data === true) return uncaughtFrozenStore(state).has(key);
-        return data && $has(data, state.id);
-      }
-    });
-
-    redefineAll(C.prototype, IS_MAP ? {
-      // 23.3.3.3 WeakMap.prototype.get(key)
-      get: function get(key) {
-        var state = getInternalState(this);
-        if (isObject(key)) {
-          var data = getWeakData(key);
-          if (data === true) return uncaughtFrozenStore(state).get(key);
-          return data ? data[state.id] : undefined;
-        }
-      },
-      // 23.3.3.5 WeakMap.prototype.set(key, value)
-      set: function set(key, value) {
-        return define(this, key, value);
-      }
-    } : {
-      // 23.4.3.1 WeakSet.prototype.add(value)
-      add: function add(value) {
-        return define(this, value, true);
-      }
-    });
-
-    return C;
-  }
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/collection.js":
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/internals/collection.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var isForced = __webpack_require__(/*! ../internals/is-forced */ "./node_modules/core-js/internals/is-forced.js");
-var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
-var InternalMetadataModule = __webpack_require__(/*! ../internals/internal-metadata */ "./node_modules/core-js/internals/internal-metadata.js");
-var iterate = __webpack_require__(/*! ../internals/iterate */ "./node_modules/core-js/internals/iterate.js");
-var anInstance = __webpack_require__(/*! ../internals/an-instance */ "./node_modules/core-js/internals/an-instance.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var checkCorrectnessOfIteration = __webpack_require__(/*! ../internals/check-correctness-of-iteration */ "./node_modules/core-js/internals/check-correctness-of-iteration.js");
-var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js/internals/set-to-string-tag.js");
-var inheritIfRequired = __webpack_require__(/*! ../internals/inherit-if-required */ "./node_modules/core-js/internals/inherit-if-required.js");
-
-module.exports = function (CONSTRUCTOR_NAME, wrapper, common) {
-  var IS_MAP = CONSTRUCTOR_NAME.indexOf('Map') !== -1;
-  var IS_WEAK = CONSTRUCTOR_NAME.indexOf('Weak') !== -1;
-  var ADDER = IS_MAP ? 'set' : 'add';
-  var NativeConstructor = global[CONSTRUCTOR_NAME];
-  var NativePrototype = NativeConstructor && NativeConstructor.prototype;
-  var Constructor = NativeConstructor;
-  var exported = {};
-
-  var fixMethod = function (KEY) {
-    var nativeMethod = NativePrototype[KEY];
-    redefine(NativePrototype, KEY,
-      KEY == 'add' ? function add(value) {
-        nativeMethod.call(this, value === 0 ? 0 : value);
-        return this;
-      } : KEY == 'delete' ? function (key) {
-        return IS_WEAK && !isObject(key) ? false : nativeMethod.call(this, key === 0 ? 0 : key);
-      } : KEY == 'get' ? function get(key) {
-        return IS_WEAK && !isObject(key) ? undefined : nativeMethod.call(this, key === 0 ? 0 : key);
-      } : KEY == 'has' ? function has(key) {
-        return IS_WEAK && !isObject(key) ? false : nativeMethod.call(this, key === 0 ? 0 : key);
-      } : function set(key, value) {
-        nativeMethod.call(this, key === 0 ? 0 : key, value);
-        return this;
-      }
-    );
-  };
-
-  // eslint-disable-next-line max-len
-  if (isForced(CONSTRUCTOR_NAME, typeof NativeConstructor != 'function' || !(IS_WEAK || NativePrototype.forEach && !fails(function () {
-    new NativeConstructor().entries().next();
-  })))) {
-    // create collection constructor
-    Constructor = common.getConstructor(wrapper, CONSTRUCTOR_NAME, IS_MAP, ADDER);
-    InternalMetadataModule.REQUIRED = true;
-  } else if (isForced(CONSTRUCTOR_NAME, true)) {
-    var instance = new Constructor();
-    // early implementations not supports chaining
-    var HASNT_CHAINING = instance[ADDER](IS_WEAK ? {} : -0, 1) != instance;
-    // V8 ~ Chromium 40- weak-collections throws on primitives, but should return false
-    var THROWS_ON_PRIMITIVES = fails(function () { instance.has(1); });
-    // most early implementations doesn't supports iterables, most modern - not close it correctly
-    // eslint-disable-next-line no-new
-    var ACCEPT_ITERABLES = checkCorrectnessOfIteration(function (iterable) { new NativeConstructor(iterable); });
-    // for early implementations -0 and +0 not the same
-    var BUGGY_ZERO = !IS_WEAK && fails(function () {
-      // V8 ~ Chromium 42- fails only with 5+ elements
-      var $instance = new NativeConstructor();
-      var index = 5;
-      while (index--) $instance[ADDER](index, index);
-      return !$instance.has(-0);
-    });
-
-    if (!ACCEPT_ITERABLES) {
-      Constructor = wrapper(function (dummy, iterable) {
-        anInstance(dummy, Constructor, CONSTRUCTOR_NAME);
-        var that = inheritIfRequired(new NativeConstructor(), dummy, Constructor);
-        if (iterable != undefined) iterate(iterable, that[ADDER], that, IS_MAP);
-        return that;
-      });
-      Constructor.prototype = NativePrototype;
-      NativePrototype.constructor = Constructor;
-    }
-
-    if (THROWS_ON_PRIMITIVES || BUGGY_ZERO) {
-      fixMethod('delete');
-      fixMethod('has');
-      IS_MAP && fixMethod('get');
-    }
-
-    if (BUGGY_ZERO || HASNT_CHAINING) fixMethod(ADDER);
-
-    // weak collections should not contains .clear method
-    if (IS_WEAK && NativePrototype.clear) delete NativePrototype.clear;
-  }
-
-  exported[CONSTRUCTOR_NAME] = Constructor;
-  $({ global: true, forced: Constructor != NativeConstructor }, exported);
-
-  setToStringTag(Constructor, CONSTRUCTOR_NAME);
-
-  if (!IS_WEAK) common.setStrong(Constructor, CONSTRUCTOR_NAME, IS_MAP);
-
-  return Constructor;
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/copy-constructor-properties.js":
 /*!***********************************************************************!*\
   !*** ./node_modules/core-js/internals/copy-constructor-properties.js ***!
@@ -1460,52 +1247,6 @@ module.exports = function (target, source) {
     var key = keys[i];
     if (!has(target, key)) defineProperty(target, key, getOwnPropertyDescriptor(source, key));
   }
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/correct-prototype-getter.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js/internals/correct-prototype-getter.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-
-module.exports = !fails(function () {
-  function F() { /* empty */ }
-  F.prototype.constructor = null;
-  return Object.getPrototypeOf(new F()) !== F.prototype;
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/create-iterator-constructor.js":
-/*!***********************************************************************!*\
-  !*** ./node_modules/core-js/internals/create-iterator-constructor.js ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var IteratorPrototype = __webpack_require__(/*! ../internals/iterators-core */ "./node_modules/core-js/internals/iterators-core.js").IteratorPrototype;
-var create = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js/internals/object-create.js");
-var createPropertyDescriptor = __webpack_require__(/*! ../internals/create-property-descriptor */ "./node_modules/core-js/internals/create-property-descriptor.js");
-var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js/internals/set-to-string-tag.js");
-var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
-
-var returnThis = function () { return this; };
-
-module.exports = function (IteratorConstructor, NAME, next) {
-  var TO_STRING_TAG = NAME + ' Iterator';
-  IteratorConstructor.prototype = create(IteratorPrototype, { next: createPropertyDescriptor(1, next) });
-  setToStringTag(IteratorConstructor, TO_STRING_TAG, false, true);
-  Iterators[TO_STRING_TAG] = returnThis;
-  return IteratorConstructor;
 };
 
 
@@ -1568,130 +1309,6 @@ module.exports = function (object, key, value) {
   var propertyKey = toPrimitive(key);
   if (propertyKey in object) definePropertyModule.f(object, propertyKey, createPropertyDescriptor(0, value));
   else object[propertyKey] = value;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/define-iterator.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js/internals/define-iterator.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var createIteratorConstructor = __webpack_require__(/*! ../internals/create-iterator-constructor */ "./node_modules/core-js/internals/create-iterator-constructor.js");
-var getPrototypeOf = __webpack_require__(/*! ../internals/object-get-prototype-of */ "./node_modules/core-js/internals/object-get-prototype-of.js");
-var setPrototypeOf = __webpack_require__(/*! ../internals/object-set-prototype-of */ "./node_modules/core-js/internals/object-set-prototype-of.js");
-var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js/internals/set-to-string-tag.js");
-var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
-var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js/internals/is-pure.js");
-var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
-var IteratorsCore = __webpack_require__(/*! ../internals/iterators-core */ "./node_modules/core-js/internals/iterators-core.js");
-
-var IteratorPrototype = IteratorsCore.IteratorPrototype;
-var BUGGY_SAFARI_ITERATORS = IteratorsCore.BUGGY_SAFARI_ITERATORS;
-var ITERATOR = wellKnownSymbol('iterator');
-var KEYS = 'keys';
-var VALUES = 'values';
-var ENTRIES = 'entries';
-
-var returnThis = function () { return this; };
-
-module.exports = function (Iterable, NAME, IteratorConstructor, next, DEFAULT, IS_SET, FORCED) {
-  createIteratorConstructor(IteratorConstructor, NAME, next);
-
-  var getIterationMethod = function (KIND) {
-    if (KIND === DEFAULT && defaultIterator) return defaultIterator;
-    if (!BUGGY_SAFARI_ITERATORS && KIND in IterablePrototype) return IterablePrototype[KIND];
-    switch (KIND) {
-      case KEYS: return function keys() { return new IteratorConstructor(this, KIND); };
-      case VALUES: return function values() { return new IteratorConstructor(this, KIND); };
-      case ENTRIES: return function entries() { return new IteratorConstructor(this, KIND); };
-    } return function () { return new IteratorConstructor(this); };
-  };
-
-  var TO_STRING_TAG = NAME + ' Iterator';
-  var INCORRECT_VALUES_NAME = false;
-  var IterablePrototype = Iterable.prototype;
-  var nativeIterator = IterablePrototype[ITERATOR]
-    || IterablePrototype['@@iterator']
-    || DEFAULT && IterablePrototype[DEFAULT];
-  var defaultIterator = !BUGGY_SAFARI_ITERATORS && nativeIterator || getIterationMethod(DEFAULT);
-  var anyNativeIterator = NAME == 'Array' ? IterablePrototype.entries || nativeIterator : nativeIterator;
-  var CurrentIteratorPrototype, methods, KEY;
-
-  // fix native
-  if (anyNativeIterator) {
-    CurrentIteratorPrototype = getPrototypeOf(anyNativeIterator.call(new Iterable()));
-    if (IteratorPrototype !== Object.prototype && CurrentIteratorPrototype.next) {
-      if (!IS_PURE && getPrototypeOf(CurrentIteratorPrototype) !== IteratorPrototype) {
-        if (setPrototypeOf) {
-          setPrototypeOf(CurrentIteratorPrototype, IteratorPrototype);
-        } else if (typeof CurrentIteratorPrototype[ITERATOR] != 'function') {
-          createNonEnumerableProperty(CurrentIteratorPrototype, ITERATOR, returnThis);
-        }
-      }
-      // Set @@toStringTag to native iterators
-      setToStringTag(CurrentIteratorPrototype, TO_STRING_TAG, true, true);
-      if (IS_PURE) Iterators[TO_STRING_TAG] = returnThis;
-    }
-  }
-
-  // fix Array#{values, @@iterator}.name in V8 / FF
-  if (DEFAULT == VALUES && nativeIterator && nativeIterator.name !== VALUES) {
-    INCORRECT_VALUES_NAME = true;
-    defaultIterator = function values() { return nativeIterator.call(this); };
-  }
-
-  // define iterator
-  if ((!IS_PURE || FORCED) && IterablePrototype[ITERATOR] !== defaultIterator) {
-    createNonEnumerableProperty(IterablePrototype, ITERATOR, defaultIterator);
-  }
-  Iterators[NAME] = defaultIterator;
-
-  // export additional methods
-  if (DEFAULT) {
-    methods = {
-      values: getIterationMethod(VALUES),
-      keys: IS_SET ? defaultIterator : getIterationMethod(KEYS),
-      entries: getIterationMethod(ENTRIES)
-    };
-    if (FORCED) for (KEY in methods) {
-      if (BUGGY_SAFARI_ITERATORS || INCORRECT_VALUES_NAME || !(KEY in IterablePrototype)) {
-        redefine(IterablePrototype, KEY, methods[KEY]);
-      }
-    } else $({ target: NAME, proto: true, forced: BUGGY_SAFARI_ITERATORS || INCORRECT_VALUES_NAME }, methods);
-  }
-
-  return methods;
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/define-well-known-symbol.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js/internals/define-well-known-symbol.js ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var path = __webpack_require__(/*! ../internals/path */ "./node_modules/core-js/internals/path.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var wrappedWellKnownSymbolModule = __webpack_require__(/*! ../internals/well-known-symbol-wrapped */ "./node_modules/core-js/internals/well-known-symbol-wrapped.js");
-var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js").f;
-
-module.exports = function (NAME) {
-  var Symbol = path.Symbol || (path.Symbol = {});
-  if (!has(Symbol, NAME)) defineProperty(Symbol, NAME, {
-    value: wrappedWellKnownSymbolModule.f(NAME)
-  });
 };
 
 
@@ -1944,18 +1561,139 @@ module.exports = function (exec) {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/freezing.js":
-/*!****************************************************!*\
-  !*** ./node_modules/core-js/internals/freezing.js ***!
-  \****************************************************/
+/***/ "./node_modules/core-js/internals/fix-regexp-well-known-symbol-logic.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/core-js/internals/fix-regexp-well-known-symbol-logic.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+"use strict";
 
-module.exports = !fails(function () {
-  return Object.isExtensible(Object.preventExtensions({}));
+// TODO: Remove from `core-js@4` since it's moved to entry points
+__webpack_require__(/*! ../modules/es.regexp.exec */ "./node_modules/core-js/modules/es.regexp.exec.js");
+var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
+var regexpExec = __webpack_require__(/*! ../internals/regexp-exec */ "./node_modules/core-js/internals/regexp-exec.js");
+var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
+
+var SPECIES = wellKnownSymbol('species');
+
+var REPLACE_SUPPORTS_NAMED_GROUPS = !fails(function () {
+  // #replace needs built-in support for named groups.
+  // #match works fine because it just return the exec results, even if it has
+  // a "grops" property.
+  var re = /./;
+  re.exec = function () {
+    var result = [];
+    result.groups = { a: '7' };
+    return result;
+  };
+  return ''.replace(re, '$<a>') !== '7';
 });
+
+// IE <= 11 replaces $0 with the whole match, as if it was $&
+// https://stackoverflow.com/questions/6024666/getting-ie-to-replace-a-regex-with-the-literal-string-0
+var REPLACE_KEEPS_$0 = (function () {
+  return 'a'.replace(/./, '$0') === '$0';
+})();
+
+var REPLACE = wellKnownSymbol('replace');
+// Safari <= 13.0.3(?) substitutes nth capture where n>m with an empty string
+var REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE = (function () {
+  if (/./[REPLACE]) {
+    return /./[REPLACE]('a', '$0') === '';
+  }
+  return false;
+})();
+
+// Chrome 51 has a buggy "split" implementation when RegExp#exec !== nativeExec
+// Weex JS has frozen built-in prototypes, so use try / catch wrapper
+var SPLIT_WORKS_WITH_OVERWRITTEN_EXEC = !fails(function () {
+  var re = /(?:)/;
+  var originalExec = re.exec;
+  re.exec = function () { return originalExec.apply(this, arguments); };
+  var result = 'ab'.split(re);
+  return result.length !== 2 || result[0] !== 'a' || result[1] !== 'b';
+});
+
+module.exports = function (KEY, length, exec, sham) {
+  var SYMBOL = wellKnownSymbol(KEY);
+
+  var DELEGATES_TO_SYMBOL = !fails(function () {
+    // String methods call symbol-named RegEp methods
+    var O = {};
+    O[SYMBOL] = function () { return 7; };
+    return ''[KEY](O) != 7;
+  });
+
+  var DELEGATES_TO_EXEC = DELEGATES_TO_SYMBOL && !fails(function () {
+    // Symbol-named RegExp methods call .exec
+    var execCalled = false;
+    var re = /a/;
+
+    if (KEY === 'split') {
+      // We can't use real regex here since it causes deoptimization
+      // and serious performance degradation in V8
+      // https://github.com/zloirock/core-js/issues/306
+      re = {};
+      // RegExp[@@split] doesn't call the regex's exec method, but first creates
+      // a new one. We need to return the patched regex when creating the new one.
+      re.constructor = {};
+      re.constructor[SPECIES] = function () { return re; };
+      re.flags = '';
+      re[SYMBOL] = /./[SYMBOL];
+    }
+
+    re.exec = function () { execCalled = true; return null; };
+
+    re[SYMBOL]('');
+    return !execCalled;
+  });
+
+  if (
+    !DELEGATES_TO_SYMBOL ||
+    !DELEGATES_TO_EXEC ||
+    (KEY === 'replace' && !(
+      REPLACE_SUPPORTS_NAMED_GROUPS &&
+      REPLACE_KEEPS_$0 &&
+      !REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE
+    )) ||
+    (KEY === 'split' && !SPLIT_WORKS_WITH_OVERWRITTEN_EXEC)
+  ) {
+    var nativeRegExpMethod = /./[SYMBOL];
+    var methods = exec(SYMBOL, ''[KEY], function (nativeMethod, regexp, str, arg2, forceStringMethod) {
+      if (regexp.exec === regexpExec) {
+        if (DELEGATES_TO_SYMBOL && !forceStringMethod) {
+          // The native String method already delegates to @@method (this
+          // polyfilled function), leasing to infinite recursion.
+          // We avoid it by directly calling the native @@method method.
+          return { done: true, value: nativeRegExpMethod.call(regexp, str, arg2) };
+        }
+        return { done: true, value: nativeMethod.call(str, regexp, arg2) };
+      }
+      return { done: false };
+    }, {
+      REPLACE_KEEPS_$0: REPLACE_KEEPS_$0,
+      REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE: REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE
+    });
+    var stringMethod = methods[0];
+    var regexMethod = methods[1];
+
+    redefine(String.prototype, KEY, stringMethod);
+    redefine(RegExp.prototype, SYMBOL, length == 2
+      // 21.2.5.8 RegExp.prototype[@@replace](string, replaceValue)
+      // 21.2.5.11 RegExp.prototype[@@split](string, limit)
+      ? function (string, arg) { return regexMethod.call(string, this, arg); }
+      // 21.2.5.6 RegExp.prototype[@@match](string)
+      // 21.2.5.9 RegExp.prototype[@@search](string)
+      : function (string) { return regexMethod.call(string, this); }
+    );
+  }
+
+  if (sham) createNonEnumerableProperty(RegExp.prototype[SYMBOL], 'sham', true);
+};
 
 
 /***/ }),
@@ -1990,6 +1728,45 @@ module.exports = function (fn, that, length) {
   return function (/* ...args */) {
     return fn.apply(that, arguments);
   };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/function-bind.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/core-js/internals/function-bind.js ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var aFunction = __webpack_require__(/*! ../internals/a-function */ "./node_modules/core-js/internals/a-function.js");
+var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
+
+var slice = [].slice;
+var factories = {};
+
+var construct = function (C, argsLength, args) {
+  if (!(argsLength in factories)) {
+    for (var list = [], i = 0; i < argsLength; i++) list[i] = 'a[' + i + ']';
+    // eslint-disable-next-line no-new-func
+    factories[argsLength] = Function('C,a', 'return new C(' + list.join(',') + ')');
+  } return factories[argsLength](C, args);
+};
+
+// `Function.prototype.bind` method implementation
+// https://tc39.github.io/ecma262/#sec-function.prototype.bind
+module.exports = Function.bind || function bind(that /* , ...args */) {
+  var fn = aFunction(this);
+  var partArgs = slice.call(arguments, 1);
+  var boundFunction = function bound(/* args... */) {
+    var args = partArgs.concat(slice.call(arguments));
+    return this instanceof boundFunction ? construct(fn, args.length, args) : fn.apply(that, args);
+  };
+  if (isObject(fn.prototype)) boundFunction.prototype = fn.prototype;
+  return boundFunction;
 };
 
 
@@ -2170,34 +1947,6 @@ module.exports = fails(function () {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/inherit-if-required.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/internals/inherit-if-required.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var setPrototypeOf = __webpack_require__(/*! ../internals/object-set-prototype-of */ "./node_modules/core-js/internals/object-set-prototype-of.js");
-
-// makes subclassing work correct for wrapped built-ins
-module.exports = function ($this, dummy, Wrapper) {
-  var NewTarget, NewTargetPrototype;
-  if (
-    // it can work only with native `setPrototypeOf`
-    setPrototypeOf &&
-    // we haven't completely correct pre-ES6 way for getting `new.target`, so use this
-    typeof (NewTarget = dummy.constructor) == 'function' &&
-    NewTarget !== Wrapper &&
-    isObject(NewTargetPrototype = NewTarget.prototype) &&
-    NewTargetPrototype !== Wrapper.prototype
-  ) setPrototypeOf($this, NewTargetPrototype);
-  return $this;
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/inspect-source.js":
 /*!**********************************************************!*\
   !*** ./node_modules/core-js/internals/inspect-source.js ***!
@@ -2217,78 +1966,6 @@ if (typeof store.inspectSource != 'function') {
 }
 
 module.exports = store.inspectSource;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/internal-metadata.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/core-js/internals/internal-metadata.js ***!
-  \*************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js/internals/hidden-keys.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js").f;
-var uid = __webpack_require__(/*! ../internals/uid */ "./node_modules/core-js/internals/uid.js");
-var FREEZING = __webpack_require__(/*! ../internals/freezing */ "./node_modules/core-js/internals/freezing.js");
-
-var METADATA = uid('meta');
-var id = 0;
-
-var isExtensible = Object.isExtensible || function () {
-  return true;
-};
-
-var setMetadata = function (it) {
-  defineProperty(it, METADATA, { value: {
-    objectID: 'O' + ++id, // object ID
-    weakData: {}          // weak collections IDs
-  } });
-};
-
-var fastKey = function (it, create) {
-  // return a primitive with prefix
-  if (!isObject(it)) return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
-  if (!has(it, METADATA)) {
-    // can't set metadata to uncaught frozen object
-    if (!isExtensible(it)) return 'F';
-    // not necessary to add metadata
-    if (!create) return 'E';
-    // add missing metadata
-    setMetadata(it);
-  // return object ID
-  } return it[METADATA].objectID;
-};
-
-var getWeakData = function (it, create) {
-  if (!has(it, METADATA)) {
-    // can't set metadata to uncaught frozen object
-    if (!isExtensible(it)) return true;
-    // not necessary to add metadata
-    if (!create) return false;
-    // add missing metadata
-    setMetadata(it);
-  // return the store of weak collections IDs
-  } return it[METADATA].weakData;
-};
-
-// add metadata on freeze-family methods calling
-var onFreeze = function (it) {
-  if (FREEZING && meta.REQUIRED && isExtensible(it) && !has(it, METADATA)) setMetadata(it);
-  return it;
-};
-
-var meta = module.exports = {
-  REQUIRED: false,
-  fastKey: fastKey,
-  getWeakData: getWeakData,
-  onFreeze: onFreeze
-};
-
-hiddenKeys[METADATA] = true;
 
 
 /***/ }),
@@ -2511,55 +2188,6 @@ var iterate = module.exports = function (iterable, fn, that, AS_ENTRIES, IS_ITER
 
 iterate.stop = function (result) {
   return new Result(true, result);
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/iterators-core.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/core-js/internals/iterators-core.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var getPrototypeOf = __webpack_require__(/*! ../internals/object-get-prototype-of */ "./node_modules/core-js/internals/object-get-prototype-of.js");
-var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js/internals/is-pure.js");
-
-var ITERATOR = wellKnownSymbol('iterator');
-var BUGGY_SAFARI_ITERATORS = false;
-
-var returnThis = function () { return this; };
-
-// `%IteratorPrototype%` object
-// https://tc39.github.io/ecma262/#sec-%iteratorprototype%-object
-var IteratorPrototype, PrototypeOfArrayIteratorPrototype, arrayIterator;
-
-if ([].keys) {
-  arrayIterator = [].keys();
-  // Safari 8 has buggy iterators w/o `next`
-  if (!('next' in arrayIterator)) BUGGY_SAFARI_ITERATORS = true;
-  else {
-    PrototypeOfArrayIteratorPrototype = getPrototypeOf(getPrototypeOf(arrayIterator));
-    if (PrototypeOfArrayIteratorPrototype !== Object.prototype) IteratorPrototype = PrototypeOfArrayIteratorPrototype;
-  }
-}
-
-if (IteratorPrototype == undefined) IteratorPrototype = {};
-
-// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-if (!IS_PURE && !has(IteratorPrototype, ITERATOR)) {
-  createNonEnumerableProperty(IteratorPrototype, ITERATOR, returnThis);
-}
-
-module.exports = {
-  IteratorPrototype: IteratorPrototype,
-  BUGGY_SAFARI_ITERATORS: BUGGY_SAFARI_ITERATORS
 };
 
 
@@ -2923,39 +2551,6 @@ exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnProper
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/object-get-own-property-names-external.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/core-js/internals/object-get-own-property-names-external.js ***!
-  \**********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
-var nativeGetOwnPropertyNames = __webpack_require__(/*! ../internals/object-get-own-property-names */ "./node_modules/core-js/internals/object-get-own-property-names.js").f;
-
-var toString = {}.toString;
-
-var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
-  ? Object.getOwnPropertyNames(window) : [];
-
-var getWindowNames = function (it) {
-  try {
-    return nativeGetOwnPropertyNames(it);
-  } catch (error) {
-    return windowNames.slice();
-  }
-};
-
-// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
-module.exports.f = function getOwnPropertyNames(it) {
-  return windowNames && toString.call(it) == '[object Window]'
-    ? getWindowNames(it)
-    : nativeGetOwnPropertyNames(toIndexedObject(it));
-};
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/object-get-own-property-names.js":
 /*!*************************************************************************!*\
   !*** ./node_modules/core-js/internals/object-get-own-property-names.js ***!
@@ -2985,34 +2580,6 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/object-get-prototype-of.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/core-js/internals/object-get-prototype-of.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
-var sharedKey = __webpack_require__(/*! ../internals/shared-key */ "./node_modules/core-js/internals/shared-key.js");
-var CORRECT_PROTOTYPE_GETTER = __webpack_require__(/*! ../internals/correct-prototype-getter */ "./node_modules/core-js/internals/correct-prototype-getter.js");
-
-var IE_PROTO = sharedKey('IE_PROTO');
-var ObjectPrototype = Object.prototype;
-
-// `Object.getPrototypeOf` method
-// https://tc39.github.io/ecma262/#sec-object.getprototypeof
-module.exports = CORRECT_PROTOTYPE_GETTER ? Object.getPrototypeOf : function (O) {
-  O = toObject(O);
-  if (has(O, IE_PROTO)) return O[IE_PROTO];
-  if (typeof O.constructor == 'function' && O instanceof O.constructor) {
-    return O.constructor.prototype;
-  } return O instanceof Object ? ObjectPrototype : null;
-};
 
 
 /***/ }),
@@ -3085,41 +2652,6 @@ exports.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
   var descriptor = getOwnPropertyDescriptor(this, V);
   return !!descriptor && descriptor.enumerable;
 } : nativePropertyIsEnumerable;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/internals/object-set-prototype-of.js":
-/*!*******************************************************************!*\
-  !*** ./node_modules/core-js/internals/object-set-prototype-of.js ***!
-  \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
-var aPossiblePrototype = __webpack_require__(/*! ../internals/a-possible-prototype */ "./node_modules/core-js/internals/a-possible-prototype.js");
-
-// `Object.setPrototypeOf` method
-// https://tc39.github.io/ecma262/#sec-object.setprototypeof
-// Works with __proto__ only. Old v8 can't work with null proto objects.
-/* eslint-disable no-proto */
-module.exports = Object.setPrototypeOf || ('__proto__' in {} ? function () {
-  var CORRECT_SETTER = false;
-  var test = {};
-  var setter;
-  try {
-    setter = Object.getOwnPropertyDescriptor(Object.prototype, '__proto__').set;
-    setter.call(test, []);
-    CORRECT_SETTER = test instanceof Array;
-  } catch (error) { /* empty */ }
-  return function setPrototypeOf(O, proto) {
-    anObject(O);
-    aPossiblePrototype(proto);
-    if (CORRECT_SETTER) setter.call(O, proto);
-    else O.__proto__ = proto;
-    return O;
-  };
-}() : undefined);
 
 
 /***/ }),
@@ -3279,6 +2811,201 @@ var TEMPLATE = String(String).split('String');
 // add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
 })(Function.prototype, 'toString', function toString() {
   return typeof this == 'function' && getInternalState(this).source || inspectSource(this);
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/regexp-exec-abstract.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/core-js/internals/regexp-exec-abstract.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var classof = __webpack_require__(/*! ./classof-raw */ "./node_modules/core-js/internals/classof-raw.js");
+var regexpExec = __webpack_require__(/*! ./regexp-exec */ "./node_modules/core-js/internals/regexp-exec.js");
+
+// `RegExpExec` abstract operation
+// https://tc39.github.io/ecma262/#sec-regexpexec
+module.exports = function (R, S) {
+  var exec = R.exec;
+  if (typeof exec === 'function') {
+    var result = exec.call(R, S);
+    if (typeof result !== 'object') {
+      throw TypeError('RegExp exec method returned something other than an Object or null');
+    }
+    return result;
+  }
+
+  if (classof(R) !== 'RegExp') {
+    throw TypeError('RegExp#exec called on incompatible receiver');
+  }
+
+  return regexpExec.call(R, S);
+};
+
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/regexp-exec.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/internals/regexp-exec.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var regexpFlags = __webpack_require__(/*! ./regexp-flags */ "./node_modules/core-js/internals/regexp-flags.js");
+var stickyHelpers = __webpack_require__(/*! ./regexp-sticky-helpers */ "./node_modules/core-js/internals/regexp-sticky-helpers.js");
+
+var nativeExec = RegExp.prototype.exec;
+// This always refers to the native implementation, because the
+// String#replace polyfill uses ./fix-regexp-well-known-symbol-logic.js,
+// which loads this file before patching the method.
+var nativeReplace = String.prototype.replace;
+
+var patchedExec = nativeExec;
+
+var UPDATES_LAST_INDEX_WRONG = (function () {
+  var re1 = /a/;
+  var re2 = /b*/g;
+  nativeExec.call(re1, 'a');
+  nativeExec.call(re2, 'a');
+  return re1.lastIndex !== 0 || re2.lastIndex !== 0;
+})();
+
+var UNSUPPORTED_Y = stickyHelpers.UNSUPPORTED_Y || stickyHelpers.BROKEN_CARET;
+
+// nonparticipating capturing group, copied from es5-shim's String#split patch.
+var NPCG_INCLUDED = /()??/.exec('')[1] !== undefined;
+
+var PATCH = UPDATES_LAST_INDEX_WRONG || NPCG_INCLUDED || UNSUPPORTED_Y;
+
+if (PATCH) {
+  patchedExec = function exec(str) {
+    var re = this;
+    var lastIndex, reCopy, match, i;
+    var sticky = UNSUPPORTED_Y && re.sticky;
+    var flags = regexpFlags.call(re);
+    var source = re.source;
+    var charsAdded = 0;
+    var strCopy = str;
+
+    if (sticky) {
+      flags = flags.replace('y', '');
+      if (flags.indexOf('g') === -1) {
+        flags += 'g';
+      }
+
+      strCopy = String(str).slice(re.lastIndex);
+      // Support anchored sticky behavior.
+      if (re.lastIndex > 0 && (!re.multiline || re.multiline && str[re.lastIndex - 1] !== '\n')) {
+        source = '(?: ' + source + ')';
+        strCopy = ' ' + strCopy;
+        charsAdded++;
+      }
+      // ^(? + rx + ) is needed, in combination with some str slicing, to
+      // simulate the 'y' flag.
+      reCopy = new RegExp('^(?:' + source + ')', flags);
+    }
+
+    if (NPCG_INCLUDED) {
+      reCopy = new RegExp('^' + source + '$(?!\\s)', flags);
+    }
+    if (UPDATES_LAST_INDEX_WRONG) lastIndex = re.lastIndex;
+
+    match = nativeExec.call(sticky ? reCopy : re, strCopy);
+
+    if (sticky) {
+      if (match) {
+        match.input = match.input.slice(charsAdded);
+        match[0] = match[0].slice(charsAdded);
+        match.index = re.lastIndex;
+        re.lastIndex += match[0].length;
+      } else re.lastIndex = 0;
+    } else if (UPDATES_LAST_INDEX_WRONG && match) {
+      re.lastIndex = re.global ? match.index + match[0].length : lastIndex;
+    }
+    if (NPCG_INCLUDED && match && match.length > 1) {
+      // Fix browsers whose `exec` methods don't consistently return `undefined`
+      // for NPCG, like IE8. NOTE: This doesn' work for /(.?)?/
+      nativeReplace.call(match[0], reCopy, function () {
+        for (i = 1; i < arguments.length - 2; i++) {
+          if (arguments[i] === undefined) match[i] = undefined;
+        }
+      });
+    }
+
+    return match;
+  };
+}
+
+module.exports = patchedExec;
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/regexp-flags.js":
+/*!********************************************************!*\
+  !*** ./node_modules/core-js/internals/regexp-flags.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
+
+// `RegExp.prototype.flags` getter implementation
+// https://tc39.github.io/ecma262/#sec-get-regexp.prototype.flags
+module.exports = function () {
+  var that = anObject(this);
+  var result = '';
+  if (that.global) result += 'g';
+  if (that.ignoreCase) result += 'i';
+  if (that.multiline) result += 'm';
+  if (that.dotAll) result += 's';
+  if (that.unicode) result += 'u';
+  if (that.sticky) result += 'y';
+  return result;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/core-js/internals/regexp-sticky-helpers.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/core-js/internals/regexp-sticky-helpers.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var fails = __webpack_require__(/*! ./fails */ "./node_modules/core-js/internals/fails.js");
+
+// babel-minify transpiles RegExp('a', 'y') -> /a/y and it causes SyntaxError,
+// so we use an intermediate function.
+function RE(s, f) {
+  return RegExp(s, f);
+}
+
+exports.UNSUPPORTED_Y = fails(function () {
+  // babel-minify transpiles RegExp('a', 'y') -> /a/y and it causes SyntaxError
+  var re = RE('a', 'y');
+  re.lastIndex = 2;
+  return re.exec('abcd') != null;
+});
+
+exports.BROKEN_CARET = fails(function () {
+  // https://bugzilla.mozilla.org/show_bug.cgi?id=773687
+  var re = RE('^r', 'gy');
+  re.lastIndex = 2;
+  return re.exec('str') != null;
 });
 
 
@@ -3790,20 +3517,6 @@ module.exports = NATIVE_SYMBOL
 
 /***/ }),
 
-/***/ "./node_modules/core-js/internals/well-known-symbol-wrapped.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/core-js/internals/well-known-symbol-wrapped.js ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-
-exports.f = wellKnownSymbol;
-
-
-/***/ }),
-
 /***/ "./node_modules/core-js/internals/well-known-symbol.js":
 /*!*************************************************************!*\
   !*** ./node_modules/core-js/internals/well-known-symbol.js ***!
@@ -3927,6 +3640,42 @@ addToUnscopables('fill');
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.array.find.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.find.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var $find = __webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").find;
+var addToUnscopables = __webpack_require__(/*! ../internals/add-to-unscopables */ "./node_modules/core-js/internals/add-to-unscopables.js");
+var arrayMethodUsesToLength = __webpack_require__(/*! ../internals/array-method-uses-to-length */ "./node_modules/core-js/internals/array-method-uses-to-length.js");
+
+var FIND = 'find';
+var SKIPS_HOLES = true;
+
+var USES_TO_LENGTH = arrayMethodUsesToLength(FIND);
+
+// Shouldn't skip holes
+if (FIND in []) Array(1)[FIND](function () { SKIPS_HOLES = false; });
+
+// `Array.prototype.find` method
+// https://tc39.github.io/ecma262/#sec-array.prototype.find
+$({ target: 'Array', proto: true, forced: SKIPS_HOLES || !USES_TO_LENGTH }, {
+  find: function find(callbackfn /* , that = undefined */) {
+    return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
+// https://tc39.github.io/ecma262/#sec-array.prototype-@@unscopables
+addToUnscopables(FIND);
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.array.for-each.js":
 /*!***********************************************************!*\
   !*** ./node_modules/core-js/modules/es.array.for-each.js ***!
@@ -3944,71 +3693,6 @@ var forEach = __webpack_require__(/*! ../internals/array-for-each */ "./node_mod
 $({ target: 'Array', proto: true, forced: [].forEach != forEach }, {
   forEach: forEach
 });
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.array.iterator.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/core-js/modules/es.array.iterator.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
-var addToUnscopables = __webpack_require__(/*! ../internals/add-to-unscopables */ "./node_modules/core-js/internals/add-to-unscopables.js");
-var Iterators = __webpack_require__(/*! ../internals/iterators */ "./node_modules/core-js/internals/iterators.js");
-var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
-var defineIterator = __webpack_require__(/*! ../internals/define-iterator */ "./node_modules/core-js/internals/define-iterator.js");
-
-var ARRAY_ITERATOR = 'Array Iterator';
-var setInternalState = InternalStateModule.set;
-var getInternalState = InternalStateModule.getterFor(ARRAY_ITERATOR);
-
-// `Array.prototype.entries` method
-// https://tc39.github.io/ecma262/#sec-array.prototype.entries
-// `Array.prototype.keys` method
-// https://tc39.github.io/ecma262/#sec-array.prototype.keys
-// `Array.prototype.values` method
-// https://tc39.github.io/ecma262/#sec-array.prototype.values
-// `Array.prototype[@@iterator]` method
-// https://tc39.github.io/ecma262/#sec-array.prototype-@@iterator
-// `CreateArrayIterator` internal method
-// https://tc39.github.io/ecma262/#sec-createarrayiterator
-module.exports = defineIterator(Array, 'Array', function (iterated, kind) {
-  setInternalState(this, {
-    type: ARRAY_ITERATOR,
-    target: toIndexedObject(iterated), // target
-    index: 0,                          // next index
-    kind: kind                         // kind
-  });
-// `%ArrayIteratorPrototype%.next` method
-// https://tc39.github.io/ecma262/#sec-%arrayiteratorprototype%.next
-}, function () {
-  var state = getInternalState(this);
-  var target = state.target;
-  var kind = state.kind;
-  var index = state.index++;
-  if (!target || index >= target.length) {
-    state.target = undefined;
-    return { value: undefined, done: true };
-  }
-  if (kind == 'keys') return { value: index, done: false };
-  if (kind == 'values') return { value: target[index], done: false };
-  return { value: [index, target[index]], done: false };
-}, 'values');
-
-// argumentsList[@@iterator] is %ArrayProto_values%
-// https://tc39.github.io/ecma262/#sec-createunmappedargumentsobject
-// https://tc39.github.io/ecma262/#sec-createmappedargumentsobject
-Iterators.Arguments = Iterators.Array;
-
-// https://tc39.github.io/ecma262/#sec-array.prototype-@@unscopables
-addToUnscopables('keys');
-addToUnscopables('values');
-addToUnscopables('entries');
 
 
 /***/ }),
@@ -4043,6 +3727,25 @@ $({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT || !USES_TO_LENGT
 
 /***/ }),
 
+/***/ "./node_modules/core-js/modules/es.function.bind.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.function.bind.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var bind = __webpack_require__(/*! ../internals/function-bind */ "./node_modules/core-js/internals/function-bind.js");
+
+// `Function.prototype.bind` method
+// https://tc39.github.io/ecma262/#sec-function.prototype.bind
+$({ target: 'Function', proto: true }, {
+  bind: bind
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/modules/es.object.define-property.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/core-js/modules/es.object.define-property.js ***!
@@ -4058,33 +3761,6 @@ var objectDefinePropertyModile = __webpack_require__(/*! ../internals/object-def
 // https://tc39.github.io/ecma262/#sec-object.defineproperty
 $({ target: 'Object', stat: true, forced: !DESCRIPTORS, sham: !DESCRIPTORS }, {
   defineProperty: objectDefinePropertyModile.f
-});
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/core-js/modules/es.object.get-own-property-descriptor.js ***!
-  \*******************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
-var nativeGetOwnPropertyDescriptor = __webpack_require__(/*! ../internals/object-get-own-property-descriptor */ "./node_modules/core-js/internals/object-get-own-property-descriptor.js").f;
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
-
-var FAILS_ON_PRIMITIVES = fails(function () { nativeGetOwnPropertyDescriptor(1); });
-var FORCED = !DESCRIPTORS || FAILS_ON_PRIMITIVES;
-
-// `Object.getOwnPropertyDescriptor` method
-// https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptor
-$({ target: 'Object', stat: true, forced: FORCED, sham: !DESCRIPTORS }, {
-  getOwnPropertyDescriptor: function getOwnPropertyDescriptor(it, key) {
-    return nativeGetOwnPropertyDescriptor(toIndexedObject(it), key);
-  }
 });
 
 
@@ -4501,523 +4177,168 @@ $({ target: PROMISE, stat: true, forced: INCORRECT_ITERATION }, {
 
 /***/ }),
 
-/***/ "./node_modules/core-js/modules/es.string.iterator.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/modules/es.string.iterator.js ***!
-  \************************************************************/
+/***/ "./node_modules/core-js/modules/es.regexp.exec.js":
+/*!********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.regexp.exec.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var charAt = __webpack_require__(/*! ../internals/string-multibyte */ "./node_modules/core-js/internals/string-multibyte.js").charAt;
-var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
-var defineIterator = __webpack_require__(/*! ../internals/define-iterator */ "./node_modules/core-js/internals/define-iterator.js");
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var exec = __webpack_require__(/*! ../internals/regexp-exec */ "./node_modules/core-js/internals/regexp-exec.js");
 
-var STRING_ITERATOR = 'String Iterator';
-var setInternalState = InternalStateModule.set;
-var getInternalState = InternalStateModule.getterFor(STRING_ITERATOR);
-
-// `String.prototype[@@iterator]` method
-// https://tc39.github.io/ecma262/#sec-string.prototype-@@iterator
-defineIterator(String, 'String', function (iterated) {
-  setInternalState(this, {
-    type: STRING_ITERATOR,
-    string: String(iterated),
-    index: 0
-  });
-// `%StringIteratorPrototype%.next` method
-// https://tc39.github.io/ecma262/#sec-%stringiteratorprototype%.next
-}, function next() {
-  var state = getInternalState(this);
-  var string = state.string;
-  var index = state.index;
-  var point;
-  if (index >= string.length) return { value: undefined, done: true };
-  point = charAt(string, index);
-  state.index += point.length;
-  return { value: point, done: false };
+$({ target: 'RegExp', proto: true, forced: /./.exec !== exec }, {
+  exec: exec
 });
 
 
 /***/ }),
 
-/***/ "./node_modules/core-js/modules/es.symbol.description.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/core-js/modules/es.symbol.description.js ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-// `Symbol.prototype.description` getter
-// https://tc39.github.io/ecma262/#sec-symbol.prototype.description
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var defineProperty = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js").f;
-var copyConstructorProperties = __webpack_require__(/*! ../internals/copy-constructor-properties */ "./node_modules/core-js/internals/copy-constructor-properties.js");
-
-var NativeSymbol = global.Symbol;
-
-if (DESCRIPTORS && typeof NativeSymbol == 'function' && (!('description' in NativeSymbol.prototype) ||
-  // Safari 12 bug
-  NativeSymbol().description !== undefined
-)) {
-  var EmptyStringDescriptionStore = {};
-  // wrap Symbol constructor for correct work with undefined description
-  var SymbolWrapper = function Symbol() {
-    var description = arguments.length < 1 || arguments[0] === undefined ? undefined : String(arguments[0]);
-    var result = this instanceof SymbolWrapper
-      ? new NativeSymbol(description)
-      // in Edge 13, String(Symbol(undefined)) === 'Symbol(undefined)'
-      : description === undefined ? NativeSymbol() : NativeSymbol(description);
-    if (description === '') EmptyStringDescriptionStore[result] = true;
-    return result;
-  };
-  copyConstructorProperties(SymbolWrapper, NativeSymbol);
-  var symbolPrototype = SymbolWrapper.prototype = NativeSymbol.prototype;
-  symbolPrototype.constructor = SymbolWrapper;
-
-  var symbolToString = symbolPrototype.toString;
-  var native = String(NativeSymbol('test')) == 'Symbol(test)';
-  var regexp = /^Symbol\((.*)\)[^)]+$/;
-  defineProperty(symbolPrototype, 'description', {
-    configurable: true,
-    get: function description() {
-      var symbol = isObject(this) ? this.valueOf() : this;
-      var string = symbolToString.call(symbol);
-      if (has(EmptyStringDescriptionStore, symbol)) return '';
-      var desc = native ? string.slice(7, -1) : string.replace(regexp, '$1');
-      return desc === '' ? undefined : desc;
-    }
-  });
-
-  $({ global: true, forced: true }, {
-    Symbol: SymbolWrapper
-  });
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.symbol.iterator.js":
-/*!************************************************************!*\
-  !*** ./node_modules/core-js/modules/es.symbol.iterator.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js/internals/define-well-known-symbol.js");
-
-// `Symbol.iterator` well-known symbol
-// https://tc39.github.io/ecma262/#sec-symbol.iterator
-defineWellKnownSymbol('iterator');
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.symbol.js":
-/*!***************************************************!*\
-  !*** ./node_modules/core-js/modules/es.symbol.js ***!
-  \***************************************************/
+/***/ "./node_modules/core-js/modules/es.string.replace.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/core-js/modules/es.string.replace.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var getBuiltIn = __webpack_require__(/*! ../internals/get-built-in */ "./node_modules/core-js/internals/get-built-in.js");
-var IS_PURE = __webpack_require__(/*! ../internals/is-pure */ "./node_modules/core-js/internals/is-pure.js");
-var DESCRIPTORS = __webpack_require__(/*! ../internals/descriptors */ "./node_modules/core-js/internals/descriptors.js");
-var NATIVE_SYMBOL = __webpack_require__(/*! ../internals/native-symbol */ "./node_modules/core-js/internals/native-symbol.js");
-var USE_SYMBOL_AS_UID = __webpack_require__(/*! ../internals/use-symbol-as-uid */ "./node_modules/core-js/internals/use-symbol-as-uid.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var has = __webpack_require__(/*! ../internals/has */ "./node_modules/core-js/internals/has.js");
-var isArray = __webpack_require__(/*! ../internals/is-array */ "./node_modules/core-js/internals/is-array.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
+var fixRegExpWellKnownSymbolLogic = __webpack_require__(/*! ../internals/fix-regexp-well-known-symbol-logic */ "./node_modules/core-js/internals/fix-regexp-well-known-symbol-logic.js");
 var anObject = __webpack_require__(/*! ../internals/an-object */ "./node_modules/core-js/internals/an-object.js");
 var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
-var toIndexedObject = __webpack_require__(/*! ../internals/to-indexed-object */ "./node_modules/core-js/internals/to-indexed-object.js");
-var toPrimitive = __webpack_require__(/*! ../internals/to-primitive */ "./node_modules/core-js/internals/to-primitive.js");
-var createPropertyDescriptor = __webpack_require__(/*! ../internals/create-property-descriptor */ "./node_modules/core-js/internals/create-property-descriptor.js");
-var nativeObjectCreate = __webpack_require__(/*! ../internals/object-create */ "./node_modules/core-js/internals/object-create.js");
-var objectKeys = __webpack_require__(/*! ../internals/object-keys */ "./node_modules/core-js/internals/object-keys.js");
-var getOwnPropertyNamesModule = __webpack_require__(/*! ../internals/object-get-own-property-names */ "./node_modules/core-js/internals/object-get-own-property-names.js");
-var getOwnPropertyNamesExternal = __webpack_require__(/*! ../internals/object-get-own-property-names-external */ "./node_modules/core-js/internals/object-get-own-property-names-external.js");
-var getOwnPropertySymbolsModule = __webpack_require__(/*! ../internals/object-get-own-property-symbols */ "./node_modules/core-js/internals/object-get-own-property-symbols.js");
-var getOwnPropertyDescriptorModule = __webpack_require__(/*! ../internals/object-get-own-property-descriptor */ "./node_modules/core-js/internals/object-get-own-property-descriptor.js");
-var definePropertyModule = __webpack_require__(/*! ../internals/object-define-property */ "./node_modules/core-js/internals/object-define-property.js");
-var propertyIsEnumerableModule = __webpack_require__(/*! ../internals/object-property-is-enumerable */ "./node_modules/core-js/internals/object-property-is-enumerable.js");
-var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
-var redefine = __webpack_require__(/*! ../internals/redefine */ "./node_modules/core-js/internals/redefine.js");
-var shared = __webpack_require__(/*! ../internals/shared */ "./node_modules/core-js/internals/shared.js");
-var sharedKey = __webpack_require__(/*! ../internals/shared-key */ "./node_modules/core-js/internals/shared-key.js");
-var hiddenKeys = __webpack_require__(/*! ../internals/hidden-keys */ "./node_modules/core-js/internals/hidden-keys.js");
-var uid = __webpack_require__(/*! ../internals/uid */ "./node_modules/core-js/internals/uid.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-var wrappedWellKnownSymbolModule = __webpack_require__(/*! ../internals/well-known-symbol-wrapped */ "./node_modules/core-js/internals/well-known-symbol-wrapped.js");
-var defineWellKnownSymbol = __webpack_require__(/*! ../internals/define-well-known-symbol */ "./node_modules/core-js/internals/define-well-known-symbol.js");
-var setToStringTag = __webpack_require__(/*! ../internals/set-to-string-tag */ "./node_modules/core-js/internals/set-to-string-tag.js");
-var InternalStateModule = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js");
-var $forEach = __webpack_require__(/*! ../internals/array-iteration */ "./node_modules/core-js/internals/array-iteration.js").forEach;
+var toLength = __webpack_require__(/*! ../internals/to-length */ "./node_modules/core-js/internals/to-length.js");
+var toInteger = __webpack_require__(/*! ../internals/to-integer */ "./node_modules/core-js/internals/to-integer.js");
+var requireObjectCoercible = __webpack_require__(/*! ../internals/require-object-coercible */ "./node_modules/core-js/internals/require-object-coercible.js");
+var advanceStringIndex = __webpack_require__(/*! ../internals/advance-string-index */ "./node_modules/core-js/internals/advance-string-index.js");
+var regExpExec = __webpack_require__(/*! ../internals/regexp-exec-abstract */ "./node_modules/core-js/internals/regexp-exec-abstract.js");
 
-var HIDDEN = sharedKey('hidden');
-var SYMBOL = 'Symbol';
-var PROTOTYPE = 'prototype';
-var TO_PRIMITIVE = wellKnownSymbol('toPrimitive');
-var setInternalState = InternalStateModule.set;
-var getInternalState = InternalStateModule.getterFor(SYMBOL);
-var ObjectPrototype = Object[PROTOTYPE];
-var $Symbol = global.Symbol;
-var $stringify = getBuiltIn('JSON', 'stringify');
-var nativeGetOwnPropertyDescriptor = getOwnPropertyDescriptorModule.f;
-var nativeDefineProperty = definePropertyModule.f;
-var nativeGetOwnPropertyNames = getOwnPropertyNamesExternal.f;
-var nativePropertyIsEnumerable = propertyIsEnumerableModule.f;
-var AllSymbols = shared('symbols');
-var ObjectPrototypeSymbols = shared('op-symbols');
-var StringToSymbolRegistry = shared('string-to-symbol-registry');
-var SymbolToStringRegistry = shared('symbol-to-string-registry');
-var WellKnownSymbolsStore = shared('wks');
-var QObject = global.QObject;
-// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
-var USE_SETTER = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
+var max = Math.max;
+var min = Math.min;
+var floor = Math.floor;
+var SUBSTITUTION_SYMBOLS = /\$([$&'`]|\d\d?|<[^>]*>)/g;
+var SUBSTITUTION_SYMBOLS_NO_NAMED = /\$([$&'`]|\d\d?)/g;
 
-// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
-var setSymbolDescriptor = DESCRIPTORS && fails(function () {
-  return nativeObjectCreate(nativeDefineProperty({}, 'a', {
-    get: function () { return nativeDefineProperty(this, 'a', { value: 7 }).a; }
-  })).a != 7;
-}) ? function (O, P, Attributes) {
-  var ObjectPrototypeDescriptor = nativeGetOwnPropertyDescriptor(ObjectPrototype, P);
-  if (ObjectPrototypeDescriptor) delete ObjectPrototype[P];
-  nativeDefineProperty(O, P, Attributes);
-  if (ObjectPrototypeDescriptor && O !== ObjectPrototype) {
-    nativeDefineProperty(ObjectPrototype, P, ObjectPrototypeDescriptor);
-  }
-} : nativeDefineProperty;
-
-var wrap = function (tag, description) {
-  var symbol = AllSymbols[tag] = nativeObjectCreate($Symbol[PROTOTYPE]);
-  setInternalState(symbol, {
-    type: SYMBOL,
-    tag: tag,
-    description: description
-  });
-  if (!DESCRIPTORS) symbol.description = description;
-  return symbol;
+var maybeToString = function (it) {
+  return it === undefined ? it : String(it);
 };
 
-var isSymbol = USE_SYMBOL_AS_UID ? function (it) {
-  return typeof it == 'symbol';
-} : function (it) {
-  return Object(it) instanceof $Symbol;
-};
+// @@replace logic
+fixRegExpWellKnownSymbolLogic('replace', 2, function (REPLACE, nativeReplace, maybeCallNative, reason) {
+  var REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE = reason.REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE;
+  var REPLACE_KEEPS_$0 = reason.REPLACE_KEEPS_$0;
+  var UNSAFE_SUBSTITUTE = REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE ? '$' : '$0';
 
-var $defineProperty = function defineProperty(O, P, Attributes) {
-  if (O === ObjectPrototype) $defineProperty(ObjectPrototypeSymbols, P, Attributes);
-  anObject(O);
-  var key = toPrimitive(P, true);
-  anObject(Attributes);
-  if (has(AllSymbols, key)) {
-    if (!Attributes.enumerable) {
-      if (!has(O, HIDDEN)) nativeDefineProperty(O, HIDDEN, createPropertyDescriptor(1, {}));
-      O[HIDDEN][key] = true;
-    } else {
-      if (has(O, HIDDEN) && O[HIDDEN][key]) O[HIDDEN][key] = false;
-      Attributes = nativeObjectCreate(Attributes, { enumerable: createPropertyDescriptor(0, false) });
-    } return setSymbolDescriptor(O, key, Attributes);
-  } return nativeDefineProperty(O, key, Attributes);
-};
-
-var $defineProperties = function defineProperties(O, Properties) {
-  anObject(O);
-  var properties = toIndexedObject(Properties);
-  var keys = objectKeys(properties).concat($getOwnPropertySymbols(properties));
-  $forEach(keys, function (key) {
-    if (!DESCRIPTORS || $propertyIsEnumerable.call(properties, key)) $defineProperty(O, key, properties[key]);
-  });
-  return O;
-};
-
-var $create = function create(O, Properties) {
-  return Properties === undefined ? nativeObjectCreate(O) : $defineProperties(nativeObjectCreate(O), Properties);
-};
-
-var $propertyIsEnumerable = function propertyIsEnumerable(V) {
-  var P = toPrimitive(V, true);
-  var enumerable = nativePropertyIsEnumerable.call(this, P);
-  if (this === ObjectPrototype && has(AllSymbols, P) && !has(ObjectPrototypeSymbols, P)) return false;
-  return enumerable || !has(this, P) || !has(AllSymbols, P) || has(this, HIDDEN) && this[HIDDEN][P] ? enumerable : true;
-};
-
-var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(O, P) {
-  var it = toIndexedObject(O);
-  var key = toPrimitive(P, true);
-  if (it === ObjectPrototype && has(AllSymbols, key) && !has(ObjectPrototypeSymbols, key)) return;
-  var descriptor = nativeGetOwnPropertyDescriptor(it, key);
-  if (descriptor && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key])) {
-    descriptor.enumerable = true;
-  }
-  return descriptor;
-};
-
-var $getOwnPropertyNames = function getOwnPropertyNames(O) {
-  var names = nativeGetOwnPropertyNames(toIndexedObject(O));
-  var result = [];
-  $forEach(names, function (key) {
-    if (!has(AllSymbols, key) && !has(hiddenKeys, key)) result.push(key);
-  });
-  return result;
-};
-
-var $getOwnPropertySymbols = function getOwnPropertySymbols(O) {
-  var IS_OBJECT_PROTOTYPE = O === ObjectPrototype;
-  var names = nativeGetOwnPropertyNames(IS_OBJECT_PROTOTYPE ? ObjectPrototypeSymbols : toIndexedObject(O));
-  var result = [];
-  $forEach(names, function (key) {
-    if (has(AllSymbols, key) && (!IS_OBJECT_PROTOTYPE || has(ObjectPrototype, key))) {
-      result.push(AllSymbols[key]);
-    }
-  });
-  return result;
-};
-
-// `Symbol` constructor
-// https://tc39.github.io/ecma262/#sec-symbol-constructor
-if (!NATIVE_SYMBOL) {
-  $Symbol = function Symbol() {
-    if (this instanceof $Symbol) throw TypeError('Symbol is not a constructor');
-    var description = !arguments.length || arguments[0] === undefined ? undefined : String(arguments[0]);
-    var tag = uid(description);
-    var setter = function (value) {
-      if (this === ObjectPrototype) setter.call(ObjectPrototypeSymbols, value);
-      if (has(this, HIDDEN) && has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
-      setSymbolDescriptor(this, tag, createPropertyDescriptor(1, value));
-    };
-    if (DESCRIPTORS && USE_SETTER) setSymbolDescriptor(ObjectPrototype, tag, { configurable: true, set: setter });
-    return wrap(tag, description);
-  };
-
-  redefine($Symbol[PROTOTYPE], 'toString', function toString() {
-    return getInternalState(this).tag;
-  });
-
-  redefine($Symbol, 'withoutSetter', function (description) {
-    return wrap(uid(description), description);
-  });
-
-  propertyIsEnumerableModule.f = $propertyIsEnumerable;
-  definePropertyModule.f = $defineProperty;
-  getOwnPropertyDescriptorModule.f = $getOwnPropertyDescriptor;
-  getOwnPropertyNamesModule.f = getOwnPropertyNamesExternal.f = $getOwnPropertyNames;
-  getOwnPropertySymbolsModule.f = $getOwnPropertySymbols;
-
-  wrappedWellKnownSymbolModule.f = function (name) {
-    return wrap(wellKnownSymbol(name), name);
-  };
-
-  if (DESCRIPTORS) {
-    // https://github.com/tc39/proposal-Symbol-description
-    nativeDefineProperty($Symbol[PROTOTYPE], 'description', {
-      configurable: true,
-      get: function description() {
-        return getInternalState(this).description;
+  return [
+    // `String.prototype.replace` method
+    // https://tc39.github.io/ecma262/#sec-string.prototype.replace
+    function replace(searchValue, replaceValue) {
+      var O = requireObjectCoercible(this);
+      var replacer = searchValue == undefined ? undefined : searchValue[REPLACE];
+      return replacer !== undefined
+        ? replacer.call(searchValue, O, replaceValue)
+        : nativeReplace.call(String(O), searchValue, replaceValue);
+    },
+    // `RegExp.prototype[@@replace]` method
+    // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@replace
+    function (regexp, replaceValue) {
+      if (
+        (!REGEXP_REPLACE_SUBSTITUTES_UNDEFINED_CAPTURE && REPLACE_KEEPS_$0) ||
+        (typeof replaceValue === 'string' && replaceValue.indexOf(UNSAFE_SUBSTITUTE) === -1)
+      ) {
+        var res = maybeCallNative(nativeReplace, regexp, this, replaceValue);
+        if (res.done) return res.value;
       }
+
+      var rx = anObject(regexp);
+      var S = String(this);
+
+      var functionalReplace = typeof replaceValue === 'function';
+      if (!functionalReplace) replaceValue = String(replaceValue);
+
+      var global = rx.global;
+      if (global) {
+        var fullUnicode = rx.unicode;
+        rx.lastIndex = 0;
+      }
+      var results = [];
+      while (true) {
+        var result = regExpExec(rx, S);
+        if (result === null) break;
+
+        results.push(result);
+        if (!global) break;
+
+        var matchStr = String(result[0]);
+        if (matchStr === '') rx.lastIndex = advanceStringIndex(S, toLength(rx.lastIndex), fullUnicode);
+      }
+
+      var accumulatedResult = '';
+      var nextSourcePosition = 0;
+      for (var i = 0; i < results.length; i++) {
+        result = results[i];
+
+        var matched = String(result[0]);
+        var position = max(min(toInteger(result.index), S.length), 0);
+        var captures = [];
+        // NOTE: This is equivalent to
+        //   captures = result.slice(1).map(maybeToString)
+        // but for some reason `nativeSlice.call(result, 1, result.length)` (called in
+        // the slice polyfill when slicing native arrays) "doesn't work" in safari 9 and
+        // causes a crash (https://pastebin.com/N21QzeQA) when trying to debug it.
+        for (var j = 1; j < result.length; j++) captures.push(maybeToString(result[j]));
+        var namedCaptures = result.groups;
+        if (functionalReplace) {
+          var replacerArgs = [matched].concat(captures, position, S);
+          if (namedCaptures !== undefined) replacerArgs.push(namedCaptures);
+          var replacement = String(replaceValue.apply(undefined, replacerArgs));
+        } else {
+          replacement = getSubstitution(matched, S, position, captures, namedCaptures, replaceValue);
+        }
+        if (position >= nextSourcePosition) {
+          accumulatedResult += S.slice(nextSourcePosition, position) + replacement;
+          nextSourcePosition = position + matched.length;
+        }
+      }
+      return accumulatedResult + S.slice(nextSourcePosition);
+    }
+  ];
+
+  // https://tc39.github.io/ecma262/#sec-getsubstitution
+  function getSubstitution(matched, str, position, captures, namedCaptures, replacement) {
+    var tailPos = position + matched.length;
+    var m = captures.length;
+    var symbols = SUBSTITUTION_SYMBOLS_NO_NAMED;
+    if (namedCaptures !== undefined) {
+      namedCaptures = toObject(namedCaptures);
+      symbols = SUBSTITUTION_SYMBOLS;
+    }
+    return nativeReplace.call(replacement, symbols, function (match, ch) {
+      var capture;
+      switch (ch.charAt(0)) {
+        case '$': return '$';
+        case '&': return matched;
+        case '`': return str.slice(0, position);
+        case "'": return str.slice(tailPos);
+        case '<':
+          capture = namedCaptures[ch.slice(1, -1)];
+          break;
+        default: // \d\d?
+          var n = +ch;
+          if (n === 0) return match;
+          if (n > m) {
+            var f = floor(n / 10);
+            if (f === 0) return match;
+            if (f <= m) return captures[f - 1] === undefined ? ch.charAt(1) : captures[f - 1] + ch.charAt(1);
+            return match;
+          }
+          capture = captures[n - 1];
+      }
+      return capture === undefined ? '' : capture;
     });
-    if (!IS_PURE) {
-      redefine(ObjectPrototype, 'propertyIsEnumerable', $propertyIsEnumerable, { unsafe: true });
-    }
-  }
-}
-
-$({ global: true, wrap: true, forced: !NATIVE_SYMBOL, sham: !NATIVE_SYMBOL }, {
-  Symbol: $Symbol
-});
-
-$forEach(objectKeys(WellKnownSymbolsStore), function (name) {
-  defineWellKnownSymbol(name);
-});
-
-$({ target: SYMBOL, stat: true, forced: !NATIVE_SYMBOL }, {
-  // `Symbol.for` method
-  // https://tc39.github.io/ecma262/#sec-symbol.for
-  'for': function (key) {
-    var string = String(key);
-    if (has(StringToSymbolRegistry, string)) return StringToSymbolRegistry[string];
-    var symbol = $Symbol(string);
-    StringToSymbolRegistry[string] = symbol;
-    SymbolToStringRegistry[symbol] = string;
-    return symbol;
-  },
-  // `Symbol.keyFor` method
-  // https://tc39.github.io/ecma262/#sec-symbol.keyfor
-  keyFor: function keyFor(sym) {
-    if (!isSymbol(sym)) throw TypeError(sym + ' is not a symbol');
-    if (has(SymbolToStringRegistry, sym)) return SymbolToStringRegistry[sym];
-  },
-  useSetter: function () { USE_SETTER = true; },
-  useSimple: function () { USE_SETTER = false; }
-});
-
-$({ target: 'Object', stat: true, forced: !NATIVE_SYMBOL, sham: !DESCRIPTORS }, {
-  // `Object.create` method
-  // https://tc39.github.io/ecma262/#sec-object.create
-  create: $create,
-  // `Object.defineProperty` method
-  // https://tc39.github.io/ecma262/#sec-object.defineproperty
-  defineProperty: $defineProperty,
-  // `Object.defineProperties` method
-  // https://tc39.github.io/ecma262/#sec-object.defineproperties
-  defineProperties: $defineProperties,
-  // `Object.getOwnPropertyDescriptor` method
-  // https://tc39.github.io/ecma262/#sec-object.getownpropertydescriptors
-  getOwnPropertyDescriptor: $getOwnPropertyDescriptor
-});
-
-$({ target: 'Object', stat: true, forced: !NATIVE_SYMBOL }, {
-  // `Object.getOwnPropertyNames` method
-  // https://tc39.github.io/ecma262/#sec-object.getownpropertynames
-  getOwnPropertyNames: $getOwnPropertyNames,
-  // `Object.getOwnPropertySymbols` method
-  // https://tc39.github.io/ecma262/#sec-object.getownpropertysymbols
-  getOwnPropertySymbols: $getOwnPropertySymbols
-});
-
-// Chrome 38 and 39 `Object.getOwnPropertySymbols` fails on primitives
-// https://bugs.chromium.org/p/v8/issues/detail?id=3443
-$({ target: 'Object', stat: true, forced: fails(function () { getOwnPropertySymbolsModule.f(1); }) }, {
-  getOwnPropertySymbols: function getOwnPropertySymbols(it) {
-    return getOwnPropertySymbolsModule.f(toObject(it));
   }
 });
-
-// `JSON.stringify` method behavior with symbols
-// https://tc39.github.io/ecma262/#sec-json.stringify
-if ($stringify) {
-  var FORCED_JSON_STRINGIFY = !NATIVE_SYMBOL || fails(function () {
-    var symbol = $Symbol();
-    // MS Edge converts symbol values to JSON as {}
-    return $stringify([symbol]) != '[null]'
-      // WebKit converts symbol values to JSON as null
-      || $stringify({ a: symbol }) != '{}'
-      // V8 throws on boxed symbols
-      || $stringify(Object(symbol)) != '{}';
-  });
-
-  $({ target: 'JSON', stat: true, forced: FORCED_JSON_STRINGIFY }, {
-    // eslint-disable-next-line no-unused-vars
-    stringify: function stringify(it, replacer, space) {
-      var args = [it];
-      var index = 1;
-      var $replacer;
-      while (arguments.length > index) args.push(arguments[index++]);
-      $replacer = replacer;
-      if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
-      if (!isArray(replacer)) replacer = function (key, value) {
-        if (typeof $replacer == 'function') value = $replacer.call(this, key, value);
-        if (!isSymbol(value)) return value;
-      };
-      args[1] = replacer;
-      return $stringify.apply(null, args);
-    }
-  });
-}
-
-// `Symbol.prototype[@@toPrimitive]` method
-// https://tc39.github.io/ecma262/#sec-symbol.prototype-@@toprimitive
-if (!$Symbol[PROTOTYPE][TO_PRIMITIVE]) {
-  createNonEnumerableProperty($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
-}
-// `Symbol.prototype[@@toStringTag]` property
-// https://tc39.github.io/ecma262/#sec-symbol.prototype-@@tostringtag
-setToStringTag($Symbol, SYMBOL);
-
-hiddenKeys[HIDDEN] = true;
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/es.weak-map.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/core-js/modules/es.weak-map.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var redefineAll = __webpack_require__(/*! ../internals/redefine-all */ "./node_modules/core-js/internals/redefine-all.js");
-var InternalMetadataModule = __webpack_require__(/*! ../internals/internal-metadata */ "./node_modules/core-js/internals/internal-metadata.js");
-var collection = __webpack_require__(/*! ../internals/collection */ "./node_modules/core-js/internals/collection.js");
-var collectionWeak = __webpack_require__(/*! ../internals/collection-weak */ "./node_modules/core-js/internals/collection-weak.js");
-var isObject = __webpack_require__(/*! ../internals/is-object */ "./node_modules/core-js/internals/is-object.js");
-var enforceIternalState = __webpack_require__(/*! ../internals/internal-state */ "./node_modules/core-js/internals/internal-state.js").enforce;
-var NATIVE_WEAK_MAP = __webpack_require__(/*! ../internals/native-weak-map */ "./node_modules/core-js/internals/native-weak-map.js");
-
-var IS_IE11 = !global.ActiveXObject && 'ActiveXObject' in global;
-var isExtensible = Object.isExtensible;
-var InternalWeakMap;
-
-var wrapper = function (init) {
-  return function WeakMap() {
-    return init(this, arguments.length ? arguments[0] : undefined);
-  };
-};
-
-// `WeakMap` constructor
-// https://tc39.github.io/ecma262/#sec-weakmap-constructor
-var $WeakMap = module.exports = collection('WeakMap', wrapper, collectionWeak);
-
-// IE11 WeakMap frozen keys fix
-// We can't use feature detection because it crash some old IE builds
-// https://github.com/zloirock/core-js/issues/485
-if (NATIVE_WEAK_MAP && IS_IE11) {
-  InternalWeakMap = collectionWeak.getConstructor(wrapper, 'WeakMap', true);
-  InternalMetadataModule.REQUIRED = true;
-  var WeakMapPrototype = $WeakMap.prototype;
-  var nativeDelete = WeakMapPrototype['delete'];
-  var nativeHas = WeakMapPrototype.has;
-  var nativeGet = WeakMapPrototype.get;
-  var nativeSet = WeakMapPrototype.set;
-  redefineAll(WeakMapPrototype, {
-    'delete': function (key) {
-      if (isObject(key) && !isExtensible(key)) {
-        var state = enforceIternalState(this);
-        if (!state.frozen) state.frozen = new InternalWeakMap();
-        return nativeDelete.call(this, key) || state.frozen['delete'](key);
-      } return nativeDelete.call(this, key);
-    },
-    has: function has(key) {
-      if (isObject(key) && !isExtensible(key)) {
-        var state = enforceIternalState(this);
-        if (!state.frozen) state.frozen = new InternalWeakMap();
-        return nativeHas.call(this, key) || state.frozen.has(key);
-      } return nativeHas.call(this, key);
-    },
-    get: function get(key) {
-      if (isObject(key) && !isExtensible(key)) {
-        var state = enforceIternalState(this);
-        if (!state.frozen) state.frozen = new InternalWeakMap();
-        return nativeHas.call(this, key) ? nativeGet.call(this, key) : state.frozen.get(key);
-      } return nativeGet.call(this, key);
-    },
-    set: function set(key, value) {
-      if (isObject(key) && !isExtensible(key)) {
-        var state = enforceIternalState(this);
-        if (!state.frozen) state.frozen = new InternalWeakMap();
-        nativeHas.call(this, key) ? nativeSet.call(this, key, value) : state.frozen.set(key, value);
-      } else nativeSet.call(this, key, value);
-      return this;
-    }
-  });
-}
 
 
 /***/ }),
@@ -5042,50 +4363,6 @@ for (var COLLECTION_NAME in DOMIterables) {
     createNonEnumerableProperty(CollectionPrototype, 'forEach', forEach);
   } catch (error) {
     CollectionPrototype.forEach = forEach;
-  }
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/core-js/modules/web.dom-collections.iterator.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/core-js/modules/web.dom-collections.iterator.js ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var global = __webpack_require__(/*! ../internals/global */ "./node_modules/core-js/internals/global.js");
-var DOMIterables = __webpack_require__(/*! ../internals/dom-iterables */ "./node_modules/core-js/internals/dom-iterables.js");
-var ArrayIteratorMethods = __webpack_require__(/*! ../modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
-var createNonEnumerableProperty = __webpack_require__(/*! ../internals/create-non-enumerable-property */ "./node_modules/core-js/internals/create-non-enumerable-property.js");
-var wellKnownSymbol = __webpack_require__(/*! ../internals/well-known-symbol */ "./node_modules/core-js/internals/well-known-symbol.js");
-
-var ITERATOR = wellKnownSymbol('iterator');
-var TO_STRING_TAG = wellKnownSymbol('toStringTag');
-var ArrayValues = ArrayIteratorMethods.values;
-
-for (var COLLECTION_NAME in DOMIterables) {
-  var Collection = global[COLLECTION_NAME];
-  var CollectionPrototype = Collection && Collection.prototype;
-  if (CollectionPrototype) {
-    // some Chrome versions have non-configurable methods on DOMTokenList
-    if (CollectionPrototype[ITERATOR] !== ArrayValues) try {
-      createNonEnumerableProperty(CollectionPrototype, ITERATOR, ArrayValues);
-    } catch (error) {
-      CollectionPrototype[ITERATOR] = ArrayValues;
-    }
-    if (!CollectionPrototype[TO_STRING_TAG]) {
-      createNonEnumerableProperty(CollectionPrototype, TO_STRING_TAG, COLLECTION_NAME);
-    }
-    if (DOMIterables[COLLECTION_NAME]) for (var METHOD_NAME in ArrayIteratorMethods) {
-      // some Chrome versions have non-configurable methods on DOMTokenList
-      if (CollectionPrototype[METHOD_NAME] !== ArrayIteratorMethods[METHOD_NAME]) try {
-        createNonEnumerableProperty(CollectionPrototype, METHOD_NAME, ArrayIteratorMethods[METHOD_NAME]);
-      } catch (error) {
-        CollectionPrototype[METHOD_NAME] = ArrayIteratorMethods[METHOD_NAME];
-      }
-    }
   }
 }
 
@@ -98011,14 +97288,6 @@ __webpack_require__(/*! core-js/modules/es.promise */ "./node_modules/core-js/mo
 
 __webpack_require__(/*! core-js/modules/web.timers */ "./node_modules/core-js/modules/web.timers.js");
 
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
-__webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
-
-__webpack_require__(/*! core-js/modules/es.promise */ "./node_modules/core-js/modules/es.promise.js");
-
-__webpack_require__(/*! core-js/modules/web.timers */ "./node_modules/core-js/modules/web.timers.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -98030,69 +97299,17 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules
 
 var _Top = _interopRequireDefault(__webpack_require__(/*! ./vue/components/Top.vue */ "./src/assets/js/coding/vue/components/Top.vue"));
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
-  try {
-    var info = gen[key](arg);
-    var value = info.value;
-  } catch (error) {
-    reject(error);
-    return;
-  }
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
-  if (info.done) {
-    resolve(value);
-  } else {
-    Promise.resolve(value).then(_next, _throw);
-  }
-}
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _asyncToGenerator(fn) {
-  return function () {
-    var self = this,
-        args = arguments;
-    return new Promise(function (resolve, reject) {
-      var gen = fn.apply(self, args);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-      function _next(value) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
-      }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-      function _throw(err) {
-        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
-      }
-
-      _next(undefined);
-    });
-  };
-}
-
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 new _vue["default"]({
   el: '#c-top',
@@ -98561,8 +97778,6 @@ document.addEventListener('DOMContentLoaded', function () {
 "use strict";
 /* WEBPACK VAR INJECTION */(function($) {
 
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -98649,8 +97864,6 @@ function func() {
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -98722,9 +97935,9 @@ function func() {
     /**
      * 線の描画を操作するイベント処理
      */
+
+
     // canvasの幅と高さを親要素のサイズに合わせる
-
-
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
 
@@ -98752,6 +97965,565 @@ function func() {
 
 /***/ }),
 
+/***/ "./src/assets/js/coding/data/work11.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work11.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 11,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work12.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work12.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(/*! core-js/modules/es.array.find */ "./node_modules/core-js/modules/es.array.find.js");
+
+__webpack_require__(/*! core-js/modules/es.regexp.exec */ "./node_modules/core-js/modules/es.regexp.exec.js");
+
+__webpack_require__(/*! core-js/modules/es.string.replace */ "./node_modules/core-js/modules/es.string.replace.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 12,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  alert("ok"); // 特徴ページ。スクロール量によってコンテンツナビゲーションのアンダーラインの位置を変える
+
+  var addLine = function addLine() {
+    // ナビゲーションのリンクを指定
+    var navList = document.querySelectorAll(".nav-list"); // 各コンテンツのページ上部からの開始位置と終了位置を配列に格納しておく
+
+    var sectionArr = [];
+
+    for (var i = 0; i < navList.length; i++) {
+      // コンテンツのIDを取得
+      var targetContents = navList[i].find("a").getAttribute("href"); // ページ内リンクでないナビゲーションが含まれている場合は除外する
+
+      if (targetContents.charAt(0) == "#") {
+        // ページ上部からコンテンツの開始位置までの距離を取得
+        var targetContentsTop = targetContents.offsetTop; // ページ上部からコンテンツの終了位置までの距離を取得
+
+        var targetContentsBottom = targetContentsTop + targetContents.clientHeight - 1; // 配列に格納
+
+        sectionArr[i] = [targetContentsTop, targetContentsBottom];
+      }
+    }
+
+    ; // 現在地をチェックする
+
+    var currentCheck = function currentCheck() {
+      // 現在のスクロール位置を取得
+      var wS = document.documentElement.scrollTop || document.body.scrollTop; // 画面の高さを取得
+
+      var wH = window.clientHeight; // 現在のスクロール位置を画面中央に指定
+
+      var windowScrolltop = wS + wH / 2;
+
+      for (var i = 0; i < sectionArr.length; i++) {
+        // 現在のスクロール位置が、配列に格納した開始位置と終了位置の間にあるものを調べる
+        if (sectionArr[i][0] <= windowScrolltop) {
+          //  && sectionArr[i][1] >= windowScrolltop
+          // 開始位置と終了位置の間にある場合、ナビゲーションにclass="current"をつける
+          navList.classList.remove('underline');
+          navList[i].classList.add('underline');
+          i == sectionArr.length;
+        }
+      }
+
+      ;
+    }; // スクロール時に、現在地をチェックする
+
+
+    document.querySelector(".wrapper").addEventListener("scroll", function () {
+      console.log("ok");
+      currentCheck();
+    });
+  }; //	fNavUnderLine()
+
+
+  window.addEventListener("load", function () {
+    addLine();
+  });
+  var smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+
+  var _loop = function _loop(i) {
+    smoothScrollTrigger[i].addEventListener('click', function (e) {
+      e.preventDefault();
+      var href = smoothScrollTrigger[i].getAttribute('href');
+      var targetElement = document.getElementById(href.replace('#', ''));
+      var area = document.querySelector(".cont");
+      var rect = targetElement.getBoundingClientRect().top;
+      var offset = window.pageYOffset;
+      var gap = 60;
+      var target = rect + offset - gap;
+      area.scrollTo({
+        top: target,
+        behavior: 'smooth'
+      });
+    });
+  };
+
+  for (var i = 0; i < smoothScrollTrigger.length; i++) {
+    _loop(i);
+  }
+
+  smoothScrollTrigger();
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work13.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work13.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 10,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d');
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work14.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work14.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 10,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d');
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work15.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work15.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 10,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d');
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work16.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work16.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 10,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d');
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work17.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work17.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 10,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d');
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work18.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work18.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 10,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d');
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work19.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work19.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 10,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d');
+  }
+}
+
+/***/ }),
+
 /***/ "./src/assets/js/coding/data/work2.js":
 /*!********************************************!*\
   !*** ./src/assets/js/coding/data/work2.js ***!
@@ -98761,10 +98533,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
@@ -98929,6 +98697,61 @@ function func() {
 
 /***/ }),
 
+/***/ "./src/assets/js/coding/data/work20.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work20.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 10,
+  ttl: "<span></span><br class='u-sp'>",
+  txt: "10作品目の情報が入ります。",
+  alt: "10作品目の情報が入ります。",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  //親要素とcanvas要素を取得
+  var canvasParent = document.getElementById("canvasParent");
+  var canvas = document.getElementById("canvas"); // Canvas利用不可の環境では実行しないようにif文で囲む
+
+  if (canvas.getContext) {
+    // canvasの幅と高さを親要素のサイズに合わせる
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
+
+    var c = canvas.getContext('2d');
+  }
+}
+
+/***/ }),
+
 /***/ "./src/assets/js/coding/data/work21.js":
 /*!*********************************************!*\
   !*** ./src/assets/js/coding/data/work21.js ***!
@@ -98938,10 +98761,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
@@ -99052,9 +98871,9 @@ function func() {
     var animate = function animate() {
       requestAnimationFrame(animate);
       update();
-    }; // canvasの幅と高さを親要素のサイズに合わせる
+    };
 
-
+    // canvasの幅と高さを親要素のサイズに合わせる
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // update関数内で使用する値
 
@@ -99084,38 +98903,16 @@ __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/cor
 
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var _default = {
   id: 22,
@@ -99201,9 +98998,9 @@ function func() {
 
     var Particle = /*#__PURE__*/function () {
       function Particle() {
-        _classCallCheck(this, Particle); // 座標
+        _classCallCheck(this, Particle);
 
-
+        // 座標
         this.pos = p.createVector(p.random(p.width), p.random(p.height)); // 大きさ
 
         this.r = p.random(5, 25); // 速さ
@@ -99273,38 +99070,16 @@ __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/cor
 
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var _default = {
   id: 23,
@@ -99391,9 +99166,9 @@ function func() {
 
     var Particle = /*#__PURE__*/function () {
       function Particle() {
-        _classCallCheck(this, Particle); // 座標
+        _classCallCheck(this, Particle);
 
-
+        // 座標
         this.pos = p.createVector(p.random(p.width), p.random(p.height)); // 大きさ
 
         this.r = 5; // 速さ
@@ -99469,10 +99244,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
@@ -99601,8 +99372,6 @@ function func() {
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -99720,38 +99489,16 @@ __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/cor
 
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var _default = {
   id: 26,
@@ -99845,9 +99592,9 @@ function func() {
 
     var Triangle = /*#__PURE__*/function () {
       function Triangle() {
-        _classCallCheck(this, Triangle); // 三角形の1辺の長さ
+        _classCallCheck(this, Triangle);
 
-
+        // 三角形の1辺の長さ
         this.s = p.random(size.min, size.max); // 三角形の色をランダムで配色
 
         this.c = colorArray[Math.floor(p.random(0, colorArray.length))]; // 三角形の初期回転値
@@ -99962,8 +99709,6 @@ function func() {
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -99973,11 +99718,7 @@ var _gsap = _interopRequireDefault(__webpack_require__(/*! gsap */ "./node_modul
 
 var _all = __webpack_require__(/*! gsap/all */ "./node_modules/gsap/all.js");
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = {
   id: 27,
@@ -100280,38 +100021,16 @@ __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/cor
 
 __webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var _default = {
   id: 28,
@@ -100468,9 +100187,9 @@ function func() {
 
     var Hexagon = /*#__PURE__*/function () {
       function Hexagon(row, num) {
-        _classCallCheck(this, Hexagon); // 頂点の数(今回は6角形なので6つ)
+        _classCallCheck(this, Hexagon);
 
-
+        // 頂点の数(今回は6角形なので6つ)
         this.vertexNum = vertexNum; // 六角形のperpendicular(垂線)の長さ
 
         this.per = per; // 六角形の1辺の長さ
@@ -100590,10 +100309,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
@@ -100787,10 +100502,6 @@ function func() {
 
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -100848,9 +100559,9 @@ function func() {
       x += speedX;
       y += speedY;
     }; // animate関数を実行する
+
+
     // canvasの幅と高さを親要素のサイズに合わせる
-
-
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与する
 
@@ -100896,41 +100607,7 @@ function func() {
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
-
-__webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
-
-__webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/core-js/modules/es.symbol.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
-__webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptor */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
-
-__webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
-
-__webpack_require__(/*! core-js/modules/es.string.iterator */ "./node_modules/core-js/modules/es.string.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.weak-map */ "./node_modules/core-js/modules/es.weak-map.js");
-
-__webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -100939,57 +100616,9 @@ exports["default"] = void 0;
 
 var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_modules/three/build/three.module.js"));
 
-function _getRequireWildcardCache() {
-  if (typeof WeakMap !== "function") return null;
-  var cache = new WeakMap();
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-  _getRequireWildcardCache = function _getRequireWildcardCache() {
-    return cache;
-  };
-
-  return cache;
-}
-
-function _interopRequireWildcard(obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  }
-
-  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-    return {
-      "default": obj
-    };
-  }
-
-  var cache = _getRequireWildcardCache();
-
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
-  for (var key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-
-  newObj["default"] = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
-}
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var _default = {
   id: 30,
@@ -101111,41 +100740,7 @@ function func() {
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
-
-__webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
-
-__webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/core-js/modules/es.symbol.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
-__webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptor */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
-
-__webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
-
-__webpack_require__(/*! core-js/modules/es.string.iterator */ "./node_modules/core-js/modules/es.string.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.weak-map */ "./node_modules/core-js/modules/es.weak-map.js");
-
-__webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -101156,57 +100751,9 @@ var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_mod
 
 var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
 
-function _getRequireWildcardCache() {
-  if (typeof WeakMap !== "function") return null;
-  var cache = new WeakMap();
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-  _getRequireWildcardCache = function _getRequireWildcardCache() {
-    return cache;
-  };
-
-  return cache;
-}
-
-function _interopRequireWildcard(obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  }
-
-  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-    return {
-      "default": obj
-    };
-  }
-
-  var cache = _getRequireWildcardCache();
-
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
-  for (var key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-
-  newObj["default"] = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
-}
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var _default = {
   id: 31,
@@ -101341,43 +100888,7 @@ function func() {
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
-
-__webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
-
-__webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/core-js/modules/es.symbol.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.array.map */ "./node_modules/core-js/modules/es.array.map.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
-__webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptor */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
-
-__webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
-
-__webpack_require__(/*! core-js/modules/es.string.iterator */ "./node_modules/core-js/modules/es.string.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.weak-map */ "./node_modules/core-js/modules/es.weak-map.js");
-
-__webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 __webpack_require__(/*! core-js/modules/es.array.map */ "./node_modules/core-js/modules/es.array.map.js");
 
@@ -101390,57 +100901,9 @@ var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_mod
 
 var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
 
-function _getRequireWildcardCache() {
-  if (typeof WeakMap !== "function") return null;
-  var cache = new WeakMap();
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-  _getRequireWildcardCache = function _getRequireWildcardCache() {
-    return cache;
-  };
-
-  return cache;
-}
-
-function _interopRequireWildcard(obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  }
-
-  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-    return {
-      "default": obj
-    };
-  }
-
-  var cache = _getRequireWildcardCache();
-
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
-  for (var key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-
-  newObj["default"] = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
-}
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var _default = {
   id: 32,
@@ -101569,7 +101032,9 @@ function func() {
 
 
   function animate() {
-    // mousedragでカメラ位置変更
+    // ジオメトリのグループを自転
+    rotation(); // mousedragでカメラ位置変更
+
     controls.update(); // rendererインスタンスにシーンとカメラを渡し、レンダリング
 
     renderer.render(scene, camera); // animate()関数を連続実行
@@ -101592,6 +101057,169 @@ function func() {
     camera.aspect = cW / cH;
     camera.updateProjectionMatrix();
   }
+  /**
+   * ジオメトリのグループを自転させる関数
+   */
+
+
+  function rotation() {
+    container.rotation.set(0, container.rotation.y + 0.005, 0);
+  }
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work33.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work33.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_modules/three/build/three.module.js"));
+
+var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+var _default = {
+  id: 33,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+// three.jsをnode moduleから読み込み
+
+exports["default"] = _default;
+
+function func() {
+  /**
+   *  createdのタイミングでinit()関数実行
+   */
+  window.addEventListener('load', init); // ----------------------------------------------------------------------
+  //親要素を取得
+
+  var parent = document.getElementById("parent"); // 親要素の幅と高さを変数化
+
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // グローバルでの変数定義
+
+  var renderer, scene, camera, group, controls, pointLight, lightHelper, ambientLight, geometry, material, mesh; // OrbitControls用domElement変数
+
+  var domElement = document.getElementById("myCanvas"); // カメラ位置
+
+  var cameraPos = {
+    x: 0,
+    y: 500,
+    z: 500
+  }; // 光源位置
+
+  var lightPos = {
+    x: 0,
+    y: 0,
+    z: 0
+  }; // オブジェクトの配色
+
+  var colorArray = ["turquoise", "lime", "yellow", "blue", "pink", "purple", "red"]; // ----------------------------------------------------------------------
+
+  /**
+   *  キャンバスの描画内容
+   */
+
+  function init() {
+    // rendererインスタンス定義(canvas要素にWebGL使用定義)
+    renderer = new THREE.WebGLRenderer({
+      canvas: document.querySelector('#myCanvas'),
+      antialias: true
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH);
+    renderer.setClearColor("grey", .2); // シーンを定義
+
+    scene = new THREE.Scene(); // シーンにfog効果設定
+
+    scene.fog = new THREE.Fog(0x000000, 200, 1500); // カメラを定義
+
+    camera = new THREE.PerspectiveCamera(45, cW / cH, 1, 10000);
+    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera); // mousedragで、カメラ位置変更
+
+    controls = new _OrbitControls.OrbitControls(camera, domElement); // 点光源を定義
+
+    pointLight = new THREE.PointLight("#fff", 3, 5000, .5);
+    pointLight.position.set(lightPos.x, lightPos.y, lightPos.z);
+    scene.add(pointLight); // 環境光源を定義
+
+    ambientLight = new THREE.AmbientLight("#999");
+    ambientLight.intensity = .5;
+    scene.add(ambientLight); // グループを定義
+
+    group = new THREE.Group();
+    scene.add(group); // オブジェクトを定義
+
+    geometry = new THREE.BoxBufferGeometry(50, 50, 50); // グループにオブジェクトを複数定義
+
+    for (var i = 0; i < 500; i++) {
+      material = new THREE.MeshStandardMaterial({
+        color: colorArray[Math.floor(Math.random() * colorArray.length)]
+      });
+      mesh = new THREE.Mesh(geometry, material);
+      mesh.position.x = (Math.random() - 0.5) * 2000;
+      mesh.position.y = (Math.random() - 0.5) * 2000;
+      mesh.position.z = (Math.random() - 0.5) * 2000;
+      mesh.rotation.x = Math.random() * 2 * Math.PI;
+      mesh.rotation.y = Math.random() * 2 * Math.PI;
+      mesh.rotation.z = Math.random() * 2 * Math.PI; // グループに格納する
+
+      group.add(mesh);
+    } // 常に連続的に描画するため、animate()関数実行
+
+
+    animate();
+  } // ----------------------------------------------------------------------
+
+  /**
+   *  常に連続的に描画するためのアニメーション関数
+   */
+
+
+  function animate() {
+    // mousedragでカメラ位置変更
+    controls.update(); // rendererインスタンスにシーンとカメラを渡し、レンダリング
+
+    renderer.render(scene, camera); // animate()関数を連続実行
+
+    requestAnimationFrame(animate);
+  }
 }
 
 /***/ }),
@@ -101606,41 +101234,162 @@ function func() {
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-__webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
 
-__webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/core-js/modules/es.symbol.iterator.js");
+var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_modules/three/build/three.module.js"));
 
-__webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
+var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
 
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-__webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptor */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-__webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
+var _default = {
+  id: 34,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+// three.jsをnode moduleから読み込み
 
-__webpack_require__(/*! core-js/modules/es.string.iterator */ "./node_modules/core-js/modules/es.string.iterator.js");
+exports["default"] = _default;
 
-__webpack_require__(/*! core-js/modules/es.weak-map */ "./node_modules/core-js/modules/es.weak-map.js");
+function func() {
+  /**
+   *  createdのタイミングでinit()関数実行
+   */
+  window.addEventListener('load', init); // ----------------------------------------------------------------------
+  //親要素を取得
 
-__webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+  var parent = document.getElementById("parent"); // 親要素の幅と高さを変数化
 
-function _typeof(obj) {
-  "@babel/helpers - typeof";
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // グローバルでの変数定義
 
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
+  var renderer, scene, camera, group, controls, pointLight, lightHelper, ambientLight, geometry, material, mesh; // OrbitControls用domElement変数
+
+  var domElement = document.getElementById("myCanvas"); // カメラ位置
+
+  var cameraPos = {
+    x: 0,
+    y: 500,
+    z: 500
+  }; // 光源位置
+
+  var lightPos = {
+    x: 0,
+    y: 0,
+    z: 0
+  }; // オブジェクトの配色
+
+  var colorArray = ["turquoise", "lime", "yellow", "blue", "pink", "purple", "red"]; // ----------------------------------------------------------------------
+
+  /**
+   *  キャンバスの描画内容
+   */
+
+  function init() {
+    // rendererインスタンス定義(canvas要素にWebGL使用定義)
+    renderer = new THREE.WebGLRenderer({
+      canvas: document.querySelector('#myCanvas'),
+      antialias: true
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH);
+    renderer.setClearColor("grey", .2); // シーンを定義
+
+    scene = new THREE.Scene(); // シーンにfog効果設定
+
+    scene.fog = new THREE.Fog(0x000000, 200, 1500); // カメラを定義
+
+    camera = new THREE.PerspectiveCamera(45, cW / cH, 1, 10000);
+    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera); // mousedragで、カメラ位置変更
+
+    controls = new _OrbitControls.OrbitControls(camera, domElement); // 点光源を定義
+
+    pointLight = new THREE.PointLight("#fff", 3, 5000, .5);
+    pointLight.position.set(lightPos.x, lightPos.y, lightPos.z);
+    scene.add(pointLight); // 環境光源を定義
+
+    ambientLight = new THREE.AmbientLight("#999");
+    ambientLight.intensity = .5;
+    scene.add(ambientLight); // グループを定義
+
+    group = new THREE.Group();
+    scene.add(group); // オブジェクトを定義
+
+    geometry = new THREE.BoxBufferGeometry(30, 30, 30); // グループにオブジェクトを複数定義
+
+    for (var i = 0; i < 500; i++) {
+      material = new THREE.MeshStandardMaterial({
+        color: colorArray[Math.floor(Math.random() * colorArray.length)]
+      });
+      mesh = new THREE.Mesh(geometry, material);
+      mesh.position.x = (Math.random() - 0.5) * 2000;
+      mesh.position.y = (Math.random() - 0.5) * 2000;
+      mesh.position.z = (Math.random() - 0.5) * 2000;
+      mesh.rotation.x = Math.random() * 2 * Math.PI;
+      mesh.rotation.y = Math.random() * 2 * Math.PI;
+      mesh.rotation.z = Math.random() * 2 * Math.PI; // グループに格納する
+
+      group.add(mesh);
+    } // 常に連続的に描画するため、animate()関数実行
+
+
+    animate();
+  } // ----------------------------------------------------------------------
+
+  /**
+   *  常に連続的に描画するためのアニメーション関数
+   */
+
+
+  function animate() {
+    // mousedragでカメラ位置変更
+    controls.update(); // rendererインスタンスにシーンとカメラを渡し、レンダリング
+
+    renderer.render(scene, camera); // animate()関数を連続実行
+
+    requestAnimationFrame(animate);
   }
-
-  return _typeof(obj);
 }
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work35.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work35.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -101653,66 +101402,14 @@ var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitCo
 
 var _gsap = _interopRequireDefault(__webpack_require__(/*! gsap */ "./node_modules/gsap/index.js"));
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-function _getRequireWildcardCache() {
-  if (typeof WeakMap !== "function") return null;
-  var cache = new WeakMap();
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-  _getRequireWildcardCache = function _getRequireWildcardCache() {
-    return cache;
-  };
-
-  return cache;
-}
-
-function _interopRequireWildcard(obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  }
-
-  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-    return {
-      "default": obj
-    };
-  }
-
-  var cache = _getRequireWildcardCache();
-
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
-  for (var key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-
-  newObj["default"] = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
-}
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 var _default = {
-  id: 34,
+  id: 35,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -101948,9 +101645,9 @@ function func() {
 
 /***/ }),
 
-/***/ "./src/assets/js/coding/data/work33.js":
+/***/ "./src/assets/js/coding/data/work36.js":
 /*!*********************************************!*\
-  !*** ./src/assets/js/coding/data/work33.js ***!
+  !*** ./src/assets/js/coding/data/work36.js ***!
   \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -101958,41 +101655,9 @@ function func() {
 "use strict";
 
 
-__webpack_require__(/*! core-js/modules/es.symbol */ "./node_modules/core-js/modules/es.symbol.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-__webpack_require__(/*! core-js/modules/es.symbol.description */ "./node_modules/core-js/modules/es.symbol.description.js");
-
-__webpack_require__(/*! core-js/modules/es.symbol.iterator */ "./node_modules/core-js/modules/es.symbol.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.array.iterator */ "./node_modules/core-js/modules/es.array.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
-__webpack_require__(/*! core-js/modules/es.object.get-own-property-descriptor */ "./node_modules/core-js/modules/es.object.get-own-property-descriptor.js");
-
-__webpack_require__(/*! core-js/modules/es.object.to-string */ "./node_modules/core-js/modules/es.object.to-string.js");
-
-__webpack_require__(/*! core-js/modules/es.string.iterator */ "./node_modules/core-js/modules/es.string.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es.weak-map */ "./node_modules/core-js/modules/es.weak-map.js");
-
-__webpack_require__(/*! core-js/modules/web.dom-collections.iterator */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-
-function _typeof(obj) {
-  "@babel/helpers - typeof";
-
-  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-    _typeof = function _typeof(obj) {
-      return typeof obj;
-    };
-  } else {
-    _typeof = function _typeof(obj) {
-      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
-    };
-  }
-
-  return _typeof(obj);
-}
+__webpack_require__(/*! core-js/modules/es.function.bind */ "./node_modules/core-js/modules/es.function.bind.js");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -102001,62 +101666,18 @@ exports["default"] = void 0;
 
 var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_modules/three/build/three.module.js"));
 
-var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
+var _gsap = _interopRequireDefault(__webpack_require__(/*! gsap */ "./node_modules/gsap/index.js"));
 
-function _getRequireWildcardCache() {
-  if (typeof WeakMap !== "function") return null;
-  var cache = new WeakMap();
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-  _getRequireWildcardCache = function _getRequireWildcardCache() {
-    return cache;
-  };
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
-  return cache;
-}
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function _interopRequireWildcard(obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  }
-
-  if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {
-    return {
-      "default": obj
-    };
-  }
-
-  var cache = _getRequireWildcardCache();
-
-  if (cache && cache.has(obj)) {
-    return cache.get(obj);
-  }
-
-  var newObj = {};
-  var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-
-  for (var key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-
-      if (desc && (desc.get || desc.set)) {
-        Object.defineProperty(newObj, key, desc);
-      } else {
-        newObj[key] = obj[key];
-      }
-    }
-  }
-
-  newObj["default"] = obj;
-
-  if (cache) {
-    cache.set(obj, newObj);
-  }
-
-  return newObj;
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var _default = {
-  id: 33,
+  id: 36,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -102077,15 +101698,27 @@ var _default = {
 /**
  * js--------------------------------------
  */
+
+/**
+ * 参考
+ * https: //goworkship.com/magazine/interactive-effect-threejs/
+ */
 // three.jsをnode moduleから読み込み
 
 exports["default"] = _default;
 
 function func() {
+  var _this = this;
+
   /**
-   *  createdのタイミングでinit()関数実行
+   * createdのタイミングでsetup() 関数実行
    */
-  window.addEventListener('load', init); // ----------------------------------------------------------------------
+  window.addEventListener('load', setup);
+  /**
+   * リサイズイベント発生時に実行
+   */
+
+  window.addEventListener('resize', onResize); // ----------------------------------------------------------------------
   //親要素を取得
 
   var parent = document.getElementById("parent"); // 親要素の幅と高さを変数化
@@ -102093,80 +101726,84 @@ function func() {
   var cW = parent.clientWidth;
   var cH = parent.clientHeight; // グローバルでの変数定義
 
-  var renderer, scene, camera, group, controls, pointLight, lightHelper, ambientLight, geometry, material, mesh; // OrbitControls用domElement変数
-
-  var domElement = document.getElementById("myCanvas"); // カメラ位置
+  var renderer, scene, camera, raycaster, gutter, meshes, grid, mouse3D, geometries, directionalLight, ambientLight, geometryList, material, mesh; // カメラ位置
 
   var cameraPos = {
     x: 0,
-    y: 500,
-    z: 500
+    y: 65,
+    z: 0
   }; // 光源位置
 
   var lightPos = {
-    x: 0,
-    y: 0,
-    z: 0
+    x: -.3,
+    y: .7,
+    z: .6
   }; // オブジェクトの配色
 
   var colorArray = ["turquoise", "lime", "yellow", "blue", "pink", "purple", "red"]; // ----------------------------------------------------------------------
 
   /**
+   *  キャンバスの基本設定
+   */
+
+  function setup() {
+    // handles mouse coordinates mapping from 2D canvas to 3D world
+    raycaster = new THREE.Raycaster();
+    gutter = {
+      size: 1
+    };
+    meshes = [];
+    grid = {
+      cols: 14,
+      rows: 6
+    };
+    mouse3D = new THREE.Vector2();
+    geometries = [new Box(), new Torus(), new Cone()];
+    window.addEventListener('mousemove', onMouseMove.bind(), {
+      passive: true
+    }); // we call this to simulate the initial position of the mouse cursor
+
+    onMouseMove({
+      clientX: 0,
+      clientY: 0
+    });
+  }
+  /**
    *  キャンバスの描画内容
    */
 
-  function init() {
+
+  function createScene() {
     // rendererインスタンス定義(canvas要素にWebGL使用定義)
     renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector('#myCanvas'),
-      antialias: true
+      antialias: true,
+      alpha: true
+    });
+    scene = new THREE.Scene();
+    this.renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(cW, cH);
-    renderer.setClearColor("grey", .2); // シーンを定義
-
-    scene = new THREE.Scene(); // シーンにfog効果設定
-
-    scene.fog = new THREE.Fog(0x000000, 200, 1500); // カメラを定義
-
-    camera = new THREE.PerspectiveCamera(45, cW / cH, 1, 10000);
-    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
-    scene.add(camera); // mousedragで、カメラ位置変更
-
-    controls = new _OrbitControls.OrbitControls(camera, domElement); // 点光源を定義
-
-    pointLight = new THREE.PointLight("#fff", 3, 5000, .5);
-    pointLight.position.set(lightPos.x, lightPos.y, lightPos.z);
-    scene.add(pointLight); // 環境光源を定義
-
-    ambientLight = new THREE.AmbientLight("#999");
-    ambientLight.intensity = .5;
-    scene.add(ambientLight); // グループを定義
-
-    group = new THREE.Group();
-    scene.add(group); // オブジェクトを定義
-
-    geometry = new THREE.BoxBufferGeometry(50, 50, 50); // グループにオブジェクトを複数定義
-
-    for (var i = 0; i < 500; i++) {
-      material = new THREE.MeshStandardMaterial({
-        color: colorArray[Math.floor(Math.random() * colorArray.length)]
-      });
-      mesh = new THREE.Mesh(geometry, material);
-      mesh.position.x = (Math.random() - 0.5) * 2000;
-      mesh.position.y = (Math.random() - 0.5) * 2000;
-      mesh.position.z = (Math.random() - 0.5) * 2000;
-      mesh.rotation.x = Math.random() * 2 * Math.PI;
-      mesh.rotation.y = Math.random() * 2 * Math.PI;
-      mesh.rotation.z = Math.random() * 2 * Math.PI; // グループに格納する
-
-      group.add(mesh);
-    } // 常に連続的に描画するため、animate()関数実行
-
+    renderer.setClearColor("grey", .2);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap; // 常に連続的に描画するため、animate()関数実行
 
     animate();
-  } // ----------------------------------------------------------------------
+  } //createScene
+
+
+  function createCamera() {
+    camera = new THREE.PerspectiveCamera(20, cW / cH, 1); // set the distance our camera will have from the grid
+
+    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z); // we rotate our camera so we can get a view from the top
+
+    camera.rotation.x = -1.57;
+    scene.add(camera);
+  } // 平行光源を定義
+  // directionalLight.position.set(lightPos.x, lightPos.y, lightPos.z);
 
   /**
    *  常に連続的に描画するためのアニメーション関数
@@ -102174,13 +101811,364 @@ function func() {
 
 
   function animate() {
-    // mousedragでカメラ位置変更
-    controls.update(); // rendererインスタンスにシーンとカメラを渡し、レンダリング
-
+    // rendererインスタンスにシーンとカメラを渡し、レンダリング
     renderer.render(scene, camera); // animate()関数を連続実行
 
     requestAnimationFrame(animate);
   }
+  /**
+   *  リサイズ時の調整関数
+   */
+
+
+  function onResize() {
+    // 親要素の幅と高さを変数化
+    var cW = parent.clientWidth;
+    var cH = parent.clientHeight; // レンダラーのサイズを調整する
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH); // カメラのアスペクト比を正す
+
+    camera.aspect = cW / cH;
+    camera.updateProjectionMatrix();
+  }
+  /**
+   * のオブジェクトクラス-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+   */
+
+
+  var Box = function Box() {
+    _classCallCheck(this, Box);
+
+    this.geom = new THREE.BoxGeometry(.5, .5, .5, .02, .2);
+    this.rotationX = 0;
+    this.rotationY = 0;
+    this.rotationZ = 0;
+  };
+  /**
+   * Coneのオブジェクトクラス-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+   */
+
+
+  var Cone = function Cone() {
+    _classCallCheck(this, Cone);
+
+    this.geom = new THREE.ConeBufferGeometry(.3, .5, 32);
+    this.rotationX = 0;
+    this.rotationY = 0;
+    this.rotationZ = radians(-180);
+  };
+  /**
+   * Torusのオブジェクトクラス-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+   */
+
+
+  var Torus = function Torus() {
+    _classCallCheck(this, Torus);
+
+    this.geom = new THREE.TorusBufferGeometry(.3, .12, 30, 200);
+    this.rotationX = radians(90);
+    this.rotationY = 0;
+    this.rotationZ = 0;
+  };
+  /**
+   * ヘルパー関数-----------------------------------------------------
+   */
+
+
+  var onMouseMove = function onMouseMove(clientX, clientY) {
+    mouse3D.x = clientX / cW * 2 - 1;
+    mouse3D.y = -(clientY / cH) * 2 + 1;
+  };
+  /**
+   * 角度をラジアンに変換する関数
+   */
+
+
+  var radians = function radians(degrees) {
+    return degrees * Math.PI / 180;
+  };
+  /**
+   * 2点間の距離を求める関数
+   */
+
+
+  var distance = function distance(x1, y1, x2, y2) {
+    return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+  };
+  /**
+   * マッピング関数
+   */
+
+
+  var map = function map(value, start1, stop1, start2, stop2) {
+    return (value - start1) / (stop1 - start1) * (stop2 - start2) + start2;
+  };
+  /**
+   * オブジェクトをランダムに配置する関数
+   */
+
+
+  var getRandomGeometry = function getRandomGeometry() {
+    return _this.geometries[Math.floor(Math.random() * Math.floor(_this.geometries.length))];
+  };
+  /**
+   * ジオメトリとマテリアルをもとにメッシュを作成する関数
+   */
+
+
+  var getMesh = function getMesh(geometry, material) {
+    var mesh = new THREE.Mesh(geometry, material);
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    return mesh;
+  };
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work37.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work37.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 23,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  // p5.jsをnode moduleから読み込み
+  var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
+
+
+  var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
+
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // -------------------------------
+
+  /**
+   * インスタンスモードで記述
+   */
+
+  var sketch = function sketch(p) {
+    /**
+     * 最初に1回だけ実行される処理
+     */
+    p.setup = function () {
+      // キャンバスを親要素のサイズに合わせて作成
+      var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
+
+      canvas["class"]('p5Canvas');
+    }; //p.setup()
+    // ------------------------------
+
+    /**
+     * 繰り返し実行される処理
+     */
+
+
+    p.draw = function () {}; // p.draw()
+
+  }; // sketch()
+  // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
+  // canvas.parent(parent);
+
+
+  new p5(sketch, parent);
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work38.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work38.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 23,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  // p5.jsをnode moduleから読み込み
+  var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
+
+
+  var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
+
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // -------------------------------
+
+  /**
+   * インスタンスモードで記述
+   */
+
+  var sketch = function sketch(p) {
+    /**
+     * 最初に1回だけ実行される処理
+     */
+    p.setup = function () {
+      // キャンバスを親要素のサイズに合わせて作成
+      var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
+
+      canvas["class"]('p5Canvas');
+    }; //p.setup()
+    // ------------------------------
+
+    /**
+     * 繰り返し実行される処理
+     */
+
+
+    p.draw = function () {}; // p.draw()
+
+  }; // sketch()
+  // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
+  // canvas.parent(parent);
+
+
+  new p5(sketch, parent);
+}
+
+/***/ }),
+
+/***/ "./src/assets/js/coding/data/work39.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work39.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 23,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  // p5.jsをnode moduleから読み込み
+  var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
+
+
+  var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
+
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // -------------------------------
+
+  /**
+   * インスタンスモードで記述
+   */
+
+  var sketch = function sketch(p) {
+    /**
+     * 最初に1回だけ実行される処理
+     */
+    p.setup = function () {
+      // キャンバスを親要素のサイズに合わせて作成
+      var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
+
+      canvas["class"]('p5Canvas');
+    }; //p.setup()
+    // ------------------------------
+
+    /**
+     * 繰り返し実行される処理
+     */
+
+
+    p.draw = function () {}; // p.draw()
+
+  }; // sketch()
+  // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
+  // canvas.parent(parent);
+
+
+  new p5(sketch, parent);
 }
 
 /***/ }),
@@ -102194,8 +102182,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -102265,9 +102251,9 @@ function func() {
         _this.draw();
       };
     }; // 配列を作っておく
+
+
     // 円を描画&アニメーションさせる関数
-
-
     var animate = function animate() {
       // animate関数をループさせる関数
       requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
@@ -102278,9 +102264,9 @@ function func() {
         circleArray[_i].update();
       }
     }; // animate関数を実行する
+
+
     // canvasの幅と高さを親要素のサイズに合わせる
-
-
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与する
 
@@ -102310,6 +102296,88 @@ function func() {
 
 /***/ }),
 
+/***/ "./src/assets/js/coding/data/work40.js":
+/*!*********************************************!*\
+  !*** ./src/assets/js/coding/data/work40.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = {
+  id: 23,
+  ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
+  txt: "Canvasで<br><br>【HTML5】",
+  alt: "Canvasで",
+  p1: "",
+  p1_color: "js-yellow",
+  p1_list1: "<span data='dot'>&#9642;</span>",
+  p1_list2: "<span data='dot'>&#9642;</span>",
+  p2: "",
+  p2_color: "js-yellow",
+  p2_list1: "<span data='dot'>&#9642;</span>",
+  p2_list2: "<span data='dot'>&#9642;</span>",
+  p3: "",
+  p3_color: "js-yellow",
+  p3_list1: "<span data='dot'>&#9642;</span>",
+  p3_list2: "<span data='dot'>&#9642;</span>",
+  func: func
+};
+/**
+ * js--------------------------------------
+ */
+
+exports["default"] = _default;
+
+function func() {
+  // p5.jsをnode moduleから読み込み
+  var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
+
+
+  var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
+
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // -------------------------------
+
+  /**
+   * インスタンスモードで記述
+   */
+
+  var sketch = function sketch(p) {
+    /**
+     * 最初に1回だけ実行される処理
+     */
+    p.setup = function () {
+      // キャンバスを親要素のサイズに合わせて作成
+      var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
+
+      canvas["class"]('p5Canvas');
+    }; //p.setup()
+    // ------------------------------
+
+    /**
+     * 繰り返し実行される処理
+     */
+
+
+    p.draw = function () {}; // p.draw()
+
+  }; // sketch()
+  // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
+  // canvas.parent(parent);
+
+
+  new p5(sketch, parent);
+}
+
+/***/ }),
+
 /***/ "./src/assets/js/coding/data/work5.js":
 /*!********************************************!*\
   !*** ./src/assets/js/coding/data/work5.js ***!
@@ -102319,10 +102387,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
@@ -102414,9 +102478,9 @@ function func() {
         _this.draw();
       };
     }; // 円の値を格納する配列
+
+
     // 円を描画&アニメーションさせる関数
-
-
     var animate = function animate() {
       // animate関数をループさせる関数
       requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
@@ -102427,9 +102491,9 @@ function func() {
         circleArray[_i].update();
       }
     }; // animate関数を実行する
+
+
     // canvasの幅と高さを親要素のサイズに合わせる
-
-
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
 
@@ -102501,10 +102565,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
@@ -102591,9 +102651,9 @@ function func() {
         _this.draw();
       };
     }; // 配列を作っておく
+
+
     // ボールを描画&アニメーションさせる関数
-
-
     var animate = function animate() {
       // animate関数をループさせる関数
       requestAnimationFrame(animate); // 指定した範囲の描画内容をリセットする
@@ -102604,9 +102664,9 @@ function func() {
         ballArray[_i].update();
       }
     }; // animate関数を実行する
+
+
     // canvasの幅と高さを親要素のサイズに合わせる
-
-
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与する
 
@@ -102660,14 +102720,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
-
-__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
-__webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
 
 __webpack_require__(/*! core-js/modules/es.array.fill */ "./node_modules/core-js/modules/es.array.fill.js");
 
@@ -102824,9 +102876,9 @@ function func() {
       };
     }; // ------------------------------------------------------------------
     // 変数をグローバルに置いておく
+
+
     // 円それぞれの値を配列に格納する関数
-
-
     var init = function init() {
       // 格納する配列
       particles = []; // 円の値を円の個数分出力し、それぞれの円の値を配列に格納する
@@ -102869,9 +102921,9 @@ function func() {
       });
     }; // ------------------------------------------------------------------
     // init関数の実行
+
+
     // canvasの幅と高さを親要素のサイズに合わせる
-
-
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
 
@@ -102903,12 +102955,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
-
-__webpack_require__(/*! core-js/modules/web.dom-collections.for-each */ "./node_modules/core-js/modules/web.dom-collections.for-each.js");
 
 __webpack_require__(/*! core-js/modules/es.array.for-each */ "./node_modules/core-js/modules/es.array.for-each.js");
 
@@ -103011,9 +103057,9 @@ function func() {
       };
     }; // ------------------------------------------------------------------
     // 変数設定
+
+
     // 点それぞれの値を配列に格納する関数
-
-
     var init = function init() {
       particles = [];
 
@@ -103037,9 +103083,9 @@ function func() {
       });
     }; // ------------------------------------------------------------------
     // init関数の実行
+
+
     // canvasの幅と高さを親要素のサイズに合わせる
-
-
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
 
@@ -103089,10 +103135,6 @@ function func() {
 
 "use strict";
 
-
-__webpack_require__(/*! core-js/modules/es.array.concat */ "./node_modules/core-js/modules/es.array.concat.js");
-
-__webpack_require__(/*! core-js/modules/es.object.define-property */ "./node_modules/core-js/modules/es.object.define-property.js");
 
 __webpack_require__(/*! core-js/modules/es.array.concat */ "./node_modules/core-js/modules/es.array.concat.js");
 
@@ -103151,9 +103193,9 @@ function func() {
       c.stroke();
       increment += wave.frequency;
     }; // 関数実行
+
+
     // canvasの幅と高さを親要素のサイズに合わせる
-
-
     canvas.width = canvasParent.clientWidth;
     canvas.height = canvasParent.clientHeight; // Canvasに描画機能を付与
 

@@ -1,5 +1,5 @@
 export default {
-  id: 10,
+  id: 11,
   ttl: "<span></span><br class='u-sp'>",
   txt: "10作品目の情報が入ります。",
   alt: "10作品目の情報が入ります。",
@@ -25,25 +25,5 @@ export default {
 
 function func() {
 
-  //親要素とcanvas要素を取得
-  let canvasParent = document.getElementById("canvasParent");
-  let canvas = document.getElementById("canvas");
-
-  // Canvas利用不可の環境では実行しないようにif文で囲む
-  if (canvas.getContext) {
-
-    // canvasの幅と高さを親要素のサイズに合わせる
-    canvas.width = canvasParent.clientWidth;
-    canvas.height = canvasParent.clientHeight;
-
-    // Canvasに描画機能を付与
-    let c = canvas.getContext('2d');
-
-
-
-
-
-
-  }
 
 }

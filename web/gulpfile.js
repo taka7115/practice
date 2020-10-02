@@ -25,8 +25,8 @@ const jsdoc = require('gulp-jsdoc3');
 const kss = require('kss');
 const kssConfig = require('./kssConfig.json')
 
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 
 //path
 const SRC = './src';
@@ -38,43 +38,6 @@ const DEST = `${HTDOCS}${BASE_PATH}`;
 // 開発中:false
 // リリース:true
 let isProduction = false;
-
-
-
-
-// // ファイルの量産
-// gulp.task('page', (done) => {
-
-
-//   const dataPath = 'src/json/pages.json';  //JSONデータ
-//   const outputPath = 'public/'; //出力先
-
-//   const json = JSON.parse(fs.readFileSync(dataPath,'utf-8'));
-
-
-//     for (var key in json.pages) {
-//         const data = json.pages[key];
-//         const layout = json.pages[key].layout;
-
-//         const templatePath = `src/_template_fund/${layout}.ejs`; //テンプレート
-
-//         data.path = key;
-
-//         gulp.src(templatePath)
-//             .pipe(ejs(data))
-//             .pipe(rename(key + '.html'))
-//             .pipe(gulp.dest(outputPath));
-//     }
-
-//     done();
-
-// });
-
-
-
-
-
-
 
 
 // css
@@ -126,16 +89,16 @@ gulp.task('styleguide-css', () => {
 
 });
 
-// // styleguide用  js
-// gulp.task('styleguide-webpack', () => {
-//   const webpackConfig = isProduction ? './webpack.prd' : './webpack.dev.js'
-//   return gulp.src(`${SRC}/assets/js/main.js`)
-//     .pipe(webpackStream(require(webpackConfig), webpack))
-//     .pipe(plumber())
-//     .pipe(gulp.dest(`styleguide/assets/js/`));
-// });
-// gulp.task('sg', gulp.series('styleguide-css', 'styleguide-webpack', 'styleguide'));
+// styleguide用  js
+gulp.task('styleguide-webpack', () => {
+  const webpackConfig = isProduction ? './webpack.prd' : './webpack.dev.js'
+  return gulp.src(`${SRC}/assets/js/main.js`)
+    .pipe(webpackStream(require(webpackConfig), webpack))
+    .pipe(plumber())
+    .pipe(gulp.dest(`styleguide/assets/js/`));
+});
 
+gulp.task('sg', gulp.series('styleguide-css', 'styleguide-webpack', 'styleguide'));
 
 
 //js
@@ -148,8 +111,6 @@ gulp.task('webpack', () => {
 });
 
 gulp.task('js', gulp.parallel('webpack'));
-
-
 
 
 // jsdoc
@@ -224,7 +185,7 @@ gulp.task('browser-sync', () => {
   });
   watch([`${SRC}/assets/scss/**/*.scss`], gulp.series('sass'));
   watch([`${SRC}/assets/js/**/*.js`, `${SRC}/assets/js/**/*.vue`], gulp.series('webpack', browserSync.reload));
-  // watch('./src/**/*.+(jpg|jpeg|png|gif|svg)', gulp.series('image'));
+  watch('./src/**/*.+(jpg|jpeg|png|gif|svg)', gulp.series('image'));
   watch([
     `${SRC}/**/*.ejs`,
   ], gulp.series('ejs', browserSync.reload));
@@ -282,8 +243,3 @@ gulp.task('build', (done) => {
   return gulp.series('clean', 'dev', 'imagemin')(done);
 });
 gulp.task('default', gulp.series('dev', 'server'));
-
-gulp.task('bjs', (done) => {
-  isProduction = true
-  return gulp.series('js')(done);
-});

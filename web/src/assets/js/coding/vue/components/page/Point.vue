@@ -53,7 +53,11 @@
         </div>
         <ul>
           <li class="point__list" v-html="arrays[name].p1_list1"></li>
-          <li class="point__list" v-if="arrays[name].p1_list2" v-html="arrays[name].p1_list2"></li>
+          <li
+            class="point__list"
+            v-if="arrays[name].p1_list2"
+            v-html="arrays[name].p1_list2"
+          ></li>
         </ul>
       </div>
     </div>
@@ -110,7 +114,11 @@
         </div>
         <ul>
           <li class="point__list" v-html="arrays[name].p2_list1"></li>
-          <li class="point__list" v-if="arrays[name].p2_list2" v-html="arrays[name].p2_list2"></li>
+          <li
+            class="point__list"
+            v-if="arrays[name].p2_list2"
+            v-html="arrays[name].p2_list2"
+          ></li>
         </ul>
       </div>
     </div>
@@ -167,7 +175,11 @@
         </div>
         <ul>
           <li class="point__list" v-html="arrays[name].p3_list1"></li>
-          <li class="point__list" v-if="arrays[name].p3_list2" v-html="arrays[name].p3_list2"></li>
+          <li
+            class="point__list"
+            v-if="arrays[name].p3_list2"
+            v-html="arrays[name].p3_list2"
+          ></li>
         </ul>
       </div>
     </div>
@@ -196,6 +208,16 @@ import work24 from "../../../data/work24.js";
 import work23 from "../../../data/work23.js";
 import work22 from "../../../data/work22.js";
 import work21 from "../../../data/work21.js";
+import work20 from "../../../data/work20.js";
+import work19 from "../../../data/work19.js";
+import work18 from "../../../data/work18.js";
+import work17 from "../../../data/work17.js";
+import work16 from "../../../data/work16.js";
+import work15 from "../../../data/work15.js";
+import work14 from "../../../data/work14.js";
+import work13 from "../../../data/work13.js";
+import work12 from "../../../data/work12.js";
+import work11 from "../../../data/work11.js";
 import work10 from "../../../data/work10.js";
 import work9 from "../../../data/work9.js";
 import work8 from "../../../data/work8.js";
@@ -236,6 +258,16 @@ export default {
         work23,
         work22,
         work21,
+        work20,
+        work19,
+        work18,
+        work17,
+        work16,
+        work15,
+        work14,
+        work13,
+        work12,
+        work11,
         work10,
         work9,
         work8,
