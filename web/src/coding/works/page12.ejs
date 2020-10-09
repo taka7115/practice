@@ -14,56 +14,233 @@
   <main class="c-page">
 
 
-    <page name="work12" tab="3">
+    <page name="work12" tab="1">
 
 
       <template slot="mainCont">
-
         <nav class="nav">
           <ul class="nav-wrap">
-            <li class="nav-list js-list underline"><a href="#aliceblue">aliceblue</a></li>
-            <li class="nav-list js-list"><a href="#orange">orange</a></li>
-            <li class="nav-list js-list"><a href="#turquoise">turquoise</a></li>
-            <li class="nav-list js-list"><a href="#pink">pink</a></li>
-            <li class="nav-list js-list"><a href="#yellowgreen">yellowgreen</a></li>
-            <li class="nav-list js-list"><a href="#blue">blue</a></li>
+            <li class="nav-list js-list underline">
+              <a href="#aliceblue">aliceblue</a>
+            </li>
+            <li class="nav-list js-list">
+              <a href="#orange">orange</a>
+            </li>
+            <li class="nav-list js-list">
+              <a href="#turquoise">turquoise</a>
+            </li>
+            <li class="nav-list js-list">
+              <a href="#pink">pink</a>
+            </li>
+            <li class="nav-list js-list">
+              <a href="#yellowgreen">yellowgreen</a>
+            </li>
+            <li class="nav-list js-list">
+              <a href="#blue">blue</a>
+            </li>
           </ul>
         </nav>
 
         <div class="wrapper">
-
           <div class="wrap">
-
             <section id="aliceblue" class="section js-target aliceblue"></section>
             <section id="orange" class="section js-target orange"></section>
             <section id="turquoise" class="section js-target turquoise"></section>
             <section id="pink" class="section js-target pink"></section>
             <section id="yellowgreen" class="section js-target yellowgreen"></section>
             <section id="blue" class="section js-target blue"></section>
-
-
           </div>
-
         </div>
-
-
       </template>
 
 
 
 
       <template slot="html">
+        &lt;div class="cont"&gt;
 
+        &lt;nav class="nav"&gt;
+        &lt;ul class="nav-wrap"&gt;
+        &lt;li class="nav-list js-list underline"&gt;
+        &lt;a href="#aliceblue"&gt;aliceblue&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-list js-list"&gt;
+        &lt;a href="#orange"&gt;orange&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-list js-list"&gt;
+        &lt;a href="#turquoise"&gt;turquoise&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-list js-list"&gt;
+        &lt;a href="#pink"&gt;pink&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-list js-list"&gt;
+        &lt;a href="#yellowgreen"&gt;yellowgreen&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-list js-list"&gt;
+        &lt;a href="#blue"&gt;blue&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/nav&gt;
+
+        &lt;div class="wrapper"&gt;
+        &lt;div class="wrap"&gt;
+        &lt;section id="aliceblue" class="section js-target aliceblue"&gt;&lt;/section&gt;
+        &lt;section id="orange" class="section js-target orange"&gt;&lt;/section&gt;
+        &lt;section id="turquoise" class="section js-target turquoise"&gt;&lt;/section&gt;
+        &lt;section id="pink" class="section js-target pink"&gt;&lt;/section&gt;
+        &lt;section id="yellowgreen" class="section js-target yellowgreen"&gt;&lt;/section&gt;
+        &lt;section id="blue" class="section js-target blue"&gt;&lt;/section&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;/div&gt;
       </template>
 
 
       <template slot="css">
+        .cont {
+        position: relative;
+        }
 
+        .nav {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        }
+
+        .nav-wrap {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 0;
+        }
+
+        .nav-list {
+        margin-bottom: 5px;
+        position: relative;
+        font-size: 18px;
+        }
+
+        .underline:after {
+        width: 120%;
+        height: 3px;
+        background-color: rgb(86, 125, 255);
+        position: absolute;
+        content: "";
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        }
+
+        .wrapper {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+        }
+
+        .wrap {
+        width: 100%;
+        height: calc(100% * 7);
+        display: flex;
+        flex-direction: column;
+        }
+
+        .section {
+        width: 100%;
+        height: 100%;
+        }
+
+        .section:last-child {
+        width: 100%;
+        height: 200%;
+        }
+
+        .aliceblue {
+        background-color: aliceblue;
+        }
+
+        .orange {
+        background-color: orange;
+        }
+
+        .turquoise {
+        background-color: turquoise;
+        }
+
+        .pink {
+        background-color: pink;
+        }
+
+        .yellowgreen {
+        background-color: yellowgreen;
+        }
+
+        .blue {
+        background-color: blue;
+        }
       </template>
 
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
+        // sectionそれぞれの位置の配列
+        var secArray = [];
+
+        // section要素を取得
+        var secList = document.querySelectorAll(".js-target");
+
+        // ナビゲーションリンク要素を取得
+        var navList = document.querySelectorAll(".js-list");
+
+        // スクロールする要素の取得 ※画面スクロールの場合、
+        // 変数baseに格納される要素をwindowにする
+        var base = document.querySelector(".wrapper");
+
+        // sectionそれぞれの位置を配列に格納する関数
+        var checkSecPos = () => {
+        for (var i = 0; i &lt; secList.length; i++) {
+        // section要素
+        var target = secList[i];
+        // ページ上部からsection要素上までの距離を取得
+        var secTop = target.offsetTop;
+        // 要素下までの距離を取得 ※他sectionと被らないように-1
+        var secBottom = secTop + target.clientHeight - 1;
+        // 配列に格納
+        secArray[i] = [secTop, secBottom]
+        };
+
+        } //checkSecPos()
+
+        // スクロール量とsectionの位置を比較して、
+        // underlineクラスの付与を操作する関数
+        var scrollCheck = () =&gt; {
+
+        // 現在のスクロール位置を取得
+        var scrollPos = base.scrollTop;
+
+        for (var i = 0; i &lt; secArray.length; i++) {
+        // 現在のスクロール位置が、どのsectionにあるかを調べる
+        if (secArray[i][0] &lt;= scrollPos && secArray[i][1] &gt;= scrollPos) {
+
+        //調べたsectionに該当するリンク要素にunderline付与。それ以外では削除
+        i == secArray.length;
+        navList[i].classList.add('underline');
+        } else {
+        navList[i].classList.remove('underline');
+        }
+        };
+        } //scrollCheck
+
+        // createdのタイミングでcheckSecPos()関数実行
+        window.addEventListener("load", () =&gt; {
+        checkSecPos();
+        })
+
+        // スクロール毎にscrollCheck()関数実行
+        base.addEventListener("scroll", () =&gt; {
+        scrollCheck();
+        });
       </template>
     </page>
   </main>

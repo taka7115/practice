@@ -24,100 +24,64 @@ export default {
  */
 
 
-
 function func() {
 
-  // sectionの配列
+  // sectionそれぞれの位置の配列
   var secArray = [];
 
-  // ナビゲーションのリンクを取得
+  // section要素を取得
   var secList = document.querySelectorAll(".js-target");
 
+  // ナビゲーションリンク要素を取得
   var navList = document.querySelectorAll(".js-list");
 
-  // 特徴ページ。スクロール量によってコンテンツナビゲーションのアンダーラインの位置を変える
-  var addLine = () => {
+  // スクロールする要素の取得 ※画面スクロールの場合、
+  // 変数baseに格納される要素をwindowにする
+  var base = document.querySelector(".wrapper");
 
-
-
+  // sectionそれぞれの位置を配列に格納する関数
+  var checkSecPos = () => {
     for (var i = 0; i < secList.length; i++) {
-      // コンテンツのIDを取得
+      // section要素
       var target = secList[i];
-      console.log(target);
-
-
-      // ページ上部からコンテンツの開始位置までの距離を取得
+      // ページ上部からsection要素上までの距離を取得
       var secTop = target.offsetTop;
-      console.log(`コンテンツ開始位置までの距離：${secTop}`)
-      // ページ上部からコンテンツの終了位置までの距離を取得
+      // 要素下までの距離を取得 ※他sectionと被らないように-1
       var secBottom = secTop + target.clientHeight - 1;
-      console.log(`コンテンツ終了位置までの距離：${secTop}`)
       // 配列に格納
       secArray[i] = [secTop, secBottom]
     };
 
-    console.log(`配列：${secArray}`)
+  } //checkSecPos()
 
-  } //addLine()
-
-
-
-  // 現在地をチェックする
-  var currentCheck = () => {
-
-    // スクロールする要素の取得
-    var base = document.querySelector(".wrapper");
+  // スクロール量とsectionの位置を比較して、
+  // underlineクラスの付与を操作する関数
+  var scrollCheck = () => {
 
     // 現在のスクロール位置を取得
-    var scrollVolume = base.scrollTop;
-
-
+    var scrollPos = base.scrollTop;
 
     for (var i = 0; i < secArray.length; i++) {
-      // 現在のスクロール位置が、配列に格納した開始位置と終了位置の間にあるものを調べる
-      if (secArray[i][0] <= scrollVolume && secArray[i][1] >= scrollVolume) {
-        //  && secArray[i][1] >= scrollVolume
-        // 開始位置と終了位置の間にある場合、ナビゲーションにclass="current"をつける
+      // 現在のスクロール位置が、どのsectionにあるかを調べる
+      if (secArray[i][0] <= scrollPos && secArray[i][1] >= scrollPos) {
+
+        //調べたsectionに該当するリンク要素にunderline付与。それ以外では削除
         i == secArray.length;
         navList[i].classList.add('underline');
       } else {
         navList[i].classList.remove('underline');
       }
     };
-  } //currentCheck
+  } //scrollCheck
 
+  // createdのタイミングでcheckSecPos()関数実行
   window.addEventListener("load", () => {
-    addLine();
+    checkSecPos();
   })
 
-  // スクロール時に、現在地をチェックする
-  document.querySelector(".wrapper").addEventListener("scroll", () => {
-    currentCheck();
+  // スクロール毎にscrollCheck()関数実行
+  base.addEventListener("scroll", () => {
+    scrollCheck();
   });
-
-
-
-
-
-  // const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
-  // for (let i = 0; i < smoothScrollTrigger.length; i++) {
-  //   smoothScrollTrigger[i].addEventListener('click', (e) => {
-  //     e.preventDefault();
-  //     let href = smoothScrollTrigger[i].getAttribute('href');
-  //     let targetElement = document.getElementById(href.replace('#', ''));
-  //     let area = document.querySelector(".cont");
-  //     const rect = targetElement.getBoundingClientRect().top;
-  //     const offset = window.pageYOffset;
-  //     const gap = 60;
-  //     const target = rect + offset - gap;
-  //     area.scrollTo({
-  //       top: target,
-  //       behavior: 'smooth',
-  //     });
-  //   });
-  // }
-
-
-
 
 }

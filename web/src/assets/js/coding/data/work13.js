@@ -1,5 +1,5 @@
 export default {
-  id: 10,
+  id: 13,
   ttl: "<span></span><br class='u-sp'>",
   txt: "10作品目の情報が入ります。",
   alt: "10作品目の情報が入ります。",
@@ -19,31 +19,108 @@ export default {
 }
 
 
+import Swiper from 'swiper'
+
+
 /**
  * js--------------------------------------
  */
 
 function func() {
 
-  //親要素とcanvas要素を取得
-  let canvasParent = document.getElementById("canvasParent");
-  let canvas = document.getElementById("canvas");
 
-  // Canvas利用不可の環境では実行しないようにif文で囲む
-  if (canvas.getContext) {
+  class Function {
 
-    // canvasの幅と高さを親要素のサイズに合わせる
-    canvas.width = canvasParent.clientWidth;
-    canvas.height = canvasParent.clientHeight;
+    constructor() {
+      this.redSwiper;
+      this.blueSwiper;
+    }
 
-    // Canvasに描画機能を付与
-    let c = canvas.getContext('2d');
+    init() {
+
+      // swiperSetUp()関数実行
+      this.swiperSetUp();
+
+      // modalOpen()関数実行
+      this.modalOpen(".modal-red", ".js-anc-red", this.redSwiper);
+      this.modalOpen(".modal-blue", ".js-anc-blue", this.blueSwiper);
+
+      // modalClose()関数実行
+      this.modalClose(".modal");
+
+    } //init
+
+    /**
+     * プランボタンクリックでモーダルを表示する関数
+     * @param {モーダル要素} m
+     * @param {アンカー要素} anc
+     * @param {インスタンス} s
+     */
+    modalOpen(m, anc, s) {
+      var anchor = document.querySelectorAll(anc);
+      for (let i = 0; i < anchor.length; i++) {
+        anchor[i].addEventListener("click", () => {
+          this.modalShowSlideTo(m, anc, s)
+        });
+      }
+    } //modalOpen
+
+    /**
+     * swiperインスタンス生成する関数
+     */
+    swiperSetUp() {
+      this.redSwiper = new Swiper('.red-container', {
+        navigation: {
+          nextEl: '.js-red-right',
+          prevEl: '.js-red-left',
+        },
+        loop: true
+      });
+
+      this.blueSwiper = new Swiper('.blue-container', {
+        navigation: {
+          nextEl: ".js-blue-right",
+          prevEl: ".js-blue-left",
+        },
+        loop: true
+      });
+    } //swiperSetUp
+
+    /**
+     * モーダルを表示&該当する順番のスライドを表示する関数
+     * @param {モーダル要素} m
+     * @param {アンカー要素} anc
+     * @param {インスタンス} s
+     */
+    modalShowSlideTo(m, anc, s) {
+      var modal = document.querySelector(m);
+      var anchor = document.querySelectorAll(anc);
+      modal.classList.add("show");
+      for (let i = 0; i < anchor.length; i++) {
+        s.slideTo(el);
+      }
+    } //modalShowSlideTo
+
+    // モーダルを閉じる関数
+    modalClose(m) {
+      var modal = document.querySelectorAll(m);
+      for (let i = 0; i < modal.length; i++) {
+        modal[i].addEventListener("click", () => {
+          modal[i].classList.remove("show");
+        });
+      }
+    } //modalClose
+
+  } //Function
+
+  /**
+   * createdのタイミングでFunctionクラスの内容を実行
+   */
+  window.addEventListener("load", () => {
+    const swiper = new Function();
+    swiper.init();
+  });
 
 
 
-
-
-
-  }
-
-}
+} //func

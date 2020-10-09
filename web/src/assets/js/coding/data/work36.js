@@ -33,10 +33,10 @@ export default {
 
 // three.jsをnode moduleから読み込み
 import * as THREE from 'three';
-
-//  gsapをimport
-import gsap from "gsap";
-
+// orbitControls.jsをnode moduleから読み込み
+import {
+  OrbitControls
+} from "three/examples/jsm/controls/OrbitControls";
 
 function func() {
 
@@ -60,8 +60,10 @@ function func() {
   let cH = parent.clientHeight;
 
   // グローバルでの変数定義
-  var renderer, scene, camera, raycaster, gutter, meshes, grid, mouse3D, geometries, directionalLight, ambientLight, geometryList, material, mesh;
+  var renderer, scene, camera,controls,mouse3D, geometry, geometries, ambientLight, spotLight, rectAreaLight, pointLight, groupMesh, floor, material, mesh;
 
+    // OrbitControls用domElement変数
+  let domElement = document.getElementById("myCanvas");
 
   // カメラ位置
   var cameraPos = {
@@ -70,15 +72,18 @@ function func() {
     z: 0
   }
 
-  // 光源位置
-  var lightPos = {
-    x: -.3,
-    y: .7,
-    z: .6
-  }
 
-  // オブジェクトの配色
-  var colorArray = ["turquoise", "lime", "yellow", "blue", "pink", "purple", "red"]
+      var gutter = {
+      size: 1
+    };
+
+  var meshes = [];
+
+    var grid = {
+      cols: 14,
+      rows: 6
+    };
+
 
   // ----------------------------------------------------------------------
 
@@ -87,47 +92,34 @@ function func() {
    */
   function setup() {
 
-    // handles mouse coordinates mapping from 2D canvas to 3D world
-    raycaster = new THREE.Raycaster();
+    // シーンの定義
+    createScene();
 
-    gutter = {
-      size: 1
-    };
-    meshes = [];
-    grid = {
-      cols: 14,
-      rows: 6
-    };
+    // シーンにカメラを追加
+    createCamera();
+
+    // シーンにライトを追加
+    createAmbient();
+    createSpot();
+    createRectArea();
+    createPoint();
+
+    // シャドーフロアを追加
+    addFloor()
 
     mouse3D = new THREE.Vector2();
-    geometries = [
-      new Box(),
-      new Torus(),
-      new Cone()
-    ];
 
-    window.addEventListener('mousemove', onMouseMove.bind(), {
-      passive: true
-    });
+        // グリッドレイアウト作成
+    createGrid();
 
-    // we call this to simulate the initial position of the mouse cursor
-    onMouseMove({
-      clientX: 0,
-      clientY: 0
-    });
+    // 繰返し描画関数
+    animate();
 
-
-
-
-  }
-
-
-
-
+  } //setup()
 
 
   /**
-   *  キャンバスの描画内容
+   *  sceneを定義
    */
   function createScene() {
 
@@ -139,28 +131,19 @@ function func() {
     });
 
     scene = new THREE.Scene();
-
-    this.renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      alpha: true
-    });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(cW, cH);
-    renderer.setClearColor("grey", .2);
+    renderer.setClearColor("#000", 1);
 
 
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
+  } //createScene()
 
-
-    // 常に連続的に描画するため、animate()関数実行
-    animate();
-
-  } //createScene
-
-
-
+  /**
+   * cameraを定義
+   */
   function createCamera() {
     camera = new THREE.PerspectiveCamera(20, cW / cH, 1);
 
@@ -172,15 +155,119 @@ function func() {
 
     scene.add(camera);
 
+    // mousedragで、カメラ位置変更
+controls = new OrbitControls(camera, domElement);
+
+  } //createCamera()
+
+  /**
+   * AmbientLightを定義
+   */
+  function createAmbient() {
+    ambientLight = new THREE.AmbientLight('#2900af', 1);
+    // ambientLight.position.set(lightPos.x, lightPos.y, lightPos.z);
+    scene.add(ambientLight);
+  } //createAmbient()
+
+  /**
+   * Spotlightを定義
+   */
+  function createSpot() {
+    spotLight = new THREE.SpotLight('#e000ff ', 1, 1000);
+    spotLight.position.set(0, 200, -200);
+    spotLight.intensity = 3;
+    spotLight.castShadow = true;
+    scene.add(spotLight);
+  } //createSpot()
+
+  /**
+   * RectAreaLightを定義
+   */
+  function createRectArea() {
+    rectAreaLight = new THREE.RectAreaLight('#0077ff', 1, 2000, 2000);
+    rectAreaLight.position.set(5, 50, 50);
+    rectAreaLight.lookAt(0, 0, 0);
+    scene.add(rectAreaLight);
+  } //createRectArea()
+
+  /**
+   * createPointを定義
+   */
+  function createPoint() {
+    pointLight = new THREE.PointLight('#fff', 1, 1000, 1);
+    pointLight.position.set(0, 0, -500);
+    scene.add(pointLight);
+  } //createPoint()
 
 
+  /**
+   * グリッドレイアウト作成
+   */
+  function createGrid() {
 
+    // コンテナーとしてグループ作成
+    groupMesh = new THREE.Object3D();
+    const meshParams = {
+      color: '#ff00ff',
+      metalness: .58,
+      emissive: '#000000',
+      roughness: .18,
+    };
+
+    // メッシュを作成
+    material = new THREE.MeshPhysicalMaterial(meshParams);
+
+    // 並べながらループ生成
+    for (let row = 0; row < grid.rows; row++) {
+      meshes[row] = [];
+
+      for (let col = 0; col < grid.cols; col++) {
+        geometry = getRandomGeometry();
+        mesh = getMesh(geometry.geom, material);
+
+        mesh.position.set(col + (col * gutter.size), 0, row + (row * gutter.size));
+        mesh.rotation.x = geometry.rotationX;
+        mesh.rotation.y = geometry.rotationY;
+        mesh.rotation.z = geometry.rotationZ;
+
+        // store the initial rotation values of each element so we can animate back
+        mesh.initialRotation = {
+          x: mesh.rotation.x,
+          y: mesh.rotation.y,
+          z: mesh.rotation.z,
+        };
+
+        groupMesh.add(mesh);
+
+        // store the element inside our array so we can get back when need to animate
+        meshes[row][col] = mesh;
+      }
+    }
+
+    //center on the X and Z our group mesh containing all the grid elements
+    const centerX = ((grid.cols - 1) + ((grid.cols - 1) * gutter.size)) * .5;
+    const centerZ = ((grid.rows - 1) + ((grid.rows - 1) * gutter.size)) * .5;
+    groupMesh.position.set(-centerX, 0, -centerZ);
+
+    scene.add(groupMesh);
+
+  } //createGrid()
+
+
+  /**
+   * シャドーフロア作成
+   */
+  function addFloor() {
+    geometry = new THREE.PlaneGeometry(100, 100);
+    material = new THREE.ShadowMaterial({ opacity: .3 });
+
+    floor = new THREE.Mesh(geometry, material);
+    floor.position.y = 0;
+    floor.receiveShadow = true;
+    floor.rotateX(- Math.PI / 2);
+
+    scene.add(floor);
   }
-
-  // 平行光源を定義
-  // directionalLight.position.set(lightPos.x, lightPos.y, lightPos.z);
-
-
 
   /**
    *  常に連続的に描画するためのアニメーション関数
@@ -190,7 +277,7 @@ function func() {
     renderer.render(scene, camera);
     // animate()関数を連続実行
     requestAnimationFrame(animate);
-  }
+  } //animate()
 
 
   /**
@@ -208,27 +295,23 @@ function func() {
     // カメラのアスペクト比を正す
     camera.aspect = cW / cH;
     camera.updateProjectionMatrix();
-  }
+  } //onResize()
 
 
 
   /**
-   * のオブジェクトクラス-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
+   * オブジェクトクラス-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
    */
 
   class Box {
     constructor() {
-      this.geom = new THREE.BoxGeometry(.5, .5, .5, .02, .2);
+      this.geom = new THREE.BoxGeometry(.5, .5, .5);
       this.rotationX = 0;
       this.rotationY = 0;
       this.rotationZ = 0;
     }
-  }
+  } //class Box
 
-
-  /**
-   * Coneのオブジェクトクラス-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
-   */
 
   class Cone {
     constructor() {
@@ -237,15 +320,7 @@ function func() {
       this.rotationY = 0;
       this.rotationZ = radians(-180);
     }
-  }
-
-
-
-
-
-  /**
-   * Torusのオブジェクトクラス-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -
-   */
+  } // class Cone
 
   class Torus {
     constructor() {
@@ -254,18 +329,12 @@ function func() {
       this.rotationY = 0;
       this.rotationZ = 0;
     }
-  }
+  } // class Torus
 
 
   /**
    * ヘルパー関数-----------------------------------------------------
    */
-
-
-  const onMouseMove = (clientX, clientY) => {
-    mouse3D.x = (clientX / cW) * 2 - 1;
-    mouse3D.y = -(clientY / cH) * 2 + 1;
-  }
 
   /**
    * 角度をラジアンに変換する関数
@@ -275,24 +344,15 @@ function func() {
   }
 
   /**
-   * 2点間の距離を求める関数
-   */
-  const distance = (x1, y1, x2, y2) => {
-    return Math.sqrt(Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2));
-  }
-
-  /**
-   * マッピング関数
-   */
-  const map = (value, start1, stop1, start2, stop2) => {
-    return (value - start1) / (stop1 - start1) * (stop2 - start2) + start2
-  }
-
-  /**
-   * オブジェクトをランダムに配置する関数
+   * 形状の違うオブジェクトをランダムに出力する関数
    */
   const getRandomGeometry = () => {
-    return this.geometries[Math.floor(Math.random() * Math.floor(this.geometries.length))];
+        geometries = [
+      new Box(),
+      new Cone(),
+      new Torus()
+     ];
+    return geometries[Math.floor(Math.random() * Math.floor(geometries.length))];
   }
 
   /**
