@@ -38,6 +38,13 @@ import {
   OrbitControls
 } from "three/examples/jsm/controls/OrbitControls";
 
+//  gsapをインポート
+import gsap from "gsap";
+import {
+  TweenMax,
+  TimelineMax,
+} from 'gsap/all';
+
 function func() {
 
   /**
@@ -50,6 +57,9 @@ function func() {
    */
   window.addEventListener('resize', onResize);
 
+
+
+
   // ----------------------------------------------------------------------
 
   //親要素を取得
@@ -60,17 +70,10 @@ function func() {
   let cH = parent.clientHeight;
 
   // グローバルでの変数定義
-  var renderer, scene, camera, controls, ambientLight, spotLight, material;
+  var renderer, scene, camera, controls, ambientLight, spotLight,mesh;
 
   // OrbitControls用domElement変数
   let domElement = document.getElementById("myCanvas");
-
-  // カメラ位置
-  var cameraPos = {
-    x: 0,
-    y: 65,
-    z: 0
-  }
 
   // 隣り合うmeshの距離間隔
   var gutter = 1;
@@ -80,6 +83,10 @@ function func() {
     cols: 14,
     rows: 6
   };
+
+  var meshArray = [];
+
+
 
 
   // ----------------------------------------------------------------------
@@ -105,6 +112,11 @@ function func() {
     // アニメーション定義
     animate();
 
+        console.log(meshArray)
+
+     hopping();
+     hopping();
+     hopping();
 
   } //setup()
 
@@ -134,7 +146,7 @@ function func() {
    */
   function createCamera() {
     camera = new THREE.PerspectiveCamera(20, cW / cH, 1);
-    camera.position.set(cameraPos.x, cameraPos.y, cameraPos.z);
+    camera.position.set(0, 30, -50);
     scene.add(camera);
 
     // mousedragで、カメラ位置変更
@@ -146,6 +158,7 @@ function func() {
    */
   function createAmbient() {
     ambientLight = new THREE.AmbientLight('#2900af', 1);
+    ambientLight.intensity = 3;
     scene.add(ambientLight);
   } //createAmbient()
 
@@ -166,7 +179,7 @@ function func() {
   function createGrid() {
 
     // コンテナーを定義
-    var container = new THREE.Object3D();
+   var container = new THREE.Object3D();
 
     // 並べながらループ生成
     for (let row = 0; row < grid.rows; row++) {
@@ -175,11 +188,15 @@ function func() {
         // メッシュを定義
         var mesh = getMesh();
 
+        meshArray.push(mesh);
+
         // メッシュの位置を定義
         mesh.position.set(col + (col * gutter), 0, row + (row * gutter));
 
         // コンテナーにメッシュ追加
         container.add(mesh);
+
+
 
       } //for
     } //for
@@ -212,8 +229,6 @@ function func() {
     camera.updateProjectionMatrix();
   } //onResize()
 
-
-
   /**
    * ヘルパー関数-----------------------------------------------------
    */
@@ -227,7 +242,8 @@ function func() {
     // ジェオメトリーを定義
     var geometry = getGeometry();
     // メッシュを作成
-    var mesh = new THREE.Mesh(geometry.geom, material);
+    mesh = new THREE.Mesh(geometry.geom, material);
+
     mesh.rotation.x = geometry.rotationX;
     mesh.rotation.y = geometry.rotationY;
     mesh.rotation.z = geometry.rotationZ;
@@ -302,11 +318,51 @@ function func() {
     }
   } // class Torus
 
+    /**
+   * アニメーション関数-----------------------------------------------------
+   */
+
+
+  const hopping = () => {
+    const tl = gsap.timeline({
+      defaults: {
+        duration: 0.15,
+      }
+    })
+
+    const tm = new TimelineMax();
+
+    var randomMesh = meshArray[Math.floor(Math.random() * Math.floor(meshArray.length))];
+
+    tm.add("scene1")
+      .to(randomMesh.position, {
+      y: 3,
+    })
+      .to(randomMesh.scale,  {
+        x: 2,
+        y: 2,
+        z: 2,
+      }, "scene1")
+      .add("scene2")
+      .to(randomMesh.position,  {
+        y: 0,
+        delay:.5
+      })
+      .to(randomMesh.scale,  {
+        x: 1,
+        y: 1,
+        z: 1,
+        delay:.5
+      },"scene2")
+        setTimeout(() => {
+          hopping();
+  },Math.random()*1000);
+  }
+
   /**
    *  常に連続的に描画するためのアニメーション関数
    */
   function animate() {
-
     // mousedragでカメラ位置変更
     controls.update();
     // rendererインスタンスにシーンとカメラを渡し、レンダリング
