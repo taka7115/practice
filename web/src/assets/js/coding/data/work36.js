@@ -38,10 +38,9 @@ import {
   OrbitControls
 } from "three/examples/jsm/controls/OrbitControls";
 
-//  gsapをインポート
+//  gsapをnode moduleから読み込み
 import gsap from "gsap";
 import {
-  TweenMax,
   TimelineMax,
 } from 'gsap/all';
 
@@ -57,9 +56,6 @@ function func() {
    */
   window.addEventListener('resize', onResize);
 
-
-
-
   // ----------------------------------------------------------------------
 
   //親要素を取得
@@ -70,10 +66,7 @@ function func() {
   let cH = parent.clientHeight;
 
   // グローバルでの変数定義
-  var renderer, scene, camera, controls, ambientLight, spotLight,mesh;
-
-  // OrbitControls用domElement変数
-  let domElement = document.getElementById("myCanvas");
+  var renderer, scene, camera, controls, ambientLight, spotLight, mesh, domElement, canvas;
 
   // 隣り合うmeshの距離間隔
   var gutter = 1;
@@ -84,12 +77,10 @@ function func() {
     rows: 6
   };
 
+  // meshの情報を格納する配列
   var meshArray = [];
 
-
-
-
-  // ----------------------------------------------------------------------
+  // 描画内容を決める関数------------------------------------------------------
 
   /**
    *  キャンバスの基本設定
@@ -112,11 +103,8 @@ function func() {
     // アニメーション定義
     animate();
 
-        console.log(meshArray)
-
-     hopping();
-     hopping();
-     hopping();
+    // meshを弾ませる関数実行
+    hopping();
 
   } //setup()
 
@@ -128,10 +116,11 @@ function func() {
 
     // rendererインスタンス定義(canvas要素にWebGL使用定義)
     renderer = new THREE.WebGLRenderer({
-      canvas: document.querySelector('#myCanvas'),
       antialias: true,
       alpha: true
     });
+    // 親要素にレンダラーのcanvasを追加
+    canvas = parent.appendChild(renderer.domElement);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(cW, cH);
     renderer.setClearColor("#000", 1);
@@ -150,7 +139,7 @@ function func() {
     scene.add(camera);
 
     // mousedragで、カメラ位置変更
-    controls = new OrbitControls(camera, domElement);
+    controls = new OrbitControls(camera, canvas);
   } //createCamera()
 
   /**
@@ -178,47 +167,45 @@ function func() {
    */
   function createGrid() {
 
-    // コンテナーを定義
-   var container = new THREE.Object3D();
+    // containerを定義
+    var container = new THREE.Object3D();
 
     // 並べながらループ生成
     for (let row = 0; row < grid.rows; row++) {
       for (let col = 0; col < grid.cols; col++) {
 
-        // メッシュを定義
+        // meshを定義
         var mesh = getMesh();
 
-        meshArray.push(mesh);
-
-        // メッシュの位置を定義
+        // meshの位置を定義
         mesh.position.set(col + (col * gutter), 0, row + (row * gutter));
 
-        // コンテナーにメッシュ追加
+        // containerにmesh追加
         container.add(mesh);
 
-
+        // 配列にmesh一つ一つの情報を格納
+        meshArray.push(mesh);
 
       } //for
     } //for
 
-    // コンテナーが中央に配置されるようにする
+    // containerが中央に配置されるようにする
     const centerX = ((grid.cols - 1) + ((grid.cols - 1) * gutter)) * .5;
     const centerZ = ((grid.rows - 1) + ((grid.rows - 1) * gutter)) * .5;
     container.position.set(-centerX, 0, -centerZ);
 
+    // sceneにcontainerを追加
     scene.add(container);
 
   } //createGrid()
-
-
 
   /**
    *  リサイズ関数
    */
   function onResize() {
     // 親要素の幅と高さを変数化
-    let cW = parent.clientWidth;
-    let cH = parent.clientHeight;
+    cW = parent.clientWidth;
+    cH = parent.clientHeight;
 
     // レンダラーのサイズを調整する
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -237,11 +224,11 @@ function func() {
    * meshを定義する関数
    */
   const getMesh = () => {
-    // マテリアルを定義
+    // materialを定義
     var material = getMaterial();
-    // ジェオメトリーを定義
+    // geometryを定義
     var geometry = getGeometry();
-    // メッシュを作成
+    // meshを作成
     mesh = new THREE.Mesh(geometry.geom, material);
 
     mesh.rotation.x = geometry.rotationX;
@@ -249,25 +236,27 @@ function func() {
     mesh.rotation.z = geometry.rotationZ;
     mesh.castShadow = true;
     mesh.receiveShadow = true;
+
+    // meshをオブジェクトとして返す
     return mesh;
   }
 
   /**
-   * ジェオメトリーを決定する関数
+   * geometryを決定する関数
    */
   const getGeometry = () => {
-    // 3種類のジェオメトリー
+    // 3種類のgeometry
     var geometries = [
       new Box(),
       new Cone(),
       new Torus()
     ];
-    // ジェオメトリーをランダムで決定
+    // ランダムで決定したgeometryをオブジェクトとして返す
     return geometries[Math.floor(Math.random() * Math.floor(geometries.length))];
-  }
+  } // getGeometry()
 
   /**
-   * マテリアルを決定する関数
+   * materialを決定する関数
    */
   const getMaterial = () => {
     const meshParams = {
@@ -276,15 +265,16 @@ function func() {
       emissive: '#000000',
       roughness: .18,
     };
+    // materialをオブジェクトとして返す
     return new THREE.MeshPhysicalMaterial(meshParams);
-  }
+  } //getMaterial()
 
   /**
    * 角度をラジアンに変換する関数
    */
   const radians = (degrees) => {
     return degrees * Math.PI / 180;
-  }
+  } //radians()
 
   /**
    * オブジェクトクラス-----------------------------------------------------
@@ -298,7 +288,6 @@ function func() {
       this.rotationZ = 0;
     }
   } //class Box
-
 
   class Cone {
     constructor() {
@@ -318,17 +307,14 @@ function func() {
     }
   } // class Torus
 
-    /**
+  /**
    * アニメーション関数-----------------------------------------------------
    */
 
-
+  /**
+   * meshを弾ませる関数
+   */
   const hopping = () => {
-    const tl = gsap.timeline({
-      defaults: {
-        duration: 0.15,
-      }
-    })
 
     const tm = new TimelineMax();
 
@@ -336,28 +322,30 @@ function func() {
 
     tm.add("scene1")
       .to(randomMesh.position, {
-      y: 3,
-    })
-      .to(randomMesh.scale,  {
+        y: 3,
+      })
+      .to(randomMesh.scale, {
         x: 2,
         y: 2,
         z: 2,
       }, "scene1")
       .add("scene2")
-      .to(randomMesh.position,  {
+      .to(randomMesh.position, {
         y: 0,
-        delay:.5
+        delay: .5
       })
-      .to(randomMesh.scale,  {
+      .to(randomMesh.scale, {
         x: 1,
         y: 1,
         z: 1,
-        delay:.5
-      },"scene2")
-        setTimeout(() => {
-          hopping();
-  },Math.random()*1000);
-  }
+        delay: .5
+      }, "scene2")
+
+    setTimeout(() => {
+      hopping();
+    }, Math.random() * 1000);
+
+  } //hopping()
 
   /**
    *  常に連続的に描画するためのアニメーション関数
@@ -365,7 +353,7 @@ function func() {
   function animate() {
     // mousedragでカメラ位置変更
     controls.update();
-    // rendererインスタンスにシーンとカメラを渡し、レンダリング
+    // sceneとcameraを常に更新
     renderer.render(scene, camera);
     // animate()関数を連続実行
     requestAnimationFrame(animate);

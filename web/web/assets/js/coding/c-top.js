@@ -110523,17 +110523,16 @@ function func() {
   var cW = parent.clientWidth;
   var cH = parent.clientHeight; // グローバルでの変数定義
 
-  var renderer, scene, camera, controls, ambientLight, spotLight, mesh; // OrbitControls用domElement変数
-
-  var domElement = document.getElementById("myCanvas"); // 隣り合うmeshの距離間隔
+  var renderer, scene, camera, controls, ambientLight, spotLight, mesh, domElement, canvas; // 隣り合うmeshの距離間隔
 
   var gutter = 1; // 列と行
 
   var grid = {
     cols: 14,
     rows: 6
-  };
-  var meshArray = []; // ----------------------------------------------------------------------
+  }; // meshの情報を格納する配列
+
+  var meshArray = []; // 描画内容を決める関数------------------------------------------------------
 
   /**
    *  キャンバスの基本設定
@@ -110550,10 +110549,8 @@ function func() {
 
     createGrid(); // アニメーション定義
 
-    animate();
-    console.log(meshArray);
-    hopping();
-    hopping();
+    animate(); // meshを弾ませる関数実行
+
     hopping();
   } //setup()
 
@@ -110565,10 +110562,11 @@ function func() {
   function createScene() {
     // rendererインスタンス定義(canvas要素にWebGL使用定義)
     renderer = new THREE.WebGLRenderer({
-      canvas: document.querySelector('#myCanvas'),
       antialias: true,
       alpha: true
-    });
+    }); // 親要素にレンダラーのcanvasを追加
+
+    canvas = parent.appendChild(renderer.domElement);
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(cW, cH);
     renderer.setClearColor("#000", 1); // sceneインスタンス定義
@@ -110586,7 +110584,7 @@ function func() {
     camera.position.set(0, 30, -50);
     scene.add(camera); // mousedragで、カメラ位置変更
 
-    controls = new _OrbitControls.OrbitControls(camera, domElement);
+    controls = new _OrbitControls.OrbitControls(camera, canvas);
   } //createCamera()
 
   /**
@@ -110619,27 +110617,29 @@ function func() {
 
 
   function createGrid() {
-    // コンテナーを定義
+    // containerを定義
     var container = new THREE.Object3D(); // 並べながらループ生成
 
     for (var row = 0; row < grid.rows; row++) {
       for (var col = 0; col < grid.cols; col++) {
-        // メッシュを定義
-        var mesh = getMesh();
-        meshArray.push(mesh); // メッシュの位置を定義
+        // meshを定義
+        var mesh = getMesh(); // meshの位置を定義
 
-        mesh.position.set(col + col * gutter, 0, row + row * gutter); // コンテナーにメッシュ追加
+        mesh.position.set(col + col * gutter, 0, row + row * gutter); // containerにmesh追加
 
-        container.add(mesh);
+        container.add(mesh); // 配列にmesh一つ一つの情報を格納
+
+        meshArray.push(mesh);
       } //for
 
     } //for
-    // コンテナーが中央に配置されるようにする
+    // containerが中央に配置されるようにする
 
 
     var centerX = (grid.cols - 1 + (grid.cols - 1) * gutter) * .5;
     var centerZ = (grid.rows - 1 + (grid.rows - 1) * gutter) * .5;
-    container.position.set(-centerX, 0, -centerZ);
+    container.position.set(-centerX, 0, -centerZ); // sceneにcontainerを追加
+
     scene.add(container);
   } //createGrid()
 
@@ -110650,8 +110650,8 @@ function func() {
 
   function onResize() {
     // 親要素の幅と高さを変数化
-    var cW = parent.clientWidth;
-    var cH = parent.clientHeight; // レンダラーのサイズを調整する
+    cW = parent.clientWidth;
+    cH = parent.clientHeight; // レンダラーのサイズを調整する
 
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(cW, cH); // カメラのアスペクト比を正す
@@ -110670,32 +110670,34 @@ function func() {
 
 
   var getMesh = function getMesh() {
-    // マテリアルを定義
-    var material = getMaterial(); // ジェオメトリーを定義
+    // materialを定義
+    var material = getMaterial(); // geometryを定義
 
-    var geometry = getGeometry(); // メッシュを作成
+    var geometry = getGeometry(); // meshを作成
 
     mesh = new THREE.Mesh(geometry.geom, material);
     mesh.rotation.x = geometry.rotationX;
     mesh.rotation.y = geometry.rotationY;
     mesh.rotation.z = geometry.rotationZ;
     mesh.castShadow = true;
-    mesh.receiveShadow = true;
+    mesh.receiveShadow = true; // meshをオブジェクトとして返す
+
     return mesh;
   };
   /**
-   * ジェオメトリーを決定する関数
+   * geometryを決定する関数
    */
 
 
   var getGeometry = function getGeometry() {
-    // 3種類のジェオメトリー
-    var geometries = [new Box(), new Cone(), new Torus()]; // ジェオメトリーをランダムで決定
+    // 3種類のgeometry
+    var geometries = [new Box(), new Cone(), new Torus()]; // ランダムで決定したgeometryをオブジェクトとして返す
 
     return geometries[Math.floor(Math.random() * Math.floor(geometries.length))];
-  };
+  }; // getGeometry()
+
   /**
-   * マテリアルを決定する関数
+   * materialを決定する関数
    */
 
 
@@ -110705,9 +110707,11 @@ function func() {
       metalness: .58,
       emissive: '#000000',
       roughness: .18
-    };
+    }; // materialをオブジェクトとして返す
+
     return new THREE.MeshPhysicalMaterial(meshParams);
-  };
+  }; //getMaterial()
+
   /**
    * 角度をラジアンに変換する関数
    */
@@ -110715,7 +110719,8 @@ function func() {
 
   var radians = function radians(degrees) {
     return degrees * Math.PI / 180;
-  };
+  }; //radians()
+
   /**
    * オブジェクトクラス-----------------------------------------------------
    */
@@ -110751,17 +110756,15 @@ function func() {
   }; // class Torus
 
   /**
-  * アニメーション関数-----------------------------------------------------
-  */
+   * アニメーション関数-----------------------------------------------------
+   */
+
+  /**
+   * meshを弾ませる関数
+   */
 
 
   var hopping = function hopping() {
-    var tl = _gsap["default"].timeline({
-      defaults: {
-        duration: 0.15
-      }
-    });
-
     var tm = new _all.TimelineMax();
     var randomMesh = meshArray[Math.floor(Math.random() * Math.floor(meshArray.length))];
     tm.add("scene1").to(randomMesh.position, {
@@ -110782,7 +110785,8 @@ function func() {
     setTimeout(function () {
       hopping();
     }, Math.random() * 1000);
-  };
+  }; //hopping()
+
   /**
    *  常に連続的に描画するためのアニメーション関数
    */
@@ -110790,7 +110794,7 @@ function func() {
 
   function animate() {
     // mousedragでカメラ位置変更
-    controls.update(); // rendererインスタンスにシーンとカメラを渡し、レンダリング
+    controls.update(); // sceneとcameraを常に更新
 
     renderer.render(scene, camera); // animate()関数を連続実行
 
@@ -110811,12 +110815,23 @@ function func() {
 "use strict";
 
 
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+var THREE = _interopRequireWildcard(__webpack_require__(/*! three */ "./node_modules/three/build/three.module.js"));
+
+var _OrbitControls = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 var _default = {
-  id: 23,
+  id: 37,
   ttl: "<span>C</span>anvasで<br class='u-sp'>【HTML5】",
   txt: "Canvasで<br><br>【HTML5】",
   alt: "Canvasで",
@@ -110837,49 +110852,99 @@ var _default = {
 /**
  * js--------------------------------------
  */
+// three.jsをnode moduleから読み込み
 
 exports["default"] = _default;
 
 function func() {
-  // p5.jsをnode moduleから読み込み
-  var p5 = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js"); //親要素を取得
-
-
-  var parent = document.getElementById("p5Parent"); // 親要素の幅と高さを変数化
-
-  var cW = parent.clientWidth;
-  var cH = parent.clientHeight; // -------------------------------
-
   /**
-   * インスタンスモードで記述
+   * createdのタイミングでsetup() 関数実行
+   */
+  window.addEventListener('load', setup);
+  /**
+   * リサイズイベント発生時に実行
    */
 
-  var sketch = function sketch(p) {
-    /**
-     * 最初に1回だけ実行される処理
-     */
-    p.setup = function () {
-      // キャンバスを親要素のサイズに合わせて作成
-      var canvas = p.createCanvas(cW, cH); //キャンバスにclassを付与
+  window.addEventListener('resize', onResize); //親要素を取得
 
-      canvas["class"]('p5Canvas');
-    }; //p.setup()
-    // ------------------------------
+  var parent = document.getElementById("parent"); // 親要素の幅と高さを変数化
 
-    /**
-     * 繰り返し実行される処理
-     */
+  var cW = parent.clientWidth;
+  var cH = parent.clientHeight; // グローバルでの変数定義
+
+  var renderer, scene, camera, controls, ambientLight, spotLight, material, geometry, mesh, domElement, canvas;
+  var rot = 0;
+
+  function setup() {
+    // rendererインスタンス定義(canvas要素にWebGL使用定義)
+    renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true
+    }); // 親要素にレンダラーのcanvasを追加
+
+    canvas = parent.appendChild(renderer.domElement);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH);
+    renderer.setClearColor("#000", 1); // sceneインスタンス定義
+
+    scene = new THREE.Scene(); //cameraを作成
+
+    camera = new THREE.PerspectiveCamera(45, cW / cH, 1, 2000);
+    camera.position.set(0, 0, 1000);
+    starField(); //初回実行
+
+    tick();
+  } //setup
 
 
-    p.draw = function () {}; // p.draw()
+  function starField() {
+    geometry = new THREE.SphereGeometry(100, 32, 32);
+    var SIZE = 5000;
+    var LENGTH = 20000;
 
-  }; // sketch()
-  // sketch関数実行。第2引数は親要素指定。setup()の中に下記記述でも同義
-  // canvas.parent(parent);
+    for (var i = 0; i < LENGTH; i++) {
+      geometry.vertices.push(new THREE.Vector3(SIZE * (Math.random() - 0.5), SIZE * (Math.random() - 0.5), SIZE * (Math.random() - 0.5)));
+    }
+
+    material = new THREE.PointsMaterial({
+      color: '0xffffff',
+      size: 5
+    });
+    mesh = new THREE.Points(geometry, material);
+    scene.add(mesh);
+  } //実行するための関数
 
 
-  new p5(sketch, parent);
-}
+  function tick() {
+    rot += 0.1; //アニメーション処理
+
+    var radian = rot * Math.PI / 180;
+    camera.position.x = Math.sin(radian) * 2000;
+    camera.position.z = Math.cos(radian) * 1000;
+    camera.lookAt(new THREE.Vector3(0, 0, 0)); //レンダリング
+
+    renderer.render(scene, camera); //自分自身を呼び続ける
+
+    requestAnimationFrame(tick);
+  }
+  /**
+   *  リサイズ関数
+   */
+
+
+  function onResize() {
+    // 親要素の幅と高さを変数化
+    cW = parent.clientWidth;
+    cH = parent.clientHeight; // レンダラーのサイズを調整する
+
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(cW, cH); // カメラのアスペクト比を正す
+
+    camera.aspect = cW / cH;
+    camera.updateProjectionMatrix();
+  } //onResize()
+
+} //func
 
 /***/ }),
 
