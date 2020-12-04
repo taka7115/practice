@@ -30,26 +30,44 @@
 <div id="c-page">
   <main class="c-page">
 
-    <page name="work10" tab="3">
+    <page name="work14" tab="2">
 
       <template slot="mainCont">
-        <div class="canvas-parent" id="canvasParent">
-          <canvas id="canvas"></canvas>
+
+        <div class="wrapper">
+
+          <svg class="btn b-left" width="75px" height="75px" viewBox="0 0 500 500">
+            <path class="l-left1 l-left"
+              d="M44.6,151.6h409.9c18.9,0,34.2-15.2,34.2-34.1c0-18.8-15.3-34-34.2-34H44.6c-18.8,0-34.1,15.2-34.1,34 C10.4,136.4,25.7,151.6,44.6,151.6z"
+              fill="#fff"></path>
+            <path class="l-left2 l-left"
+              d="M454.5,219.9H44.5c-18.8,0-34.1,15.3-34.1,34.1c0,18.9,15.3,34.2,34.1,34.2h409.9c18.9,0,34.2-15.3,34.2-34.2 C488.7,235.2,473.3,219.9,454.5,219.9z"
+              fill="#fff"></path>
+            <path class="l-left3 l-left"
+              d="M454.5,356.7H44.5c-18.8,0-34.1,15.2-34.1,34.1c0,18.8,15.3,34.1,34.1,34.1h409.9c18.9,0,34.2-15.3,34.2-34.1 S473.3,356.7,454.5,356.7z"
+              fill="#fff"></path>
+          </svg>
+
+          <svg class="btn b-right" width="150px" height="150px" viewBox="0 0 500 500">
+            <path class="l-right1 l-right"
+              d="M44.6,151.6h409.9c18.9,0,34.2-15.2,34.2-34.1c0-18.8-15.3-34-34.2-34H44.6c-18.8,0-34.1,15.2-34.1,34 C10.4,136.4,25.7,151.6,44.6,151.6z"
+              fill="#fff"></path>
+            <path class="l-right2 l-right"
+              d="M454.5,219.9H44.5c-18.8,0-34.1,15.3-34.1,34.1c0,18.9,15.3,34.2,34.1,34.2h409.9c18.9,0,34.2-15.3,34.2-34.2 C488.7,235.2,473.3,219.9,454.5,219.9z"
+              fill="#fff"></path>
+            <path class="l-right3 l-right"
+              d="M454.5,356.7H44.5c-18.8,0-34.1,15.2-34.1,34.1c0,18.8,15.3,34.1,34.1,34.1h409.9c18.9,0,34.2-15.3,34.2-34.1 S473.3,356.7,454.5,356.7z"
+              fill="#fff"></path>
+          </svg>
+
         </div>
+
       </template>
 
       <template slot="html">
-        &lt;div class="canvas-parent" id="canvasParent"&gt;
-        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
-        &lt;/div&gt;
       </template>
 
       <template slot="css">
-        .canvas-parent {
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        }
       </template>
 
       <template slot="js">
@@ -96,10 +114,67 @@
 
 <!-- css manipulation ----------------------------------------- -->
 <style type="text/css">
-  .canvas-parent {
+  .wrapper {
     width: 100%;
     height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .btn{
     cursor: pointer;
+  }
+
+  /* 左側のハンバーガーメニュー */
+
+  .l-left {
+    transition: .2s;
+    transform-origin: left 50%;
+  }
+
+  .b-left:hover .l-left {
+    fill: rgb(137, 10, 12);
+  }
+
+  .b-left:hover .l-left1 {
+    transform: translate(-5%, -16%) rotate(45deg);
+  }
+
+  .b-left:hover .l-left2 {
+    opacity: 0;
+  }
+
+  .b-left:hover .l-left3 {
+    transform: translate(-7%, 16%) rotate(-45deg);
+  }
+
+  /* 右側のハンバーガーメニュー */
+
+  .b-right {
+    cursor: pointer;
+  }
+
+  .l-right {
+    transition: .2s;
+    transform-origin: left 50%;
+  }
+
+  .b-right.active .l-right {
+    fill: rgb(137, 10, 12);
+  }
+
+  .b-right.active .l-right1 {
+    transform: translate(-5%, -16%) rotate(45deg);
+  }
+
+  .b-right.active .l-right2 {
+    opacity: 0;
+  }
+
+  .b-right.active .l-right3 {
+    transform: translate(-7%, 16%) rotate(-45deg);
   }
 
 </style>
