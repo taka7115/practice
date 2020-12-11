@@ -31,8 +31,10 @@ function func() {
     aniId;
   //parameters
 
-  var w = canvas.width = window.innerWidth - 230,
-    h = canvas.height = window.innerHeight,
+  var w = canvas.width,
+    h = canvas.height,
+  // var w = canvas.width = window.innerWidth - 230,
+  //   h = canvas.height = window.innerHeight,
     particles = [], //particle array
     level = 50,
     fill = false,
@@ -109,18 +111,7 @@ function func() {
         particles[i].respawn();
     }
   }
-  document.getElementById("level").oninput = function () {
-    level = document.getElementById("level").value;
-  }
-  document.getElementById("Filled_Hollow").onchange = function () {
-    fill = document.getElementById("Filled_Hollow").checked;
-  }
-  document.getElementById("blue_red").onchange = function () {
-    if (document.getElementById("blue_red").checked)
-      color = "#34A7C1";
-    else
-      color = "tomato";
-  }
+
   //update canvas size when resizing the window
   window.addEventListener('resize', function () {
     //update the size
@@ -133,3 +124,17 @@ function func() {
   //start animation
   init();
 }
+
+
+// document.getElementById("level").oninput = function () {
+//   level = document.getElementById("level").value;
+// }
+// document.getElementById("Filled_Hollow").onchange = function () {
+//   fill = document.getElementById("Filled_Hollow").checked;
+// }
+// document.getElementById("blue_red").onchange = function () {
+//   if (document.getElementById("blue_red").checked)
+//     color = "#34A7C1";
+//   else
+//     color = "tomato";
+// }

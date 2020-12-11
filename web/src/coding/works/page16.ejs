@@ -13,36 +13,82 @@
 <div id="c-page">
   <main class="c-page">
 
-
-    <page name="work10" tab="3">
-
+    <page name="work16" tab="3">
 
       <template slot="mainCont">
-        <div class="canvas-parent" id="canvasParent">
-          <canvas id="canvas"></canvas>
+        <div class="wrapper">
+          <ul class="list">
+            <li data-filter="all" class="active">All</li>
+            <li data-filter="cat">Cat</li>
+            <li data-filter="penguin">Penguin</li>
+            <li data-filter="lizard">Lizard</li>
+            <li data-filter="otter">Otter</li>
+            <li data-filter="squirrel">Squirrel</li>
+          </ul>
+
+          <div class="wrap">
+
+
+
+            <% var headList = [
+                  {
+                    name: 'cat',
+                    alt :'猫'
+                  },
+                  {
+                    name: 'penguin',
+                    alt :'ペンギン'
+                  },
+                  {
+                    name: 'lizard',
+                    alt :'トカゲ'
+                  },
+                  {
+                    name: 'otter',
+                    alt :'カワウソ'
+                  },
+                  {
+                    name: 'squirrel',
+                    alt :'リス'
+                  },
+                  ]%>
+            <% var count = 1; %>
+
+            <% for(let i = 1; i <= 5; i++ ){%>
+              <% headList.forEach(function(item,key){%>
+            <div class="item <%- item.name %>"><img src="../../assets/img/coding/page/animal/<%- item.name %><%- count %>.jpg"
+                alt="<%- item.alt %>"></div>
+                <% }); %>
+                <% count++; %>
+            <% }; %>
+
+
+          </div>
         </div>
       </template>
 
 
 
       <template slot="html">
-        &lt;div class="canvas-parent" id="canvasParent"&gt;
-        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
-        &lt;/div&gt;
+
       </template>
 
 
       <template slot="css">
-        .canvas-parent {
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        }
+
       </template>
 
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
+        $(".list li").on("click",function() {
+        var value = $(this).attr("data-filter");
+        if (value == "all") {
+        $(".item").show("1000");
+        } else {
+        $(".item").not("." + value).hide("1000");
+        $(".item").filter("." + value).show("1000");
+        }
+        });
       </template>
     </page>
   </main>
@@ -52,10 +98,56 @@
 
 <!-- css manipulation ----------------------------------------- -->
 <style type="text/css">
-  .canvas-parent {
+  .wrapper {
     width: 100%;
     height: 100%;
+    background-color: #fff;
+    padding: 20px 0 70px;
+    overflow: hidden;
+  }
+
+  .list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .list li {
+    width: 100px;
+    padding: 6px 0 4px;
+    margin: 0 10px;
+    background-color: #eee;
+    text-align: center;
     cursor: pointer;
+  }
+
+  .list li.active {
+    background-color: #03a9f4;
+    color: #fff;
+  }
+
+  .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 0 40px;
+    overflow-y: scroll;
+  }
+
+  .item {
+    position: relative;
+    width: calc(100% / 3 - 10px);
+    height: 210px;
+    margin: 0 5px 10px;
+  }
+
+  .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
 </style>

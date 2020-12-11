@@ -30,26 +30,32 @@
 <div id="c-page">
   <main class="c-page">
 
-    <page name="work10" tab="3">
+    <page name="work18" tab="2">
 
       <template slot="mainCont">
-        <div class="canvas-parent" id="canvasParent">
-          <canvas id="canvas"></canvas>
+        <div class="wrapper">
+
+          <div class="circle"></div>
+          <div class="circle"></div>
+
+          <svg>
+            <filter id="wavy">
+              <feTurbulence x="0" y="0" baseFrequency="0.007" numOctaves="5" seed="2">
+                <animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02" repeatCount="indefinite">
+              </feTurbulence>
+              <feDisplacementMap in="SourceGraphic" scale="30">
+            </filter>
+          </svg>
+
         </div>
       </template>
 
       <template slot="html">
-        &lt;div class="canvas-parent" id="canvasParent"&gt;
-        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
-        &lt;/div&gt;
+
       </template>
 
       <template slot="css">
-        .canvas-parent {
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        }
+
       </template>
 
       <template slot="js">
@@ -96,11 +102,94 @@
 
 <!-- css manipulation ----------------------------------------- -->
 <style type="text/css">
-  .canvas-parent {
+  .wrapper {
     width: 100%;
     height: 100%;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(0, 0, 0),rgb(31, 0, 134));
   }
+
+  .circle {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    filter: url(#wavy) blur(1px);
+  }
+
+  .circle:before {
+    position: absolute;
+    content: "";
+    top:50px;
+    right:50px;
+    bottom:50px;
+    left:50px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #0f0f,
+      inset 0 0 50px #0f0;
+      -webkit-box-reflect: below 10px linear-gradient(transparent,transparent,#0002);
+      animation: color_anim 5s linear infinite;
+  }
+
+  .circle:after {
+    position: absolute;
+    content: "";
+    top:50px;
+    right:50px;
+    bottom:50px;
+    left:50px;
+    border: 10px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff,
+      inset 0 0 20px #fff;
+  }
+
+  .circle:nth-child(2):before {
+    animation-delay: 2.5s;
+  }
+
+  @keyframes color_anim
+{
+  0%
+  {
+    box-shadow: 0 0 50px #0f0,
+    inset 0 0 50px #0f0;
+    filter: hue-rotate(0deg);
+  }
+  20%
+  {
+    box-shadow: 0 0 60px #0f0,
+    inset 0 0 60px #0f0;
+  }
+  40%
+  {
+    box-shadow: 0 0 40px #0f0,
+    inset 0 0 40px #0f0;
+  }
+  60%
+  {
+    box-shadow: 0 0 80px #0f0,
+    inset 0 0 80px #0f0;
+  }
+  80%
+  {
+    box-shadow: 0 0 100px #0f0,
+    inset 0 0 100px #0f0;
+  }
+  100%
+  {
+    box-shadow: 0 0 50px #0f0,
+    inset 0 0 50px #0f0;
+    filter: hue-rotate(360deg);
+  }
+}
+
+svg{
+  width: 0;
+  height: 0;
+}
 
 </style>
 

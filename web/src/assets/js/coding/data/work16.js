@@ -25,25 +25,15 @@ export default {
 
 function func() {
 
-  //親要素とcanvas要素を取得
-  let canvasParent = document.getElementById("canvasParent");
-  let canvas = document.getElementById("canvas");
+  $(".list li").on("click",function() {
+    var value = $(this).attr("data-filter");
+    if (value == "all") {
+      $(".item").show(1000);
+    } else {
+      $(".item").not("." + value).hide(1000);
+      $(".item").filter("." + value).show(1000);
+    }
+  });
 
-  // Canvas利用不可の環境では実行しないようにif文で囲む
-  if (canvas.getContext) {
-
-    // canvasの幅と高さを親要素のサイズに合わせる
-    canvas.width = canvasParent.clientWidth;
-    canvas.height = canvasParent.clientHeight;
-
-    // Canvasに描画機能を付与
-    let c = canvas.getContext('2d');
-
-
-
-
-
-
-  }
 
 }

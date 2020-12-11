@@ -30,30 +30,138 @@
 <div id="c-page">
   <main class="c-page">
 
-    <page name="work10" tab="3">
+    <page name="work16" tab="3">
 
       <template slot="mainCont">
-        <div class="canvas-parent" id="canvasParent">
-          <canvas id="canvas"></canvas>
+        <div class="wrapper">
+          <ul class="list">
+            <li data-filter="all" class="active">All</li>
+            <li data-filter="cat">Cat</li>
+            <li data-filter="penguin">Penguin</li>
+            <li data-filter="lizard">Lizard</li>
+            <li data-filter="otter">Otter</li>
+            <li data-filter="squirrel">Squirrel</li>
+          </ul>
+
+          <div class="wrap">
+
+            
+            
+
+            
+              
+            <div class="item cat"><img src="../../assets/img/coding/page/animal/cat1.jpg"
+                alt="猫"></div>
+                
+            <div class="item penguin"><img src="../../assets/img/coding/page/animal/penguin1.jpg"
+                alt="ペンギン"></div>
+                
+            <div class="item lizard"><img src="../../assets/img/coding/page/animal/lizard1.jpg"
+                alt="トカゲ"></div>
+                
+            <div class="item otter"><img src="../../assets/img/coding/page/animal/otter1.jpg"
+                alt="カワウソ"></div>
+                
+            <div class="item squirrel"><img src="../../assets/img/coding/page/animal/squirrel1.jpg"
+                alt="リス"></div>
+                
+                
+            
+              
+            <div class="item cat"><img src="../../assets/img/coding/page/animal/cat2.jpg"
+                alt="猫"></div>
+                
+            <div class="item penguin"><img src="../../assets/img/coding/page/animal/penguin2.jpg"
+                alt="ペンギン"></div>
+                
+            <div class="item lizard"><img src="../../assets/img/coding/page/animal/lizard2.jpg"
+                alt="トカゲ"></div>
+                
+            <div class="item otter"><img src="../../assets/img/coding/page/animal/otter2.jpg"
+                alt="カワウソ"></div>
+                
+            <div class="item squirrel"><img src="../../assets/img/coding/page/animal/squirrel2.jpg"
+                alt="リス"></div>
+                
+                
+            
+              
+            <div class="item cat"><img src="../../assets/img/coding/page/animal/cat3.jpg"
+                alt="猫"></div>
+                
+            <div class="item penguin"><img src="../../assets/img/coding/page/animal/penguin3.jpg"
+                alt="ペンギン"></div>
+                
+            <div class="item lizard"><img src="../../assets/img/coding/page/animal/lizard3.jpg"
+                alt="トカゲ"></div>
+                
+            <div class="item otter"><img src="../../assets/img/coding/page/animal/otter3.jpg"
+                alt="カワウソ"></div>
+                
+            <div class="item squirrel"><img src="../../assets/img/coding/page/animal/squirrel3.jpg"
+                alt="リス"></div>
+                
+                
+            
+              
+            <div class="item cat"><img src="../../assets/img/coding/page/animal/cat4.jpg"
+                alt="猫"></div>
+                
+            <div class="item penguin"><img src="../../assets/img/coding/page/animal/penguin4.jpg"
+                alt="ペンギン"></div>
+                
+            <div class="item lizard"><img src="../../assets/img/coding/page/animal/lizard4.jpg"
+                alt="トカゲ"></div>
+                
+            <div class="item otter"><img src="../../assets/img/coding/page/animal/otter4.jpg"
+                alt="カワウソ"></div>
+                
+            <div class="item squirrel"><img src="../../assets/img/coding/page/animal/squirrel4.jpg"
+                alt="リス"></div>
+                
+                
+            
+              
+            <div class="item cat"><img src="../../assets/img/coding/page/animal/cat5.jpg"
+                alt="猫"></div>
+                
+            <div class="item penguin"><img src="../../assets/img/coding/page/animal/penguin5.jpg"
+                alt="ペンギン"></div>
+                
+            <div class="item lizard"><img src="../../assets/img/coding/page/animal/lizard5.jpg"
+                alt="トカゲ"></div>
+                
+            <div class="item otter"><img src="../../assets/img/coding/page/animal/otter5.jpg"
+                alt="カワウソ"></div>
+                
+            <div class="item squirrel"><img src="../../assets/img/coding/page/animal/squirrel5.jpg"
+                alt="リス"></div>
+                
+                
+            
+
+          </div>
         </div>
       </template>
 
       <template slot="html">
-        &lt;div class="canvas-parent" id="canvasParent"&gt;
-        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
-        &lt;/div&gt;
+
       </template>
 
       <template slot="css">
-        .canvas-parent {
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        }
+
       </template>
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
+        $(".list li").on("click",function() {
+        var value = $(this).attr("data-filter");
+        if (value == "all") {
+        $(".item").show("1000");
+        } else {
+        $(".item").not("." + value).hide("1000");
+        $(".item").filter("." + value).show("1000");
+        }
+        });
       </template>
     </page>
   </main>
@@ -96,10 +204,56 @@
 
 <!-- css manipulation ----------------------------------------- -->
 <style type="text/css">
-  .canvas-parent {
+  .wrapper {
     width: 100%;
     height: 100%;
+    background-color: #fff;
+    padding: 20px 0 70px;
+    overflow: hidden;
+  }
+
+  .list {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .list li {
+    width: 100px;
+    padding: 6px 0 4px;
+    margin: 0 10px;
+    background-color: #eee;
+    text-align: center;
     cursor: pointer;
+  }
+
+  .list li.active {
+    background-color: #03a9f4;
+    color: #fff;
+  }
+
+  .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    padding: 0 40px;
+    overflow-y: scroll;
+  }
+
+  .item {
+    position: relative;
+    width: calc(100% / 3 - 10px);
+    height: 210px;
+    margin: 0 5px 10px;
+  }
+
+  .item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
 </style>

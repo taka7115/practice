@@ -62,7 +62,12 @@
 
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
+        var btn = document.querySelector(".b-right");
+
+        btn.addEventListener("click", (e) =&gt; {
+          var self = e.currentTarget;
+          (self.classList.contains("active")) ? self.classList.remove("active"): self.classList.add("active");
+        });
       </template>
     </page>
   </main>
@@ -75,7 +80,7 @@
   .wrapper {
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: rgb(0, 92, 54);
     display: flex;
     justify-content: space-around;
     align-items: center;

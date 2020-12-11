@@ -30,30 +30,45 @@
 <div id="c-page">
   <main class="c-page">
 
-    <page name="work10" tab="3">
+    <page name="work15" tab="2">
 
       <template slot="mainCont">
-        <div class="canvas-parent" id="canvasParent">
-          <canvas id="canvas"></canvas>
+        <div class="wrapper">
+          <div class="bg">
+            <div class="loader">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
         </div>
       </template>
 
       <template slot="html">
-        &lt;div class="canvas-parent" id="canvasParent"&gt;
-        &lt;canvas id="canvas"&gt;&lt;/canvas&gt;
-        &lt;/div&gt;
+
       </template>
 
       <template slot="css">
-        .canvas-parent {
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        }
+
       </template>
 
       <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
+
       </template>
     </page>
   </main>
@@ -96,10 +111,218 @@
 
 <!-- css manipulation ----------------------------------------- -->
 <style type="text/css">
-  .canvas-parent {
+  .wrapper {
     width: 100%;
     height: 100%;
-    cursor: pointer;
+    background-color: rgb(1, 0, 65);
+  }
+
+  .bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: animateBg 10s linear infinite;
+
+  }
+
+  @keyframes animateBg {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+
+  .loader {
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+
+  .dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .dot:nth-child(1) {
+    transform: rotate(calc(20deg * 1));
+  }
+
+  .dot:nth-child(2) {
+    transform: rotate(calc(20deg * 2));
+  }
+
+  .dot:nth-child(3) {
+    transform: rotate(calc(20deg * 3));
+  }
+
+  .dot:nth-child(4) {
+    transform: rotate(calc(20deg * 4));
+  }
+
+  .dot:nth-child(5) {
+    transform: rotate(calc(20deg * 5));
+  }
+
+  .dot:nth-child(6) {
+    transform: rotate(calc(20deg * 6));
+  }
+
+  .dot:nth-child(7) {
+    transform: rotate(calc(20deg * 7));
+  }
+
+  .dot:nth-child(8) {
+    transform: rotate(calc(20deg * 8));
+  }
+
+  .dot:nth-child(9) {
+    transform: rotate(calc(20deg * 9));
+  }
+
+  .dot:nth-child(10) {
+    transform: rotate(calc(20deg * 10));
+  }
+
+  .dot:nth-child(11) {
+    transform: rotate(calc(20deg * 11));
+  }
+
+  .dot:nth-child(12) {
+    transform: rotate(calc(20deg * 12));
+  }
+
+  .dot:nth-child(13) {
+    transform: rotate(calc(20deg * 13));
+  }
+
+  .dot:nth-child(14) {
+    transform: rotate(calc(20deg * 14));
+  }
+
+  .dot:nth-child(15) {
+    transform: rotate(calc(20deg * 15));
+  }
+
+  .dot:nth-child(16) {
+    transform: rotate(calc(20deg * 16));
+  }
+
+  .dot:nth-child(17) {
+    transform: rotate(calc(20deg * 17));
+  }
+
+  .dot:nth-child(18) {
+    transform: rotate(calc(20deg * 18));
+  }
+
+  .dot:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #00ff0a;
+    box-shadow: 0 0 10px #00ff0a,
+      0 0 20px #00ff0a,
+      0 0 40px #00ff0a,
+      0 0 60px #00ff0a,
+      0 0 80px #00ff0a,
+      0 0 100px #00ff0a;
+    transform: scale(0);
+    animation: animation 1.8s linear infinite;
+    animation-delay: calc(0.1s * 18);
+  }
+
+  .dot:nth-child(1):before {
+    animation-delay: calc(0.1s * 1);
+  }
+
+  .dot:nth-child(2):before {
+    animation-delay: calc(0.1s * 2);
+  }
+
+  .dot:nth-child(3):before {
+    animation-delay: calc(0.1s * 3);
+  }
+
+  .dot:nth-child(4):before {
+    animation-delay: calc(0.1s * 4);
+  }
+
+  .dot:nth-child(5):before {
+    animation-delay: calc(0.1s * 5);
+  }
+
+  .dot:nth-child(6):before {
+    animation-delay: calc(0.1s * 6);
+  }
+
+  .dot:nth-child(7):before {
+    animation-delay: calc(0.1s * 7);
+  }
+
+  .dot:nth-child(8):before {
+    animation-delay: calc(0.1s * 8);
+  }
+
+  .dot:nth-child(9):before {
+    animation-delay: calc(0.1s * 9);
+  }
+
+  .dot:nth-child(10):before {
+    animation-delay: calc(0.1s * 10);
+  }
+
+  .dot:nth-child(11):before {
+    animation-delay: calc(0.1s * 11);
+  }
+
+  .dot:nth-child(12):before {
+    animation-delay: calc(0.1s * 12);
+  }
+
+  .dot:nth-child(13):before {
+    animation-delay: calc(0.1s * 13);
+  }
+
+  .dot:nth-child(14):before {
+    animation-delay: calc(0.1s * 14);
+  }
+
+  .dot:nth-child(15):before {
+    animation-delay: calc(0.1s * 15);
+  }
+
+  .dot:nth-child(16):before {
+    animation-delay: calc(0.1s * 16);
+  }
+
+  .dot:nth-child(17):before {
+    animation-delay: calc(0.1s * 17);
+  }
+
+  .dot:nth-child(18):before {
+    animation-delay: calc(0.1s * 18);
+  }
+
+  @keyframes animation {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0);
+    }
   }
 
 </style>
