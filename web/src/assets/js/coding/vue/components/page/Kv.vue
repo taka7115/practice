@@ -14,6 +14,26 @@
 
 
 <script>
+import work60 from "../../../data/work60.js";
+import work59 from "../../../data/work59.js";
+import work58 from "../../../data/work58.js";
+import work57 from "../../../data/work57.js";
+import work56 from "../../../data/work56.js";
+import work55 from "../../../data/work55.js";
+import work54 from "../../../data/work54.js";
+import work53 from "../../../data/work53.js";
+import work52 from "../../../data/work52.js";
+import work51 from "../../../data/work51.js";
+import work50 from "../../../data/work50.js";
+import work49 from "../../../data/work49.js";
+import work48 from "../../../data/work48.js";
+import work47 from "../../../data/work47.js";
+import work46 from "../../../data/work46.js";
+import work45 from "../../../data/work45.js";
+import work44 from "../../../data/work44.js";
+import work43 from "../../../data/work43.js";
+import work42 from "../../../data/work42.js";
+import work41 from "../../../data/work41.js";
 import work40 from "../../../data/work40.js";
 import work39 from "../../../data/work39.js";
 import work38 from "../../../data/work38.js";
@@ -68,6 +88,26 @@ export default {
   data() {
     return {
       arrays: {
+        work60,
+        work59,
+        work58,
+        work57,
+        work56,
+        work55,
+        work54,
+        work53,
+        work52,
+        work51,
+        work50,
+        work49,
+        work48,
+        work47,
+        work46,
+        work45,
+        work44,
+        work43,
+        work42,
+        work41,
         work40,
         work39,
         work38,

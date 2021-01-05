@@ -20,14 +20,12 @@ path {
 }
 
 
-
-
-.c-kv {
-  position: relative;
-  width: 100%;
+body {
   background-image: url(../../../assets/img/coding/kv.jpg);
-  background-size: cover;
+  background-size: 100% auto;
   background-color: #000;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
   @include tab {
     width: 100%;
@@ -36,8 +34,18 @@ path {
   }
 
   @include sp {
-    height: 1010/750*100vw;
     background-image: url(../../../assets/img/coding/kv--sp.jpg);
+  }
+
+}
+
+.c-kv {
+  position: relative;
+  width: 100%;
+  background-color:$coding_color;
+
+  @include sp {
+    height: 1010/750*100vw;
   }
 
 
@@ -47,415 +55,56 @@ path {
     pointer-events: none;
   }
 
-  &Deco1 {
-    width: 200/1920*100vw;
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    @include sp {
-      width: 100/750*100vw;
-    }
-  }
-
-  &Deco2 {
-    width: 400/1920*100vw;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-
-    @include sp {
-      width: 200/750*100vw;
-    }
-  }
-}
-
-
-
-// opAnim-----------------------------
-.c-first {
-  pointer-events: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 99;
-  background-color: #000;
-  overflow: hidden;
-
-  &Wrap {
-    position: relative;
-    width: 100%;
-    height: 100%;
-
-    @include tab {
-      margin-left: 40/1920*100vw;
-
-    }
-  }
-
-  &Ttl {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    &__area {
-      position: relative;
-      width: 140/1920*100vw;
-      margin: 0 auto;
-      // width: 820/1920*100vw;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      @include tab {
-        width: 280/1920*100vw;
-      }
-
-
-    }
-
-    &__left {
-      width: 52/1920*100vw;
-      height: 52/1920*100vw;
-
-      @include tab {
-        width: 104/1920*100vw;
-        height: 104/1920*100vw;
-
-      }
-
-      @include sp {
-        width: 117/1920*100vw;
-        height: 117/1920*100vw;
-      }
-    }
-
-    &__right {
-      width: 52/1920*100vw;
-      height: 52/1920*100vw;
-
-      @include tab {
-        width: 104/1920*100vw;
-        height: 104/1920*100vw;
-      }
-
-      @include sp {
-        width: 117/1920*100vw;
-        height: 117/1920*100vw;
-      }
-    }
-
-    &__letter {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto 0;
-    }
-
-    &__1 {
-      width: 44/1920*100vw;
-      height: 42/1920*100vw;
-      margin: auto 0 auto 31/750*100vw;
-
-      @include tab {
-        width: 88/1920*100vw;
-        height: 84/1920*100vw;
-        margin: auto 0 auto 62/750*100vw;
-      }
-
-      @include sp {
-        width: 99/1920*100vw;
-        height: 95/1920*100vw;
-        margin: auto 0 auto 70/750*100vw;
-      }
-
-
-    }
-
-    &__2 {
-      width: 54/1920*100vw;
-      height: 8/1920*100vw;
-      margin: auto 0 auto 55/750*100vw;
-
-      @include tab {
-        width: 108/1920*100vw;
-        height: 16/1920*100vw;
-        margin: auto 0 auto 110/750*100vw;
-      }
-
-      @include sp {
-        width: 121/1920*100vw;
-        height: 18/1920*100vw;
-        margin: auto 0 auto 124/750*100vw;
-      }
-    }
-
-    &__3 {
-      width: 69/1920*100vw;
-      height: 65/1920*100vw;
-      margin: auto 0 auto 83/750*100vw;
-
-      @include tab {
-        width: 138/1920*100vw;
-        height: 130/1920*100vw;
-        margin: auto 0 auto 166/750*100vw;
-      }
-
-      @include sp {
-        width: 155/1920*100vw;
-        height: 146/1920*100vw;
-        margin: auto 0 auto 187/750*100vw;
-      }
-    }
-
-    &__4 {
-      width: 29/1920*100vw;
-      height: 36/1920*100vw;
-      margin: 6/750*100vw 0 0 112/750*100vw;
-
-      @include tab {
-        width: 58/1920*100vw;
-        height: 72/1920*100vw;
-        margin: 12/750*100vw 0 0 224/750*100vw;
-      }
-
-      @include sp {
-        width: 65/1920*100vw;
-        height: 81/1920*100vw;
-        margin: 14/750*100vw 0 0 252/750*100vw;
-      }
-    }
-
-    &__5 {
-      width: 52/1920*100vw;
-      height: 48/1920*100vw;
-      margin: auto 0 auto 132/750*100vw;
-
-      @include tab {
-        width: 104/1920*100vw;
-        height: 96/1920*100vw;
-        margin: auto 0 auto 264/750*100vw;
-      }
-
-      @include sp {
-        width: 117/1920*100vw;
-        height: 108/1920*100vw;
-        margin: auto 0 auto 297/750*100vw;
-      }
-    }
-
-    &__6 {
-      width: 61/1920*100vw;
-      height: 65/1920*100vw;
-      margin: auto 0 auto 160/750*100vw;
-
-      @include tab {
-        width: 122/1920*100vw;
-        height: 130/1920*100vw;
-        margin: auto 0 auto 320/750*100vw;
-      }
-
-      @include sp {
-        width: 137/1920*100vw;
-        height: 147/1920*100vw;
-        margin: auto 0 auto 360/750*100vw;
-      }
-    }
-
-    &__7 {
-      width: 44/1920*100vw;
-      height: 38/1920*100vw;
-      margin: auto 0 auto 187/750*100vw;
-
-      @include tab {
-        width: 88/1920*100vw;
-        height: 76/1920*100vw;
-        margin: auto 0 auto 374/750*100vw;
-      }
-
-      @include sp {
-        width: 99/1920*100vw;
-        height: 85/1920*100vw;
-        margin: auto 0 auto 421/750*100vw;
-      }
-    }
-
-    &__8 {
-      width: 67/1920*100vw;
-      height: 68/1920*100vw;
-      margin: auto 0 auto 210/750*100vw;
-
-      @include tab {
-        width: 134/1920*100vw;
-        height: 136/1920*100vw;
-        margin: auto 0 auto 420/750*100vw;
-      }
-
-      @include sp {
-        width: 151/1920*100vw;
-        height: 153/1920*100vw;
-        margin: auto 0 auto 472/750*100vw;
-      }
-    }
-
-    &__9 {
-      width: 65/1920*100vw;
-      height: 63/1920*100vw;
-      margin: auto 0 auto 241/750*100vw;
-
-      @include tab {
-        width: 130/1920*100vw;
-        height: 126/1920*100vw;
-        margin: auto 0 auto 482/750*100vw;
-      }
-
-      @include sp {
-        width: 146/1920*100vw;
-        height: 142/1920*100vw;
-        margin: auto 0 auto 542/750*100vw;
-      }
-    }
-
-    &__10 {
-      width: 28/1920*100vw;
-      height: 68/1920*100vw;
-      margin: auto 0 auto 274/750*100vw;
-
-      // transform: rotate(-20deg);
-      @include tab {
-        width: 56/1920*100vw;
-        height: 136/1920*100vw;
-        margin: auto 0 auto 548/750*100vw;
-      }
-
-      @include sp {
-        width: 63/1920*100vw;
-        height: 153/1920*100vw;
-        margin: auto 0 auto 616/750*100vw;
-      }
-    }
-  }
-
-  &Box {
-    width: 160/1920*100vw;
-    height: 160/1920*100vw;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    transform: translate(-370/1920*100vw, 30/1920*100vw) rotate(0deg);
-    z-index: 1;
-
-    @include tab {
-      width: 320/1920*100vw;
-      height: 320/1920*100vw;
-      transform: translate(-740/1920*100vw, 60/1920*100vw) rotate(0deg);
-    }
-
-    @include sp {
-      width: 360/1920*100vw;
-      height: 360/1920*100vw;
-      transform: translate(-250/750*100vw, 30/750*100vw) rotate(0deg);
-    }
-
-    // &--1 {
-    //   background-color: rgba(216, 128, 243, 0.7);
-    // }
-
-    // &--2 {
-    //   background-color: rgba(68, 16, 83, 0.7);
-    // }
-
-
-    &__wrap {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-  }
-
-  &Rect {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    transform: scale(.6);
-
-    &--1 {
-      width: 40/1920*100vw;
-      height: 40/1920*100vw;
-      top: -800/1920*100vw;
-      box-shadow: 0 0 14px #00a2ff;
-
-
-      @include tab {
-        width: 80/1920*100vw;
-        height: 80/1920*100vw;
-        top: -1600/1920*100vw;
-      }
-
-      @include sp {
-        width: 90/1920*100vw;
-        height: 90/1920*100vw;
-        top: -250/750*100vw;
-      }
-    }
-
-    &--2 {
-      width: 30/1920*100vw;
-      height: 30/1920*100vw;
-      top: -800/1920*100vw;
-      box-shadow: 0 0 14px #0375cc;
-
-      @include tab {
-        width: 60/1920*100vw;
-        height: 60/1920*100vw;
-        top: -1600/1920*100vw;
-      }
-
-      @include sp {
-        width: 68/1920*100vw;
-        height: 68/1920*100vw;
-        top: -250/750*100vw;
-      }
-    }
-  }
 
 }
-
-
-// svg {
-//   transform: scale(.8);
-// }
 
 
 
 .c-main {
   border-top: 1px solid rgb(168, 168, 168);
-  background-color: #000207;
-  padding: 150px 0;
+  padding-bottom: 150px;
 
   @include tab {
-    padding: 80px 0;
+    padding-bottom: 80px;
   }
 
   @include sp {
-    padding: 80/750*100vw 0;
+    padding-bottom: 80/750*100vw;
   }
 }
 
 .c-typeWriting {
-  margin-bottom: 100px;
+  padding: 50px 0 130px;
+  position: relative;
+  overflow: hidden;
 
   @include sp {
-    margin-bottom: 60/750*100vw;
+    padding: 50/750*100vw 0;
   }
+
+  &:before{
+width: 40%;
+height: 100%;
+background: linear-gradient(90deg, blue, transparent);
+position: absolute;
+content: "";
+top: 0;
+left: 0;
+  }
+  &:after {
+    @include pc{
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 150px 0 0 100vw;
+      border-color: transparent transparent transparent $coding_color;
+      position: absolute;
+      content: "";
+      bottom: 0px;
+      left: 0;
+    }
+  }
+
 
   &Txt {
     font-size: 26px;
@@ -481,28 +130,25 @@ path {
   $L-width-pc: 36%;
   $L-width-tab: 36%;
   $L-width-sp: 38%;
-
-
-  max-width: 1200px;
-  margin: 0 auto;
-
-  @include tab {
-    width: 88vw;
-  }
-
-  @include sp {
-    width: 100vw;
-  }
-
+  background-color: $coding_color;
 
   &Wrapper {
+    max-width: 1200px;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 
+    @include tab {
+      width: 88vw;
+    }
+
     @include sp {
+      width: 100vw;
       display: block;
+      padding-top: 80/750*100vw;
     }
   }
 
@@ -840,112 +486,6 @@ path {
   &-worksBtn-anim {
     transform: translateY(0);
     opacity: 1;
-  }
-
-
-  // for opAnimation------------------------
-
-  &-wideArea {
-    width: 820/1920*100vw;
-
-    @include tab {
-      width: 1640/1920*100vw;
-    }
-
-    @include sp {
-      width: 720/750*100vw;
-    }
-  }
-
-  &-letter {
-    opacity: 0;
-  }
-
-  &-ttl {
-    display: none;
-  }
-
-  &-jack {
-    animation: jackInTheBox .4s forwards;
-  }
-
-  &-fall {
-    animation: fall .3s forwards;
-  }
-
-  &-bounce {
-    animation: bounce 1.2s forwards ease-out;
-  }
-
-  &-rotate1 {
-    animation: rotate1 .5s forwards ease-out;
-  }
-
-  &-rotate2 {
-    animation: rotate2 .5s forwards ease-out;
-  }
-
-  &-swing {
-    animation: swing 1.6s forwards;
-  }
-
-  &-lean {
-    animation: lean .4s forwards;
-  }
-
-  &-vanish {
-    animation: vanish 2s forwards ease-out .8s;
-  }
-
-
-  &-smaller {
-    animation: smaller 2s forwards ease-out .8s;
-  }
-
-  // from second visit--------------------------------------------------
-
-
-  &-session-first {
-    background-color: transparent;
-    position: relative;
-  }
-
-  &-session-wrap {
-    background-color: transparent;
-    transform: scale(.8);
-  }
-
-
-
-  &-session-rect1 {
-    top: 0;
-    transform: translate(-140/1920*100vw, -40/1920*100vw) rotate(-40deg);
-
-    @include tab {
-      transform: translate(-280/1920*100vw, -80/1920*100vw) rotate(-40deg);
-    }
-
-    @include sp {
-      transform: translate(-190/750*100vw, -30/750*100vw) rotate(-40deg);
-    }
-  }
-
-  &-session-rect2 {
-    top: 0;
-    transform: translate(-80/1920*100vw, -60/1920*100vw) rotate(-5deg);
-
-    @include tab {
-      transform: translate(-160/1920*100vw, -120/1920*100vw) rotate(-5deg);
-    }
-
-    @include sp {
-      transform: translate(-140/750*100vw, -50/750*100vw) rotate(-5deg);
-    }
-  }
-
-  &-session-bar {
-    transform-origin: bottom center;
-    transform: rotate(20deg);
   }
 
 

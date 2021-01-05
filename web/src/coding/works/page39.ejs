@@ -1,50 +1,55 @@
 <% var meta = {
-    pageTitle:'',
-    description:'foo',
-    keywords:'foo',
-    url:'http://www.example.com/'
-  };
-  var page={
-      root:filePath.dir
-  };
+  pageTitle:'',
+  description:'foo',
+  keywords:'foo',
+  url:'http://www.example.com/'
+};
+var page={
+    root:filePath.dir
+};
 %>
 <% var imgpath = '/assets/img/coding/page/' %>
 <%- include(page.root + 'common/meta/coding/_page', {param:'param'}); %>
 <div id="c-page">
-  <main class="c-page">
+<main class="c-page">
 
 
-    <page name="work3" tab="3">
+  <page name="work39" tab="3">
 
 
-      <template slot="mainCont">
-        <!-- kvに入るhtmlを記述 -->
-      </template>
+    <template slot="mainCont">
+      <div class="canvas-parent" id="p5Parent">
+      </div>
+    </template>
 
 
 
-      <template slot="html">
-        <!-- ソースとしてhtmlを記述 -->
-      </template>
+    <template slot="html">
+      &lt;div class="canvas-parent" id="canvasParent"&gt;
+      &lt;/div&gt;
+    </template>
 
 
-      <template slot="css">
-        <!-- ソースとしてcssを記述 -->
-      </template>
+    <template slot="css">
+      <!-- ソースとしてcssを記述 -->
+    </template>
 
 
-      <template slot="js">
-        <!-- ソースとしてjavascriptを記述 -->
-      </template>
-    </page>
-  </main>
+    <template slot="js">
+      <!-- ソースとしてjavascriptを記述 -->
+    </template>
+  </page>
+</main>
 </div>
 
 <%- include(page.root + 'common/_footer', {param:'param'}); %>
 
 <!-- css manipulation ----------------------------------------- -->
 <style type="text/css">
-  /* kvのhtmlをスタイリングするcssを記述 */
+.canvas-parent {
+  width: 100%;
+  height: 100%;
+}
 
 </style>
 

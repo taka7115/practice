@@ -1,0 +1,60 @@
+<% var meta = {
+    pageTitle:'',
+    description:'foo',
+    keywords:'foo',
+    url:'http://www.example.com/'
+  };
+  var page={
+      root:filePath.dir
+  };
+%>
+<% var imgpath = '/assets/img/coding/page/' %>
+<%- include(page.root + 'common/meta/coding/_page', {param:'param'}); %>
+<div id="c-page">
+  <main class="c-page">
+
+
+    <page name="work53" tab="3">
+
+
+      <template slot="mainCont">
+        <!-- kvに入るhtmlを記述 -->
+      </template>
+
+
+
+      <template slot="html">
+        <!-- ソースとしてhtmlを記述 -->
+      </template>
+
+
+      <template slot="css">
+        <!-- ソースとしてcssを記述 -->
+      </template>
+
+
+      <template slot="js">
+        <!-- ソースとしてjavascriptを記述 -->
+      </template>
+    </page>
+  </main>
+</div>
+
+<%- include(page.root + 'common/_footer', {param:'param'}); %>
+
+<!-- css manipulation ----------------------------------------- -->
+<style type="text/css">
+  /* kvのhtmlをスタイリングするcssを記述 */
+
+</style>
+
+<!-- call the common javascript ------------------------------------ -->
+<script type="text/javascript" src="<%-conf.path.js%>coding/c-page.js"></script>
+
+
+
+<!------------------------------------------- javascript manipulatio -->
+
+</body>
+
+</html>

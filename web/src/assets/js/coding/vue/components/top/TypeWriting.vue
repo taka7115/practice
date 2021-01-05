@@ -1,14 +1,14 @@
 <template>
   <section class="c-typeWriting">
     <h2 class="c-typeWritingTxt u-pc">
-      HTML5のCanvas、CSS、JavaScriptを使って
+      Canvas、CSS、JavaScriptを使って
       <br />コーディングした作品集。
-      <br />コードも紹介。気になる作品をホバーしてみてください！
+      <br />コードも紹介。気になる作品をホバー！
     </h2>
     <h2 class="c-typeWritingTxt u-sp">
-      HTML5のCanvas、CSS、JavaScriptを使って
+      Canvas、CSS、JavaScriptを使って
       <br />コーディングした作品集。
-      <br />コードも紹介。作品をタップしてみてください！
+      <br />コードも紹介。作品をタップ！
     </h2>
   </section>
 </template>
@@ -17,6 +17,7 @@
 
 <script>
 export default {
-  data() {}
+  // data: function () {
+  // }
 };
 </script>
